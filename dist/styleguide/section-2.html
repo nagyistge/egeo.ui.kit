@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Egeo UI Kit Documentation</title>
+    <meta name="description" content="" />
+    <meta name="generator" content="kss-node" />
+    <link href='http://guide.stratio.com/public/favicon.ico' rel='icon' type='image/x-icon'>
+    <link rel="stylesheet" href="public/kss.css" />
+    <link rel="stylesheet" href="public/styleguide.css">
+
+    <!--[if lt IE 9]>
+    <script src="public/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body id="kss-node">
+    <div class="kss-wrapper">
+      <div class="kss-sidebar">
+        <div class="kss-sidebar-inner">
+          <header class="kss-header">
+            <div class="logo"><img src="public/logo_header.png" alt="Stratio" width="201" height="42"></div>
+            <h1 class="kss-doc-title"><a href="./">Egeo UI Kit Documentation</a></h1>
+          </header>
+          <nav class="kss-nav">
+            <ul class="kss-menu" data-kss-ref="2">
+              <li class="kss-menu-item"><a href="./"><span class="kss-ref">0</span><span class="kss-name">Overview</span></a></li>
+              <li class="kss-menu-item"><a href="section-1.html"><span class="kss-ref">1</span><span class="kss-name">Settings</span></a></li>
+              <li class="kss-menu-item"><a href="section-2.html"><span class="kss-ref">2</span><span class="kss-name">Tools</span></a></li>
+              <li class="kss-menu-item"><a href="section-3.html"><span class="kss-ref">3</span><span class="kss-name">Vendors</span></a></li>
+              <li class="kss-menu-item"><a href="section-4.html"><span class="kss-ref">4</span><span class="kss-name">Base</span></a></li>
+              <li class="kss-menu-item"><a href="section-5.html"><span class="kss-ref">5</span><span class="kss-name">Objects</span></a></li>
+              <li class="kss-menu-item"><a href="section-6.html"><span class="kss-ref">6</span><span class="kss-name">Components</span></a></li>
+              <li class="kss-menu-item"><a href="section-7.html"><span class="kss-ref">7</span><span class="kss-name">Utils</span></a></li>
+              <li class="kss-menu-item"><a href="section-8.html"><span class="kss-ref">8</span><span class="kss-name">Theming</span></a></li>
+            </ul>
+            <ul class="kss-menu-child">
+              <li class="kss-menu-item"><a href="#section-2.1"><span class="kss-ref">2.1</span><span class="kss-name">tools.colors</span></a></li>
+              <li class="kss-menu-item"><a href="#section-2.2"><span class="kss-ref">2.2</span><span class="kss-name">tools.typography</span></a></li>
+              <li class="kss-menu-item"><a href="#section-2.3"><span class="kss-ref">2.3</span><span class="kss-name">tools.log</span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="kss-content">
+        <article class="kss-article">
+          <section id="section-2" class="kss-section kss-depth-1">
+            <h1 class="kss-title"><span class="kss-ref">2</span> Tools</h1>
+            <div class="kss-description">
+              <p>The tools section includes a series of mixins, functions, placeholders, etc...
+to help developers to access settings with ease, do operations with different
+inputs and reuse concrete behaviors or properties.</p>
+
+            </div>
+          </section>
+          <section id="section-2.1" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">2.1</span> tools.colors</h1>
+            <div class="kss-description">
+              <h4 id="is-coloured-colors-">is-coloured($colors)</h4>
+<p>Creates a set of modifier classes with the whole colors of a colors map passed as a parameter.</p>
+<ul>
+<li><strong>$colors</strong> - A Sass map of colors when the key is the name of the color and the value is the color itself.</li>
+</ul>
+<div class="compatibility">Compatibility untested.</div>
+            </div>
+          </section>
+          <section id="section-2.2" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">2.2</span> tools.typography</h1>
+            <div class="kss-description">
+              <p>The typography tools includes a series of mixins and functions
+to work with typographies.</p>
+
+            </div>
+          </section>
+          <section id="section-2.3" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">2.3</span> tools.log</h1>
+            <div class="kss-description">
+              <p><span class="tag tag--untested">untested</span></p>
+<p>A logger library implemented over the version created by Hugo Giraudel
+in his article
+<a href="http://www.sitepoint.com/using-error-responsibly-in-sass/">Using @error responsibly in Sass</a>
+at sitepoint.</p>
+<p>The log includes a mixin and a function with the same name. This is
+a hack needed to allow the log can be called from a function due to
+Sass doesn&#39;t allow calling mixins inside functions.</p>
+<p><strong>Note</strong>: This module cannot be tested due to the current systems of testing
+for Sass doesn&#39;t allow to test console outputs or compilation breaks.</p>
+<h2 id="variables">Variables</h2>
+<table>
+<thead>
+<tr>
+<th>var</th>
+<th>default</th>
+<th>desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class="u-tx-align-left">$log-debug</div></td>
+<td>No</td>
+<td><div class="u-tx-align-left">A constant value used by the log methods to say to the log method that we want to show a debug message in the console.</div></td>
+</tr>
+<tr>
+<td><div class="u-tx-align-left">$log-warn</div></td>
+<td>No</td>
+<td><div class="u-tx-align-left">A constant value used by the log methods to say to the log method that we want to show a warn message in the console.</div></td>
+</tr>
+<tr>
+<td><div class="u-tx-align-left">$log-error</div></td>
+<td>No</td>
+<td><div class="u-tx-align-left">A constant value used by the log methods to say to the log method that we want to show an error message in the console.</div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="functions">Functions</h2>
+<h3 id="log-message-type-log-debug-the-function">log($message, $type: $log-debug) - the function</h3>
+<p>The function log launches the directive <code>@debug</code>, <code>@warn</code> or <code>@error</code> depending on
+the parameter <code>$type</code> passed to the function. It detects if the directive
+@error is supported (Sass 3.3+) and provides an alternative for lower versions.</p>
+<table>
+<thead>
+<tr>
+<th>parameters</th>
+<th><div class="st-u-nowrap">default value</div></th>
+<th>desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class="u-tx-align-left">$message</div></td>
+<td>No</td>
+<td><div class="u-tx-align-left">The message we want to show in the console.</div></td>
+</tr>
+<tr>
+<td><div class="u-tx-align-left">$type</div></td>
+<td>$log-debug</td>
+<td><div class="u-tx-align-left">The type of message we want to show in the console. It could be have the value of one of the variables pre-defined: <code>$log-debug</code>, <code>@log-warn</code> or <code>@log-error</code>.</div></td>
+</tr>
+</tbody>
+</table>
+<h4 id="usage">Usage</h4>
+<p>If we want to use the logger inside a function we have to
+use a hack due to the Sass limitations. We should have a
+code like the one below:</p>
+<pre><code>@function myFunction() {
+    ...
+    @if @log(&#39;My log message&#39;, $log-error) {}
+    ...
+}
+</code></pre><div class="compatibility">Compatibility untested.</div>
+
+<h3 id="log-message-type-log-debug-the-mixin">log($message, $type: $log-debug) - the mixin</h3>
+<p>Does exactly the same than the function but you can call it
+like showed in the Usage section.</p>
+<table>
+<thead>
+<tr>
+<th>parameters</th>
+<th><div class="st-u-nowrap">default value</div></th>
+<th>desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class="u-tx-align-left">$message</div></td>
+<td>No</td>
+<td><div class="u-tx-align-left">The message we want to show in the console.</div></td>
+</tr>
+<tr>
+<td><div class="u-tx-align-left">$type</div></td>
+<td>$log-debug</td>
+<td><div class="u-tx-align-left">The type of message we want to show in the console. It could be have the value of one of the variables pre-defined: <code>$log-debug</code>, <code>@log-warn</code> or <code>@log-error</code>.</div></td>
+</tr>
+</tbody>
+</table>
+<h4 id="usage">Usage</h4>
+<pre><code>...
+@include(&#39;My log message&#39;, $log-error);
+...
+</code></pre><div class="compatibility">Compatibility untested.</div>
+            </div>
+          </section>
+        </article>
+        <footer class="kss-footer">
+          <div>Created using <a href="https://github.com/hughsk/kss-node">kss-node</a> and <a href="https://github.com/htanjo/kss-node-template">kss-node-template</a>.</div>
+        </footer>
+      </div>
+    </div>
+    <script src="public/kss.js"></script>
+    <script src="public/jquery-1.9.1.min.js"></script>
+    <!--[if gt IE 8]><!-->
+    <script src="public/rainbow.min.js"></script>
+    <!--<![endif]-->
+    <script src="public/main.js"></script>
+  </body>
+</html>
