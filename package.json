@@ -1,7 +1,7 @@
 {
-  "name": "egeo.visual.guidelines",
+  "name": "egeo.ui.documentation",
   "version": "0.1.0",
-  "description": "Official documentation about the Visual Guidelines of Egeo.",
+  "description": "Official documentation about the Egeo UI Kit. The UI Kit includes the framework and the family of components and libraries needed to create a GUI following the Egeo Styleguides.",
   "main": "index.html",
   "scripts": {
     "doc": "grunt doc",
