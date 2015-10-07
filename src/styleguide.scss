@@ -5,6 +5,7 @@
 @import '../node_modules/egeo.ui.base/dist/sass/settings/settings.typography';
 
 @import '../node_modules/egeo.ui.base/dist/sass/tools/tools.log';
+@import '../node_modules/egeo.ui.base/dist/sass/tools/tools.maps';
 @import '../node_modules/egeo.ui.base/dist/sass/tools/tools.colors';
 @import '../node_modules/egeo.ui.base/dist/sass/tools/tools.typography';
 
@@ -74,6 +75,11 @@ h3 + h4 {
 		color: white;
 	}
 
+	&--type {
+		background-color: get-color(a1);
+		color: white;
+	}
+
 	&--immutable,
 	&--not-supported,
 	&--untested {
@@ -126,10 +132,10 @@ h3 + h4 {
 }
 
 .typo-block {
-	@include font-families;
-	@include font-sizes;
-	@include font-weights;
-	@include line-heights;
+	@include set-font-families;
+	@include set-font-sizes;
+	@include set-font-weights;
+	@include set-line-heights;
 
 	//border: 1px solid lightgray;
 	box-sizing: border-box;
@@ -139,7 +145,7 @@ h3 + h4 {
 	width: 100%;
 }
 
-@each $color-name, $color in $colors {
+@each $color-name, $color in $egeo-colors {
 	.color-block-#{$color-name} {
 		background: $color;
 

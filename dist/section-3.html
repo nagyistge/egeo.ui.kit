@@ -41,6 +41,7 @@
               <li class="kss-menu-item"><a href="#section-3.2"><span class="kss-ref">3.2</span><span class="kss-name">tools.typography</span></a></li>
               <li class="kss-menu-item"><a href="#section-3.3"><span class="kss-ref">3.3</span><span class="kss-name">tools.log</span></a></li>
               <li class="kss-menu-item"><a href="#section-3.4"><span class="kss-ref">3.4</span><span class="kss-name">tools.layers</span></a></li>
+              <li class="kss-menu-item"><a href="#section-3.5"><span class="kss-ref">3.5</span><span class="kss-name">tools.maps</span></a></li>
             </ul>
           </nav>
         </div>
@@ -59,12 +60,19 @@ inputs and reuse concrete behaviors or properties.</p>
           <section id="section-3.1" class="kss-section kss-depth-2">
             <h1 class="kss-title"><span class="kss-ref">3.1</span> tools.colors</h1>
             <div class="kss-description">
-              <h4 id="is-coloured-colors-">is-coloured($colors)</h4>
+              <p>A set of mixins and functions to work with colors.</p>
+<h3 id="is-coloured-colors-">is-coloured($colors)</h3>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span></p>
 <p>Creates a set of modifier classes with the whole colors of a colors map passed as a parameter.</p>
 <ul>
 <li><strong>$colors</strong> - A Sass map of colors when the key is the name of the color and the value is the color itself.</li>
 </ul>
 <div class="compatibility">Compatibility untested.</div>
+
+<h3 id="get-color-color-">get-color($color)</h3>
+<p><span class="tag tag--type">@function</span><span class="tag tag--tested">Test covered</span></p>
+<p>Get a specific color of the Sass map of colors <a href="section-2.html#section-2.1">$egeo-colors defined in settings.colors</a>.</p>
+
             </div>
           </section>
           <section id="section-3.2" class="kss-section kss-depth-2">
@@ -72,14 +80,199 @@ inputs and reuse concrete behaviors or properties.</p>
             <div class="kss-description">
               <p>The typography tools includes a series of mixins and functions
 to work with typographies.</p>
+<h3 id="get-font-font-family-open-sans-">get-font($font-family: open-sans)</h3>
+<p><span class="tag tag--type">@function</span><span class="tag tag--tested">Test covered</span></p>
+<p>Return a value from the Sass map <a href="section-2.html#section-2.2">$egeo-font-families</a>.</p>
+<ul>
+<li><strong>$font-family</strong> - The key of a pair key/value defined in the Sass map <a href="section-2.html#section-2.2">$egeo-font-families</a>.</li>
+</ul>
+<p>Usage</p>
+<pre><code>.test {
+    font-family: get-font();
+}
 
+.test-2 {
+    font-family: get-font(brandon-grotesque);
+}
+</code></pre><p>This code will generate:</p>
+<pre><code>.test {
+    font-family: &#39;Open Sans&#39;;
+}
+
+.test-2 {
+    font-family: &#39;Brandon Grotesque&#39;;
+}
+</code></pre><div class="compatibility">Compatibility untested.</div>
+
+<h3 id="get-font-size-font-size-medium-">get-font-size($font-size: medium)</h3>
+<p><span class="tag tag--type">@function</span><span class="tag tag--tested">Test covered</span></p>
+<p>Return a value from the Sass map <a href="section-2.html#section-2.2">$egeo-font-sizes</a>.</p>
+<ul>
+<li><strong>$font-size</strong> - The key of a pair key/value defined in the Sass map <a href="section-2.html#section-2.2">$egeo-font-sizes</a>.</li>
+</ul>
+<p>Usage</p>
+<pre><code>.test {
+    font-size: get-font-size();
+}
+
+.test-2 {
+    font-size: get-font-size(small);
+}
+</code></pre><p>This code will generate:</p>
+<pre><code>.test {
+    font-size: 1rem;
+}
+
+.test-2 {
+    font-size: .8rem;
+}
+</code></pre><div class="compatibility">Compatibility untested.</div>
+
+<h3 id="get-font-weight-font-weight-normal-">get-font-weight($font-weight: normal)</h3>
+<p><span class="tag tag--type">@function</span><span class="tag tag--tested">Test covered</span></p>
+<p>Return a value from the Sass map <a href="section-2.html#section-2.2">$egeo-font-weights</a>.</p>
+<ul>
+<li><strong>$font-weight</strong> - The key of a pair key/value defined in the Sass map <a href="section-2.html#section-2.2">$egeo-font-weights</a>.</li>
+</ul>
+<p>Usage</p>
+<pre><code>.test {
+    font-weight: get-font-weight();
+}
+
+.test-2 {
+    font-weight: get-font-weight(bold);
+}
+</code></pre><p>This code will generate:</p>
+<pre><code>.test {
+    font-weight: 400;
+}
+
+.test-2 {
+    font-weight: 700;
+}
+</code></pre><div class="compatibility">Compatibility untested.</div>
+
+<h3 id="get-line-height-line-height-normal-">get-line-height($line-height: normal)</h3>
+<p><span class="tag tag--type">@function</span><span class="tag tag--tested">Test covered</span></p>
+<p>Return a value from the Sass map <a href="section-2.html#section-2.2">$egeo-line-heights</a>.</p>
+<ul>
+<li><strong>$line-height</strong> - The key of a pair key/value defined in the Sass map <a href="section-2.html#section-2.2">$egeo-line-heights</a>.</li>
+</ul>
+<p>Usage</p>
+<pre><code>.test {
+    line-height: get-line-height();
+}
+
+.test-2 {
+    line-height: get-line-height(double);
+}
+</code></pre><p>This code will generate:</p>
+<pre><code>.test {
+    line-height: 1em;
+}
+
+.test-2 {
+    line-height: 2em;
+}
+</code></pre><div class="compatibility">Compatibility untested.</div>
+
+<h3 id="set-font-families-">set-font-families()</h3>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span></p>
+<p>Output a set of modifiers based on the $egeo-font-families map</p>
+<p>Usage</p>
+<pre><code>.test {
+    @include set-font-families;
+}
+</code></pre><p>This code will generate:</p>
+<pre><code>...
+
+.test--brandon-grotesque {
+    font-family: &quot;Brandon Grotesque&quot;;
+}
+
+.test--open-sans {
+    font-family: &quot;Open Sans&quot;;
+}
+
+...
+</code></pre><div class="compatibility">Compatibility untested.</div>
+
+<h3 id="set-font-sizes-">set-font-sizes()</h3>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span></p>
+<p>Output a set of modifiers based on the $egeo-font-sizes map</p>
+<p>Usage</p>
+<pre><code>.test {
+    @include set-font-sizes;
+}
+</code></pre><p>This code will generate:</p>
+<pre><code>...
+
+.test--large {
+    font-size: 1.2rem;
+}
+
+.test--medium {
+    font-size: 1rem;
+}
+
+.test--small {
+    font-size: 0.8rem;
+}
+
+...
+</code></pre><div class="compatibility">Compatibility untested.</div>
+
+<h3 id="set-font-weights-">set-font-weights()</h3>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span></p>
+<p>Output a set of modifiers based on the $egeo-font-weights map</p>
+<p>Usage</p>
+<pre><code>.test {
+    @include set-font-weights;
+}
+</code></pre><p>This code will generate:</p>
+<pre><code>...
+
+.test--bold {
+    font-weight: 700;
+}
+
+.test--semibold {
+    font-weight: 500;
+}
+
+.test--normal {
+    font-weight: 400;
+}
+
+...
+</code></pre><div class="compatibility">Compatibility untested.</div>
+
+<h3 id="set-line-heights-">set-line-heights()</h3>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span></p>
+<p>Output a set of modifiers based on the $egeo-line-heights map</p>
+<p>Usage</p>
+<pre><code>.test {
+    @include set-line-heights;
+}
+</code></pre><p>This code will generate:</p>
+<pre><code>...
+
+.test--double {
+    line-height: 2em;
+}
+
+.test--normal {
+    line-height: 1.5em;
+}
+
+...
+</code></pre><div class="compatibility">Compatibility untested.</div>
             </div>
           </section>
           <section id="section-3.3" class="kss-section kss-depth-2">
             <h1 class="kss-title"><span class="kss-ref">3.3</span> tools.log</h1>
             <div class="kss-description">
-              <p><span class="tag tag--untested">untested</span></p>
-<p>A logger library implemented over the version created by Hugo Giraudel
+              <p>A logger library implemented over the version created by Hugo Giraudel
 in his article
 <a href="http://www.sitepoint.com/using-error-responsibly-in-sass/">Using @error responsibly in Sass</a>
 at sitepoint.</p>
@@ -117,6 +310,7 @@ for Sass doesn&#39;t allow to test console outputs or compilation breaks.</p>
 </table>
 <h2 id="functions">Functions</h2>
 <h3 id="log-message-type-log-debug-the-function">log($message, $type: $log-debug) - the function</h3>
+<p><span class="tag tag--type">@function</span><span class="tag tag--untested">untested</span></p>
 <p>The function log launches the directive <code>@debug</code>, <code>@warn</code> or <code>@error</code> depending on
 the parameter <code>$type</code> passed to the function. It detects if the directive
 @error is supported (Sass 3.3+) and provides an alternative for lower versions.</p>
@@ -153,6 +347,7 @@ code like the one below:</p>
 </code></pre><div class="compatibility">Compatibility untested.</div>
 
 <h3 id="log-message-type-log-debug-the-mixin">log($message, $type: $log-debug) - the mixin</h3>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--untested">untested</span></p>
 <p>Does exactly the same than the function but you can call it
 like showed in the Usage section.</p>
 <table>
@@ -186,12 +381,51 @@ like showed in the Usage section.</p>
           <section id="section-3.4" class="kss-section kss-depth-2">
             <h1 class="kss-title"><span class="kss-ref">3.4</span> tools.layers</h1>
             <div class="kss-description">
-              <h4 id="get-layer-layer-">get-layer($layer)</h4>
-<p>Return a value from the Sass map <a href="section-2.html#section-2.5">$layers</a>.</p>
+              <p>A set of functions and mixins to work with layers (z-index).</p>
+<h3 id="get-layer-layer-">get-layer($layer)</h3>
+<p><span class="tag tag--type">@function</span><span class="tag tag--tested">Test covered</span></p>
+<p>Return a value from the Sass map <a href="section-2.html#section-2.5">$egeo-layers</a>.</p>
 <ul>
-<li><strong>$layer</strong> - The key of a pair key/value defined in the Sass map <a href="section-2.html#section-2.5">$layers</a>.</li>
+<li><strong>$layer</strong> - The key of a pair key/value defined in the Sass map <a href="section-2.html#section-2.5">$egeo-layers</a>.</li>
 </ul>
 <div class="compatibility">Compatibility untested.</div>
+            </div>
+          </section>
+          <section id="section-3.5" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">3.5</span> tools.maps</h1>
+            <div class="kss-description">
+              <p>Functions and mixins to help work with Sass maps.</p>
+<h3 id="bem-modifiers-from-map-map-css-property-">bem-modifiers-from-map($map, $css-property)</h3>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span></p>
+<p>Create a BEM modifier class from the inner class that contains the mixin
+using the keys of the map passed as parameter as the --name and the
+values as the value of the $css-property.</p>
+<ul>
+<li><strong>$map</strong> - A Sass map with pairs key/value.</li>
+<li><strong>$css-property</strong> - The name of the CSS property which will change in the modifiers.</li>
+</ul>
+<p>Usage</p>
+<pre><code>$my-map: (
+    large: 1.5rem;
+    normal: 1rem;
+    small: .8rem;
+)
+
+.my-class {
+        @include bem-modifiers-from-map($my-map, font-size);
+}
+</code></pre><p>This sample will generate this CSS code.</p>
+<pre><code>.my-class--large {
+    font-size: 1.5rem;
+}
+
+.my-class--normal {
+    font-size: 1rem;
+}
+.my-class--small {
+    font-size: .8rem;
+}
+</code></pre><div class="compatibility">Compatibility untested.</div>
             </div>
           </section>
         </article>
