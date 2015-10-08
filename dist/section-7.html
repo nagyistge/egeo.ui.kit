@@ -27,6 +27,7 @@
             <ul class="kss-menu" data-kss-ref="7">
               <li class="kss-menu-item"><a href="./"><span class="kss-ref">0</span><span class="kss-name">Overview</span></a></li>
               <li class="kss-menu-item"><a href="section-1.html"><span class="kss-ref">1</span><span class="kss-name">Managers</span></a></li>
+              <li class="kss-menu-item"><a href="section-2.html"><span class="kss-ref">2</span><span class="kss-name">Settings</span></a></li>
               <li class="kss-menu-item"><a href="section-3.html"><span class="kss-ref">3</span><span class="kss-name">Tools</span></a></li>
               <li class="kss-menu-item"><a href="section-4.html"><span class="kss-ref">4</span><span class="kss-name">Vendors</span></a></li>
               <li class="kss-menu-item"><a href="section-5.html"><span class="kss-ref">5</span><span class="kss-name">Base</span></a></li>
@@ -36,6 +37,7 @@
               <li class="kss-menu-item"><a href="section-9.html"><span class="kss-ref">9</span><span class="kss-name">Theming</span></a></li>
             </ul>
             <ul class="kss-menu-child">
+              <li class="kss-menu-item"><a href="#section-7.1"><span class="kss-ref">7.1</span><span class="kss-name">Component</span></a></li>
             </ul>
           </nav>
         </div>
@@ -47,6 +49,26 @@
             <div class="kss-description">
               <p>To do</p>
 
+            </div>
+          </section>
+          <section id="section-7.1" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">7.1</span> Component</h1>
+            <div class="kss-description">
+              <p>The component Component is the parent class of all components in
+the UI Kit</p>
+<h3 id="c-component">c-component</h3>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span></p>
+<p>Injects the general behavior and properties of the abstract class Component to other
+components of the UI Kit.</p>
+<p>Usage</p>
+<pre><code>.test {
+        @include c-component;
+}
+</code></pre><p>Will product the next result:</p>
+<pre><code>.test {
+        box-sizing: border-box;
+}
+</code></pre><div class="compatibility">Compatibility IE8+, Firefox 29+, Chrome 10+, Edge 12+, Safari 5.1+, Opera 9.5+</div>
             </div>
           </section>
         </article>
