@@ -50,7 +50,8 @@ module.exports = function (grunt) {
     styleguide: 'styleguide', // Warning: This name is used to reference files 
                               // and folders.
     vendors: 'vendors',       // Folder of the vendors not included in npm or bower
-    egeoBase: 'node_modules/egeo.ui.base/dist/',        // Folder of the Egeo UI Base Framework
+    kssTemplate: 'node_modules/egeo.website.template/dist/',  // Folder of the KSS Template
+    egeoBase: 'node_modules/egeo.ui.base/dist/',              // Folder of the Egeo UI Base Framework
     assets: 'assets'
   };
 
@@ -111,7 +112,7 @@ module.exports = function (grunt) {
       doc: {
         options: {
           cmd: function(f) {
-            return '.\\node_modules\\.bin\\kss-node --source src --source node_modules/egeo.ui.base/dist/sass --destination dist --template vendors/kss-template --homepage readme.md --css public/styleguide.css';
+            return '.\\node_modules\\.bin\\kss-node --source src --destination dist --template node_modules/egeo.website.template/dist/kss-template --homepage readme.md --css public/styleguide.css';
           }
         },
         files: [{
@@ -136,6 +137,7 @@ module.exports = function (grunt) {
         files: [
           // Includes font files within path and its sub-directories
           {expand: true, cwd: '<%= app.egeoBase %>', src: ['<%= app.assets %>/**'], dest: '<%= app.dist %>/public'},
+          {expand: true, cwd: '<%= app.kssTemplate %>/public', src: ['**/*'], dest: '<%= app.dist %>/public'},
           {expand: true, cwd: '<%= app.src %>', src: ['<%= app.assets %>/**'], dest: '<%= app.dist %>/public'}
         ],
       },
@@ -154,7 +156,6 @@ module.exports = function (grunt) {
   });
 
   // Load the npm tasks needed
-  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-batch');
   grunt.loadNpmTasks('grunt-contrib-clean');
@@ -180,7 +181,6 @@ module.exports = function (grunt) {
                         // from scratch
     'batch:doc',        // Generate KSS documentation
     'copy:styleguide',  // Copy files needed
-    'sass:styleguide'   // Generate custom CSS to customize the documentation
   ]);
 
   grunt.registerTask('default', [
