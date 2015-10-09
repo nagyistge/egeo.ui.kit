@@ -38,6 +38,7 @@
             </ul>
             <ul class="kss-menu-child">
               <li class="kss-menu-item"><a href="#section-7.1"><span class="kss-ref">7.1</span><span class="kss-name">Component</span></a></li>
+              <li class="kss-menu-item"><a href="#section-7.1"><span class="kss-ref">7.1</span><span class="kss-name">Button</span></a></li>
             </ul>
           </nav>
         </div>
@@ -55,7 +56,9 @@
             <h1 class="kss-title"><span class="kss-ref">7.1</span> Component</h1>
             <div class="kss-description">
               <p>The component Component is the parent class of all components in
-the UI Kit</p>
+the UI Kit. It is an abstrac class that it means that it doesn&#39;t
+exist as a CSS class itself but as a mixin that can be inherited
+in any component.</p>
 <h3 id="c-component">c-component</h3>
 <p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span></p>
 <p>Injects the general behavior and properties of the abstract class Component to other
@@ -69,6 +72,198 @@ components of the UI Kit.</p>
         box-sizing: border-box;
 }
 </code></pre><div class="compatibility">Compatibility IE8+, Firefox 29+, Chrome 10+, Edge 12+, Safari 5.1+, Opera 9.5+</div>
+            </div>
+          </section>
+          <section id="section-7.1" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">7.1</span> Button</h1>
+            <div class="kss-description">
+              <p>The component Button is officially supported in <code>&lt;a&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;button&gt;</code> and <code>&lt;span&gt;</code> tags.</p>
+<p>.egeo-c-button                           - Button without type
+.egeo-c-button--call-to-action-1         - Button call-to-action-1
+.egeo-c-button--call-to-action-1:hover   - Button call-to-action-1:hover
+.egeo-c-button--call-to-action-2         - Button call-to-action-2
+.egeo-c-button--call-to-action-2:hover   - Button call-to-action-2:hover
+.egeo-c-button--call-to-action-3         - Button call-to-action-3
+.egeo-c-button--call-to-action-3:hover   - Button call-to-action-3:hover
+.egeo-c-button--call-to-action-4         - Button call-to-action-4
+.egeo-c-button--call-to-action-4:hover   - Button call-to-action-4:hover
+.egeo-c-button--danger                   - Button danger
+.egeo-c-button--danger:hover             - Button danger:hover</p>
+<h3 id="egeo-c-button-modifier">egeo-c-button-modifier</h3>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span></p>
+<p>Creates a new modifier which is a type of button with the properties passed as parameters.</p>
+<p>Usage</p>
+<pre><code>.test {
+     @include egeo-c-button-modifier(&#39;warning&#39;,
+                                      orange,
+                                      1px solid blue,
+                                      white,
+                                      red,
+                                      1px solid white,
+                                      white
+                                      );
+}
+</code></pre><p>Will product the next result:</p>
+<pre><code>.test--warning {
+        background: orange;
+     border: 1px solid blue;
+     color: white;
+}
+
+.test--warning:hover {
+     background: red;
+     border: 1px solid white;
+     color: white;
+}
+</code></pre><h3 id="egeo-c-button">egeo-c-button</h3>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span><span class="tag tag--danger">Internal</span></p>
+<p>Internally used to create the Egeo buttons in an extensible way.</p>
+<h2 id="how-to-extend-the-button">How to extend the button</h2>
+<pre><code>   .#{$egeo-namespace}c-button {
+       @include egeo-c-button;
+
+       // your code here
+
+       // If you want to use the modifier constructor
+       @include egeo-c-button-modifier(&#39;name-of-you-modifier&#39;,
+                                   #000, // Background value
+                                   1px solid #000, // Border value
+                                   #000, // Color value
+                                   #000, // Background value on hover
+                                   1px solid #000, // Border value on hover
+                                   #000, // Color value on hover
+                                   );
+   }
+</code></pre><h2 id="how-to-create-a-new-button-inheriting-from-button">How to create a new button inheriting from button</h2>
+<pre><code>   .my-button {
+       @include egeo-c-button;
+
+       // your code here
+
+       // If you want to use the modifier constructor
+       @include egeo-c-button-modifier(&#39;name-of-you-modifier&#39;,
+                                   #000, // Background value
+                                   1px solid #000, // Border value
+                                   #000, // Color value
+                                   #000, // Background value on hover
+                                   1px solid #000, // Border value on hover
+                                   #000, // Color value on hover
+                                   );
+   }
+</code></pre><div class="compatibility">Compatibility untested</div>
+
+<h2 id="variables-exposed-to-theming">Variables exposed to theming</h2>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$egeo-c-button</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td>$egeo-c-button---height</td>
+<td><code>40px</code></td>
+</tr>
+<tr>
+<td>$egeo-c-button---min-width</td>
+<td><code>180px</code></td>
+</tr>
+<tr>
+<td>$egeo-c-button---padding</td>
+<td><code>0 20px</code></td>
+</tr>
+<tr>
+<td>$egeo-c-button---text-align</td>
+<td><code>center</code></td>
+</tr>
+<tr>
+<td>$egeo-c-button---text-transform</td>
+<td><code>uppercase</code></td>
+</tr>
+<tr>
+<td>$egeo-c-button--call-to-action-1---background</td>
+<td><code>egeo-get-color(c1)</code></td>
+</tr>
+<tr>
+<td>$egeo-c-button--call-to-action-1---color</td>
+<td><code>egeo-get-color(g0)</code></td>
+</tr>
+<tr>
+<td>$egeo-c-button--call-to-action-1--hover---background</td>
+<td><code>egeo-get-color(c1b)</code></td>
+</tr>
+<tr>
+<td>$egeo-c-button--call-to-action-1--hover---color</td>
+<td><code>egeo-get-color(g0)</code></td>
+</tr>
+<tr>
+<td>$egeo-c-button--call-to-action-2---background</td>
+<td><code>egeo-get-color(c2)</code></td>
+</tr>
+<tr>
+<td>$egeo-c-button--call-to-action-2---color</td>
+<td><code>egeo-get-color(g0)</code></td>
+</tr>
+<tr>
+<td>$egeo-c-button--call-to-action-2--hover---background</td>
+<td><code>egeo-get-color(c2b)</code></td>
+</tr>
+<tr>
+<td>$egeo-c-button--call-to-action-2--hover---color</td>
+<td><code>egeo-get-color(g0)</code></td>
+</tr>
+<tr>
+<td>$egeo-c-button--call-to-action-3---background</td>
+<td><code>egeo-get-color(c3)</code></td>
+</tr>
+<tr>
+<td>$egeo-c-button--call-to-action-3---color</td>
+<td><code>egeo-get-color(g0)</code></td>
+</tr>
+<tr>
+<td>$egeo-c-button--call-to-action-3--hover---background</td>
+<td><code>egeo-get-color(c3b)</code></td>
+</tr>
+<tr>
+<td>$egeo-c-button--call-to-action-3--hover---color</td>
+<td><code>egeo-get-color(g0)</code></td>
+</tr>
+<tr>
+<td>$egeo-c-button--call-to-action-4---background</td>
+<td><code>egeo-get-color(g0)</code></td>
+</tr>
+<tr>
+<td>$egeo-c-button--call-to-action-4---border</td>
+<td><code>2px solid egeo-get-color(g3)</code></td>
+</tr>
+<tr>
+<td>$egeo-c-button--call-to-action-4---color</td>
+<td><code>egeo-get-color(g4)</code></td>
+</tr>
+<tr>
+<td>$egeo-c-button--call-to-action-4--hover---background</td>
+<td><code>egeo-get-color(g0)</code></td>
+</tr>
+<tr>
+<td>$egeo-c-button--call-to-action-4--hover---border</td>
+<td><code>2px solid egeo-get-color(g4)</code></td>
+</tr>
+<tr>
+<td>$egeo-c-button--call-to-action-4--hover---color</td>
+<td><code>egeo-get-color(g5)</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li><a href="section-7.html#section-7.1">c-component</a></li>
+</ul>
+
             </div>
           </section>
         </article>

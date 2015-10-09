@@ -67,22 +67,28 @@ internally used by the framework and shouldn&#39;t be modified.</p>
 </thead>
 <tbody>
 <tr>
-<td><div class="u-tx-align-left">$egeo-namespace</div></td>
-<td><span class="tag tag--default">!default</span></td>
-<td>&#39;st-&#39;</td>
-<td><div class="u-tx-align-left">A prefix included in all classes created by the UI Kit.</div></td>
+<td><div class="egeo-u-tx-align-left egeo-u-nowrap">$egeo-namespace</div></td>
+<td><span class="tag tag--default">!default</span><span class="tag tag--danger">Inner used!</span></td>
+<td>&#39;egeo-&#39;</td>
+<td><div class="egeo-u-tx-align-left">A prefix included in all classes created by the UI Kit. <span class="text text--s3">This variable is used internally so change it could cause unexpected results.</span></div></td>
 </tr>
 <tr>
-<td><div class="u-tx-align-left">$egeo-nobem-namespace</div></td>
-<td><span class="tag tag--default">!default</span></td>
-<td>&#39;st-nobem-&#39;</td>
-<td><div class="u-tx-align-left">A prefix included in all classes created by the UI Kit to be used in projects which are not using BEM like naming methodology.</div></td>
+<td><div class="egeo-u-tx-align-left egeo-u-nowrap">$egeo-nobem-namespace</div></td>
+<td><span class="tag tag--default">!default</span><span class="tag tag--danger">Inner used!</span></td>
+<td>&#39;egeo-nobem-&#39;</td>
+<td><div class="egeo-u-tx-align-left">A prefix included in all classes created by the UI Kit to be used in projects which are not using BEM like naming methodology. <span class="text text--s3">This variable is used internally so change it could cause unexpected results.</span></div></td>
 </tr>
 <tr>
-<td><div class="u-tx-align-left">$egeo-fontface-src</div></td>
+<td><div class="egeo-u-tx-align-left egeo-u-nowrap">$egeo-fontface-src</div></td>
 <td><span class="tag tag--default">!default</span></td>
 <td>&#39;assets/fonts&#39;</td>
-<td><div class="u-tx-align-left">A base url from which the @font-face directive will seek the font folders.</div></td>
+<td><div class="egeo-u-tx-align-left">A base url from which the @font-face directive will seek the font folders.</div></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align-left egeo-u-nowrap">$egeo-silent-classes</div></td>
+<td><span class="tag tag--default">!default</span></td>
+<td>&#39;false&#39;</td>
+<td><div class="egeo-u-tx-align-left">Active/deactivate the use of silent classes (view en explanation about silent classes below).</div></td>
 </tr>
 </tbody>
 </table>
@@ -109,6 +115,23 @@ Even knowing it, you would have to create a selector specifically written for ea
 selector you want to overwrite. A mess.</p>
 <p>For that, some classes and placeholders in the framework uses the non-BEM namespace to
 ensure that the <code>!important</code> flag is used and they can overwrite any class in the project.</p>
+<h3 id="silent-classes">Silent Classes</h3>
+<p>It is possible that, in any cases, you want to use some of the Egeo features
+but you don&#39;t want to import all the classes generated in your final CSS due to
+obvious performance reasons. If not used, shouldn&#39;t appear.</p>
+<p>All CSS classes in the Egeo UI Kit even in the Base Framework, are generated
+throughout mixins. This means that we can enable/disable the generation of the
+CSS class and import only the mixins to our code or import only the CSS classes
+we really need to use. This technique is called <em>Silent Classes</em>.</p>
+<p>By default, Egeo considers that you want to generate all CSS classes you import so
+the default value of <code>$egeo-silent-classes</code> is <em>false</em>. If you set it as <em>true</em>,
+by default, the system will only provide you the mixins and you have to set manually,
+class by class, if you want to generate the CSS class or not.</p>
+<p>To do it, all Egeo components include a variable called like the component that is
+a boolean. For example, the Button component that has the mixin <code>egeo-c-button</code>
+includes a variable called <code>$egeo-c-button</code> to indicate if Egeo should generate
+the CSS class or not. By default, this variable will have the value of
+<code>$egeo-silent-classes</code>.</p>
 
             </div>
           </section>
@@ -129,49 +152,51 @@ ones defined by the Design Team in the <a href="/web/visual-docs/section-1.html"
 </thead>
 <tbody>
 <tr>
-<td><div class="u-tx-align-left">$colors</div></td>
+<td><div class="egeo-u-tx-align-left">$colors</div></td>
 <td><span class="tag tag--default">!default</span></td>
-<td><div class="u-tx-align-left">The default Sass map of colors. By default, the map includes the whole <a href="/web/visual-docs/section-1.html">colors of the visual specification</a>.</div></td>
+<td><div class="egeo-u-tx-align-left">The default Sass map of colors. By default, the map includes the whole <a href="/web/visual-docs/section-1.html">colors of the visual specification</a>.</div></td>
 </tr>
 </tbody>
 </table>
 <h3 id="sass-map-colors">Sass Map $colors</h3>
 <div class="color-block color-block-c1"><div class="color-block__title">c1: #37b5e4</div></div>
-<div class="color-block color-block-c1b"><div class="color-block__title">c1b: #2d96bd</div></div>
-<div class="color-block color-block-c2"><div class="color-block__title">c2: #b7bfc3</div></div>
-<div class="color-block color-block-c2b"><div class="color-block__title">c2b: #92989c</div></div>
-<div class="color-block color-block-c3"><div class="color-block__title">c3: #485566</div></div>
-<div class="color-block color-block-c3b"><div class="color-block__title">c3b: #2d3540</div></div>
-<div class="color-block color-block-c4"><div class="color-block__title">c4: #222b37</div></div>
-<div class="color-block color-block-c5"><div class="color-block__title">c5: #d3d8db</div></div>
-<div class="color-block color-block-g0"><div class="color-block__title">g0: #fff</div></div>
-<div class="color-block color-block-g1"><div class="color-block__title">g1: #fbfbfb</div></div>
-<div class="color-block color-block-g2"><div class="color-block__title">g2: #f3f3f3</div></div>
-<div class="color-block color-block-g3"><div class="color-block__title">g3: #e4e4e4</div></div>
-<div class="color-block color-block-g4"><div class="color-block__title">g4: #cbcbcb</div></div>
-<div class="color-block color-block-g5"><div class="color-block__title">g5: #b5b5b5</div></div>
-<div class="color-block color-block-g6"><div class="color-block__title">g6: #999</div></div>
-<div class="color-block color-block-g7"><div class="color-block__title">g7: #777</div></div>
-<div class="color-block color-block-g8"><div class="color-block__title">g8: #555</div></div>
-<div class="color-block color-block-g9"><div class="color-block__title">g9: #242424</div></div>
-<div class="color-block color-block-g10"><div class="color-block__title">g10: #000</div></div>
-<div class="color-block color-block-f1"><div class="color-block__title">f1: #222b37</div></div>
-<div class="color-block color-block-f2"><div class="color-block__title">f2: #1a212b</div></div>
-<div class="color-block color-block-f3"><div class="color-block__title">f3: #eff2f3</div></div>
-<div class="color-block color-block-f4"><div class="color-block__title">f4: #e1e4e5</div></div>
-<div class="color-block color-block-f5"><div class="color-block__title">f5: #fff</div></div>
-<div class="color-block color-block-e1"><div class="color-block__title">e1: #93ae65</div></div>
-<div class="color-block color-block-e1b"><div class="color-block__title">e1b: #7d9456</div></div>
-<div class="color-block color-block-e1c"><div class="color-block__title">e1c: #9fad87</div></div>
-<div class="color-block color-block-e2"><div class="color-block__title">e2: #eb8817</div></div>
-<div class="color-block color-block-e2b"><div class="color-block__title">e2b: #d17915</div></div>
-<div class="color-block color-block-e2c"><div class="color-block__title">e2c: #eb9e46</div></div>
-<div class="color-block color-block-e3"><div class="color-block__title">e3: #d24234</div></div>
-<div class="color-block color-block-e3b"><div class="color-block__title">e3b: #b8392e</div></div>
-<div class="color-block color-block-e3c"><div class="color-block__title">e3c: #d15549</div></div>
-<div class="color-block color-block-a1"><div class="color-block__title">a1: #d0c120</div></div>
-<div class="color-block color-block-a2"><div class="color-block__title">a2: #21d8de</div></div>
-<div class="color-block color-block-a3"><div class="color-block__title">a3: #bcea3</div></div>
+<div class="color-block color-block--a1"><div class="color-block__title">a1: #37b5e4</div></div>
+<div class="color-block color-block--a1_dark"><div class="color-block__title">a1_dark: #2d96bd</div></div>
+<div class="color-block color-block--a1_light"><div class="color-block__title">a1_light: #3dc9fc</div></div>
+<div class="color-block color-block--a2"><div class="color-block__title">a2: #b5c1c5</div></div>
+<div class="color-block color-block--a2_dark"><div class="color-block__title">a2_dark: #919b9e</div></div>
+<div class="color-block color-block--a2_light"><div class="color-block__title">a2_light: #ccd9de</div></div>
+<div class="color-block color-block--a3"><div class="color-block__title">a3: #405467</div></div>
+<div class="color-block color-block--a3_dark"><div class="color-block__title">a3_dark: #283440</div></div>
+<div class="color-block color-block--a3_light"><div class="color-block__title">a3_light: #4f6880</div></div>
+<div class="color-block color-block--n0"><div class="color-block__title">n0: #fff</div></div>
+<div class="color-block color-block--n1"><div class="color-block__title">n1: #fbfbfb</div></div>
+<div class="color-block color-block--n2"><div class="color-block__title">n2: #f3f3f3</div></div>
+<div class="color-block color-block--n3"><div class="color-block__title">n3: #e4e4e4</div></div>
+<div class="color-block color-block--n4"><div class="color-block__title">n4: #cbcbcb</div></div>
+<div class="color-block color-block--n5"><div class="color-block__title">n5: #b5b5b5</div></div>
+<div class="color-block color-block--n6"><div class="color-block__title">n6: #999</div></div>
+<div class="color-block color-block--n7"><div class="color-block__title">n7: #777</div></div>
+<div class="color-block color-block--n8"><div class="color-block__title">n8: #555</div></div>
+<div class="color-block color-block--n9"><div class="color-block__title">n9: #242424</div></div>
+<div class="color-block color-block--n10"><div class="color-block__title">n10: #000</div></div>
+<div class="color-block color-block--b1"><div class="color-block__title">b1: #172734</div></div>
+<div class="color-block color-block--b2"><div class="color-block__title">b2: #0f1b27</div></div>
+<div class="color-block color-block--b3"><div class="color-block__title">b3: #eff2f3</div></div>
+<div class="color-block color-block--b3_dark"><div class="color-block__title">b3_dark: #e1e4e5</div></div>
+<div class="color-block color-block--b4"><div class="color-block__title">b4: #fff</div></div>
+<div class="color-block color-block--s1"><div class="color-block__title">s1: #88b060</div></div>
+<div class="color-block color-block--s1_dark"><div class="color-block__title">s1_dark: #759653</div></div>
+<div class="color-block color-block--s1_light"><div class="color-block__title">s1_light: #9ab084</div></div>
+<div class="color-block color-block--s2"><div class="color-block__title">s2: #ff8900</div></div>
+<div class="color-block color-block--s2_dark"><div class="color-block__title">s2_dark: #e57a00</div></div>
+<div class="color-block color-block--s2_light"><div class="color-block__title">s2_light: #ffa033</div></div>
+<div class="color-block color-block--s3"><div class="color-block__title">s3: #e23b2b</div></div>
+<div class="color-block color-block--s3_dark"><div class="color-block__title">s3_dark: #c93426</div></div>
+<div class="color-block color-block--s3_light"><div class="color-block__title">s3_light: #e36459</div></div>
+<div class="color-block color-block--t1"><div class="color-block__title">t1: #d0c120</div></div>
+<div class="color-block color-block--t2"><div class="color-block__title">t2: #21d8de</div></div>
+<div class="color-block color-block--t3"><div class="color-block__title">t3: #bcea3f</div></div>
             </div>
           </section>
           <section id="section-2.2" class="kss-section kss-depth-2">
@@ -189,24 +214,24 @@ ones defined by the Design Team in the <a href="/web/visual-docs/section-1.html"
 </thead>
 <tbody>
 <tr>
-<td><div class="u-tx-align-left">$egeo-font-families</div></td>
+<td><div class="egeo-u-tx-align-left">$egeo-font-families</div></td>
 <td><span class="tag tag--default">!default</span></td>
-<td><div class="u-tx-align-left">The default Sass map of font families declared in the <a href="/web/visual-docs/section-2.html">visual specifications</a>.</div></td>
+<td><div class="egeo-u-tx-align-left">The default Sass map of font families declared in the <a href="/web/visual-docs/section-2.html">visual specifications</a>.</div></td>
 </tr>
 <tr>
-<td><div class="u-tx-align-left">$egeo-font-weights</div></td>
+<td><div class="egeo-u-tx-align-left">$egeo-font-weights</div></td>
 <td><span class="tag tag--default">!default</span></td>
-<td><div class="u-tx-align-left">The default Sass map of font weights declared in the <a href="/web/visual-docs/section-2.html">visual specifications</a>.</div></td>
+<td><div class="egeo-u-tx-align-left">The default Sass map of font weights declared in the <a href="/web/visual-docs/section-2.html">visual specifications</a>.</div></td>
 </tr>
 <tr>
-<td><div class="u-tx-align-left">$egeo-font-sizes</div></td>
+<td><div class="egeo-u-tx-align-left">$egeo-font-sizes</div></td>
 <td><span class="tag tag--default">!default</span></td>
-<td><div class="u-tx-align-left">The default Sass map of font sizes declared in the <a href="/web/visual-docs/section-2.html">visual specifications</a>. </div></td>
+<td><div class="egeo-u-tx-align-left">The default Sass map of font sizes declared in the <a href="/web/visual-docs/section-2.html">visual specifications</a>. </div></td>
 </tr>
 <tr>
-<td><div class="u-tx-align-left">$egeo-line-heights</div></td>
+<td><div class="egeo-u-tx-align-left">$egeo-line-heights</div></td>
 <td><span class="tag tag--default">!default</span></td>
-<td><div class="u-tx-align-left">The default Sass map of line heights declared in the <a href="/web/visual-docs/section-2.html">visual specifications</a>.</div></td>
+<td><div class="egeo-u-tx-align-left">The default Sass map of line heights declared in the <a href="/web/visual-docs/section-2.html">visual specifications</a>.</div></td>
 </tr>
 </tbody>
 </table>
@@ -386,12 +411,12 @@ reference compatibility table.</p>
 <tbody>
 <tr>
 <td><span class="typo-block typo-block--brandon-grotesque typo-block--medium">Brandon Grotesque</span></td>
-<td><div class="u-tx-align-left">Light, Regular, Bold, Black</div></td>
+<td><div class="egeo-u-tx-align-left">Light, Regular, Bold, Black</div></td>
 <td>EOT, SVG, TTF, WOFF</td>
 </tr>
 <tr>
 <td><span class="typo-block typo-block--open-sans typo-block--medium">Open Sans</span></td>
-<td><div class="u-tx-align-left">Light, LightItalic, Regular, Italic, Semibold, SemiboldItalic, Bold, BoldItalic, ExtraBold, ExtraBoldItalic</div></td>
+<td><div class="egeo-u-tx-align-left">Light, LightItalic, Regular, Italic, Semibold, SemiboldItalic, Bold, BoldItalic, ExtraBold, ExtraBoldItalic</div></td>
 <td>EOT, SVG, TTF, WOFF</td>
 </tr>
 </tbody>
@@ -491,9 +516,9 @@ magic numbers.</p>
 </thead>
 <tbody>
 <tr>
-<td><div class="u-tx-align-left">$egeo-layers</div></td>
+<td><div class="egeo-u-tx-align-left">$egeo-layers</div></td>
 <td><span class="tag tag--default">!default</span></td>
-<td><div class="u-tx-align-left">The default Sass map of layers. This map is only a set of pairs key/value that represents name/number of deep.</div></td>
+<td><div class="egeo-u-tx-align-left">The default Sass map of layers. This map is only a set of pairs key/value that represents name/number of deep.</div></td>
 </tr>
 </tbody>
 </table>
