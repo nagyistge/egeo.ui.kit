@@ -39,6 +39,7 @@
             <ul class="kss-menu-child">
               <li class="kss-menu-item"><a href="#section-7.1"><span class="kss-ref">7.1</span><span class="kss-name">Component</span></a></li>
               <li class="kss-menu-item"><a href="#section-7.2"><span class="kss-ref">7.2</span><span class="kss-name">Button</span></a></li>
+              <li class="kss-menu-item"><a href="#section-7.3"><span class="kss-ref">7.3</span><span class="kss-name">Icon</span></a></li>
             </ul>
           </nav>
         </div>
@@ -59,13 +60,13 @@
 the UI Kit. It is an abstrac class that it means that it doesn&#39;t
 exist as a CSS class itself but as a mixin that can be inherited
 in any component.</p>
-<h3 id="c-component">c-component</h3>
+<h3 id="egeo-c-component">egeo-c-component</h3>
 <p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span></p>
 <p>Injects the general behavior and properties of the abstract class Component to other
 components of the UI Kit.</p>
 <p>Usage</p>
 <pre><code>.test {
-        @include c-component;
+        @include egeo-c-component;
 }
 </code></pre><p>Will product the next result:</p>
 <pre><code>.test {
@@ -77,18 +78,11 @@ components of the UI Kit.</p>
           <section id="section-7.2" class="kss-section kss-depth-2">
             <h1 class="kss-title"><span class="kss-ref">7.2</span> Button</h1>
             <div class="kss-description">
-              <p>The component Button is officially supported in <code>&lt;a&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;button&gt;</code> and <code>&lt;span&gt;</code> tags.</p>
-<p>.egeo-c-button                           - Button without type
-.egeo-c-button--call-to-action-1         - Button call-to-action-1
-.egeo-c-button--call-to-action-1:hover   - Button call-to-action-1:hover
-.egeo-c-button--call-to-action-2         - Button call-to-action-2
-.egeo-c-button--call-to-action-2:hover   - Button call-to-action-2:hover
-.egeo-c-button--call-to-action-3         - Button call-to-action-3
-.egeo-c-button--call-to-action-3:hover   - Button call-to-action-3:hover
-.egeo-c-button--call-to-action-4         - Button call-to-action-4
-.egeo-c-button--call-to-action-4:hover   - Button call-to-action-4:hover
-.egeo-c-button--danger                   - Button danger
-.egeo-c-button--danger:hover             - Button danger:hover</p>
+              <p>The component Button is officially supported in <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code> and <code>&lt;span&gt;</code> tags.
+The <code>&lt;input&gt;</code> tag has a particular behavior due to the default values and special
+implementation dragged from its implementation in the oldest browsers.</p>
+<p><code>&lt;input&gt;</code> tag can be perfectly used but keep in mind that the input type doesn&#39;t allow
+to use an icon inside the text (that is place in the value attribute).</p>
 <h3 id="egeo-c-button-modifier">egeo-c-button-modifier</h3>
 <p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span></p>
 <p>Creates a new modifier which is a type of button with the properties passed as parameters.</p>
@@ -122,10 +116,8 @@ components of the UI Kit.</p>
 <pre><code>   .#{$egeo-namespace}c-button {
        @include egeo-c-button;
 
-       // your code here
-
        // If you want to use the modifier constructor
-       @include egeo-c-button-modifier(&#39;name-of-you-modifier&#39;,
+       @include egeo-c-button-modifier(&#39;name-of-the-button&#39;,
                                    #000, // Background value
                                    1px solid #000, // Border value
                                    #000, // Color value
@@ -133,22 +125,42 @@ components of the UI Kit.</p>
                                    1px solid #000, // Border value on hover
                                    #000, // Color value on hover
                                    );
+
+       // your code here
    }
 </code></pre><h2 id="how-to-create-a-new-button-inheriting-from-button">How to create a new button inheriting from button</h2>
 <pre><code>   .my-button {
        @include egeo-c-button;
 
-       // your code here
-
        // If you want to use the modifier constructor
        @include egeo-c-button-modifier(&#39;name-of-you-modifier&#39;,
-                                   #000, // Background value
-                                   1px solid #000, // Border value
-                                   #000, // Color value
-                                   #000, // Background value on hover
-                                   1px solid #000, // Border value on hover
-                                   #000, // Color value on hover
+                                   (background: #000, margin:0), // Sass map that includes the styles to be placed in the modifier
+                                   (background: #777, margin:0), // Sass map that includes the styles to be placed in the modifier on hover
+                                   (background: #fff, margin:0)  // Sass map that includes the styles to be placed in the modifier on focus
                                    );
+
+       // your code here
+   }
+</code></pre><p>This script will create a class called <code>my-button</code> with the shared styles of all egeo-buttons,
+other class called <code>my-button---name-of-your-modifier</code> with the default values
+of the first Sass map, a pseudo-class called <code>my-button---name-of-your-modifier:hover</code>
+with the values of the second Sass map and a last pseudo-class called
+<code>my-button---name-of-your-modifier:focus</code> with the values of the third Sass map.</p>
+<h2 id="how-to-create-a-disabled-state">How to create a disabled state</h2>
+<p>Automatically, if exist a button which name is <em>disabled</em>, then the system
+will also create a pseudo-class called <code>:disabled</code> that will work when buttons
+will be tagged with the HTML5 attribute <strong>disabled</strong>.</p>
+<pre><code>   .my-button {
+       @include egeo-c-button;
+
+       // If you want to use the modifier constructor
+       @include egeo-c-button-modifier(&#39;disabled&#39;,
+                                   (background: #777, margin:0), // Sass map that includes the styles to be placed in the modifier
+                                   (background: #777, margin:0), // Sass map that includes the styles to be placed in the modifier on hover
+                                   (background: #777, margin:0)  // Sass map that includes the styles to be placed in the modifier on focus
+                                   );
+
+       // your code here
    }
 </code></pre><div class="compatibility">Compatibility untested</div>
 
@@ -186,92 +198,143 @@ components of the UI Kit.</p>
 <td><div class="egeo-u-tx-align-left"><code>uppercase</code></div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button--call-to-action-1---background</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(c1)</code></div></td>
+<td><div class="egeo-u-tx-align-left">$egeo-c-buttons</div></td>
+<td><div class="egeo-u-tx-align-left">Sass map</div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button--call-to-action-1---color</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(g0)</code></div></td>
+<td><div class="egeo-u-tx-align-left">$egeo-c-buttons-custom</div></td>
+<td><div class="egeo-u-tx-align-left">Sass map</div></td>
+</tr>
+</tbody>
+</table>
+<h3 id="how-the-buttons-sass-maps-work">How the buttons Sass maps work</h3>
+<p>There are two different Sass Maps we can work with to create new buttons or
+remove those that were created as default ones. The map <code>$egeo-c-buttons</code> is
+used to describe the default buttons defined in the <a href="/web/visual-docs/section-1.html">Visual Guidelines</a>.
+As is defined as <code>!default</code> is perfectly possible to reset it, removing all
+the buttons pre-configurated.</p>
+<p>However, if you want create new buttons and keep the default ones, you can use
+the second map called <code>$egeo-c-buttons-custom</code> and define there the buttons you
+need to add.</p>
+<p>The system will merge the two maps to renderize the whole buttons defined in both.</p>
+<p>We have six properties we can modify to create new custom buttons: background, color, border,
+backgroun-hover, color-hover and border-hover in addition to the general properties the whole
+buttons share between them. So, if we want to creata a new pair of buttons, we only need to add
+their definitions to the <code>$egeo-c-buttons-custom</code> map as is shown below:</p>
+<pre><code>$egeo-c-buttons-custom: (
+    mybutton: (background: egeo-get-color(a1), border: 0, color: egeo-get-color(n0), background-hover: egeo-get-color(a1_dark), border-hover: 0, color-hover: egeo-get-color(n0)),
+    mybutton-2: (background: egeo-get-color(a2), border: 0, color: egeo-get-color(n0), background-hover: egeo-get-color(a2_dark), border-hover: 0, color-hover: egeo-get-color(n0))
+);
+</code></pre><p>All properties are optional so, if you don&#39;t want your button have a background or a border, the
+only thing you have to do is not including in the map and it will not be renderized.</p>
+<p>The default values of the pre-configured buttons defined in the <code>$egeo-c-buttons</code> map are:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class="egeo-u-tx-align-left">call-to-action-1 (background)</div></td>
+<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(a1)</code></div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button--call-to-action-1--hover---background</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(c1b)</code></div></td>
+<td><div class="egeo-u-tx-align-left">call-to-action-1 (color)</div></td>
+<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(n0)</code></div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button--call-to-action-1--hover---color</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(g0)</code></div></td>
+<td><div class="egeo-u-tx-align-left">call-to-action-1 (background-hover)</div></td>
+<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(a1_dark)</code></div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button--call-to-action-2---background</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(c2)</code></div></td>
+<td><div class="egeo-u-tx-align-left">call-to-action-1 (color-hover)</div></td>
+<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(n0)</code></div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button--call-to-action-2---color</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(g0)</code></div></td>
+<td><div class="egeo-u-tx-align-left">call-to-action-2 (background)</div></td>
+<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(a2)</code></div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button--call-to-action-2--hover---background</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(c2b)</code></div></td>
+<td><div class="egeo-u-tx-align-left">call-to-action-2 (color)</div></td>
+<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(n0)</code></div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button--call-to-action-2--hover---color</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(g0)</code></div></td>
+<td><div class="egeo-u-tx-align-left">call-to-action-2 (background-hover)</div></td>
+<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(a2_dark)</code></div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button--call-to-action-3---background</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(c3)</code></div></td>
+<td><div class="egeo-u-tx-align-left">call-to-action-2 (color-hover)</div></td>
+<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(n0)</code></div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button--call-to-action-3---color</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(g0)</code></div></td>
+<td><div class="egeo-u-tx-align-left">call-to-action-3 (background)</div></td>
+<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(a3)</code></div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button--call-to-action-3--hover---background</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(c3b)</code></div></td>
+<td><div class="egeo-u-tx-align-left">call-to-action-3 (color)</div></td>
+<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(n0)</code></div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button--call-to-action-3--hover---color</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(g0)</code></div></td>
+<td><div class="egeo-u-tx-align-left">call-to-action-3 (background-hover)</div></td>
+<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(a3_dark)</code></div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button--call-to-action-4---background</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(g0)</code></div></td>
+<td><div class="egeo-u-tx-align-left">call-to-action-3 (color-hover)</div></td>
+<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(n0)</code></div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button--call-to-action-4---border</div></td>
-<td><div class="egeo-u-tx-align-left"><code>2px solid egeo-get-color(g3)</code></div></td>
+<td><div class="egeo-u-tx-align-left">call-to-action-4 (background)</div></td>
+<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(n0)</code></div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button--call-to-action-4---color</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(g4)</code></div></td>
+<td><div class="egeo-u-tx-align-left">call-to-action-4 (border)</div></td>
+<td><div class="egeo-u-tx-align-left"><code>2px solid egeo-get-color(n3)</code></div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button--call-to-action-4--hover---background</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(g0)</code></div></td>
+<td><div class="egeo-u-tx-align-left">call-to-action-4 (color)</div></td>
+<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(n4)</code></div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button--call-to-action-4--hover---border</div></td>
-<td><div class="egeo-u-tx-align-left"><code>2px solid egeo-get-color(g4)</code></div></td>
+<td><div class="egeo-u-tx-align-left">call-to-action-4 (background-hover)</div></td>
+<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(n0)</code></div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button--call-to-action-4--hover---color</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(g5)</code></div></td>
+<td><div class="egeo-u-tx-align-left">call-to-action-4 (border-hover)</div></td>
+<td><div class="egeo-u-tx-align-left"><code>2px solid egeo-get-color(n4)</code></div></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align-left">call-to-action-4 (color-hover)</div></td>
+<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(n5)</code></div></td>
 </tr>
 </tbody>
 </table>
 <h2 id="usage">Usage</h2>
-<pre><code>&lt;a class=&quot;egeo-c-button egeo-c-button--call-to-action-1&quot;&gt;Call to Action 1&lt;/a&gt;
-&lt;span class=&quot;egeo-c-button egeo-c-button--call-to-action-2&quot;&gt;Call to Action 2&lt;/span&gt;
-&lt;button class=&quot;egeo-c-button egeo-c-button--call-to-action-3&quot;&gt;Call to Action 3&lt;/button&gt;
-&lt;input class=&quot;egeo-c-button egeo-c-button--call-to-action-4&quot; value=&quot;Call to Action 4&quot;&gt;
-&lt;input class=&quot;egeo-c-button egeo-c-button--danger&quot; value=&quot;Danger action&quot;&gt;
+<pre><code>&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;a class=&quot;egeo-c-button egeo-c-button--main-1&quot;&gt;&lt;i class=&quot;egeo-c-icon icon-cog&quot;&gt;&lt;/i&gt;Main 1&lt;/a&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;span class=&quot;egeo-c-button egeo-c-button--main-2&quot;&gt;&lt;i class=&quot;egeo-c-icon icon-cog&quot;&gt;&lt;/i&gt;Main 2&lt;/span&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;button class=&quot;egeo-c-button egeo-c-button--main-3&quot;&gt;&lt;i class=&quot;egeo-c-icon icon-cog&quot;&gt;&lt;/i&gt;Main 3&lt;/button&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;input type=&quot;submit&quot; class=&quot;egeo-c-button egeo-c-button--secondary-1&quot; value=&quot;Secondary 1&quot;&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;input type=&quot;button&quot; class=&quot;egeo-c-button egeo-c-button--small egeo-c-button--secondary-1&quot; value=&quot;Secondary 2&quot;&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;input type=&quot;reset&quot; class=&quot;egeo-c-button egeo-c-button--danger&quot; value=&quot;Danger action&quot;&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;button class=&quot;egeo-c-button egeo-c-button--main-3&quot; disabled&gt;&lt;i class=&quot;egeo-c-icon icon-cog&quot;&gt;&lt;/i&gt;Disabled button&lt;/button&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;button class=&quot;egeo-c-button egeo-c-button--rounded egeo-c-button--tool-1&quot;&gt;&lt;i class=&quot;egeo-c-icon icon-cog&quot;&gt;&lt;/i&gt;&lt;/button&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;button class=&quot;egeo-c-button egeo-c-button--rounded egeo-c-button--tool-2&quot;&gt;&lt;i class=&quot;egeo-c-icon icon-cog&quot;&gt;&lt;/i&gt;&lt;/button&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;button class=&quot;egeo-c-button egeo-c-button--rounded egeo-c-button--tool-ellipsis&quot;&gt;&lt;i class=&quot;egeo-c-icon icon-waiting&quot;&gt;&lt;/i&gt;&lt;/button&gt;&lt;/div&gt;
 </code></pre><p>Will be renderized to:</p>
-<p><hr>
-<a class="egeo-c-button egeo-c-button--call-to-action-1">Call to Action 1</a>
-<span class="egeo-c-button egeo-c-button--call-to-action-2">Call to Action 2</span></p>
-<p><button class="egeo-c-button egeo-c-button--call-to-action-3">Call to Action 3</button></p>
-<p><input class="egeo-c-button egeo-c-button--call-to-action-4" value="Call to Action 4"></p>
-<p><input class="egeo-c-button egeo-c-button--danger" value="Danger action"></p>
+<p><hr></p>
+<p><div style="padding-left: 20px;">
+  <div style="margin-bottom: 5px"><a class="egeo-c-button egeo-c-button--main-1"><i class="egeo-c-icon icon-cog"></i>Main 1</a></div>
+  <div style="margin-bottom: 5px"><span class="egeo-c-button egeo-c-button--main-2"><i class="egeo-c-icon icon-cog"></i>Main 2</span></div>
+  <div style="margin-bottom: 5px"><button class="egeo-c-button egeo-c-button--main-3"><i class="egeo-c-icon icon-cog"></i>Main 3</button></div>
+  <div style="margin-bottom: 5px"><input type="submit" class="egeo-c-button egeo-c-button--secondary-1" value="Secondary 1"></div>
+  <div style="margin-bottom: 5px"><input type="button" class="egeo-c-button egeo-c-button--small egeo-c-button--secondary-1" value="Secondary 2"></div>
+  <div style="margin-bottom: 5px"><input type="reset" class="egeo-c-button egeo-c-button--danger" value="Danger action"></div>
+  <div style="margin-bottom: 5px"><button class="egeo-c-button egeo-c-button--main-3" disabled><i class="egeo-c-icon icon-cog"></i>Disabled button</button></div>
+  <div style="margin-bottom: 5px"><button class="egeo-c-button egeo-c-button--rounded egeo-c-button--tool-1"><i class="egeo-c-icon icon-cog"></i></button></div>
+  <div style="margin-bottom: 5px"><button class="egeo-c-button egeo-c-button--rounded egeo-c-button--tool-2"><i class="egeo-c-icon icon-cog"></i></button></div>
+  <div style="margin-bottom: 5px"><button class="egeo-c-button egeo-c-button--rounded egeo-c-button--tool-ellipsis"><i class="egeo-c-icon icon-waiting"></i></button></div>
+</div></p>
 <hr>
 
 <h2 id="dependencies">Dependencies</h2>
@@ -279,6 +342,27 @@ components of the UI Kit.</p>
 <li><a href="section-7.html#section-7.1">c-component</a></li>
 </ul>
 
+            </div>
+          </section>
+          <section id="section-7.3" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">7.3</span> Icon</h1>
+            <div class="kss-description">
+              <p>The Icon Component is a class to group common styles and behaviors to
+all icons in an Egeo app.</p>
+<h3 id="egeo-c-icon">egeo-c-icon</h3>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span></p>
+<p>Injects the general behavior and properties of the class Icon to other
+components of the UI Kit.</p>
+<p><strong>Note</strong>: The Icon component triggers styles in other components if is active.</p>
+<p>Usage</p>
+<pre><code>.test {
+        @include egeo-c-icon;
+}
+</code></pre><p>Will product the next result:</p>
+<pre><code>.test {
+        box-sizing: border-box;
+}
+</code></pre><div class="compatibility">Compatibility IE8+, Firefox 29+, Chrome 10+, Edge 12+, Safari 5.1+, Opera 9.5+</div>
             </div>
           </section>
         </article>
