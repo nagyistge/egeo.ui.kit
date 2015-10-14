@@ -217,100 +217,35 @@ the buttons pre-configurated.</p>
 the second map called <code>$egeo-c-buttons-custom</code> and define there the buttons you
 need to add.</p>
 <p>The system will merge the two maps to renderize the whole buttons defined in both.</p>
-<p>We have six properties we can modify to create new custom buttons: background, color, border,
-backgroun-hover, color-hover and border-hover in addition to the general properties the whole
-buttons share between them. So, if we want to creata a new pair of buttons, we only need to add
-their definitions to the <code>$egeo-c-buttons-custom</code> map as is shown below:</p>
-<pre><code>$egeo-c-buttons-custom: (
-    mybutton: (background: egeo-get-color(a1), border: 0, color: egeo-get-color(n0), background-hover: egeo-get-color(a1_dark), border-hover: 0, color-hover: egeo-get-color(n0)),
-    mybutton-2: (background: egeo-get-color(a2), border: 0, color: egeo-get-color(n0), background-hover: egeo-get-color(a2_dark), border-hover: 0, color-hover: egeo-get-color(n0))
+<p>We have three inner Sass maps with properties we can modify to create new custom buttons:
+a map for the default state, other one for the hover state and a last one for the focus state.
+These Sass maps can include any CSS class. In addition, the general properties the whole
+buttons share between them will be created in the <code>egeo-c-button</code> class. So, if we want to
+create a new pair of buttons, we only need to add their definitions to
+the <code>$egeo-c-buttons-custom</code> map as is shown below:</p>
+<pre><code>$egeo-c-buttons: (
+    button-1: (
+                normal: (background: egeo-get-color(a1), border: 0, color: egeo-get-color(n0)),
+                hover: (background: egeo-get-color(a1_dark), border: 0, color: egeo-get-color(n0)),
+                focus: (background: egeo-get-color(a1_light), border: 0, color: egeo-get-color(n0))
+            ),
+    button-2: (
+                normal: (background: egeo-get-color(a2), border: 0, color: egeo-get-color(n0)),
+                hover: (background: egeo-get-color(a2_dark), border: 0, color: egeo-get-color(n0)),
+                focus: (background: egeo-get-color(a2_light), border: 0, color: egeo-get-color(n0))
+            )
 );
+</code></pre><p>The definition above will generate the next classes:</p>
+<pre><code>.egeo-c-button {...}
+.egeo-c-button--button-1 {...}
+.egeo-c-button--button-1:hover {...}
+.egeo-c-button--button-1:focus {...}
+.egeo-c-button--button-2 {...}
+.egeo-c-button--button-2:hover {...}
+.egeo-c-button--button-2:focus {...}
 </code></pre><p>All properties are optional so, if you don&#39;t want your button have a background or a border, the
 only thing you have to do is not including in the map and it will not be renderized.</p>
 <p>The default values of the pre-configured buttons defined in the <code>$egeo-c-buttons</code> map are:</p>
-<table>
-<thead>
-<tr>
-<th>Variable</th>
-<th>Default value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><div class="egeo-u-tx-align-left">call-to-action-1 (background)</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(a1)</code></div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">call-to-action-1 (color)</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(n0)</code></div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">call-to-action-1 (background-hover)</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(a1_dark)</code></div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">call-to-action-1 (color-hover)</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(n0)</code></div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">call-to-action-2 (background)</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(a2)</code></div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">call-to-action-2 (color)</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(n0)</code></div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">call-to-action-2 (background-hover)</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(a2_dark)</code></div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">call-to-action-2 (color-hover)</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(n0)</code></div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">call-to-action-3 (background)</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(a3)</code></div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">call-to-action-3 (color)</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(n0)</code></div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">call-to-action-3 (background-hover)</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(a3_dark)</code></div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">call-to-action-3 (color-hover)</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(n0)</code></div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">call-to-action-4 (background)</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(n0)</code></div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">call-to-action-4 (border)</div></td>
-<td><div class="egeo-u-tx-align-left"><code>2px solid egeo-get-color(n3)</code></div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">call-to-action-4 (color)</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(n4)</code></div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">call-to-action-4 (background-hover)</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(n0)</code></div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">call-to-action-4 (border-hover)</div></td>
-<td><div class="egeo-u-tx-align-left"><code>2px solid egeo-get-color(n4)</code></div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">call-to-action-4 (color-hover)</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-color(n5)</code></div></td>
-</tr>
-</tbody>
-</table>
-<h2 id="usage">Usage</h2>
 <pre><code>&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;a class=&quot;egeo-c-button egeo-c-button--main-1&quot;&gt;&lt;i class=&quot;egeo-c-icon icon-cog&quot;&gt;&lt;/i&gt;Main 1&lt;/a&gt;&lt;/div&gt;
 &lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;span class=&quot;egeo-c-button egeo-c-button--main-2&quot;&gt;&lt;i class=&quot;egeo-c-icon icon-cog&quot;&gt;&lt;/i&gt;Main 2&lt;/span&gt;&lt;/div&gt;
 &lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;button class=&quot;egeo-c-button egeo-c-button--main-3&quot;&gt;&lt;i class=&quot;egeo-c-icon icon-cog&quot;&gt;&lt;/i&gt;Main 3&lt;/button&gt;&lt;/div&gt;
