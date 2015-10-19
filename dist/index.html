@@ -73,9 +73,34 @@
 </tr>
 </tbody>
 </table>
-<h2 id="technologies">Technologies</h2>
+<h2 id="begin-to-work-with-egeo">Begin to work with Egeo</h2>
+<p>Egeo is built around the modularization principle so depending of the items you need to work with, you would need to load different packages and load differente archives in your code.</p>
+<p>The main of all of them is the Egeo Base Framework which is the foundation of the rest of the components. This package is always mandatory to be included (and, at this moment, is the only one).</p>
+<p>Install the Base Framework to begin to work with Egeo following the installation instructions included in <a href="https://github.com/Stratio/egeo.ui.base">its Github repository</a>.</p>
+<h3 id="example">Example</h3>
+<p>Create a simple AngularJS app with the two dependencies we currently have in the framework; the EgeoConfigProvider to config the path where Egeo files are deployed and the egeo-c-button directive. Change the <code>public/js/egeo</code> by your own path in the line 11:</p>
+<pre><code>(function() {
+    &#39;use strict&#39;;
+
+    angular
+        .module(&#39;myApp&#39;, [
+            &#39;egeo.config&#39;,
+            &#39;egeo.buttons&#39;
+        ])
+
+        .config(function(EgeoConfigProvider){
+            EgeoConfigProvider.setEgeoPath(&#39;public/js/egeo&#39;);
+        });
+})();
+</code></pre><p>Create a button in the HTML of the project:</p>
+<pre><code>&lt;body&gt;
+    ...
+   &lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;main-1&quot; label=&quot;AngularJS Button: Click to test ({{count}})&quot; data-ng-click=&quot;count = count + 1&quot;&gt;&lt;/egeo-c-button&gt;
+    ...
+&lt;/body&gt;
+</code></pre><h2 id="technologies-used">Technologies used</h2>
 <p>Egeo is developed under <a href="https://github.com/sass/node-sass">node-sass 3.3</a> to avoid dependencies from Ruby and official Sass ruby gem. Node-sass is an official port to C developed by the team of Sass so it is fully stable and reliable. The Sass code is tested using the <a href="http://www.ericsuzanne.com/true/">True framework</a> created by <a href="https://twitter.com/ericmsuzanne">Eric Suzanne</a>.</p>
-<p>At the Javascript side, Egeo uses <a href="https://angularjs.org/">AngularJS</a> and is tested with <a href="http://jasmine.github.io/">Jasmine</a> as a BDD testing framework and <a href="http://karma-runner.github.io/0.13/index.html">Karma</a> as the task runner.</p>
+<p>At the Javascript side, Egeo uses <a href="https://angularjs.org/">AngularJS 1.4.7</a> and is tested with <a href="http://jasmine.github.io/">Jasmine</a> as a BDD testing framework and <a href="http://karma-runner.github.io/0.13/index.html">Karma</a> as the task runner.</p>
 <h2 id="methodologies-and-principles">Methodologies and principles</h2>
 <p>Egeo follows a set of principles and methodologies that guide the development of the library. Below, you can see a reference to this methods and more information about each.</p>
 <p>Egeo also includes components in AngularJS but the CSS is fully decoupled, so it&#39;s perfectly possible migrate this components to Backbone, Ember or Vanilla JS or even use only the CSS framework directly.</p>

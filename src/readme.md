@@ -13,11 +13,47 @@ For now, these are the browsers officialy supported by Egeo:
 | Mozilla Firefox	| Latest	|
 | Safari			| Latest	|
 
-## Technologies
+## Begin to work with Egeo
+
+Egeo is built around the modularization principle so depending of the items you need to work with, you would need to load different packages and load differente archives in your code.
+
+The main of all of them is the Egeo Base Framework which is the foundation of the rest of the components. This package is always mandatory to be included (and, at this moment, is the only one).
+
+Install the Base Framework to begin to work with Egeo following the installation instructions included in [its Github repository](https://github.com/Stratio/egeo.ui.base).
+
+### Example
+
+Create a simple AngularJS app with the two dependencies we currently have in the framework; the EgeoConfigProvider to config the path where Egeo files are deployed and the egeo-c-button directive. Change the `public/js/egeo` by your own path in the line 11:
+
+```
+(function() {
+    'use strict';
+
+    angular
+        .module('myApp', [
+            'egeo.config',
+            'egeo.buttons'
+        ])
+
+        .config(function(EgeoConfigProvider){
+            EgeoConfigProvider.setEgeoPath('public/js/egeo');
+        });
+})();
+```
+Create a button in the HTML of the project:
+```
+<body>
+	...
+   <egeo-c-button type="submit" modifier="main-1" label="AngularJS Button: Click to test ({{count}})" data-ng-click="count = count + 1"></egeo-c-button>
+	...
+</body>
+```
+
+## Technologies used
 
 Egeo is developed under [node-sass 3.3](https://github.com/sass/node-sass) to avoid dependencies from Ruby and official Sass ruby gem. Node-sass is an official port to C developed by the team of Sass so it is fully stable and reliable. The Sass code is tested using the [True framework](http://www.ericsuzanne.com/true/) created by [Eric Suzanne](https://twitter.com/ericmsuzanne).
 
-At the Javascript side, Egeo uses [AngularJS](https://angularjs.org/) and is tested with [Jasmine](http://jasmine.github.io/) as a BDD testing framework and [Karma](http://karma-runner.github.io/0.13/index.html) as the task runner.
+At the Javascript side, Egeo uses [AngularJS 1.4.7](https://angularjs.org/) and is tested with [Jasmine](http://jasmine.github.io/) as a BDD testing framework and [Karma](http://karma-runner.github.io/0.13/index.html) as the task runner.
 
 ## Methodologies and principles
 
