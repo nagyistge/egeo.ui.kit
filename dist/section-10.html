@@ -38,6 +38,7 @@
               <li class="kss-menu-item"><a href="section-10.html"><span class="kss-ref">10</span><span class="kss-name">Providers</span></a></li>
             </ul>
             <ul class="kss-menu-child">
+              <li class="kss-menu-item"><a href="#section-10.1"><span class="kss-ref">10.1</span><span class="kss-name">EgeoConfig</span></a></li>
             </ul>
           </nav>
         </div>
@@ -46,6 +47,66 @@
         <article class="kss-article">
           <section id="section-10" class="kss-section kss-depth-1">
             <h1 class="kss-title"><span class="kss-ref">10</span> Providers</h1>
+            <div class="kss-description">
+              <p>Egeo provides a series of AngularJS providers to work together
+with the components and helpers.</p>
+
+            </div>
+          </section>
+          <section id="section-10.1" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">10.1</span> EgeoConfig</h1>
+            <div class="kss-description">
+              <p>The EgeoConfig provider expose a series of methods to
+configure how the application works, how it is installed
+and where the components should look for their templates
+or similar resources.</p>
+<h3 id="egeopath">EgeoPath</h3>
+<p>The EgeoPath is the path where the system have to seek for
+egeo components and resources. Where a component needs to
+obtain the template to work with, calls to the EgeoConfig
+provider to obtain the EgeoPath.</p>
+<p>The default value of the path is <code>public/js/egeo</code> and we
+can obtain it as it shown below. The code is from the
+egeo-c-button directive. Take a look to the lines 5, 7
+and 20:</p>
+<pre><code>   angular
+       .module(&#39;egeo.buttons&#39;, [])
+       .directive(&#39;egeoCButton&#39;, egeoCButton);
+
+   egeoCButton.$inject = [&#39;EgeoConfig&#39;];
+
+   function egeoCButton(EgeoConfig) {
+       var directive = {
+           restrict: &#39;E&#39;,
+           replace: true,
+           scope: {
+               icon: &#39;@&#39;,
+               label: &#39;@&#39;,
+               modifier: &#39;@&#39;,
+               rounded: &#39;@&#39;,
+               small: &#39;@&#39;,
+               tabindex: &#39;@&#39;,
+               type: &#39;@&#39;
+           },
+           templateUrl: EgeoConfig.getEgeoPath() + &#39;/components/button/components.button.tpl.html&#39;
+       }
+
+       return directive;
+   }
+</code></pre><p>Instead, if we want to configure the value to modify
+the default path, we need to do it as below. Lines 3
+and 7 to 9:</p>
+<pre><code>   angular
+       .module(&#39;myApp&#39;, [
+           &#39;egeo.config&#39;,
+           &#39;egeo.buttons&#39;
+       ])
+
+       .config(function(EgeoConfigProvider){
+           EgeoConfigProvider.setEgeoPath(&#39;my/path&#39;);
+       });
+</code></pre>
+            </div>
           </section>
         </article>
         <footer class="kss-footer">
