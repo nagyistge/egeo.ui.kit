@@ -14,7 +14,7 @@
     <script src="public/html5shiv.js"></script>
     <![endif]-->
   </head>
-  <body id="kss-node">
+  <body id="kss-node" data-ng-app="myApp">
     <div class="kss-wrapper">
       <div class="kss-sidebar">
         <div class="kss-sidebar-inner">
@@ -35,6 +35,7 @@
               <li class="kss-menu-item"><a href="section-7.html"><span class="kss-ref">7</span><span class="kss-name">Components</span></a></li>
               <li class="kss-menu-item"><a href="section-8.html"><span class="kss-ref">8</span><span class="kss-name">Utils</span></a></li>
               <li class="kss-menu-item"><a href="section-9.html"><span class="kss-ref">9</span><span class="kss-name">Theming</span></a></li>
+              <li class="kss-menu-item"><a href="section-10.html"><span class="kss-ref">10</span><span class="kss-name">Providers</span></a></li>
             </ul>
             <ul class="kss-menu-child">
               <li class="kss-menu-item"><a href="#section-7.1"><span class="kss-ref">7.1</span><span class="kss-name">Component</span></a></li>
@@ -84,8 +85,10 @@ implementation dragged from its implementation in the oldest browsers.</p>
 <p><code>&lt;input&gt;</code> tag can be perfectly used but keep in mind that the input type doesn&#39;t allow
 to use an icon inside the text (that is place in the value attribute).</p>
 <h3 id="egeo-c-button-modifier">egeo-c-button-modifier</h3>
-<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span></p>
-<p>Creates a new modifier which is a type of button with the properties passed as parameters.</p>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--untested">Untested</span></p>
+<p>Creates a new modifier which is a type of button with the properties passed as parameters.
+Sass True doesn&#39;t work well with mixins that generates completely new classes outside
+the one marked as input.</p>
 <p>Usage</p>
 <pre><code>.test {
      @include egeo-c-button-modifier(&#39;warning&#39;,
@@ -110,8 +113,11 @@ to use an icon inside the text (that is place in the value attribute).</p>
      color: white;
 }
 </code></pre><h3 id="egeo-c-button">egeo-c-button</h3>
-<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span><span class="tag tag--danger">Internal</span></p>
-<p>Internally used to create the Egeo buttons in an extensible way.</p>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--untested">Untested</span><span class="tag tag--danger">Internal</span></p>
+<p>Internally used to create the Egeo buttons in an extensible way. Sass True doesn&#39;t work well with mixins that generates
+completely new classes outside the one marked as input.</p>
+<div class="compatibility">Compatibility IE6+, Firefox 29+, Chrome 10+, Edge 12+, Safari 5.1+, Opera 9.5+</div>
+
 <h2 id="how-to-extend-the-button">How to extend the button</h2>
 <pre><code>   .#{$egeo-namespace}c-button {
        @include egeo-c-button;
@@ -164,50 +170,7 @@ will be tagged with the HTML5 attribute <strong>disabled</strong>.</p>
    }
 </code></pre><div class="compatibility">Compatibility untested</div>
 
-<h2 id="variables-exposed-to-theming">Variables exposed to theming</h2>
-<table>
-<thead>
-<tr>
-<th>Variable</th>
-<th>Default value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><div class="egeo-u-tx-align-feft">$egeo-c-button</div></td>
-<td><div class="egeo-u-tx-align-left"><code>true</code></div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button---height</div></td>
-<td><div class="egeo-u-tx-align-left"><code>40px</code></div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button---min-width</div></td>
-<td><div class="egeo-u-tx-align-left"><code>180px</code></div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button---padding</div></td>
-<td><div class="egeo-u-tx-align-left"><code>0 20px</code></div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button---text-align</div></td>
-<td><div class="egeo-u-tx-align-left"><code>center</code></div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button---text-transform</div></td>
-<td><div class="egeo-u-tx-align-left"><code>uppercase</code></div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-buttons</div></td>
-<td><div class="egeo-u-tx-align-left">Sass map</div></td>
-</tr>
-<tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-buttons-custom</div></td>
-<td><div class="egeo-u-tx-align-left">Sass map</div></td>
-</tr>
-</tbody>
-</table>
-<h3 id="how-the-buttons-sass-maps-work">How the buttons Sass maps work</h3>
+<h2 id="how-the-buttons-sass-maps-work">How the buttons Sass maps work</h2>
 <p>There are two different Sass Maps we can work with to create new buttons or
 remove those that were created as default ones. The map <code>$egeo-c-buttons</code> is
 used to describe the default buttons defined in the <a href="/web/visual-docs/section-1.html">Visual Guidelines</a>.
@@ -272,6 +235,143 @@ only thing you have to do is not including in the map and it will not be renderi
 </div></p>
 <hr>
 
+<h2 id="variables-exposed-to-theming">Variables exposed to theming</h2>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class="egeo-u-tx-align-left">$egeo-c-button</div></td>
+<td><div class="egeo-u-tx-align-left"><code>true</code></div></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align-left">$egeo-c-button---height</div></td>
+<td><div class="egeo-u-tx-align-left"><code>40px</code></div></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align-left">$egeo-c-button---min-width</div></td>
+<td><div class="egeo-u-tx-align-left"><code>180px</code></div></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align-left">$egeo-c-button---padding</div></td>
+<td><div class="egeo-u-tx-align-left"><code>0 20px</code></div></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align-left">$egeo-c-button---text-align</div></td>
+<td><div class="egeo-u-tx-align-left"><code>center</code></div></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align-left">$egeo-c-button---text-transform</div></td>
+<td><div class="egeo-u-tx-align-left"><code>uppercase</code></div></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align-left">$egeo-c-button---transition</div></td>
+<td><div class="egeo-u-tx-align-left"><code>all .5s</code></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align-left">$egeo-c-button--focus---shadow</div></td>
+<td><div class="egeo-u-tx-align-left"><code>0 0 5px 0 rgba(egeo-get-color(n8), .5)</code></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align-left">$egeo-c-button__c-icon---margin</div></td>
+<td><div class="egeo-u-tx-align-left"><code>0 8px 0 0</code></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align-left">$egeo-c-button--small---font-size</div></td>
+<td><div class="egeo-u-tx-align-left"><code>egeo-get-font-size(small)</code></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align-left">$egeo-c-button--small---height</div></td>
+<td><div class="egeo-u-tx-align-left"><code>30px</code></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align-left">$egeo-c-button--small---padding</div></td>
+<td><div class="egeo-u-tx-align-left"><code>4px 15px</code></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align-left">$egeo-c-buttons</div></td>
+<td><div class="egeo-u-tx-align-left">Sass map</div></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align-left">$egeo-c-buttons-custom</div></td>
+<td><div class="egeo-u-tx-align-left">Sass map</div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-egeo-c-button-angularjs-directive">The egeo-c-button AngularJS directive</h2>
+<p>Egeo provides an AngularJS directive to create all types of buttons defined with ease. The directive is restricted
+to HTML Element and called <code>egeo-c-button</code>. Below you can see the properties exposed:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class="egeo-u-tx-align-left">type</div></td>
+<td><div class="egeo-u-tx-align-left">Submit, Reset or Button</div></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align-left">modifier</div></td>
+<td><div class="egeo-u-tx-align-left">The name of the button created as a CSS BEM Modifier</div></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align-left">label</div></td>
+<td><div class="egeo-u-tx-align-left">The label of the button</div></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align-left">icon</div></td>
+<td><div class="egeo-u-tx-align-left">An icon which appears at left side</div></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align-left">small</div></td>
+<td><div class="egeo-u-tx-align-left">A small version of the button</div></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align-left">rounded</div></td>
+<td><div class="egeo-u-tx-align-left">A rounded version of the button. A rounded button will hide the label and only show the icon.</div></td>
+</tr>
+</tbody>
+</table>
+<h3 id="usage">Usage</h3>
+<p>Take a look to the samples shown below to see how the properties could be used and combined to get different results:</p>
+<pre><code>&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;main-1&quot; label=&quot;AngularJS Button: Click to test ({{count}})&quot; data-ng-click=&quot;count = count + 1&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;main-2&quot; label=&quot;AngularJS Button&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;main-3&quot; label=&quot;AngularJS Button&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;secondary-1&quot; label=&quot;AngularJS Button&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;secondary-1&quot; small=&quot;true&quot; label=&quot;AngularJS Button Small&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;danger&quot; label=&quot;AngularJS Danger Button&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;danger&quot; label=&quot;AngularJS Disabled Button&quot; disabled&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;tool-1&quot; rounded=&quot;true&quot; icon=&quot;icon-datetime&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;tool-1&quot; rounded=&quot;true&quot; small=&quot;true&quot; icon=&quot;icon-datetime&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;tool-2&quot; rounded=&quot;true&quot; icon=&quot;icon-datetime&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;tool-2&quot; rounded=&quot;true&quot; small=&quot;true&quot; icon=&quot;icon-datetime&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;ellipsis&quot; rounded=&quot;true&quot; icon=&quot;icon-datetime&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;ellipsis&quot; rounded=&quot;true&quot; small=&quot;true&quot; icon=&quot;icon-datetime&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+</code></pre><p><hr></p>
+<p><div style="padding-left: 20px;">
+  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="main-1" label="AngularJS Button: Click to test ({{count}})" data-ng-click="count = count + 1"></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="main-2" icon="icon-cog" label="AngularJS Button"></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="main-3" label="AngularJS Button"></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="secondary-1" label="AngularJS Button"></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="secondary-1" icon="icon-cog" small="true" label="AngularJS Button Small"></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="danger" label="AngularJS Danger Button"></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="danger" icon="icon-cog" label="AngularJS Disabled Button" disabled></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="tool-1" rounded="true" icon="icon-datetime"></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="tool-1" rounded="true" small="true" icon="icon-datetime"></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="tool-2" rounded="true" icon="icon-datetime"></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="tool-2" rounded="true" small="true" icon="icon-datetime"></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="tool-ellipsis" rounded="true" icon="icon-waiting"></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="tool-ellipsis" rounded="true" small="true" icon="icon-waiting"></egeo-c-button></div>
+</div></p>
+<hr>
+
 <h2 id="dependencies">Dependencies</h2>
 <ul>
 <li><a href="section-7.html#section-7.1">c-component</a></li>
@@ -313,6 +413,7 @@ components of the UI Kit.</p>
     <!--<![endif]-->
     <script src="public/main.js"></script>
     <script src="public/js/angular/angular.min.js"></script>
+<script src="public/js/egeo/components/button/components.button.directive.js"></script>
 
   </body>
 </html>
