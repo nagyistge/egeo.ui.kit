@@ -88,7 +88,7 @@ inputs and reuse concrete behaviors or properties.</p>
             <div class="kss-description">
               <p>The typography tools includes a series of mixins and functions
 to work with typographies.</p>
-<h3 id="get-font-font-family-open-sans-">get-font($font-family: open-sans)</h3>
+<h3 id="egeo-get-font-font-family-open-sans-">egeo-get-font($font-family: open-sans)</h3>
 <p><span class="tag tag--type">@function</span><span class="tag tag--tested">Test covered</span></p>
 <p>Return a value from the Sass map <a href="section-2.html#section-2.2">$egeo-font-families</a>.</p>
 <ul>
@@ -96,11 +96,11 @@ to work with typographies.</p>
 </ul>
 <p>Usage</p>
 <pre><code>.test {
-    font-family: get-font();
+    font-family: egeo-get-font();
 }
 
 .test-2 {
-    font-family: get-font(brandon-grotesque);
+    font-family: egeo-get-font(brandon-grotesque);
 }
 </code></pre><p>This code will generate:</p>
 <pre><code>.test {
@@ -112,7 +112,7 @@ to work with typographies.</p>
 }
 </code></pre><div class="compatibility">Compatibility untested.</div>
 
-<h3 id="get-font-size-font-size-medium-">get-font-size($font-size: medium)</h3>
+<h3 id="egeo-get-font-size-font-size-medium-">egeo-get-font-size($font-size: medium)</h3>
 <p><span class="tag tag--type">@function</span><span class="tag tag--tested">Test covered</span></p>
 <p>Return a value from the Sass map <a href="section-2.html#section-2.2">$egeo-font-sizes</a>.</p>
 <ul>
@@ -120,11 +120,11 @@ to work with typographies.</p>
 </ul>
 <p>Usage</p>
 <pre><code>.test {
-    font-size: get-font-size();
+    font-size: egeo-get-font-size();
 }
 
 .test-2 {
-    font-size: get-font-size(small);
+    font-size: egeo-get-font-size(small);
 }
 </code></pre><p>This code will generate:</p>
 <pre><code>.test {
@@ -136,7 +136,7 @@ to work with typographies.</p>
 }
 </code></pre><div class="compatibility">Compatibility untested.</div>
 
-<h3 id="get-font-weight-font-weight-normal-">get-font-weight($font-weight: normal)</h3>
+<h3 id="egeo-get-font-weight-font-weight-normal-">egeo-get-font-weight($font-weight: normal)</h3>
 <p><span class="tag tag--type">@function</span><span class="tag tag--tested">Test covered</span></p>
 <p>Return a value from the Sass map <a href="section-2.html#section-2.2">$egeo-font-weights</a>.</p>
 <ul>
@@ -144,11 +144,11 @@ to work with typographies.</p>
 </ul>
 <p>Usage</p>
 <pre><code>.test {
-    font-weight: get-font-weight();
+    font-weight: egeo-get-font-weight();
 }
 
 .test-2 {
-    font-weight: get-font-weight(bold);
+    font-weight: egeo-get-font-weight(bold);
 }
 </code></pre><p>This code will generate:</p>
 <pre><code>.test {
@@ -160,7 +160,7 @@ to work with typographies.</p>
 }
 </code></pre><div class="compatibility">Compatibility untested.</div>
 
-<h3 id="get-line-height-line-height-normal-">get-line-height($line-height: normal)</h3>
+<h3 id="egeo-get-line-height-line-height-normal-">egeo-get-line-height($line-height: normal)</h3>
 <p><span class="tag tag--type">@function</span><span class="tag tag--tested">Test covered</span></p>
 <p>Return a value from the Sass map <a href="section-2.html#section-2.2">$egeo-line-heights</a>.</p>
 <ul>
@@ -168,11 +168,11 @@ to work with typographies.</p>
 </ul>
 <p>Usage</p>
 <pre><code>.test {
-    line-height: get-line-height();
+    line-height: egeo-get-line-height();
 }
 
 .test-2 {
-    line-height: get-line-height(double);
+    line-height: egeo-get-line-height(double);
 }
 </code></pre><p>This code will generate:</p>
 <pre><code>.test {
@@ -184,12 +184,12 @@ to work with typographies.</p>
 }
 </code></pre><div class="compatibility">Compatibility untested.</div>
 
-<h3 id="set-font-families-">set-font-families()</h3>
+<h3 id="egeo-set-font-families-">egeo-set-font-families()</h3>
 <p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span></p>
 <p>Output a set of modifiers based on the $egeo-font-families map</p>
 <p>Usage</p>
 <pre><code>.test {
-    @include set-font-families;
+    @include egeo-set-font-families;
 }
 </code></pre><p>This code will generate:</p>
 <pre><code>...
@@ -205,12 +205,12 @@ to work with typographies.</p>
 ...
 </code></pre><div class="compatibility">Compatibility untested.</div>
 
-<h3 id="set-font-sizes-">set-font-sizes()</h3>
+<h3 id="egeo-set-font-sizes-">egeo-set-font-sizes()</h3>
 <p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span></p>
 <p>Output a set of modifiers based on the $egeo-font-sizes map</p>
 <p>Usage</p>
 <pre><code>.test {
-    @include set-font-sizes;
+    @include egeo-set-font-sizes;
 }
 </code></pre><p>This code will generate:</p>
 <pre><code>...
@@ -230,12 +230,12 @@ to work with typographies.</p>
 ...
 </code></pre><div class="compatibility">Compatibility untested.</div>
 
-<h3 id="set-font-weights-">set-font-weights()</h3>
+<h3 id="egeo-set-font-weights-">egeo-set-font-weights()</h3>
 <p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span></p>
 <p>Output a set of modifiers based on the $egeo-font-weights map</p>
 <p>Usage</p>
 <pre><code>.test {
-    @include set-font-weights;
+    @include egeo-set-font-weights;
 }
 </code></pre><p>This code will generate:</p>
 <pre><code>...
@@ -255,12 +255,12 @@ to work with typographies.</p>
 ...
 </code></pre><div class="compatibility">Compatibility untested.</div>
 
-<h3 id="set-line-heights-">set-line-heights()</h3>
+<h3 id="egeo-set-line-heights-">egeo-set-line-heights()</h3>
 <p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span></p>
 <p>Output a set of modifiers based on the $egeo-line-heights map</p>
 <p>Usage</p>
 <pre><code>.test {
-    @include set-line-heights;
+    @include egeo-set-line-heights;
 }
 </code></pre><p>This code will generate:</p>
 <pre><code>...
@@ -402,7 +402,19 @@ like showed in the Usage section.</p>
 <ul>
 <li><strong>$layer</strong> - The key of a pair key/value defined in the Sass map <a href="section-2.html#section-2.5">$egeo-layers</a>.</li>
 </ul>
-<div class="compatibility">Compatibility untested.</div>
+<p>Usage</p>
+<pre><code>.test {
+    @include egeo-get-layer(ontop);
+}
+</code></pre><p>This code will generate:</p>
+<pre><code>...
+
+.test {
+    z-index: 10;
+}
+
+...
+</code></pre><div class="compatibility">Compatibility untested.</div>
 
 <h2 id="dependencies">Dependencies</h2>
 <ul>
@@ -415,7 +427,7 @@ like showed in the Usage section.</p>
             <h1 class="kss-title"><span class="kss-ref">3.5</span> tools.maps</h1>
             <div class="kss-description">
               <p>Functions and mixins to help work with Sass maps.</p>
-<h3 id="bem-modifiers-from-map-map-css-property-">bem-modifiers-from-map($map, $css-property)</h3>
+<h3 id="egeo-bem-modifiers-from-map-map-css-property-">egeo-bem-modifiers-from-map($map, $css-property)</h3>
 <p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span></p>
 <p>Create a BEM modifier class from the inner class that contains the mixin
 using the keys of the map passed as parameter as the --name and the
@@ -432,7 +444,7 @@ values as the value of the $css-property.</p>
 )
 
 .my-class {
-        @include bem-modifiers-from-map($my-map, font-size);
+        @include egeo-bem-modifiers-from-map($my-map, font-size);
 }
 </code></pre><p>This sample will generate this CSS code.</p>
 <pre><code>.my-class--large {
