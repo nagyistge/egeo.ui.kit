@@ -236,7 +236,14 @@ ones defined by the Design Team in the <a href="/web/visual-docs/section-1.html"
 </tr>
 </tbody>
 </table>
-<h3 id="sass-map-font-families">Sass map $font-families</h3>
+<h3 id="sass-map-egeo-font-families">Sass map $egeo-font-families</h3>
+<p>The $egeo-font-families map includes, althought the font families used, a series of alias to hide
+the font family behind the purpose of that font and protect our app of the changes in the typographies
+at future. For example, we can use <code>egeo-get-font(heading)</code> instead of <code>egeo-get-font(brandon-grotesque)</code>.
+The final result will be the same but, if in the future the design team decides that the font for the
+heading will be Monotype, our code will be safe due to when the framework update the font reference of
+the heading value, we will only need to recompile the Sass code to obtain the new value in all places
+we are using it.</p>
 <table>
 <thead>
 <tr>
@@ -256,9 +263,41 @@ ones defined by the Design Team in the <a href="/web/visual-docs/section-1.html"
 <td>Open Sans</td>
 <td>open-sans</td>
 </tr>
+<tr>
+<td><span class="typo-block typo-block--droid-sans typo-block--medium">Droid Sans</span></td>
+<td>DroidSansMonoRegular</td>
+<td>droid-sans</td>
+</tr>
+<tr>
+<td><span class="typo-block typo-block--stratio-iconfont typo-block--medium"><i class="icon-datetime"></i></span></td>
+<td>ico_stratio</td>
+<td>stratio-iconfont</td>
+</tr>
+<tr>
+<td><span class="typo-block typo-block--heading typo-block--medium">Heading</span></td>
+<td>Brandon Grotesque</td>
+<td>heading</td>
+</tr>
+<tr>
+<td><span class="typo-block typo-block--body typo-block--medium">Body</span></td>
+<td>Open Sans</td>
+<td>body</td>
+</tr>
+<tr>
+<td><span class="typo-block typo-block--code typo-block--medium">Code</span></td>
+<td>DroidSansMonoRegular</td>
+<td>code</td>
+</tr>
+<tr>
+<td><span class="typo-block typo-block--icon typo-block--medium"><i class="icon-datetime"></i></span></td>
+<td>icon</td>
+<td>stratio-iconfont</td>
+</tr>
 </tbody>
 </table>
-<h3 id="sass-map-font-sizes">Sass map $font-sizes</h3>
+<h3 id="sass-map-egeo-font-sizes">Sass map $egeo-font-sizes</h3>
+<p>The $egeo-font-sizes map is really a merge of three different maps: $egeo-head-font-sizes,
+$egeo-icon-font-sizes and $egeo-body-font-sizes as it is described in the <a href="/web/visual-docs/">Visual Guidelines</a>.</p>
 <table>
 <thead>
 <tr>
@@ -269,63 +308,148 @@ ones defined by the Design Team in the <a href="/web/visual-docs/section-1.html"
 </thead>
 <tbody>
 <tr>
-<td><span class="typo-block typo-block--open-sans typo-block--xgiant">Open Sans</span></td>
-<td>4rem</td>
-<td>xgiant</td>
+<td><span class="typo-block typo-block--brandon-grotesque typo-block--head_giant">Heading in Brandon Grotesque</span></td>
+<td>2.75rem</td>
+<td>head_giant</td>
 </tr>
 <tr>
-<td><span class="typo-block typo-block--open-sans typo-block--giant">Open Sans</span></td>
-<td>3rem</td>
-<td>giant</td>
+<td><span class="typo-block typo-block--brandon-grotesque typo-block--head_xxxlarge">Heading in Brandon Grotesque</span></td>
+<td>2.12rem</td>
+<td>head_xxxlarge</td>
 </tr>
 <tr>
-<td><span class="typo-block typo-block--open-sans typo-block--xxxlarge">Open Sans</span></td>
-<td>2.5rem</td>
-<td>xxxlarge</td>
+<td><span class="typo-block typo-block--brandon-grotesque typo-block--head_xxlarge">Heading in Brandon Grotesque</span></td>
+<td>1.88rem</td>
+<td>head_xxlarge</td>
 </tr>
 <tr>
-<td><span class="typo-block typo-block--open-sans typo-block--xxlarge">Open Sans</span></td>
-<td>2rem</td>
-<td>xxlarge</td>
+<td><span class="typo-block typo-block--brandon-grotesque typo-block--head_xlarge">Heading in Brandon Grotesque</span></td>
+<td>1.75rem</td>
+<td>head_xlarge</td>
 </tr>
 <tr>
-<td><span class="typo-block typo-block--open-sans typo-block--xlarge">Open Sans</span></td>
+<td><span class="typo-block typo-block--brandon-grotesque typo-block--head_large">Heading in Brandon Grotesque</span></td>
 <td>1.5rem</td>
-<td>xlarge</td>
+<td>head_large</td>
 </tr>
 <tr>
-<td><span class="typo-block typo-block--open-sans typo-block--large">Open Sans</span></td>
-<td>1.2rem</td>
-<td>large</td>
+<td><span class="typo-block typo-block--brandon-grotesque typo-block--head_medium">Heading in Brandon Grotesque</span></td>
+<td>1.38rem</td>
+<td>head_medium</td>
 </tr>
 <tr>
-<td><span class="typo-block typo-block--open-sans typo-block--medium">Open Sans</span></td>
+<td><span class="typo-block typo-block--brandon-grotesque typo-block--head_small">Heading in Brandon Grotesque</span></td>
+<td>1.13rem</td>
+<td>head_small</td>
+</tr>
+<tr>
+<td><span class="typo-block typo-block--brandon-grotesque typo-block--head_xsmall">Heading in Brandon Grotesque</span></td>
 <td>1rem</td>
-<td>medium</td>
+<td>head_xsmall</td>
 </tr>
 <tr>
-<td><span class="typo-block typo-block--open-sans typo-block--small">Open Sans</span></td>
-<td>.8rem</td>
-<td>small</td>
+<td><span class="typo-block typo-block--brandon-grotesque typo-block--head_xxsmall">Heading in Brandon Grotesque</span></td>
+<td>.94rem</td>
+<td>head_xxsmall</td>
 </tr>
 <tr>
-<td><span class="typo-block typo-block--open-sans typo-block--xsmall">Open Sans</span></td>
+<td><span class="typo-block typo-block--brandon-grotesque typo-block--head_xxxsmall">Heading in Brandon Grotesque</span></td>
+<td>.82rem</td>
+<td>head_xxxsmall</td>
+</tr>
+<tr>
+<td><span class="typo-block typo-block--brandon-grotesque typo-block--head_mini">Heading in Brandon Grotesque</span></td>
+<td>.75rem</td>
+<td>head_mini</td>
+</tr>
+<tr>
+<td><span class="typo-block typo-block--stratio-iconfont typo-block--icon_xxlarge"><i class="icon-datetime"></i></span></td>
+<td>1.88rem</td>
+<td>icon_xxlarge</td>
+</tr>
+<tr>
+<td><span class="typo-block typo-block--stratio-iconfont typo-block--icon_xlarge"><i class="icon-datetime"></i></span></td>
+<td>1.63rem</td>
+<td>icon_xlarge</td>
+</tr>
+<tr>
+<td><span class="typo-block typo-block--stratio-iconfont typo-block--icon_large"><i class="icon-datetime"></i></span></td>
+<td>1.38rem</td>
+<td>icon_large</td>
+</tr>
+<tr>
+<td><span class="typo-block typo-block--stratio-iconfont typo-block--icon_medium"><i class="icon-datetime"></i></span></td>
+<td>1.2rem</td>
+<td>icon_medium</td>
+</tr>
+<tr>
+<td><span class="typo-block typo-block--stratio-iconfont typo-block--icon_small"><i class="icon-datetime"></i></span></td>
+<td>1.1rem</td>
+<td>icon_small</td>
+</tr>
+<tr>
+<td><span class="typo-block typo-block--stratio-iconfont typo-block--icon_xsmall"><i class="icon-datetime"></i></span></td>
+<td>.94rem</td>
+<td>icon_xsmall</td>
+</tr>
+<tr>
+<td><span class="typo-block typo-block--stratio-iconfont typo-block--icon_xxsmall"><i class="icon-datetime"></i></span></td>
+<td>.82rem</td>
+<td>icon_xxsmall</td>
+</tr>
+<tr>
+<td><span class="typo-block typo-block--stratio-iconfont typo-block--icon_xxxsmall"><i class="icon-datetime"></i></span></td>
 <td>.7rem</td>
-<td>xsmall</td>
+<td>icon_xxxsmall</td>
 </tr>
 <tr>
-<td><span class="typo-block typo-block--open-sans typo-block--xxsmall">Open Sans</span></td>
-<td>.6rem</td>
-<td>xxsmall</td>
+<td><span class="typo-block typo-block--open-sans typo-block--body_xxxlarge">Body in Open Sans</span></td>
+<td>1.38rem</td>
+<td>body_xxxlarge</td>
 </tr>
 <tr>
-<td><span class="typo-block typo-block--open-sans typo-block--xxxsmall">Open Sans</span></td>
-<td>.5rem</td>
-<td>xxxsmall</td>
+<td><span class="typo-block typo-block--open-sans typo-block--body_xxlarge">Body in Open Sans</span></td>
+<td>1.19rem</td>
+<td>body_xxlarge</td>
+</tr>
+<tr>
+<td><span class="typo-block typo-block--open-sans typo-block--body_xlarge">Body in Open Sans</span></td>
+<td>1.1rem</td>
+<td>body_xlarge</td>
+</tr>
+<tr>
+<td><span class="typo-block typo-block--open-sans typo-block--body_large">Body in Open Sans</span></td>
+<td>1rem</td>
+<td>body_large</td>
+</tr>
+<tr>
+<td><span class="typo-block typo-block--open-sans typo-block--body_medium">Body in Open Sans</span></td>
+<td>.94rem</td>
+<td>body_medium</td>
+</tr>
+<tr>
+<td><span class="typo-block typo-block--open-sans typo-block--body_small">Body in Open Sans</span></td>
+<td>.84rem</td>
+<td>body_small</td>
+</tr>
+<tr>
+<td><span class="typo-block typo-block--open-sans typo-block--body_xsmall">Body in Open Sans</span></td>
+<td>.82rem</td>
+<td>body_xsmall</td>
+</tr>
+<tr>
+<td><span class="typo-block typo-block--open-sans typo-block--body_xxsmall">Body in Open Sans</span></td>
+<td>.75rem</td>
+<td>body_xxsmall</td>
+</tr>
+<tr>
+<td><span class="typo-block typo-block--open-sans typo-block--body_xxxsmall">Body in Open Sans</span></td>
+<td>.69rem</td>
+<td>body_xxxsmall</td>
 </tr>
 </tbody>
 </table>
-<h3 id="sass-map-font-weights">Sass map $font-weights</h3>
+<h3 id="sass-map-egeo-font-weights">Sass map $egeo-font-weights</h3>
 <table>
 <thead>
 <tr>
@@ -362,7 +486,7 @@ ones defined by the Design Team in the <a href="/web/visual-docs/section-1.html"
 </tr>
 </tbody>
 </table>
-<h3 id="sass-map-line-heights">Sass map $line-heights</h3>
+<h3 id="sass-map-egeo-line-heights">Sass map $egeo-line-heights</h3>
 <h4 id="double">double</h4>
 <p class="typo-block typo-block--line-height-double">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor nunc elit. Sed ut euismod sem, congue blandit odio. Curabitur enim eros, imperdiet aliquam maximus non, luctus a diam. Suspendisse eleifend lectus metus. Morbi maximus eget sem a laoreet. Proin a nibh nec dolor vulputate auctor sit amet ut erat. Fusce scelerisque justo leo, sit amet rhoncus leo finibus dictum. Aliquam eget placerat nunc.</p>
 
