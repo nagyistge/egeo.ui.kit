@@ -38,6 +38,7 @@
               <li class="kss-menu-item"><a href="section-10.html"><span class="kss-ref">10</span><span class="kss-name">Providers</span></a></li>
             </ul>
             <ul class="kss-menu-child">
+              <li class="kss-menu-item"><a href="#section-6.1"><span class="kss-ref">6.1</span><span class="kss-name">Media</span></a></li>
             </ul>
           </nav>
         </div>
@@ -49,6 +50,130 @@
             <div class="kss-description">
               <p>To do</p>
 
+            </div>
+          </section>
+          <section id="section-6.1" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">6.1</span> Media</h1>
+            <div class="kss-description">
+              <p>The Media Object is the Egeo implementation of the
+<a href="https://twitter.com/stubbornella">Nicolle Sullivan</a>&#39;s media object.</p>
+<p>To find out how to use and what exactly is, read <a href="http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/">Nicole’s blog post</a>.</p>
+<p>Usage</p>
+<pre><code>&lt;div class=&quot;egeo-o-media&quot;&gt;
+     &lt;a href=&quot;#&quot; class=&quot;egeo-o-media__img&quot;&gt;
+         &lt;img src=&quot;public/assets/images/header.logo.png&quot; alt=&quot;logo&quot; /&gt;
+     &lt;/a&gt;
+
+     &lt;div class=&quot;egeo-o-media__bd&quot;&gt;Lorem ipsum dolor sit amet, consectetur
+                                   adipiscing elit. Sed sed ipsum elit.
+                                   Curabitur sed varius nibh. Proin quis sem elementum,
+                                   fringilla diam quis, aliquet ipsum. Vestibulum
+                                   convallis nisi sed est volutpat ullamcorper.
+                                   Suspendisse bibendum urna nec facilisis consequat.
+                                   Phasellus imperdiet malesuada quam et semper.
+                                   Praesent fermentum, quam in interdum rutrum,
+                                   velit enim molestie tortor, at consequat dolor
+                                   lorem id lectus. Nullam egestas convallis est
+                                   at pretium. Vivamus accumsan lorem at enim
+                                   egestas porta. Vivamus eleifend enim vel arcu
+                                   pretium suscipit. Donec interdum lectus vel
+                                   arcu rutrum tincidunt. Praesent interdum enim arcu,
+                                   sed placerat diam vulputate non.
+     &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;egeo-o-media&quot;&gt;
+     &lt;a href=&quot;#&quot; class=&quot;egeo-o-media__img--right&quot;&gt;
+         &lt;img src=&quot;public/assets/images/header.logo.png&quot; alt=&quot;logo&quot; /&gt;
+     &lt;/a&gt;
+
+     &lt;div class=&quot;egeo-o-media__bd&quot;&gt;Lorem ipsum dolor sit amet, consectetur
+                                   adipiscing elit. Sed sed ipsum elit.
+                                   Curabitur sed varius nibh. Proin quis sem elementum,
+                                   fringilla diam quis, aliquet ipsum. Vestibulum
+                                   convallis nisi sed est volutpat ullamcorper.
+                                   Suspendisse bibendum urna nec facilisis consequat.
+                                   Phasellus imperdiet malesuada quam et semper.
+                                   Praesent fermentum, quam in interdum rutrum,
+                                   velit enim molestie tortor, at consequat dolor
+                                   lorem id lectus. Nullam egestas convallis est
+                                   at pretium. Vivamus accumsan lorem at enim
+                                   egestas porta. Vivamus eleifend enim vel arcu
+                                   pretium suscipit. Donec interdum lectus vel
+                                   arcu rutrum tincidunt. Praesent interdum enim arcu,
+                                   sed placerat diam vulputate non.
+     &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>Will product the next result:</p>
+<div class="egeo-o-media">
+     <a href="#" class="egeo-o-media__img">
+         <img src="public/assets/images/header.logo.png" alt="logo" />
+     </a>
+
+     <div class="egeo-o-media__bd">Lorem ipsum dolor sit amet, consectetur
+                                   adipiscing elit. Sed sed ipsum elit.
+                                   Curabitur sed varius nibh. Proin quis sem elementum,
+                                   fringilla diam quis, aliquet ipsum. Vestibulum
+                                   convallis nisi sed est volutpat ullamcorper.
+                                   Suspendisse bibendum urna nec facilisis consequat.
+                                   Phasellus imperdiet malesuada quam et semper.
+                                   Praesent fermentum, quam in interdum rutrum,
+                                   velit enim molestie tortor, at consequat dolor
+                                   lorem id lectus. Nullam egestas convallis est
+                                   at pretium. Vivamus accumsan lorem at enim
+                                   egestas porta. Vivamus eleifend enim vel arcu
+                                   pretium suscipit. Donec interdum lectus vel
+                                   arcu rutrum tincidunt. Praesent interdum enim arcu,
+                                   sed placerat diam vulputate non.
+     </div>
+</div>
+
+<div class="egeo-o-media">
+     <a href="#" class="egeo-o-media__img--right">
+         <img src="public/assets/images/header.logo.png" alt="logo" />
+     </a>
+
+     <div class="egeo-o-media__bd">Lorem ipsum dolor sit amet, consectetur
+                                   adipiscing elit. Sed sed ipsum elit.
+                                   Curabitur sed varius nibh. Proin quis sem elementum,
+                                   fringilla diam quis, aliquet ipsum. Vestibulum
+                                   convallis nisi sed est volutpat ullamcorper.
+                                   Suspendisse bibendum urna nec facilisis consequat.
+                                   Phasellus imperdiet malesuada quam et semper.
+                                   Praesent fermentum, quam in interdum rutrum,
+                                   velit enim molestie tortor, at consequat dolor
+                                   lorem id lectus. Nullam egestas convallis est
+                                   at pretium. Vivamus accumsan lorem at enim
+                                   egestas porta. Vivamus eleifend enim vel arcu
+                                   pretium suscipit. Donec interdum lectus vel
+                                   arcu rutrum tincidunt. Praesent interdum enim arcu,
+                                   sed placerat diam vulputate non.
+     </div>
+</div>
+
+<h2 id="variables-exposed-to-theming">Variables exposed to theming</h2>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class="egeo-u-tx-align-left">$egeo-o-media</div></td>
+<td><div class="egeo-u-tx-align-left"><code>true</code></div></td>
+<td>Whether or not we want to include the media object in the compiled CSS.</td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align-left">$egeo-o-media---margin</div></td>
+<td><div class="egeo-u-tx-align-left"><code>10px</code></div></td>
+<td>The margin value the media object will use to separate the items which belong to it.</td>
+</tr>
+</tbody>
+</table>
+<div class="compatibility">Compatibility IE8+, Firefox 29+, Chrome 10+, Edge 12+, Safari 5.1+, Opera 9.5+</div>
             </div>
           </section>
         </article>
