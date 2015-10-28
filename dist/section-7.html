@@ -41,6 +41,7 @@
               <li class="kss-menu-item"><a href="#section-7.1"><span class="kss-ref">7.1</span><span class="kss-name">Component</span></a></li>
               <li class="kss-menu-item"><a href="#section-7.2"><span class="kss-ref">7.2</span><span class="kss-name">Button</span></a></li>
               <li class="kss-menu-item"><a href="#section-7.3"><span class="kss-ref">7.3</span><span class="kss-name">Icon</span></a></li>
+              <li class="kss-menu-item"><a href="#section-7.4"><span class="kss-ref">7.4</span><span class="kss-name">Row</span></a></li>
             </ul>
           </nav>
         </div>
@@ -65,7 +66,7 @@ in any component.</p>
 <p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span></p>
 <p>Injects the general behavior and properties of the abstract class Component to other
 components of the UI Kit.</p>
-<p>Usage</p>
+<h4 id="usage">Usage</h4>
 <pre><code>.test {
         @include egeo-c-component;
 }
@@ -89,7 +90,7 @@ to use an icon inside the text (that is place in the value attribute).</p>
 <p>Creates a new modifier which is a type of button with the properties passed as parameters.
 Sass True doesn&#39;t work well with mixins that generates completely new classes outside
 the one marked as input.</p>
-<p>Usage</p>
+<h4 id="usage">Usage</h4>
 <pre><code>.test {
        @include egeo-c-button-modifier(&#39;warning&#39;,
                                    (background: orange, margin:0, color: white), // Sass map that includes the styles to be placed in the modifier
@@ -245,60 +246,60 @@ only thing you have to do is not including in the map and it will not be renderi
 </thead>
 <tbody>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button</div></td>
-<td><div class="egeo-u-tx-align-left"><code>true</code></div></td>
+<td><div class="egeo-u-tx-align--left">$egeo-c-button</div></td>
+<td><div class="egeo-u-tx-align--left"><code>true</code></div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button---height</div></td>
-<td><div class="egeo-u-tx-align-left"><code>40px</code></div></td>
+<td><div class="egeo-u-tx-align--left">$egeo-c-button---height</div></td>
+<td><div class="egeo-u-tx-align--left"><code>40px</code></div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button---min-width</div></td>
-<td><div class="egeo-u-tx-align-left"><code>180px</code></div></td>
+<td><div class="egeo-u-tx-align--left">$egeo-c-button---min-width</div></td>
+<td><div class="egeo-u-tx-align--left"><code>180px</code></div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button---padding</div></td>
-<td><div class="egeo-u-tx-align-left"><code>0 20px</code></div></td>
+<td><div class="egeo-u-tx-align--left">$egeo-c-button---padding</div></td>
+<td><div class="egeo-u-tx-align--left"><code>0 20px</code></div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button---text-align</div></td>
-<td><div class="egeo-u-tx-align-left"><code>center</code></div></td>
+<td><div class="egeo-u-tx-align--left">$egeo-c-button---text-align</div></td>
+<td><div class="egeo-u-tx-align--left"><code>center</code></div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button---text-transform</div></td>
-<td><div class="egeo-u-tx-align-left"><code>uppercase</code></div></td>
+<td><div class="egeo-u-tx-align--left">$egeo-c-button---text-transform</div></td>
+<td><div class="egeo-u-tx-align--left"><code>uppercase</code></div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button---transition</div></td>
-<td><div class="egeo-u-tx-align-left"><code>all .5s</code></td>
+<td><div class="egeo-u-tx-align--left">$egeo-c-button---transition</div></td>
+<td><div class="egeo-u-tx-align--left"><code>all .5s</code></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button--focus---shadow</div></td>
-<td><div class="egeo-u-tx-align-left"><code>0 0 5px 0 rgba(egeo-get-color(n8), .5)</code></td>
+<td><div class="egeo-u-tx-align--left">$egeo-c-button--focus---shadow</div></td>
+<td><div class="egeo-u-tx-align--left"><code>0 0 5px 0 rgba(egeo-get-color(n8), .5)</code></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button__c-icon---margin</div></td>
-<td><div class="egeo-u-tx-align-left"><code>0 8px 0 0</code></td>
+<td><div class="egeo-u-tx-align--left">$egeo-c-button__c-icon---margin</div></td>
+<td><div class="egeo-u-tx-align--left"><code>0 8px 0 0</code></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button--small---font-size</div></td>
-<td><div class="egeo-u-tx-align-left"><code>egeo-get-font-size(small)</code></td>
+<td><div class="egeo-u-tx-align--left">$egeo-c-button--small---font-size</div></td>
+<td><div class="egeo-u-tx-align--left"><code>egeo-get-font-size(small)</code></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button--small---height</div></td>
-<td><div class="egeo-u-tx-align-left"><code>30px</code></td>
+<td><div class="egeo-u-tx-align--left">$egeo-c-button--small---height</div></td>
+<td><div class="egeo-u-tx-align--left"><code>30px</code></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-button--small---padding</div></td>
-<td><div class="egeo-u-tx-align-left"><code>4px 15px</code></td>
+<td><div class="egeo-u-tx-align--left">$egeo-c-button--small---padding</div></td>
+<td><div class="egeo-u-tx-align--left"><code>4px 15px</code></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-buttons</div></td>
-<td><div class="egeo-u-tx-align-left">Sass map</div></td>
+<td><div class="egeo-u-tx-align--left">$egeo-c-buttons</div></td>
+<td><div class="egeo-u-tx-align--left">Sass map</div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">$egeo-c-buttons-custom</div></td>
-<td><div class="egeo-u-tx-align-left">Sass map</div></td>
+<td><div class="egeo-u-tx-align--left">$egeo-c-buttons-custom</div></td>
+<td><div class="egeo-u-tx-align--left">Sass map</div></td>
 </tr>
 </tbody>
 </table>
@@ -314,28 +315,28 @@ to HTML Element and called <code>egeo-c-button</code>. Below you can see the pro
 </thead>
 <tbody>
 <tr>
-<td><div class="egeo-u-tx-align-left">type</div></td>
-<td><div class="egeo-u-tx-align-left">Submit, Reset or Button</div></td>
+<td><div class="egeo-u-tx-align--left">type</div></td>
+<td><div class="egeo-u-tx-align--left">Submit, Reset or Button</div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">modifier</div></td>
-<td><div class="egeo-u-tx-align-left">The name of the button created as a CSS BEM Modifier</div></td>
+<td><div class="egeo-u-tx-align--left">modifier</div></td>
+<td><div class="egeo-u-tx-align--left">The name of the button created as a CSS BEM Modifier</div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">label</div></td>
-<td><div class="egeo-u-tx-align-left">The label of the button</div></td>
+<td><div class="egeo-u-tx-align--left">label</div></td>
+<td><div class="egeo-u-tx-align--left">The label of the button</div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">icon</div></td>
-<td><div class="egeo-u-tx-align-left">An icon which appears at left side</div></td>
+<td><div class="egeo-u-tx-align--left">icon</div></td>
+<td><div class="egeo-u-tx-align--left">An icon which appears at left side</div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">small</div></td>
-<td><div class="egeo-u-tx-align-left">A small version of the button</div></td>
+<td><div class="egeo-u-tx-align--left">small</div></td>
+<td><div class="egeo-u-tx-align--left">A small version of the button</div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align-left">rounded</div></td>
-<td><div class="egeo-u-tx-align-left">A rounded version of the button. A rounded button will hide the label and only show the icon.</div></td>
+<td><div class="egeo-u-tx-align--left">rounded</div></td>
+<td><div class="egeo-u-tx-align--left">A rounded version of the button. A rounded button will hide the label and only show the icon.</div></td>
 </tr>
 </tbody>
 </table>
@@ -374,7 +375,7 @@ to HTML Element and called <code>egeo-c-button</code>. Below you can see the pro
 
 <h2 id="dependencies">Dependencies</h2>
 <ul>
-<li><a href="section-7.html#section-7.1">c-component</a></li>
+<li><a href="section-7.html#section-7.1">component</a></li>
 </ul>
 
             </div>
@@ -389,7 +390,7 @@ all icons in an Egeo app.</p>
 <p>Injects the general behavior and properties of the class Icon to other
 components of the UI Kit.</p>
 <p><strong>Note</strong>: The Icon component triggers styles in other components if is active.</p>
-<p>Usage</p>
+<h4 id="usage">Usage</h4>
 <pre><code>.test {
         @include egeo-c-icon;
 }
@@ -397,7 +398,75 @@ components of the UI Kit.</p>
 <pre><code>.test {
         box-sizing: border-box;
 }
-</code></pre><div class="compatibility">Compatibility IE8+, Firefox 29+, Chrome 10+, Edge 12+, Safari 5.1+, Opera 9.5+</div>
+</code></pre><h2 id="dependencies">Dependencies</h2>
+<ul>
+<li><a href="section-7.html#section-7.1">component</a></li>
+</ul>
+<div class="compatibility">Compatibility IE8+, Firefox 29+, Chrome 10+, Edge 12+, Safari 5.1+, Opera 9.5+</div>
+            </div>
+          </section>
+          <section id="section-7.4" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">7.4</span> Row</h1>
+            <div class="kss-description">
+              <p>The Row Component is a container which uses always 100% width
+and never floats.</p>
+<h3 id="egeo-c-row">egeo-c-row</h3>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span></p>
+<p>Injects the general behavior and properties of the class Row to other
+components of the UI Kit.</p>
+<h4 id="usage">Usage</h4>
+<pre><code>.test {
+     @include egeo-c-row;
+}
+</code></pre><p>Will product the next result:</p>
+<pre><code>.test {
+     box-sizing: border-box;
+     display: block;
+}
+
+.test:after {
+     clear: both;
+     content: &quot;&quot;;
+     display: table;
+}
+</code></pre><h4 id="example">Example</h4>
+<pre><code>&lt;span class=&quot;egeo-c-row&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget sem sem. Sed eros mi, blandit vel nulla non, sodales mollis libero.&lt;/span&gt;
+&lt;span class=&quot;egeo-c-row&quot;&gt;Nam faucibus aliquam mi, sit amet eleifend libero vehicula a. Fusce efficitur posuere lacus, eu tempus dolor volutpat id.&lt;/span&gt;
+</code></pre><p><span class="egeo-c-row">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget sem sem. Sed eros mi, blandit vel nulla non, sodales mollis libero.</span>
+<span class="egeo-c-row">Nam faucibus aliquam mi, sit amet eleifend libero vehicula a. Fusce efficitur posuere lacus, eu tempus dolor volutpat id.</span></p>
+<h2 id="the-egeo-c-row-angularjs-directive">The egeo-c-row AngularJS directive</h2>
+<p>Egeo provides an AngularJS directive to create rows with ease. The directive is restricted
+to HTML Element and called <code>egeo-c-row</code>. The Row component is a container so it allows to use
+transclude content. Below you can see the properties exposed:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class="egeo-u-tx-align--left">content-at-right</div></td>
+<td><div class="egeo-u-tx-align--left">false</div></td>
+</tr>
+</tbody>
+</table>
+<h3 id="usage">Usage</h3>
+<p>Take a look to the samples shown below to see how the properties could be used and combined to get different results:</p>
+<pre><code>&lt;egeo-c-row&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;main-1&quot; label=&quot;AngularJS Button: Click to test ({{count}})&quot; data-ng-click=&quot;count = count + 1&quot;&gt;&lt;/egeo-c-button&gt;&lt;/egeo-c-row&gt;
+&lt;egeo-c-row data-content-at-right=&quot;true&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;main-1&quot; label=&quot;AngularJS Button: Click to test ({{count}})&quot; data-ng-click=&quot;count = count + 1&quot;&gt;&lt;/egeo-c-button&gt;&lt;/egeo-c-row&gt;
+</code></pre><p><hr></p>
+<p><egeo-c-row><egeo-c-button type="submit" modifier="main-1" label="AngularJS Button: Click to test ({{count}})" data-ng-click="count = count + 1"></egeo-c-button></egeo-c-row></p>
+<p><egeo-c-row data-content-at-right="true"><egeo-c-button type="submit" modifier="main-1" label="AngularJS Button: Click to test ({{count}})" data-ng-click="count = count + 1"></egeo-c-button></egeo-c-row></p>
+<hr>
+
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li><a href="section-7.html#section-7.1">component</a></li>
+<li><a href="section-8.html#section-8.1">clearfix</a></li>
+</ul>
+<div class="compatibility">Compatibility IE8+, Firefox 29+, Chrome 10+, Edge 12+, Safari 5.1+, Opera 9.5+</div>
             </div>
           </section>
         </article>
@@ -415,6 +484,7 @@ components of the UI Kit.</p>
     <script src="public/js/angular/angular.min.js"></script>
 <script src="public/js/app.js"></script>
 <script src="public/js/egeo/components/button/components.button.directive.js"></script>
+<script src="public/js/egeo/components/row/components.row.directive.js"></script>
 <script src="public/js/egeo/providers/egeo.config.provider.js"></script>
 
   </body>

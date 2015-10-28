@@ -13,7 +13,8 @@
     angular
         .module('myApp', [
             'egeo.config',
-            'egeo.buttons'
+            'egeo.buttons',
+            'egeo.layout'
         ])
 
         .config(function(EgeoConfigProvider){
