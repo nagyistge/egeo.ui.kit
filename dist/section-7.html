@@ -42,6 +42,7 @@
               <li class="kss-menu-item"><a href="#section-7.2"><span class="kss-ref">7.2</span><span class="kss-name">Button</span></a></li>
               <li class="kss-menu-item"><a href="#section-7.3"><span class="kss-ref">7.3</span><span class="kss-name">Icon</span></a></li>
               <li class="kss-menu-item"><a href="#section-7.4"><span class="kss-ref">7.4</span><span class="kss-name">Row</span></a></li>
+              <li class="kss-menu-item"><a href="#section-7.5"><span class="kss-ref">7.5</span><span class="kss-name">Toolbar</span></a></li>
             </ul>
           </nav>
         </div>
@@ -63,7 +64,7 @@ the UI Kit. It is an abstrac class that it means that it doesn&#39;t
 exist as a CSS class itself but as a mixin that can be inherited
 in any component.</p>
 <h3 id="egeo-c-component">egeo-c-component</h3>
-<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span></p>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span><span class="tag tag--danger">Internal</span></p>
 <p>Injects the general behavior and properties of the abstract class Component to other
 components of the UI Kit.</p>
 <h4 id="usage">Usage</h4>
@@ -86,7 +87,7 @@ implementation dragged from its implementation in the oldest browsers.</p>
 <p><code>&lt;input&gt;</code> tag can be perfectly used but keep in mind that the input type doesn&#39;t allow
 to use an icon inside the text (that is place in the value attribute).</p>
 <h3 id="egeo-c-button-modifier">egeo-c-button-modifier</h3>
-<p><span class="tag tag--type">@mixin</span><span class="tag tag--untested">Untested</span></p>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--untested">Untested</span><span class="tag tag--danger">Internal</span></p>
 <p>Creates a new modifier which is a type of button with the properties passed as parameters.
 Sass True doesn&#39;t work well with mixins that generates completely new classes outside
 the one marked as input.</p>
@@ -278,8 +279,12 @@ only thing you have to do is not including in the map and it will not be renderi
 <td><div class="egeo-u-tx-align--left"><code>0 0 5px 0 rgba(egeo-get-color(n8), .5)</code></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align--left">$egeo-c-button__c-icon---margin</div></td>
+<td><div class="egeo-u-tx-align--left">$egeo-c-button__c-icon--first-child---margin</div></td>
 <td><div class="egeo-u-tx-align--left"><code>0 8px 0 0</code></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align--left">$egeo-c-button__c-icon--last-child---margin</div></td>
+<td><div class="egeo-u-tx-align--left"><code>0 0 0 8px</code></td>
 </tr>
 <tr>
 <td><div class="egeo-u-tx-align--left">$egeo-c-button--small---font-size</div></td>
@@ -327,8 +332,12 @@ to HTML Element and called <code>egeo-c-button</code>. Below you can see the pro
 <td><div class="egeo-u-tx-align--left">The label of the button</div></td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align--left">icon</div></td>
+<td><div class="egeo-u-tx-align--left">icon-left</div></td>
 <td><div class="egeo-u-tx-align--left">An icon which appears at left side</div></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align--left">icon-right</div></td>
+<td><div class="egeo-u-tx-align--left">An icon which appears at right side</div></td>
 </tr>
 <tr>
 <td><div class="egeo-u-tx-align--left">small</div></td>
@@ -338,44 +347,51 @@ to HTML Element and called <code>egeo-c-button</code>. Below you can see the pro
 <td><div class="egeo-u-tx-align--left">rounded</div></td>
 <td><div class="egeo-u-tx-align--left">A rounded version of the button. A rounded button will hide the label and only show the icon.</div></td>
 </tr>
+<tr>
+<td><div class="egeo-u-tx-align--left">at-right</div></td>
+<td><div class="egeo-u-tx-align--left">Floats the button to right</div></td>
+</tr>
 </tbody>
 </table>
 <h3 id="usage">Usage</h3>
 <p>Take a look to the samples shown below to see how the properties could be used and combined to get different results:</p>
-<pre><code>&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;main-1&quot; label=&quot;AngularJS Button: Click to test ({{count}})&quot; data-ng-click=&quot;count = count + 1&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
-&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;main-2&quot; label=&quot;AngularJS Button&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
-&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;main-3&quot; label=&quot;AngularJS Button&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
-&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;secondary-1&quot; label=&quot;AngularJS Button&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
-&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;secondary-1&quot; small=&quot;true&quot; label=&quot;AngularJS Button Small&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
-&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;danger&quot; label=&quot;AngularJS Danger Button&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
-&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;danger&quot; label=&quot;AngularJS Disabled Button&quot; disabled&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
-&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;tool-1&quot; rounded=&quot;true&quot; icon=&quot;icon-datetime&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
-&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;tool-1&quot; rounded=&quot;true&quot; small=&quot;true&quot; icon=&quot;icon-datetime&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
-&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;tool-2&quot; rounded=&quot;true&quot; icon=&quot;icon-datetime&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
-&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;tool-2&quot; rounded=&quot;true&quot; small=&quot;true&quot; icon=&quot;icon-datetime&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
-&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;ellipsis&quot; rounded=&quot;true&quot; icon=&quot;icon-datetime&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
-&lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;ellipsis&quot; rounded=&quot;true&quot; small=&quot;true&quot; icon=&quot;icon-datetime&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+<pre><code>  &lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;main-1&quot; data-label=&quot;AngularJS Button: Click to test ({{count}})&quot; data-ng-click=&quot;count = count + 1&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+  &lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;main-2&quot; data-icon-left=&quot;icon-cog&quot; data-icon-right=&quot;icon-arrow2_down&quot; data-label=&quot;AngularJS Button&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+  &lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;main-3&quot; data-label=&quot;AngularJS Button&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+  &lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;secondary-1&quot; data-label=&quot;AngularJS Button&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+  &lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;secondary-1&quot; data-icon-left=&quot;icon-cog&quot; data-small=&quot;true&quot; data-label=&quot;AngularJS Button Small&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+  &lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;danger&quot; data-label=&quot;AngularJS Danger Button&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+  &lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;danger&quot; data-icon-left=&quot;icon-cog&quot; data-label=&quot;AngularJS Disabled Button&quot; disabled&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+  &lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-1&quot; data-rounded=&quot;true&quot; data-icon-left=&quot;icon-datetime&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+  &lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-1&quot; data-rounded=&quot;true&quot; data-small=&quot;true&quot; data-icon-left=&quot;icon-datetime&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+  &lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-2&quot; data-rounded=&quot;true&quot; data-icon-left=&quot;icon-datetime&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+  &lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-2&quot; data-rounded=&quot;true&quot; data-small=&quot;true&quot; data-icon-left=&quot;icon-datetime&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+  &lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-ellipsis&quot; data-rounded=&quot;true&quot; data-icon-left=&quot;icon-waiting&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+  &lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-ellipsis&quot; data-rounded=&quot;true&quot; data-small=&quot;true&quot; data-icon-left=&quot;icon-waiting&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
+  &lt;div style=&quot;margin-bottom: 5px; overflow: auto&quot;&gt;&lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;ellipsis&quot; data-rounded=&quot;true&quot; data-small=&quot;true&quot; data-icon-left=&quot;icon-datetime&quot; data-at-right=&quot;true&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
 </code></pre><p><hr></p>
 <p><div style="padding-left: 20px;">
-  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="main-1" label="AngularJS Button: Click to test ({{count}})" data-ng-click="count = count + 1"></egeo-c-button></div>
-  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="main-2" icon="icon-cog" label="AngularJS Button"></egeo-c-button></div>
-  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="main-3" label="AngularJS Button"></egeo-c-button></div>
-  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="secondary-1" label="AngularJS Button"></egeo-c-button></div>
-  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="secondary-1" icon="icon-cog" small="true" label="AngularJS Button Small"></egeo-c-button></div>
-  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="danger" label="AngularJS Danger Button"></egeo-c-button></div>
-  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="danger" icon="icon-cog" label="AngularJS Disabled Button" disabled></egeo-c-button></div>
-  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="tool-1" rounded="true" icon="icon-datetime"></egeo-c-button></div>
-  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="tool-1" rounded="true" small="true" icon="icon-datetime"></egeo-c-button></div>
-  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="tool-2" rounded="true" icon="icon-datetime"></egeo-c-button></div>
-  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="tool-2" rounded="true" small="true" icon="icon-datetime"></egeo-c-button></div>
-  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="tool-ellipsis" rounded="true" icon="icon-waiting"></egeo-c-button></div>
-  <div style="margin-bottom: 5px"><egeo-c-button type="submit" modifier="tool-ellipsis" rounded="true" small="true" icon="icon-waiting"></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button data-type="submit" data-modifier="main-1" data-label="AngularJS Button: Click to test ({{count}})" data-ng-click="count = count + 1"></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button data-type="submit" data-modifier="main-2" data-icon-left="icon-cog" data-icon-right="icon-arrow2_down" data-label="AngularJS Button"></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button data-type="submit" data-modifier="main-3" data-label="AngularJS Button"></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button data-type="submit" data-modifier="secondary-1" data-label="AngularJS Button"></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button data-type="submit" data-modifier="secondary-1" data-icon-left="icon-cog" data-small="true" data-label="AngularJS Button Small"></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button data-type="submit" data-modifier="danger" data-label="AngularJS Danger Button"></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button data-type="submit" data-modifier="danger" data-icon-left="icon-cog" data-label="AngularJS Disabled Button" disabled></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button data-type="submit" data-modifier="tool-1" data-rounded="true" data-icon-left="icon-datetime"></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button data-type="submit" data-modifier="tool-1" data-rounded="true" data-small="true" data-icon-left="icon-datetime"></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button data-type="submit" data-modifier="tool-2" data-rounded="true" data-icon-left="icon-datetime"></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button data-type="submit" data-modifier="tool-2" data-rounded="true" data-small="true" data-icon-left="icon-datetime"></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button data-type="submit" data-modifier="tool-ellipsis" data-rounded="true" data-icon-left="icon-waiting"></egeo-c-button></div>
+  <div style="margin-bottom: 5px"><egeo-c-button data-type="submit" data-modifier="tool-ellipsis" data-rounded="true" data-small="true" data-icon-left="icon-waiting"></egeo-c-button></div>
+  <div style="margin-bottom: 5px; overflow: auto"><egeo-c-button data-type="submit" data-modifier="ellipsis" data-rounded="true" data-small="true" data-icon-left="icon-datetime" data-at-right="true"></egeo-c-button></div>
 </div></p>
 <hr>
 
 <h2 id="dependencies">Dependencies</h2>
 <ul>
-<li><a href="section-7.html#section-7.1">component</a></li>
+<li><a href="section-7.html#section-7.1">components.component</a></li>
+<li><a href="section-8.html#section-8.3">utils.floats</a> - <em>only if you want to float your buttons</em>.</li>
 </ul>
 
             </div>
@@ -386,7 +402,7 @@ to HTML Element and called <code>egeo-c-button</code>. Below you can see the pro
               <p>The Icon Component is a class to group common styles and behaviors to
 all icons in an Egeo app.</p>
 <h3 id="egeo-c-icon">egeo-c-icon</h3>
-<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span></p>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span><span class="tag tag--danger">Internal</span></p>
 <p>Injects the general behavior and properties of the class Icon to other
 components of the UI Kit.</p>
 <p><strong>Note</strong>: The Icon component triggers styles in other components if is active.</p>
@@ -411,7 +427,7 @@ components of the UI Kit.</p>
               <p>The Row Component is a container which uses always 100% width
 and never floats.</p>
 <h3 id="egeo-c-row">egeo-c-row</h3>
-<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span></p>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span><span class="tag tag--danger">Internal</span></p>
 <p>Injects the general behavior and properties of the class Row to other
 components of the UI Kit.</p>
 <h4 id="usage">Usage</h4>
@@ -469,6 +485,70 @@ transclude content. Below you can see the properties exposed:</p>
 <div class="compatibility">Compatibility IE8+, Firefox 29+, Chrome 10+, Edge 12+, Safari 5.1+, Opera 9.5+</div>
             </div>
           </section>
+          <section id="section-7.5" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">7.5</span> Toolbar</h1>
+            <div class="kss-description">
+              <p>The Toolbar Component is a container of items which will be added one behind the other.</p>
+<h3 id="egeo-c-toolbar">egeo-c-toolbar</h3>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span><span class="tag tag--danger">Internal</span></p>
+<p>Injects the general behavior and properties of the class Toolbar to other
+components of the UI Kit.</p>
+<h4 id="usage">Usage</h4>
+<pre><code>.test {
+     @include egeo-c-toolbar;
+}
+</code></pre><p>Will product the next result:</p>
+<pre><code>.test {
+     box-sizing: border-box;
+     display: inline-block;
+}
+
+.test__item {
+     margin: 0 0 0 8px;
+}
+
+.test__item:first-child {
+     margin: 0;
+}
+</code></pre><h4 id="example">Example</h4>
+<pre><code>&lt;span class=&quot;egeo-c-toolbar&quot;&gt;
+     &lt;button&gt;Opt 1&lt;/button&gt;
+     &lt;button&gt;Opt 2&lt;/button&gt;
+     &lt;button&gt;Opt 3&lt;/button&gt;
+&lt;/span&gt;
+</code></pre><p><span class="egeo-c-toolbar">
+     <button>Opt 1</button>
+     <button>Opt 2</button>
+     <button>Opt 3</button>
+</span></p>
+<h2 id="the-egeo-c-toolbar-angularjs-directive">The egeo-c-toolbar AngularJS directive</h2>
+<p>Egeo provides an AngularJS directive to create toolbars with ease. The directive is restricted
+to HTML Element and called <code>egeo-c-toolbar</code>. The Toolbar component is a container so it allows to use
+transclude content. Below you can see the properties exposed:</p>
+<h3 id="usage">Usage</h3>
+<p>Take a look to the samples shown below to see how the properties could be used and combined to get different results:</p>
+<pre><code>&lt;egeo-c-toolbar&gt;
+  &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;main-1&quot; data-label=&quot;AngularJS Button: Click to test ({{count}})&quot; data-ng-click=&quot;count = count + 1&quot;&gt;&lt;/egeo-c-button&gt;
+  &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;main-2&quot; data-icon-left=&quot;icon-cog&quot; data-icon-right=&quot;icon-arrow2_down&quot; data-label=&quot;AngularJS Button&quot;&gt;&lt;/egeo-c-button&gt;
+  &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;main-3&quot; data-label=&quot;AngularJS Button&quot;&gt;&lt;/egeo-c-button&gt;
+  &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-ellipsis&quot; data-rounded=&quot;true&quot; data-icon-left=&quot;icon-waiting&quot;&gt;&lt;/egeo-c-button&gt;
+&lt;/egeo-c-toolbar&gt;
+</code></pre><p><hr></p>
+<p><egeo-c-toolbar>
+  <egeo-c-button data-type="submit" data-modifier="main-1" data-label="AngularJS Button: Click to test ({{count}})" data-ng-click="count = count + 1"></egeo-c-button>
+  <egeo-c-button data-type="submit" data-modifier="main-2" data-icon-left="icon-cog" data-icon-right="icon-arrow2_down" data-label="AngularJS Button"></egeo-c-button>
+  <egeo-c-button data-type="submit" data-modifier="main-3" data-label="AngularJS Button"></egeo-c-button>
+  <egeo-c-button data-type="submit" data-modifier="tool-ellipsis" data-rounded="true" data-icon-left="icon-waiting"></egeo-c-button>
+</egeo-c-toolbar></p>
+<hr>
+
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li><a href="section-7.html#section-7.1">component</a></li>
+</ul>
+<div class="compatibility">Compatibility IE8+, Firefox 29+, Chrome 10+, Edge 12+, Safari 5.1+, Opera 9.5+</div>
+            </div>
+          </section>
         </article>
         <footer class="kss-footer">
           <div>Created using <a href="https://github.com/hughsk/kss-node">kss-node</a> and <a href="https://github.com/htanjo/kss-node-template">kss-node-template</a>.</div>
@@ -485,6 +565,7 @@ transclude content. Below you can see the properties exposed:</p>
 <script src="public/js/app.js"></script>
 <script src="public/js/egeo/components/button/components.button.directive.js"></script>
 <script src="public/js/egeo/components/row/components.row.directive.js"></script>
+<script src="public/js/egeo/components/toolbar/components.toolbar.directive.js"></script>
 <script src="public/js/egeo/providers/egeo.config.provider.js"></script>
 
   </body>

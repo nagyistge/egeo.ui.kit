@@ -12,7 +12,9 @@
             restrict: 'E',
             replace: true,
             scope: {
-                icon: '@',
+                atRight: '@',
+                iconLeft: '@',
+                iconRight: '@',
                 label: '@',
                 modifier: '@',
                 rounded: '@',

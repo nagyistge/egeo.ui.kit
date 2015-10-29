@@ -14,6 +14,7 @@
         .module('myApp', [
             'egeo.config',
             'egeo.buttons',
+            'egeo.toolbar',
             'egeo.layout'
         ])
 
