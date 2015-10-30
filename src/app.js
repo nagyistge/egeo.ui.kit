@@ -14,8 +14,9 @@
         .module('myApp', [
             'egeo.config',
             'egeo.buttons',
+            'egeo.childrenClass',
             'egeo.toolbar',
-            'egeo.layout'
+            'egeo.row'
         ])
 
         .config(function(EgeoConfigProvider){
