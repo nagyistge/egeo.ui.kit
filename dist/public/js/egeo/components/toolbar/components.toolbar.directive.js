@@ -9,11 +9,14 @@
 
     function egeoCToolbar(EgeoConfig, EgeoChildrenClass) {
         var directive = {
+            atRight: '@',
             link: EgeoChildrenClass('egeo-c-toolbar__item'),
             replace: true,
             restrict: 'E',
             transclude: true,
-            scope: {},
+            scope: {
+                atRight: '@'
+            },
             templateUrl: EgeoConfig.getEgeoPath() + '/components/toolbar/components.toolbar.tpl.html'
         }
 
