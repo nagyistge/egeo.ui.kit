@@ -1,0 +1,171 @@
+
+$action-group---background:		(base: getColor(g2), hover: getColor(g3)) !default;
+$action-group---color:			(base: getColor(c1), hover: getColor(c1b)) !default;
+$action-group---font-size: 13px !default;
+$action-group---margin-horizontal: 5px !default;
+$action-group---size: 40px !default;
+$action-group--disabled--background: getColor(g2) !default;
+$action-group--disabled--color: getColor(g4) !default;
+$action-group__element-more---background:	(base: getColor(g0), hover: getColor(g1)) !default;
+$action-group__element-more---border-color:	(base: getColor(g5), hover: getColor(g6)) !default;
+$action-group__element-more---color:		(base: getColor(g6), hover: getColor(g7)) !default;
+
+.action-group{
+	white-space: nowrap;
+	position: relative;
+	z-index: 3;
+
+	&__buttons{
+		display: inline-block;
+		vertical-align: bottom;
+	}
+
+	.menu-element-more,
+	&__buttons .menu-element{
+		display: inline-block;
+		margin: 0px $action-group---margin-horizontal;
+
+		&:last-child{
+			margin-right: 0;
+		}
+
+		&__element{
+			@extend .st-button;
+			@extend .st-button--icon;
+			@extend %t-slow;
+
+			display: inline-block;
+			white-space: nowrap;
+			line-height: $action-group---size * 0.9;
+			min-width: $action-group---size;
+			width: auto;
+			cursor: pointer;
+			position: relative;
+			z-index: 3;
+
+			@include hoverize($action-group---color, color);
+			@include hoverize($action-group---background, background);
+		}
+		&__icon{
+			vertical-align: middle;
+			display: inline-block;
+			color: inherit;
+		}
+
+		&[disabled] .menu-element__element{
+			cursor: default;
+			background: $action-group--disabled--background;
+
+			&,
+			&:hover{
+				background: $action-group--disabled--background;
+				color: $action-group--disabled--color;
+			}
+		}
+	}
+
+	&__buttons .menu-element{
+
+		position: relative;
+
+		&__text{
+			@extend .tooltip;
+			@extend .tooltip--top;
+		}
+
+		&__element:hover .menu-element__text{
+			@extend .tooltip--visible;
+		}
+	}
+	&__buttons > .menu-element:last-child .menu-element__text{
+		transform: translateX(-80%);
+
+		&:before{
+			left: 80%;
+		}
+	}
+
+	.menu-element-more,
+	&__buttons .menu-element{
+		@extend %t-normal;
+
+		transform: scale(1) translateX(0px);
+		opacity: 1;
+		max-width: $action-group---size;
+
+		&.hidden{
+			transform: scale(0.4);
+			opacity: 0;
+			max-width: 0;
+			margin: 0;
+		}
+	}
+	.menu-element-more.hidden{
+		transform: scale(0.4) translateX(-20px);
+		opacity: 0;
+		max-width: 0;
+		margin: 0;
+	}
+
+	.menu-element-more{
+		display: inline-block;
+		vertical-align: bottom;
+		height: $action-group---size;
+
+		&__element{
+			width: $action-group---size;
+			border: 2px solid;
+
+			@include hoverize($action-group__element-more---background, background);
+			@include hoverize($action-group__element-more---color, color);
+			@include hoverize($action-group__element-more---border-color, border-color);
+		}
+		&__icon{
+			position: relative;
+			top: -2px;
+		}
+	}
+
+	.floating-menu{
+		top: -6px;
+		left: -6px;
+
+		.menu-element{
+			@extend %floaring-menu__blur-visible;
+		}
+		.menu-element.hidden{
+			@extend %floaring-menu__blur-hidden;
+		}
+		& .floating-menu__list .menu-element{
+			transition-property: all;
+
+			&:nth-child(n){
+				transition-delay: 0s;
+			}
+		}
+
+		.direction{
+			transform: rotate(-45deg) !important;
+		}
+
+		&__list{
+			//@extend %webkit-sidebar;
+			//@extend %webkit-sidebar-all;
+			//@extend %webkit-sidebar-rect;
+
+			max-height: 400px;
+		}
+
+		svg{
+			display: none;
+		}
+	}
+
+	&--check-width{
+		white-space: nowrap;
+
+		*{
+			transition-property: none !important;
+		}
+	}
+}

@@ -12,13 +12,21 @@
 
     angular
         .module('myApp', [
+            'ngSanitize',
+            'angular-bind-html-compile',
             'egeo.config',
             'egeo.buttons',
             'egeo.childrenClass',
             'egeo.toolbar',
             'egeo.dropdown',
             'egeo.app-header',
-            'egeo.row'
+            'egeo.row',
+            'StratioUI.components.actionButton',
+            'StratioUI.components.actionGroup',
+            'StratioUI.components.menuElement',
+            'StratioUI.helper.passAllAttributes',
+            'StratioUI.helper.toggleFloatingElement',
+            'StratioUI.helper.constant.templateUrl'
         ])
 
         .config(function(EgeoConfigProvider){

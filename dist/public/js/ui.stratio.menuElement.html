@@ -1,0 +1,29 @@
+<span class="menu-element" ui-sref-active="active">
+	<a 
+		class="menu-element__element"
+		ng-if="sref"
+		href
+		ui-sref="{{sref}}">
+		
+		<em ng-if="classIcon" class="menu-element__icon ico {{classIcon}}"></em><!-- 
+	 --><span class="menu-element__text" ng-transclude></span>
+	</a>
+
+	<a
+		class="menu-element__element"
+		ng-if="href && !sref"
+		ng-attr-target="{{target || null}}"
+		href="{{href}}">
+		
+		<em ng-if="classIcon" class="menu-element__icon ico {{classIcon}}"></em><!-- 
+	 --><span class="menu-element__text" ng-transclude></span>
+	</a>
+
+	<span
+		class="menu-element__element"
+		ng-if="!(href || sref)">
+		
+		<em ng-if="classIcon" class="menu-element__icon ico {{classIcon}}"></em><!-- 
+	 --><span class="menu-element__text" ng-transclude></span>
+	</span>
+</span>

@@ -59,22 +59,6 @@ module.exports = function (grunt) {
     // Set the paths to be available inside the grunt tasks
     app: appConfig,
 
-    //Sass compile
-    sass: {
-      styleguide: {
-        options: {
-          sourceMap: 'auto',  // The sourcemaps are a way to map the compiled and
-                              // minified files to let the browser to know when
-                              // inspect code the original file and line we are
-                              // inspecting
-          outputStyle: 'compressed' // Minify the Sass as much as possible
-        },
-        files: {
-          '<%= app.dist %>/public/<%= app.styleguide %>.css': 'src/<%= app.styleguide %>.scss'
-        }
-      }
-    },
-
     /* 
 
       Watch task to automatically refresh the documentation when any Sass file 
@@ -112,7 +96,7 @@ module.exports = function (grunt) {
       doc: {
         options: {
           cmd: function(f) {
-            return '.\\node_modules\\.bin\\kss-node --source src --source node_modules/egeo.ui.base/dist/egeo --destination dist --template node_modules/egeo.website.template/dist/kss-template --homepage readme.md --css public/styleguide.css --js public/js/angular/angular.min.js --js public/js/app.js --js public/js/egeo/components/button/components.button.directive.js --js public/js/egeo/components/row/components.row.directive.js --js public/js/egeo/components/toolbar/components.toolbar.directive.js --js public/js/egeo/components/dropdown/components.dropdown.directive.js --js public/js/egeo/components/dropdown/components.dropdown.controller.js --js public/js/egeo/components/app-header/components.app-header.directive.js --js public/js/egeo/components/buttongroup/components.buttongroup.directive.js --js public/js/egeo/providers/egeo.config.provider.js --js public/js/egeo/factories/egeo.childrenclass.factory.js';
+            return '.\\node_modules\\.bin\\kss-node --source src --source node_modules/egeo.ui.base/dist/egeo --destination dist --template node_modules/egeo.website.template/dist/kss-template --homepage readme.md --css public/styleguide.css --css public/manager.css --js public/js/angular/angular.min.js --js public/js/angular-animate/angular-animate.min.js --js public/js/angular-sanitize/angular-sanitize.min.js --js public/js/angular-bind-html-compile/angular-bind-html-compile.js --js public/js/app.js --js public/js/ui.stratio.actionGroup.js --js public/js/ui.stratio.contant.templateUrl.js --js public/js/ui.stratio.actionButton.js --js public/js/ui.stratio.menuElement.js --js public/js/ui.stratio.passAllAttributes.js --js public/js/ui.stratio.toggleFloatingElement.js --js public/js/egeo/components/button/components.button.directive.js --js public/js/egeo/components/row/components.row.directive.js --js public/js/egeo/components/toolbar/components.toolbar.directive.js --js public/js/egeo/components/dropdown/components.dropdown.directive.js --js public/js/egeo/components/dropdown/components.dropdown.controller.js --js public/js/egeo/components/app-header/components.app-header.directive.js --js public/js/egeo/components/buttongroup/components.buttongroup.directive.js --js public/js/egeo/components/buttongroup/components.buttongroup.controller.js --js public/js/egeo/providers/egeo.config.provider.js --js public/js/egeo/factories/egeo.childrenclass.factory.js';
           }
         },
         files: [{
@@ -137,10 +121,13 @@ module.exports = function (grunt) {
         files: [
           // Includes font files within path and its sub-directories
           {expand: true, cwd: '<%= app.egeoBase %>', src: ['**/*.js', '*.js'], dest: '<%= app.dist %>/public/js'},
+          {expand: true, cwd: '<%= app.egeoBase %>/vendors', src: ['**/*.js', '*.js'], dest: '<%= app.dist %>/public/js'},
           {expand: true, cwd: '<%= app.egeoBase %>', src: ['**/*.tpl.html', '*.tpl.html'], dest: '<%= app.dist %>/public/js'},
           {expand: true, cwd: '<%= app.egeoBase %>', src: ['<%= app.assets %>/**'], dest: '<%= app.dist %>/public'},
           {expand: true, cwd: '<%= app.kssTemplate %>/public', src: ['**/*'], dest: '<%= app.dist %>/public'},
           {expand: true, cwd: '<%= app.src %>', src: ['*.js'], dest: '<%= app.dist %>/public/js'},
+          {expand: true, cwd: '<%= app.src %>', src: ['*.html'], dest: '<%= app.dist %>/public/js'}, // temporal for Stratio UI tests
+          {expand: true, cwd: '<%= app.src %>', src: ['*.css'], dest: '<%= app.dist %>/public'}, // temporal for Stratio UI tests
           {expand: true, cwd: '<%= app.src %>', src: ['<%= app.assets %>/**'], dest: '<%= app.dist %>/public'}
         ],
       },
