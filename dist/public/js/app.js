@@ -20,13 +20,7 @@
             'egeo.toolbar',
             'egeo.dropdown',
             'egeo.app-header',
-            'egeo.row',
-            'StratioUI.components.actionButton',
-            'StratioUI.components.actionGroup',
-            'StratioUI.components.menuElement',
-            'StratioUI.helper.passAllAttributes',
-            'StratioUI.helper.toggleFloatingElement',
-            'StratioUI.helper.constant.templateUrl'
+            'egeo.row'
         ])
 
         .config(function(EgeoConfigProvider){
