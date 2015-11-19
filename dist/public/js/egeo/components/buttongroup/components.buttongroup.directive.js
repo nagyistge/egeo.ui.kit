@@ -5,9 +5,9 @@
         .module('egeo.buttons')
         .directive('egeoCButtongroup', egeoCButtongroup);
 
-    egeoCButtongroup.$inject = ['EgeoConfig', 'EgeoChildrenClass'];
+    egeoCButtongroup.$inject = ['EgeoConfig', 'EgeoChildrenClass', '$window'];
 
-    function egeoCButtongroup(EgeoConfig, EgeoChildrenClass) {
+    function egeoCButtongroup(EgeoConfig, EgeoChildrenClass, $window) {
         var directive = {
             controller: 'EgeoButtongroupController as vm',
             link: link,
@@ -28,9 +28,7 @@
                 lastLimit = null,
                 moreButtonWidth = 43;
 
-            // Replace the #transclude tag with transclude content to
-            // put the ellipsis button at same level than the trascluded
-            // ones.
+            // Replace the #transclude tag with transclude content
             element.find('#transclude').replaceWith(transclude());
 
             // Apply the subclass to all buttons in the group
@@ -112,24 +110,31 @@
             }
 
             function renderPopover() {
-                var i = ctrl.itemsHidden.length;
-                var output = "";
+                var i,
+                    buttongroupItems,
+                    item;
 
-                ctrl.popoverItems = [];
+                ctrl.popoverItems = angular.element(element.find('.egeo-c-popover__listitems')).children();
+                buttongroupItems = element.children().slice(0, element.children().length - 1);
+                i = ctrl.popoverItems.length;
 
                 while (i--) {
-                    ctrl.popoverItems[i] = {};
-                    ctrl.popoverItems[i].icon = ctrl.itemsHidden[i].find('.egeo-c-icon').attr('class');
-                    ctrl.popoverItems[i].label = ctrl.itemsHidden[i].attr('data-label');
+                    item = angular.element(ctrl.popoverItems[i]);
+                    item.attr('class', 'egeo-c-popover__listitem ng-isolate-scope');
+                    item.html(item.html() + item.attr('data-label'));
 
-                    if (ctrl.itemsHidden[i].attr('data-ng-click')) {
-                        ctrl.popoverItems[i].click = ctrl.itemsHidden[i].attr('data-ng-click');
-                    } else if (ctrl.itemsHidden[i].attr('ng-click')) {
-                        ctrl.popoverItems[i].click = ctrl.itemsHidden[i].attr('data-ng-click');
+                    if (angular.element(buttongroupItems[i]).hasClass('ng-hide')) {
+                        item.removeClass('ng-hide');
+                    } else {
+                        item.addClass('ng-hide');
                     }
                 }
 
-                if (ctrl.popoverItems.length > 0) {
+                if ((element.find('.egeo-c-popover').parent().parent().offset().left + element.find('.egeo-c-popover').outerWidth()) >= $(window).innerWidth()) {
+                    element.find('.egeo-c-popover').addClass('egeo-c-popover--right-aligned');
+                }
+
+                if (ctrl.itemsHidden.length > 0) {
                     ctrl.isPopoverShown = true;
                 } else {
                     ctrl.isPopoverShown = false;
@@ -202,14 +207,12 @@
 
             function getLastVisibleItemIndex() {
                 var i = 0,
-                    iMax = element.children().length,
+                    iMax = element.children().length -1,
                     widthBuffer = 0,
                     childWidth = 0,
                     correctionFactor = 3, // The correction factor is used due to the separation the browsers add to the inline-block elements
                     limit = null,
                     buttonFits = false;
-
-                if (ctrl.areItemsHidden) iMax--; // This is needed due to, in this case, the div which contains the popover is counted as child
 
                 // If we already have a limit, it is not needed keep the loop working
                 while (i < iMax && limit == null) {

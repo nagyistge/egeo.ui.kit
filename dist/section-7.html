@@ -320,7 +320,7 @@ to HTML Element and called <code>egeo-c-button</code>. Below you can see the pro
 <thead>
 <tr>
 <th>Property</th>
-<th>Default value</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -355,6 +355,10 @@ to HTML Element and called <code>egeo-c-button</code>. Below you can see the pro
 <tr>
 <td><div class="egeo-u-tx-align--left">at-right</div></td>
 <td><div class="egeo-u-tx-align--left">Floats the button to right</div></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align--left">popover</div></td>
+<td><div classgit="egeo-u-tx-align--left"><span class="tag tag--danger">internal!</span>It is used to reference popover IDs when the button is linked to a popover.</div></td>
 </tr>
 </tbody>
 </table>
@@ -654,24 +658,93 @@ transclude content.  Below you can see the properties exposed:</p>
           <section id="section-7.8" class="kss-section kss-depth-2">
             <h1 class="kss-title"><span class="kss-ref">7.8</span> Button Group</h1>
             <div class="kss-description">
-              <pre><code>&lt;egeo-c-buttongroup&gt;
-  &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-1&quot; data-rounded=&quot;true&quot; data-icon-left=&quot;icon-datetime&quot;&gt;&lt;/egeo-c-button&gt;
-  &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-1&quot; data-rounded=&quot;true&quot; data-small=&quot;true&quot; data-icon-left=&quot;icon-datetime&quot;&gt;&lt;/egeo-c-button&gt;
-  &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-2&quot; data-rounded=&quot;true&quot; data-icon-left=&quot;icon-datetime&quot;&gt;&lt;/egeo-c-button&gt;
-&lt;/egeo-c-buttongroup&gt;
-</code></pre><p><hr></p>
-<p><egeo-c-buttongroup>
-  <egeo-c-button data-type="submit" data-modifier="tool-1" data-label="Test 1" data-rounded="true" data-icon-left="icon-datetime"></egeo-c-button>
-  <egeo-c-button data-type="submit" data-modifier="tool-1" data-label="Test 2" data-rounded="true" data-small="true" data-icon-left="icon-datetime"></egeo-c-button>
-  <egeo-c-button data-type="submit" data-modifier="tool-2" data-label="Test 3" data-rounded="true" data-icon-left="icon-datetime" data-test="{{count}}" data-ng-click="count = count + 1"></egeo-c-button>
-</egeo-c-buttongroup></p>
+              <p>The Button Group component is a wrapper to group a set of Egeo Buttons. You can
+use only the CSS styles but probably has no sense due to the whole functionality
+is only available via the AngularJS Directive.</p>
+<h2 id="the-egeo-c-buttongroup-angularjs-directive">The egeo-c-buttongroup AngularJS directive</h2>
+<p><span class="tag tag--type">@directive</span><span class="tag tag--untested">Untested</span></p>
+<p>Egeo provides an AngularJS directive to create button groups with ease. The directive is restricted
+to HTML Element and called <code>egeo-c-buttongroup</code>. Below you can see the properties exposed:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class="egeo-u-tx-align--left">small</div></td>
+<td><div class="egeo-u-tx-align--left">Tell to the directive if the more button will be small or not.</div></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Warning:*</strong> Keep in mind that the egeo-c-buttongroup Angular Directive is only allowed to be used
+with egeo-c-buttons as inside elements. Use it combined with other elements may have unexpected effects.</p>
+<h3 id="usage">Usage</h3>
+<pre><code>&lt;div data-ng-controller=&quot;TestController as TestCtrl&quot;&gt;
+     &lt;egeo-c-buttongroup&gt;
+         &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-1&quot; data-label=&quot;Test 1&quot; data-rounded=&quot;true&quot; data-icon-left=&quot;icon-datetime&quot; data-ng-click=&quot;TestCtrl.test()&quot;&gt;&lt;/egeo-c-button&gt;
+         &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-1&quot; data-label=&quot;Test 2&quot; data-rounded=&quot;true&quot; data-small=&quot;true&quot; data-icon-left=&quot;icon-datetime&quot; data-ng-click=&quot;TestCtrl.test()&quot;&gt;&lt;/egeo-c-button&gt;
+         &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-2&quot; data-label=&quot;Test 3&quot; data-rounded=&quot;true&quot; data-icon-left=&quot;icon-datetime&quot; data-ng-click=&quot;TestCtrl.test()&quot;&gt;&lt;/egeo-c-button&gt;
+     &lt;/egeo-c-buttongroup&gt;
+&lt;/div&gt;
+&lt;p&gt;The same buttongroup in a container of 110px wide.&lt;/p&gt;
+&lt;div style=&quot;width: 110px&quot; data-ng-controller=&quot;TestController as TestCtrl&quot;&gt;
+     &lt;egeo-c-buttongroup small=&quot;true&quot;&gt;
+         &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-1&quot; data-label=&quot;Test 1&quot; data-rounded=&quot;true&quot; data-icon-left=&quot;icon-datetime&quot; data-ng-click=&quot;TestCtrl.test()&quot;&gt;&lt;/egeo-c-button&gt;
+         &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-1&quot; data-label=&quot;Test 2&quot; data-rounded=&quot;true&quot; data-small=&quot;true&quot; data-icon-left=&quot;icon-datetime&quot; data-ng-click=&quot;TestCtrl.test()&quot;&gt;&lt;/egeo-c-button&gt;
+         &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-2&quot; data-label=&quot;Test 3&quot; data-rounded=&quot;true&quot; data-icon-left=&quot;icon-datetime&quot; data-ng-click=&quot;TestCtrl.test()&quot;&gt;&lt;/egeo-c-button&gt;
+     &lt;/egeo-c-buttongroup&gt;
+&lt;/div&gt;
+&lt;p&gt;The same buttongroup in a container of 110px wide and right aligned.&lt;/p&gt;
+&lt;div style=&quot;text-align: right; margin-right: 10px;&quot; data-ng-controller=&quot;TestController as TestCtrl&quot;&gt;
+  &lt;div style=&quot;display: inline-block; width: 110px&quot; data-ng-controller=&quot;TestController as TestCtrl&quot;&gt;
+     &lt;egeo-c-buttongroup&gt;
+         &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-1&quot; data-label=&quot;Test 1&quot; data-rounded=&quot;true&quot; data-icon-left=&quot;icon-datetime&quot; data-ng-click=&quot;TestCtrl.test()&quot;&gt;&lt;/egeo-c-button&gt;
+         &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-1&quot; data-label=&quot;Test 2&quot; data-rounded=&quot;true&quot; data-small=&quot;true&quot; data-icon-left=&quot;icon-datetime&quot; data-ng-click=&quot;TestCtrl.test()&quot;&gt;&lt;/egeo-c-button&gt;
+         &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-2&quot; data-label=&quot;Test 3&quot; data-rounded=&quot;true&quot; data-icon-left=&quot;icon-datetime&quot; data-ng-click=&quot;TestCtrl.test()&quot;&gt;&lt;/egeo-c-button&gt;
+     &lt;/egeo-c-buttongroup&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>To view the results of click actions, open the Javascript conole of your browser.</p>
+<hr>
+
+<div data-ng-controller="TestController as TestCtrl">
+     <egeo-c-buttongroup>
+         <egeo-c-button data-type="submit" data-modifier="tool-1" data-label="Test 1" data-rounded="true" data-icon-left="icon-datetime" data-ng-click="TestCtrl.test()"></egeo-c-button>
+         <egeo-c-button data-type="submit" data-modifier="tool-1" data-label="Test 2" data-rounded="true" data-small="true" data-icon-left="icon-datetime" data-ng-click="TestCtrl.test()"></egeo-c-button>
+         <egeo-c-button data-type="submit" data-modifier="tool-2" data-label="Test 3" data-rounded="true" data-icon-left="icon-datetime" data-ng-click="TestCtrl.test()"></egeo-c-button>
+     </egeo-c-buttongroup>
+</div>
+<p>The same buttongroup in a container of 110px wide.</p>
+<div style="width: 110px" data-ng-controller="TestController as TestCtrl">
+     <egeo-c-buttongroup small="true">
+         <egeo-c-button data-type="submit" data-modifier="tool-1" data-label="Test 1" data-rounded="true" data-icon-left="icon-datetime" data-ng-click="TestCtrl.test()"></egeo-c-button>
+         <egeo-c-button data-type="submit" data-modifier="tool-1" data-label="Test 2" data-rounded="true" data-small="true" data-icon-left="icon-datetime" data-ng-click="TestCtrl.test()"></egeo-c-button>
+         <egeo-c-button data-type="submit" data-modifier="tool-2" data-label="Test 3" data-rounded="true" data-icon-left="icon-datetime" data-ng-click="TestCtrl.test()"></egeo-c-button>
+     </egeo-c-buttongroup>
+</div>
+<p>The same buttongroup in a container of 110px wide and right aligned.</p>
+<div style="text-align: right; margin-right: 10px;" data-ng-controller="TestController as TestCtrl">
+  <div style="display: inline-block; width: 110px" data-ng-controller="TestController as TestCtrl">
+     <egeo-c-buttongroup>
+         <egeo-c-button data-type="submit" data-modifier="tool-1" data-label="Test 1" data-rounded="true" data-icon-left="icon-datetime" data-ng-click="TestCtrl.test()"></egeo-c-button>
+         <egeo-c-button data-type="submit" data-modifier="tool-1" data-label="Test 2" data-rounded="true" data-small="true" data-icon-left="icon-datetime" data-ng-click="TestCtrl.test()"></egeo-c-button>
+         <egeo-c-button data-type="submit" data-modifier="tool-2" data-label="Test 3" data-rounded="true" data-icon-left="icon-datetime" data-ng-click="TestCtrl.test()"></egeo-c-button>
+     </egeo-c-buttongroup>
+  </div>
+</div>
+
 <hr>
 
 <h2 id="dependencies">Dependencies</h2>
 <ul>
 <li><a href="section-7.html#section-7.1">component</a></li>
+<li><a href="section-7.html#section-7.2">button</a></li>
+<li><a href="section-7.html#section-7.9">popover</a></li>
 </ul>
-<div class="compatibility">Compatibility IE8+, Firefox 29+, Chrome 10+, Edge 12+, Safari 5.1+, Opera 9.5+</div>
+<div class="compatibility">Compatibility untested</div>
             </div>
           </section>
           <section id="section-7.9" class="kss-section kss-depth-2">
@@ -701,6 +774,7 @@ transclude content.  Below you can see the properties exposed:</p>
 <script src="public/js/vendors/angular-sanitize/angular-sanitize.min.js"></script>
 <script src="public/js/vendors/angular-bind-html-compile/angular-bind-html-compile.js"></script>
 <script src="public/js/app.js"></script>
+<script src="public/js/test.controller.js"></script>
 <script src="public/js/egeo/components/button/components.button.directive.js"></script>
 <script src="public/js/egeo/components/button/components.button.controller.js"></script>
 <script src="public/js/egeo/components/row/components.row.directive.js"></script>
