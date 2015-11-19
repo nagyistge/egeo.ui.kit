@@ -2,6 +2,28 @@
 
 Welcome to the Stratio UI official documentation. In this document you will find all the information needed to begin build apps following the Stratio Visual Guidelines and the UX Guidelines, Patterns and Best Practices with ease.
 
+## About the use of tags
+
+Along the whole documentation you will find different tags with a specific meaning you should know. You can see in detail the meaning of each below:
+
+| tag           | meaning  |
+|-------------------|-----------|
+| <span class="tag tag--untested">untested</span> | The component, directive, mixin or function related to is untested.       |
+| <span class="tag tag--tested">tested</span> | The component, directive, mixin or function related to is full covered by tests.       |
+| <span class="tag tag--warn">partially tested</span> | The component, directive, mixin or function related to is partially tested definitively for some reason.       |
+| <span class="tag tag--danger">In progress</span> | The component, directive, mixin or function related to is a work in progress. It is not recommended to work with.       |
+| <span class="tag tag--danger">internal</span> | The component, directive, mixin or function related to is used internally by other components of Egeo.       |
+| <span class="tag tag--default">!default</span> | Related to a variables declared as default in Sass.       |
+| <span class="tag tag--type">@mixin</span> | Related to a Sass mixin.       |
+| <span class="tag tag--type">@function</span> | Related to a Sass function.       |
+| <span class="tag tag--type">@placeholder</span> | Related to a Sass placeholder.       |
+| <span class="tag tag--type">@class</span> | Related to a CSS class.       |
+| <span class="tag tag--type">@directive</span> | Related to an AngularJS directive.       |
+| <span class="tag tag--type">@provider</span> | Related to an AngularJS provider.       |
+| <span class="tag tag--type">@service</span> | Related to an AngularJS service.       |
+| <span class="tag tag--type">@factory</span> | Related to an AngularJS factory.       |
+| <span class="tag tag--not-supported">not supported</span> | The element or functionality is not supported.       |
+
 ## Minimum Requirements
 
 For now, these are the browsers officialy supported by Egeo:

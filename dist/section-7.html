@@ -64,12 +64,13 @@
           <section id="section-7.1" class="kss-section kss-depth-2">
             <h1 class="kss-title"><span class="kss-ref">7.1</span> Component</h1>
             <div class="kss-description">
-              <p>The component Component is the parent class of all components in
+              <p><span class="tag tag--danger">internal</span><span class="tag tag--untested">untested</span></p>
+<p>The component Component is the parent class of all components in
 the UI Kit. It is an abstrac class that it means that it doesn&#39;t
 exist as a CSS class itself but as a mixin that can be inherited
 in any component.</p>
 <h3 id="egeo-c-component">egeo-c-component</h3>
-<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span><span class="tag tag--danger">Internal</span></p>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">tested</span><span class="tag tag--danger">internal</span></p>
 <p>Injects the general behavior and properties of the abstract class Component to other
 components of the UI Kit.</p>
 <h4 id="usage">Usage</h4>
@@ -86,13 +87,14 @@ components of the UI Kit.</p>
           <section id="section-7.2" class="kss-section kss-depth-2">
             <h1 class="kss-title"><span class="kss-ref">7.2</span> Button</h1>
             <div class="kss-description">
-              <p>The component Button is officially supported in <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code> and <code>&lt;span&gt;</code> tags.
+              <p><span class="tag tag--danger">internal</span><span class="tag tag--untested">untested</span></p>
+<p>The component Button is officially supported in <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code> and <code>&lt;span&gt;</code> tags.
 The <code>&lt;input&gt;</code> tag has a particular behavior due to the default values and special
 implementation dragged from its implementation in the oldest browsers.</p>
 <p><code>&lt;input&gt;</code> tag can be perfectly used but keep in mind that the input type doesn&#39;t allow
 to use an icon inside the text (that is place in the value attribute).</p>
 <h3 id="egeo-c-button-modifier">egeo-c-button-modifier</h3>
-<p><span class="tag tag--type">@mixin</span><span class="tag tag--untested">Untested</span><span class="tag tag--danger">Internal</span></p>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--untested">untested</span><span class="tag tag--danger">internal</span></p>
 <p>Creates a new modifier which is a type of button with the properties passed as parameters.
 Sass True doesn&#39;t work well with mixins that generates completely new classes outside
 the one marked as input.</p>
@@ -123,7 +125,7 @@ the one marked as input.</p>
      margin: 0;
 }
 </code></pre><h3 id="egeo-c-button">egeo-c-button</h3>
-<p><span class="tag tag--type">@mixin</span><span class="tag tag--untested">Untested</span><span class="tag tag--danger">Internal</span></p>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--untested">untested</span><span class="tag tag--danger">internal</span></p>
 <p>Internally used to create the Egeo buttons in an extensible way. Sass True doesn&#39;t work well with mixins that generates
 completely new classes outside the one marked as input.</p>
 <div class="compatibility">Compatibility IE6+, Firefox 29+, Chrome 10+, Edge 12+, Safari 5.1+, Opera 9.5+</div>
@@ -314,6 +316,7 @@ only thing you have to do is not including in the map and it will not be renderi
 </tbody>
 </table>
 <h2 id="the-egeo-c-button-angularjs-directive">The egeo-c-button AngularJS directive</h2>
+<p><span class="tag tag--type">@directive</span><span class="tag tag--untested">untested</span></p>
 <p>Egeo provides an AngularJS directive to create all types of buttons defined with ease. The directive is restricted
 to HTML Element and called <code>egeo-c-button</code>. Below you can see the properties exposed:</p>
 <table>
@@ -358,7 +361,7 @@ to HTML Element and called <code>egeo-c-button</code>. Below you can see the pro
 </tr>
 <tr>
 <td><div class="egeo-u-tx-align--left">popover</div></td>
-<td><div classgit="egeo-u-tx-align--left"><span class="tag tag--danger">internal!</span>It is used to reference popover IDs when the button is linked to a popover.</div></td>
+<td><div classgit="egeo-u-tx-align--left"><span class="tag tag--danger">internal</span>It is used to reference popover IDs when the button is linked to a popover.</div></td>
 </tr>
 </tbody>
 </table>
@@ -408,10 +411,11 @@ to HTML Element and called <code>egeo-c-button</code>. Below you can see the pro
           <section id="section-7.3" class="kss-section kss-depth-2">
             <h1 class="kss-title"><span class="kss-ref">7.3</span> Icon</h1>
             <div class="kss-description">
-              <p>The Icon Component is a class to group common styles and behaviors to
+              <p><span class="tag tag--tested">tested</span></p>
+<p>The Icon Component is a class to group common styles and behaviors to
 all icons in an Egeo app.</p>
 <h3 id="egeo-c-icon">egeo-c-icon</h3>
-<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span><span class="tag tag--danger">Internal</span></p>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">tested</span><span class="tag tag--danger">internal</span></p>
 <p>Injects the general behavior and properties of the class Icon to other
 components of the UI Kit.</p>
 <p><strong>Note</strong>: The Icon component triggers styles in other components if is active.</p>
@@ -433,10 +437,11 @@ components of the UI Kit.</p>
           <section id="section-7.4" class="kss-section kss-depth-2">
             <h1 class="kss-title"><span class="kss-ref">7.4</span> Row</h1>
             <div class="kss-description">
-              <p>The Row Component is a container which uses always 100% width
+              <p><span class="tag tag--untested">untested</span></p>
+<p>The Row Component is a container which uses always 100% width
 and never floats.</p>
 <h3 id="egeo-c-row">egeo-c-row</h3>
-<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span><span class="tag tag--danger">Internal</span></p>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">tested</span><span class="tag tag--danger">internal</span></p>
 <p>Injects the general behavior and properties of the class Row to other
 components of the UI Kit.</p>
 <h4 id="usage">Usage</h4>
@@ -524,9 +529,10 @@ transclude content. Below you can see the properties exposed:</p>
           <section id="section-7.5" class="kss-section kss-depth-2">
             <h1 class="kss-title"><span class="kss-ref">7.5</span> Toolbar</h1>
             <div class="kss-description">
-              <p>The Toolbar Component is a container of items which will be added one behind the other.</p>
+              <p><span class="tag tag--untested">untested</span></p>
+<p>The Toolbar Component is a container of items which will be added one behind the other.</p>
 <h3 id="egeo-c-toolbar">egeo-c-toolbar</h3>
-<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Test covered</span><span class="tag tag--danger">Internal</span></p>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">tested</span><span class="tag tag--danger">internal</span></p>
 <p>Injects the general behavior and properties of the class Toolbar to other
 components of the UI Kit.</p>
 <h4 id="usage">Usage</h4>
@@ -604,7 +610,8 @@ transclude content.  Below you can see the properties exposed:</p>
           <section id="section-7.6" class="kss-section kss-depth-2">
             <h1 class="kss-title"><span class="kss-ref">7.6</span> Dropdown</h1>
             <div class="kss-description">
-              <p>In progress...</p>
+              <p><span class="tag tag--danger">in progress</span><span class="tag tag--untested">untested</span></p>
+<p>In progress...</p>
 <h2 id="the-egeo-c-dropdown-angularjs-directive">The egeo-c-dropdown AngularJS directive</h2>
 <p>soon</p>
 <table>
@@ -649,7 +656,8 @@ transclude content.  Below you can see the properties exposed:</p>
           <section id="section-7.7" class="kss-section kss-depth-2">
             <h1 class="kss-title"><span class="kss-ref">7.7</span> App Header</h1>
             <div class="kss-description">
-              <pre><code>&lt;egeo-c-app-header data-username=&quot;Spongebob Squarepants&quot; data-logo-url=&quot;public/assets/images/header.logo.png&quot; data-logo-sref=&quot;app.init&quot; data-logo-alt=&quot;Stratio Application&quot;&gt;&lt;/egeo-c-app-header&gt;
+              <p><span class="tag tag--danger">in progress</span><span class="tag tag--untested">untested</span></p>
+<pre><code>&lt;egeo-c-app-header data-username=&quot;Spongebob Squarepants&quot; data-logo-url=&quot;public/assets/images/header.logo.png&quot; data-logo-sref=&quot;app.init&quot; data-logo-alt=&quot;Stratio Application&quot;&gt;&lt;/egeo-c-app-header&gt;
 </code></pre><p><hr></p>
 <p><egeo-c-app-header data-username="Spongebob Squarepants" data-logo-url="public/assets/images/header.logo.png" data-logo-sref="app.init" data-logo-alt="Stratio Application"></egeo-c-app-header></p>
 <hr>
@@ -658,11 +666,11 @@ transclude content.  Below you can see the properties exposed:</p>
           <section id="section-7.8" class="kss-section kss-depth-2">
             <h1 class="kss-title"><span class="kss-ref">7.8</span> Button Group</h1>
             <div class="kss-description">
-              <p>The Button Group component is a wrapper to group a set of Egeo Buttons. You can
+              <p><span class="tag tag--untested">untested</span></p>
+<p>The Button Group component is a wrapper to group a set of Egeo Buttons. You can
 use only the CSS styles but probably has no sense due to the whole functionality
 is only available via the AngularJS Directive.</p>
 <h2 id="the-egeo-c-buttongroup-angularjs-directive">The egeo-c-buttongroup AngularJS directive</h2>
-<p><span class="tag tag--type">@directive</span><span class="tag tag--untested">Untested</span></p>
 <p>Egeo provides an AngularJS directive to create button groups with ease. The directive is restricted
 to HTML Element and called <code>egeo-c-buttongroup</code>. Below you can see the properties exposed:</p>
 <table>
@@ -750,11 +758,16 @@ with egeo-c-buttons as inside elements. Use it combined with other elements may 
           <section id="section-7.9" class="kss-section kss-depth-2">
             <h1 class="kss-title"><span class="kss-ref">7.9</span> Popover</h1>
             <div class="kss-description">
-              <h2 id="dependencies">Dependencies</h2>
+              <p><span class="tag tag--danger">internal</span><span class="tag tag--untested">untested</span></p>
+<p>The Popover component, for now, is only available inside other components like
+the Button Group. For that, in terms of code available to work with, only the
+CSS has real influence in the code. In short term, this component will be
+available to be included as a directive in any other component itself.</p>
+<h2 id="dependencies">Dependencies</h2>
 <ul>
 <li><a href="section-7.html#section-7.1">component</a></li>
 </ul>
-<div class="compatibility">Compatibility IE8+, Firefox 29+, Chrome 10+, Edge 12+, Safari 5.1+, Opera 9.5+</div>
+<div class="compatibility">Compatibility untested</div>
             </div>
           </section>
         </article>
