@@ -40,6 +40,7 @@
             </ul>
             <ul class="kss-menu-child">
               <li class="kss-menu-item"><a href="#section-6.1"><span class="kss-ref">6.1</span><span class="kss-name">Media</span></a></li>
+              <li class="kss-menu-item"><a href="#section-6.2"><span class="kss-ref">6.2</span><span class="kss-name">Box Shadow</span></a></li>
             </ul>
           </nav>
         </div>
@@ -175,6 +176,69 @@
 </tbody>
 </table>
 <div class="compatibility">Compatibility IE8+, Firefox 29+, Chrome 10+, Edge 12+, Safari 5.1+, Opera 9.5+</div>
+            </div>
+          </section>
+          <section id="section-6.2" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">6.2</span> Box Shadow</h1>
+            <div class="kss-description">
+              <p>The Box Shadow object includes a series of variables and a mixin to help
+all components in an application to have the same shadow using a common
+way to do it.</p>
+<div class="compatibility">Compatibility IE8+, Firefox 29+, Chrome 10+, Edge 12+, Safari 5.1+, Opera 9.5+</div>
+
+<h3 id="egeo-o-box-shadow">egeo-o-box-shadow</h3>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">tested</span><span class="tag tag--danger">internal</span></p>
+<p>Injects the box-shadow property as is defined by the variables exposed to theming (see below).</p>
+<h3 id="-egeo-o-box-shadow">.egeo-o-box-shadow</h3>
+<p><span class="tag tag--type">@class</span><span class="tag tag--tested">tested</span></p>
+<p>If the class is not silenced, the css will include the <code>.egeo-o-box-shadow</code> class with which
+we can apply the box-shadow effect everywhere we want.</p>
+<h3 id="usage">Usage</h3>
+<h4 id="using-the-mixin">Using the mixin</h4>
+<pre><code>.test {
+       @include egeo-o-box-shadow;
+}
+</code></pre><p>Will product the next result:</p>
+<pre><code>.test {
+     box-shadow: 0 0 3px map-get($egeo-shadows, sh2), 0 0 1px map-get($egeo-shadows, sh3), 0 3px 2px -1px map-get($egeo-shadows, sh1);
+}
+</code></pre><h4 id="using-the-class">Using the class</h4>
+<pre><code>&lt;div&gt;
+     &lt;div class=&quot;egeo-o-box-shadow&quot; style=&quot;background: red; display: inline-block; height: 200px; width: 200px;&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>Will product the next result:</p>
+<div>
+     <div class="egeo-o-box-shadow" style="background: red; display: inline-block; height: 200px; width: 200px;"></div>
+</div>
+
+<h2 id="variables-exposed-to-theming">Variables exposed to theming</h2>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class="egeo-u-tx-align--left egeo-u-nowrap">$egeo-o-box-shadow</div></td>
+<td><div class="egeo-u-tx-align--left"><code>true</code></div></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align--left egeo-u-nowrap">$egeo-shadows</div></td>
+<td><div class="egeo-u-tx-align--left">A Sass map with RGBA colors to be used as shadows. The values are sh1, sh2 and sh3, with value rgba(0, 0, 0, .1), rgba(0, 0, 0, .15) and rgba(0, 0, 0, .3) respectively.</div></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align--left egeo-u-nowrap">$egeo-o-box-shadow---box-shadow</div></td>
+<td><div class="egeo-u-tx-align--left">0 0 3px map-get($egeo-shadows, sh2), 0 0 1px map-get($egeo-shadows, sh3), 0 3px 2px -1px map-get($egeo-shadows, sh1)</div></td>
+</tr>
+<tr>
+<td><div class="egeo-u-tx-align--left egeo-u-nowrap">$egeo-o-box-shadow---shadow-color</div></td>
+<td><div class="egeo-u-tx-align--left">map-get($egeo-shadows, sh3)</div></td>
+</tr>
+</tbody>
+</table>
+
             </div>
           </section>
         </article>
