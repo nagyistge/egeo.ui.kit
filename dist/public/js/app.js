@@ -20,7 +20,8 @@
             'egeo.toolbar',
             'egeo.dropdown',
             'egeo.app-header',
-            'egeo.row'
+            'egeo.row',
+            'egeo.forms'
         ])
 
         .config(function(EgeoConfigProvider){
