@@ -126,15 +126,15 @@ namespace</a>.</p>
 </thead>
 <tbody>
 <tr>
-<td><div class="egeo-u-tx-align--left">$egeo-u-tx-alignments</div></td>
-<td><div class="egeo-u-tx-align--left"><code>true</code></div></td>
-<td><div class="egeo-u-tx-align--left">Whether or not we want to include the alignments classes in the compiled CSS.</div></td>
+<td>$egeo-u-tx-alignments</td>
+<td><code>true</code></td>
+<td>Whether or not we want to include the alignments classes in the compiled CSS.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="egeo-u-tx-align-direction-left-nobem-false-">egeo-u-tx-align($direction: left, $nobem: false)</h3>
 <p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">Tested</span><span class="tag tag--danger">internal</span></p>
-<p>Creates a text-align property in any $direction (left/right) and adding <code>!important</code>
+<p>Creates a text-align property in any $direction (left/right/center) and adding <code>!important</code>
 depending of the <code>$nobem</code> parameter value.</p>
 <div class="compatibility">Compatibility IE3+, Firefox 1+, Chrome 1+, Edge 12+, Safari 1+, Opera 3.5+</div>
 
@@ -156,6 +156,14 @@ depending of the <code>$nobem</code> parameter value.</p>
 <h3 id="-egeo-u-tx-align-right-egeo-u-tx-align-right">%egeo-u-tx-align-right, .egeo-u-tx-align-right</h3>
 <p><span class="tag tag--type">@placeholder</span><span class="tag tag--type">@class</span></p>
 <p>Set a &#39;text-align: right !important;&#39; property.</p>
+<h3 id="-egeo-u-tx-align-center-egeo-u-tx-align-center">%egeo-u-tx-align-center, .egeo-u-tx-align-center</h3>
+<p><span class="tag tag--type">@placeholder</span><span class="tag tag--type">@class</span></p>
+<p>Set a &#39;text-align: center;&#39; property.</p>
+<div class="compatibility">Compatibility IE3+, Firefox 1+, Chrome 1+, Edge 12+, Safari 1+, Opera 3.5+</div>
+
+<h3 id="-egeo-u-tx-align-center-egeo-u-tx-align-center">%egeo-u-tx-align-center, .egeo-u-tx-align-center</h3>
+<p><span class="tag tag--type">@placeholder</span><span class="tag tag--type">@class</span></p>
+<p>Set a &#39;text-align: center !important;&#39; property.</p>
 <div class="compatibility">Compatibility IE3+, Firefox 1+, Chrome 1+, Edge 12+, Safari 1+, Opera 3.5+</div>
             </div>
           </section>
@@ -282,6 +290,7 @@ depending of the <code>$nobem</code> parameter value.</p>
 <script src="public/js/egeo/components/formgroup/components.formgroup.directive.js"></script>
 <script src="public/js/egeo/components/label/components.label.directive.js"></script>
 <script src="public/js/egeo/components/input/components.input.directive.js"></script>
+<script src="public/js/egeo/components/input/components.input.controller.js"></script>
 
   </body>
 </html>
