@@ -11,7 +11,9 @@ Along the whole documentation you will find different tags with a specific meani
 | <span class="tag tag--untested">untested</span> | The component, directive, mixin or function related to is untested.       |
 | <span class="tag tag--tested">tested</span> | The component, directive, mixin or function related to is full covered by tests.       |
 | <span class="tag tag--warn">partially tested</span> | The component, directive, mixin or function related to is partially tested definitively for some reason.       |
-| <span class="tag tag--danger">In progress</span> | The component, directive, mixin or function related to is a work in progress. It is not recommended to work with.       |
+| <span class="tag tag--danger">in progress</span> | The component, directive, mixin or function related to is a work in progress. It is not recommended to work with.       |
+| <span class="tag tag--danger">alpha version</span> | The component, directive, mixin or function related to is developed in an alpha version. It is not recommended to work with in production but could be used for testing purposes and to find bugs.       |
+| <span class="tag tag--warn">beta version</span> | The component, directive, mixin or function related to is developed in a beta version. It could be used in production but could has some minor changes in the final version. A piece of code should be tested to get its final version.         |
 | <span class="tag tag--danger">internal</span> | The component, directive, mixin or function related to is used internally by other components of Egeo.       |
 | <span class="tag tag--default">!default</span> | Related to a variables declared as default in Sass.       |
 | <span class="tag tag--type">@mixin</span> | Related to a Sass mixin.       |
