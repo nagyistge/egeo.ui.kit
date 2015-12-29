@@ -41,8 +41,8 @@
             <ul class="kss-menu-child">
               <li class="kss-menu-item"><a href="#section-7.1"><span class="kss-ref">7.1</span><span class="kss-name">Component</span></a></li>
               <li class="kss-menu-item"><a href="#section-7.2"><span class="kss-ref">7.2</span><span class="kss-name">Button</span></a></li>
-              <li class="kss-menu-item"><a href="#section-7.3"><span class="kss-ref">7.3</span><span class="kss-name">Message</span></a></li>
               <li class="kss-menu-item"><a href="#section-7.3"><span class="kss-ref">7.3</span><span class="kss-name">Icon</span></a></li>
+              <li class="kss-menu-item"><a href="#section-7.3"><span class="kss-ref">7.3</span><span class="kss-name">Message</span></a></li>
               <li class="kss-menu-item"><a href="#section-7.4"><span class="kss-ref">7.4</span><span class="kss-name">Row</span></a></li>
               <li class="kss-menu-item"><a href="#section-7.5"><span class="kss-ref">7.5</span><span class="kss-name">Toolbar</span></a></li>
               <li class="kss-menu-item"><a href="#section-7.6"><span class="kss-ref">7.6</span><span class="kss-name">Dropdown</span></a></li>
@@ -53,7 +53,8 @@
               <li class="kss-menu-item"><a href="#section-7.11"><span class="kss-ref">7.11</span><span class="kss-name">Form Group</span></a></li>
               <li class="kss-menu-item"><a href="#section-7.12"><span class="kss-ref">7.12</span><span class="kss-name">Form Control</span></a></li>
               <li class="kss-menu-item"><a href="#section-7.13"><span class="kss-ref">7.13</span><span class="kss-name">Input</span></a></li>
-              <li class="kss-menu-item"><a href="#section-7.13"><span class="kss-ref">7.13</span><span class="kss-name">Label</span></a></li>
+              <li class="kss-menu-item"><a href="#section-7.14"><span class="kss-ref">7.14</span><span class="kss-name">Label</span></a></li>
+              <li class="kss-menu-item"><a href="#section-7.15"><span class="kss-ref">7.15</span><span class="kss-name">Checkbox</span></a></li>
             </ul>
           </nav>
         </div>
@@ -236,8 +237,8 @@ only thing you have to do is not including in the map and it will not be renderi
 &lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;button class=&quot;egeo-c-button egeo-c-button--rounded egeo-c-button--tool-2&quot;&gt;&lt;i class=&quot;egeo-c-icon icon-cog&quot;&gt;&lt;/i&gt;&lt;/button&gt;&lt;/div&gt;
 &lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;button class=&quot;egeo-c-button egeo-c-button--rounded egeo-c-button--tool-ellipsis&quot;&gt;&lt;i class=&quot;egeo-c-icon icon-waiting&quot;&gt;&lt;/i&gt;&lt;/button&gt;&lt;/div&gt;
 </code></pre><p>Will be renderized to:</p>
-<p><hr></p>
-<p><div style="padding-left: 20px;">
+<hr>
+<div style="padding-left: 20px;">
   <div style="margin-bottom: 5px"><a class="egeo-c-button egeo-c-button--main-1"><i class="egeo-c-icon icon-cog"></i>Main 1</a></div>
   <div style="margin-bottom: 5px"><span class="egeo-c-button egeo-c-button--main-2"><i class="egeo-c-icon icon-cog"></i>Main 2</span></div>
   <div style="margin-bottom: 5px"><button class="egeo-c-button egeo-c-button--main-3"><i class="egeo-c-icon icon-cog"></i>Main 3</button></div>
@@ -248,9 +249,9 @@ only thing you have to do is not including in the map and it will not be renderi
   <div style="margin-bottom: 5px"><button class="egeo-c-button egeo-c-button--rounded egeo-c-button--tool-1"><i class="egeo-c-icon icon-cog"></i></button></div>
   <div style="margin-bottom: 5px"><button class="egeo-c-button egeo-c-button--rounded egeo-c-button--tool-2"><i class="egeo-c-icon icon-cog"></i></button></div>
   <div style="margin-bottom: 5px"><button class="egeo-c-button egeo-c-button--rounded egeo-c-button--tool-ellipsis"><i class="egeo-c-icon icon-waiting"></i></button></div>
-</div></p>
-<hr>
+</div>
 
+<hr>
 <h2 id="variables-exposed-to-theming">Variables exposed to theming</h2>
 <table>
 <thead>
@@ -388,8 +389,8 @@ to HTML Element and called <code>egeo-c-button</code>. Below you can see the pro
   &lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-ellipsis&quot; data-rounded=&quot;true&quot; data-icon-left=&quot;icon-waiting&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
   &lt;div style=&quot;margin-bottom: 5px&quot;&gt;&lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-ellipsis&quot; data-rounded=&quot;true&quot; data-small=&quot;true&quot; data-icon-left=&quot;icon-waiting&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
   &lt;div style=&quot;margin-bottom: 5px; overflow: auto&quot;&gt;&lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;ellipsis&quot; data-rounded=&quot;true&quot; data-small=&quot;true&quot; data-icon-left=&quot;icon-datetime&quot; data-at-right=&quot;true&quot;&gt;&lt;/egeo-c-button&gt;&lt;/div&gt;
-</code></pre><p><hr></p>
-<p><div style="padding-left: 20px;">
+</code></pre><hr>
+<div style="padding-left: 20px;">
   <div style="margin-bottom: 5px"><egeo-c-button data-type="submit" data-modifier="main-1" data-label="AngularJS Button: Click to test ({{count}})" data-ng-click="count = count + 1"></egeo-c-button></div>
   <div style="margin-bottom: 5px"><egeo-c-button data-type="submit" data-modifier="main-2" data-icon-left="icon-cog" data-icon-right="icon-arrow2_down" data-label="AngularJS Button"></egeo-c-button></div>
   <div style="margin-bottom: 5px"><egeo-c-button data-type="submit" data-modifier="main-3" data-label="AngularJS Button"></egeo-c-button></div>
@@ -404,56 +405,15 @@ to HTML Element and called <code>egeo-c-button</code>. Below you can see the pro
   <div style="margin-bottom: 5px"><egeo-c-button data-type="submit" data-modifier="tool-ellipsis" data-rounded="true" data-icon-left="icon-waiting"></egeo-c-button></div>
   <div style="margin-bottom: 5px"><egeo-c-button data-type="submit" data-modifier="tool-ellipsis" data-rounded="true" data-small="true" data-icon-left="icon-waiting"></egeo-c-button></div>
   <div style="margin-bottom: 5px; overflow: auto"><egeo-c-button data-type="submit" data-modifier="ellipsis" data-rounded="true" data-small="true" data-icon-left="icon-datetime" data-at-right="true"></egeo-c-button></div>
-</div></p>
-<hr>
+</div>
 
+<hr>
 <h2 id="dependencies">Dependencies</h2>
 <ul>
 <li><a href="section-7.html#section-7.1">components.component</a></li>
 <li><a href="section-8.html#section-8.3">utils.floats</a> - <em>only if you want to float your buttons</em>.</li>
 </ul>
 
-            </div>
-          </section>
-          <section id="section-7.3" class="kss-section kss-depth-2">
-            <h1 class="kss-title"><span class="kss-ref">7.3</span> Message</h1>
-            <div class="kss-description">
-              <p><span class="tag tag--untested">untested</span></p>
-<p>The Message Component is a class to group common styles and behaviors to
-all Messages in an Egeo app.</p>
-<h3 id="egeo-c-message">egeo-c-message</h3>
-<p><span class="tag tag--type">@mixin</span><span class="tag tag--untested">untested</span><span class="tag tag--danger">internal</span></p>
-<p>Injects the general behavior and properties of the class Message.</p>
-<h4 id="usage">Usage</h4>
-<pre><code>.test {
-        @include egeo-c-message;
-}
-</code></pre><p>Will product the next result:</p>
-<pre><code>.test {
-        box-sizing: border-box;
-}
-</code></pre><h2 id="variables-exposed-to-theming">Variables exposed to theming</h2>
-<table>
-<thead>
-<tr>
-<th>Variable</th>
-<th>Default value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="egeo-u-nowrap">$egeo-c-message</span></td>
-<td><span class="egeo-u-nowrap"><code>true</code> </span></td>
-<td>Tells Egeo if the class egeo-c-message should be included in the CSS.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="dependencies">Dependencies</h2>
-<ul>
-<li><a href="section-7.html#section-7.1">component</a></li>
-</ul>
-<div class="compatibility">Compatibility IE8+, Firefox 29+, Chrome 10+, Edge 12+, Safari 5.1+, Opera 9.5+</div>
             </div>
           </section>
           <section id="section-7.3" class="kss-section kss-depth-2">
@@ -489,6 +449,47 @@ components of the UI Kit.</p>
 <td><span class="egeo-u-nowrap">$egeo-c-icon</span></td>
 <td><span class="egeo-u-nowrap"><code>true</code> </span></td>
 <td>Tells Egeo if the class egeo-c-icon should be included in the CSS.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li><a href="section-7.html#section-7.1">component</a></li>
+</ul>
+<div class="compatibility">Compatibility IE8+, Firefox 29+, Chrome 10+, Edge 12+, Safari 5.1+, Opera 9.5+</div>
+            </div>
+          </section>
+          <section id="section-7.3" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">7.3</span> Message</h1>
+            <div class="kss-description">
+              <p><span class="tag tag--untested">untested</span></p>
+<p>The Message Component is a class to group common styles and behaviors to
+all Messages in an Egeo app.</p>
+<h3 id="egeo-c-message">egeo-c-message</h3>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--untested">untested</span><span class="tag tag--danger">internal</span></p>
+<p>Injects the general behavior and properties of the class Message.</p>
+<h4 id="usage">Usage</h4>
+<pre><code>.test {
+        @include egeo-c-message;
+}
+</code></pre><p>Will product the next result:</p>
+<pre><code>.test {
+        box-sizing: border-box;
+}
+</code></pre><h2 id="variables-exposed-to-theming">Variables exposed to theming</h2>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="egeo-u-nowrap">$egeo-c-message</span></td>
+<td><span class="egeo-u-nowrap"><code>true</code> </span></td>
+<td>Tells Egeo if the class egeo-c-message should be included in the CSS.</td>
 </tr>
 </tbody>
 </table>
@@ -565,12 +566,11 @@ transclude content. Below you can see the properties exposed:</p>
 <pre><code>&lt;egeo-c-row&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;main-1&quot; label=&quot;AngularJS Button: Click to test ({{count}})&quot; data-ng-click=&quot;count = count + 1&quot;&gt;&lt;/egeo-c-button&gt;&lt;/egeo-c-row&gt;
 &lt;egeo-c-row data-content-at-right=&quot;true&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;main-1&quot; label=&quot;AngularJS Button: Click to test ({{count}})&quot; data-ng-click=&quot;count = count + 1&quot;&gt;&lt;/egeo-c-button&gt;&lt;/egeo-c-row&gt;
 &lt;egeo-c-row data-content-centered=&quot;true&quot;&gt;&lt;egeo-c-button type=&quot;submit&quot; modifier=&quot;main-1&quot; label=&quot;AngularJS Button: Click to test ({{count}})&quot; data-ng-click=&quot;count = count + 1&quot;&gt;&lt;/egeo-c-button&gt;&lt;/egeo-c-row&gt;
-</code></pre><p><hr></p>
+</code></pre><hr>
 <p><egeo-c-row><egeo-c-button type="submit" modifier="main-1" label="AngularJS Button: Click to test ({{count}})" data-ng-click="count = count + 1"></egeo-c-button></egeo-c-row></p>
 <p><egeo-c-row data-content-at-right="true"><egeo-c-button type="submit" modifier="main-1" label="AngularJS Button: Click to test ({{count}})" data-ng-click="count = count + 1"></egeo-c-button></egeo-c-row></p>
 <p><egeo-c-row data-content-centered="true"><egeo-c-button type="submit" modifier="main-1" label="AngularJS Button: Click to test ({{count}})" data-ng-click="count = count + 1"></egeo-c-button></egeo-c-row></p>
 <hr>
-
 <h2 id="variables-exposed-to-theming">Variables exposed to theming</h2>
 <p>Egeo provides an AngularJS directive to create rows with ease. The directive is restricted
 to HTML Element and called <code>egeo-c-row</code>. The Row component is a container so it allows to use
@@ -670,7 +670,7 @@ transclude content.  Below you can see the properties exposed:</p>
   &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;main-3&quot; data-label=&quot;AngularJS Button&quot;&gt;&lt;/egeo-c-button&gt;
   &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-ellipsis&quot; data-rounded=&quot;true&quot; data-icon-left=&quot;icon-waiting&quot;&gt;&lt;/egeo-c-button&gt;
 &lt;/egeo-c-toolbar&gt;
-</code></pre><p><hr></p>
+</code></pre><hr>
 <p><egeo-c-toolbar>
   <egeo-c-button data-type="submit" data-modifier="main-1" data-label="AngularJS Button: Click to test ({{count}})" data-ng-click="count = count + 1"></egeo-c-button>
   <egeo-c-button data-type="submit" data-modifier="main-2" data-icon-left="icon-cog" data-icon-right="icon-arrow2_down" data-label="AngularJS Button"></egeo-c-button>
@@ -678,7 +678,6 @@ transclude content.  Below you can see the properties exposed:</p>
   <egeo-c-button data-type="submit" data-modifier="tool-ellipsis" data-rounded="true" data-icon-left="icon-waiting"></egeo-c-button>
 </egeo-c-toolbar></p>
 <hr>
-
 <h2 id="variables-exposed-to-theming">Variables exposed to theming</h2>
 <table>
 <thead>
@@ -743,15 +742,14 @@ transclude content.  Below you can see the properties exposed:</p>
   &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-2&quot; data-rounded=&quot;true&quot; data-icon-left=&quot;icon-datetime&quot;&gt;&lt;/egeo-c-button&gt;
   &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-ellipsis&quot; data-rounded=&quot;true&quot; data-icon-left=&quot;icon-waiting&quot;&gt;&lt;/egeo-c-button&gt;
  &lt;/egeo-c-dropdown&gt;
-</code></pre><p><hr>
- <egeo-c-dropdown data-label="Dropdown button" data-icon="icon-datetime">
+</code></pre><hr>
+<p> <egeo-c-dropdown data-label="Dropdown button" data-icon="icon-datetime">
   <egeo-c-button data-type="submit" data-modifier="main-1" data-label="AngularJS Button: Click to test ({{count}})" data-ng-click="count = count + 1"></egeo-c-button>
   <egeo-c-button data-type="submit" data-modifier="danger" data-label="AngularJS Danger Button"></egeo-c-button>
   <egeo-c-button data-type="submit" data-modifier="tool-2" data-rounded="true" data-icon-left="icon-datetime"></egeo-c-button>
   <egeo-c-button data-type="submit" data-modifier="tool-ellipsis" data-rounded="true" data-icon-left="icon-waiting"></egeo-c-button>
  </egeo-c-dropdown></p>
 <hr>
-
 <h2 id="variables-exposed-to-theming">Variables exposed to theming</h2>
 <table>
 <thead>
@@ -856,7 +854,6 @@ with egeo-c-buttons as inside elements. Use it combined with other elements may 
 &lt;/div&gt;
 </code></pre><p>To view the results of click actions, open the Javascript conole of your browser.</p>
 <hr>
-
 <div data-ng-controller="TestController as TestCtrl">
      <egeo-c-buttongroup>
          <egeo-c-button data-type="submit" data-modifier="tool-1" data-label="Test 1" data-rounded="true" data-icon-left="icon-datetime" data-ng-click="TestCtrl.test()"></egeo-c-button>
@@ -884,7 +881,6 @@ with egeo-c-buttons as inside elements. Use it combined with other elements may 
 </div>
 
 <hr>
-
 <h2 id="variables-exposed-to-theming">Variables exposed to theming</h2>
 <table>
 <thead>
@@ -1205,7 +1201,7 @@ HTML input tag.</p>
 <tr>
 <td><span class="egeo-u-nowrap">$egeo-c-input</span></td>
 <td><span class="egeo-u-nowrap"><code>true</code> </span></td>
-<td>Tells Egeo if the class egeo-c-label should be included in the CSS.</td>
+<td>Tells Egeo if the class egeo-c-input should be included in the CSS.</td>
 </tr>
 </tbody>
 </table>
@@ -1216,15 +1212,15 @@ and/or the form it is included on.</p>
 <h3 id="how-to-work-with">How to work with</h3>
 <pre><code>&lt;div ng-controller=&quot;TestController as vm&quot;&gt;
   &lt;egeo-c-form id=&quot;TestForm&quot; method=&quot;post&quot;&gt;
-     &lt;egeo-c-input data-id=&quot;username&quot; data-label=&quot;username&quot; data-placeholder=&quot;Ex. dwalsh&quot; data-type=&quot;text&quot; data-model=&quot;vm.username&quot; data-pattern=&quot;&#39;([a-zA-Z0-9]*)&#39;&quot; data-required=&quot;true&quot; data-restriction=&quot;Only numbers and letters are allowed&quot; data-qa=&quot;id-for-username&quot; data-help-text=&quot;The username is needed to login into our applications.&quot;&gt;&lt;/egeo-c-input&gt;
-     &lt;egeo-c-input data-id=&quot;city&quot; data-label=&quot;city&quot; data-placeholder=&quot;Ex. Madrid&quot; data-type=&quot;text&quot; data-model=&quot;vm.city&quot; data-pattern=&quot;&#39;([a-zA-Z]*)&#39;&quot; data-restriction=&quot;Only letters are allowed&quot; data-qa=&quot;id-for-city&quot; data-help-text=&quot;The city will be used to gather stat info.&quot;&gt;&lt;/egeo-c-input&gt;
+     &lt;egeo-c-input data-id=&quot;username&quot; data-label=&quot;username&quot; data-placeholder=&quot;Ex. dwalsh&quot; data-type=&quot;text&quot; data-model=&quot;vm.username&quot; data-pattern=&quot;&#39;([a-zA-Z0-9]*)&#39;&quot; data-required=&quot;true&quot; data-qa=&quot;id-for-username&quot; data-help-text=&quot;The username is needed to login into our applications. &lt;strong&gt;Only numbers and letters are allowed.&lt;/strong&gt;&quot;&gt;&lt;/egeo-c-input&gt;
+     &lt;egeo-c-input data-id=&quot;city&quot; data-label=&quot;city&quot; data-placeholder=&quot;Ex. Madrid&quot; data-type=&quot;text&quot; data-model=&quot;vm.city&quot; data-pattern=&quot;&#39;([a-zA-Z]*)&#39;&quot; data-qa=&quot;id-for-city&quot; data-help-text=&quot;The city will be used to gather stat info.&quot;&gt;&lt;/egeo-c-input&gt;
      &lt;egeo-c-input data-id=&quot;freetext&quot; data-label=&quot;free text&quot; data-placeholder=&quot;Ex. No contextual help but errors (try put whitespaces)&quot; data-type=&quot;text&quot; data-model=&quot;vm.other&quot; data-pattern=&quot;&#39;([a-zA-Z]*)&#39;&quot; data-qa=&quot;id-for-free-text&quot;&gt;&lt;/egeo-c-input&gt;
   &lt;/egeo-c-form&gt;
 &lt;/div&gt;
 </code></pre><div ng-controller="TestController as vm">
   <egeo-c-form id="TestForm" method="post">
-     <egeo-c-input data-id="username" data-label="username" data-placeholder="Ex. dwalsh" data-type="text" data-model="vm.username" data-pattern="'([a-zA-Z0-9]*)'" data-required="true" data-restriction="Only numbers and letters are allowed" data-qa="id-for-username" data-help-text="The username is needed to login into our applications."></egeo-c-input>
-     <egeo-c-input data-id="city" data-label="city" data-placeholder="Ex. Madrid" data-type="text" data-model="vm.city" data-pattern="'([a-zA-Z]*)'" data-restriction="Only letters are allowed" data-qa="id-for-city" data-help-text="The city will be used to gather stat info."></egeo-c-input>
+     <egeo-c-input data-id="username" data-label="username" data-placeholder="Ex. dwalsh" data-type="text" data-model="vm.username" data-pattern="'([a-zA-Z0-9]*)'" data-required="true" data-qa="id-for-username" data-help-text="The username is needed to login into our applications. <strong>Only numbers and letters are allowed.</strong>"></egeo-c-input>
+     <egeo-c-input data-id="city" data-label="city" data-placeholder="Ex. Madrid" data-type="text" data-model="vm.city" data-pattern="'([a-zA-Z]*)'" data-qa="id-for-city" data-help-text="The city will be used to gather stat info."></egeo-c-input>
      <egeo-c-input data-id="freetext" data-label="free text" data-placeholder="Ex. No contextual help but errors (try put whitespaces)" data-type="text" data-model="vm.other" data-pattern="'([a-zA-Z]*)'" data-qa="id-for-free-text"></egeo-c-input>
   </egeo-c-form>
 </div>
@@ -1237,8 +1233,8 @@ and/or the form it is included on.</p>
 <div class="compatibility">Compatibility IE8+, Firefox 29+, Chrome 10+, Edge 12+, Safari 5.1+, Opera 9.5+</div>
             </div>
           </section>
-          <section id="section-7.13" class="kss-section kss-depth-2">
-            <h1 class="kss-title"><span class="kss-ref">7.13</span> Label</h1>
+          <section id="section-7.14" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">7.14</span> Label</h1>
             <div class="kss-description">
               <p><span class="tag tag--tested">tested</span></p>
 <p>The Label Component is a class to show the Egeo custom version of an
@@ -1286,6 +1282,58 @@ HTML label tag.</p>
 <div class="compatibility">Compatibility IE8+, Firefox 29+, Chrome 10+, Edge 12+, Safari 5.1+, Opera 9.5+</div>
             </div>
           </section>
+          <section id="section-7.15" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">7.15</span> Checkbox</h1>
+            <div class="kss-description">
+              <p><span class="tag tag--untested">Untested</span></p>
+<p>The Checkbox Component is a class to show the Egeo custom version of an
+HTML input checkbox tag.</p>
+<h3 id="egeo-c-checkbox">egeo-c-checkbox</h3>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">tested</span><span class="tag tag--danger">internal</span></p>
+<p>Apply the whole styles needed to customize a input.</p>
+<h2 id="variables-exposed-to-theming">Variables exposed to theming</h2>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="egeo-u-nowrap">$egeo-c-checkbox</span></td>
+<td><span class="egeo-u-nowrap"><code>true</code> </span></td>
+<td>Tells Egeo if the class egeo-c-checkbox should be included in the CSS.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-egeo-c-checkbox-angularjs-directive">The egeo-c-checkbox AngularJS directive</h2>
+<p>Egeo includes an AngularJS directive to be used in Angular apps to allow developers to integrate the whole classes, properties and
+functionalities with no effort. The directive is the responsible of apply different styles depending of the status of the input itself
+and/or the form it is included on.</p>
+<h3 id="how-to-work-with">How to work with</h3>
+<pre><code>&lt;div ng-controller=&quot;TestController as vm&quot;&gt;
+  &lt;egeo-c-form id=&quot;TestForm&quot; method=&quot;post&quot;&gt;
+     &lt;egeo-c-checkbox data-id=&quot;test-checkbox&quot; data-label=&quot;I read and accept the conditions&quot; data-model=&quot;vm.isRead&quot; data-required=&quot;true&quot; data-qa=&quot;id-for-checkbox&quot; data-help-text=&quot;The acceptance of conditions is needed to continue.&quot;&gt;&lt;/egeo-c-checkbox&gt;
+  &lt;/egeo-c-form&gt;
+&lt;/div&gt;
+</code></pre><hr>
+<div ng-controller="TestController as vm">
+  <egeo-c-form id="TestForm" method="post">
+     <egeo-c-checkbox data-id="test-checkbox" data-label="I read and accept the conditions" data-model="vm.isRead" data-required="true" data-qa="id-for-checkbox" data-help-text="The acceptance of conditions is needed to continue."></egeo-c-checkbox>
+  </egeo-c-form>
+</div>
+
+<hr>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li><a href="section-7.html#section-7.1">component</a></li>
+<li><a href="section-7.html#section-7.12">formcontrol</a></li>
+</ul>
+<div class="compatibility">Compatibility IE8+, Firefox 29+, Chrome 10+, Edge 12+, Safari 5.1+, Opera 9.5+</div>
+            </div>
+          </section>
         </article>
         <footer class="kss-footer">
           <div>Created using <a href="https://github.com/hughsk/kss-node">kss-node</a> and <a href="https://github.com/htanjo/kss-node-template">kss-node-template</a>.</div>
@@ -1320,6 +1368,8 @@ HTML label tag.</p>
 <script src="public/js/egeo/components/label/components.label.directive.js"></script>
 <script src="public/js/egeo/components/input/components.input.directive.js"></script>
 <script src="public/js/egeo/components/input/components.input.controller.js"></script>
+<script src="public/js/egeo/components/checkbox/components.checkbox.directive.js"></script>
+<script src="public/js/egeo/components/checkbox/components.checkbox.controller.js"></script>
 
   </body>
 </html>
