@@ -1,0 +1,56 @@
+// Toolbar
+//
+// <span class="tag tag--untested">untested</span><span class="tag tag--warn">beta version</span>
+//
+// The Toolbar Component is a container of items which will be added one behind the other.
+//
+// ### egeo-c-toolbar
+// 
+// <span class="tag tag--type">@mixin</span><span class="tag tag--tested">tested</span><span class="tag tag--danger">internal</span>
+//
+// Injects the general behavior and properties of the class Toolbar to other
+// components of the UI Kit.
+//
+// ## The egeo-c-toolbar AngularJS directive
+//
+// <span class="tag tag--type">@directive</span><span class="tag tag--untested">untested</span>
+//
+// Egeo provides an AngularJS directive to create toolbars with ease. The directive is restricted
+// to HTML Element and called `egeo-c-toolbar`. The Toolbar component is a container so it allows to use
+// transclude content.  Below you can see the properties exposed:
+//
+// | Property                                           | Default value                                  | Description                                                                   |
+// | -------------------------------------------------- | ---------------------------------------------- | ----------------------------------------------------------------------------- |
+// | <div class="egeo-u-tx-align--left">at-right</div>  | <div class="egeo-u-tx-align--left">false</div> | <div class="egeo-u-tx-align--left">If the content will be right floated</div> |
+//
+//
+// ### Usage
+//
+// Take a look to the samples shown below to see how the properties could be used and combined to get different results:
+//
+// ```
+// <egeo-c-toolbar>
+//   <egeo-c-button data-type="submit" data-modifier="main-1" data-label="AngularJS Button: Click to test ({{count}})" data-ng-click="count = count + 1"></egeo-c-button>
+//   <egeo-c-button data-type="submit" data-modifier="main-2" data-icon-left="icon-cog" data-icon-right="icon-arrow2_down" data-label="AngularJS Button"></egeo-c-button>
+//   <egeo-c-button data-type="submit" data-modifier="main-3" data-label="AngularJS Button"></egeo-c-button>
+//   <egeo-c-button data-type="submit" data-modifier="tool-ellipsis" data-rounded="true" data-icon-left="icon-waiting"></egeo-c-button>
+// </egeo-c-toolbar>
+// ```
+//
+// ---
+// <egeo-c-toolbar>
+//   <egeo-c-button data-type="submit" data-modifier="main-1" data-label="AngularJS Button: Click to test ({{count}})" data-ng-click="count = count + 1"></egeo-c-button>
+//   <egeo-c-button data-type="submit" data-modifier="main-2" data-icon-left="icon-cog" data-icon-right="icon-arrow2_down" data-label="AngularJS Button"></egeo-c-button>
+//   <egeo-c-button data-type="submit" data-modifier="main-3" data-label="AngularJS Button"></egeo-c-button>
+//   <egeo-c-button data-type="submit" data-modifier="tool-ellipsis" data-rounded="true" data-icon-left="icon-waiting"></egeo-c-button>
+// </egeo-c-toolbar>
+//
+// ---
+//
+// ## Dependencies
+//  
+// * [component](section-7.html#section-7.1)
+//
+// <div class="compatibility">Compatibility IE8+, Firefox 29+, Chrome 10+, Edge 12+, Safari 5.1+, Opera 9.5+</div>
+//
+// Styleguide 7.5
