@@ -1,12 +1,17 @@
 <?xml version="1.0"?>
-<testsuite name="PhantomJS 1.9.8 (Windows 8 0.0.0)" package="" timestamp="2016-01-11T12:02:33" id="0" hostname="Alejandro-PC" tests="4" errors="0" failures="0" time="0.021">
+<testsuite name="PhantomJS 1.9.8 (Windows 8 0.0.0)" package="" timestamp="2016-01-11T12:54:59" id="0" hostname="Alejandro-PC" tests="4" errors="0" failures="1" time="0.02">
   <properties>
     <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.8 Safari/534.34"/>
   </properties>
-  <testcase name="It should return a function after call it passing a className" time="0.011" classname="PhantomJS_1_9_8_(Windows_8_0_0_0).factories.egeo.childrenClass"/>
-  <testcase name="It should add a class to him children asynchronously" time="0.007" classname="PhantomJS_1_9_8_(Windows_8_0_0_0).factories.egeo.childrenClass"/>
-  <testcase name="It should return the defined path with setEgeoPath" time="0.002" classname="PhantomJS_1_9_8_(Windows_8_0_0_0).providers.egeo.config"/>
-  <testcase name="It should return the default config value of the Path where Egeo is installed" time="0.001" classname="PhantomJS_1_9_8_(Windows_8_0_0_0).providers.egeo.config"/>
+  <testcase name="It should return a function after call it passing a className" time="0.01" classname="PhantomJS_1_9_8_(Windows_8_0_0_0).factories.egeo.childrenClass"/>
+  <testcase name="It should add a class to him children asynchronously" time="0.006" classname="PhantomJS_1_9_8_(Windows_8_0_0_0).factories.egeo.childrenClass"/>
+  <testcase name="It should return the defined path with setEgeoPath" time="0.002" classname="PhantomJS_1_9_8_(Windows_8_0_0_0).providers.egeo.config">
+    <failure type="">Expected 'egeo/test' to be 'egeo/testx'.
+    at C:/projects/egeo.ui.kit/tests/providers/tests.providers.egeo.config.js:22
+    at C:/projects/egeo.ui.kit/tests/factories/tests.factories.egeo.childrenClass.js:31
+</failure>
+  </testcase>
+  <testcase name="It should return the default config value of the Path where Egeo is installed" time="0.002" classname="PhantomJS_1_9_8_(Windows_8_0_0_0).providers.egeo.config"/>
   <system-out>
     <![CDATA[
 ]]>
