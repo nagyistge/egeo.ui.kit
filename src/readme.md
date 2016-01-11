@@ -1,6 +1,6 @@
 # Introduction
 
-Welcome to the Stratio UI official documentation. In this document you will find all the information needed to begin build apps following the Stratio Visual Guidelines and the UX Guidelines, Patterns and Best Practices with ease.
+Welcome to the Stratio UI Kit official documentation. In this document you will find all the information needed to begin build apps following the Stratio Visual Guidelines and the UX Guidelines, Patterns and Best Practices with ease.
 
 ## About the use of tags
 
