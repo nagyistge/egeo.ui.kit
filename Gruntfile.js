@@ -100,7 +100,7 @@ module.exports = function (grunt) {
       doc: {
         options: {
           cmd: function(f) {
-            return '.\\node_modules\\.bin\\kss-node --source src --destination dist/docs --template node_modules/egeo.website.template/dist/kss-template --homepage readme.md --css public/styleguide.css --js public/js/vendors/angular/angular.min.js --js public/js/vendors/angular-animate/angular-animate.min.js --js public/js/vendors/angular-sanitize/angular-sanitize.min.js --js public/js/vendors/angular-bind-html-compile/angular-bind-html-compile.js --js public/js/app.js --js public/js/test.controller.js --js public/js/egeo/components/button/components.button.directive.js --js public/js/egeo/components/button/components.button.controller.js --js public/js/egeo/components/row/components.row.directive.js --js public/js/egeo/components/toolbar/components.toolbar.directive.js --js public/js/egeo/components/dropdown/components.dropdown.directive.js --js public/js/egeo/components/dropdown/components.dropdown.controller.js --js public/js/egeo/components/app-header/components.app-header.directive.js --js public/js/egeo/components/buttongroup/components.buttongroup.directive.js --js public/js/egeo/components/buttongroup/components.buttongroup.controller.js --js public/js/egeo/providers/egeo.config.provider.js --js public/js/egeo/factories/egeo.childrenclass.factory.js --js public/js/egeo/components/form/components.form.directive.js --js public/js/egeo/components/formgroup/components.formgroup.directive.js --js public/js/egeo/components/label/components.label.directive.js --js public/js/egeo/components/input/components.input.directive.js --js public/js/egeo/components/input/components.input.controller.js --js public/js/egeo/components/checkbox/components.checkbox.directive.js --js public/js/egeo/components/checkbox/components.checkbox.controller.js';
+            return '.\\node_modules\\.bin\\kss-node --source src --destination dist/docs --template node_modules/egeo.website.template/dist/kss-template --homepage readme.md --css public/styleguide.css --js public/js/egeo/vendors/angular/angular.min.js --js public/js/egeo/vendors/angular-animate/angular-animate.min.js --js public/js/egeo/vendors/angular-sanitize/angular-sanitize.min.js --js public/js/egeo/vendors/angular-bind-html-compile/angular-bind-html-compile.js --js public/js/app.js --js public/js/test.controller.js --js public/js/egeo/components/button/components.button.directive.js --js public/js/egeo/components/button/components.button.controller.js --js public/js/egeo/components/row/components.row.directive.js --js public/js/egeo/components/toolbar/components.toolbar.directive.js --js public/js/egeo/components/dropdown/components.dropdown.directive.js --js public/js/egeo/components/dropdown/components.dropdown.controller.js --js public/js/egeo/components/app-header/components.app-header.directive.js --js public/js/egeo/components/buttongroup/components.buttongroup.directive.js --js public/js/egeo/components/buttongroup/components.buttongroup.controller.js --js public/js/egeo/providers/egeo.config.provider.js --js public/js/egeo/factories/egeo.childrenclass.factory.js --js public/js/egeo/components/form/components.form.directive.js --js public/js/egeo/components/formgroup/components.formgroup.directive.js --js public/js/egeo/components/label/components.label.directive.js --js public/js/egeo/components/input/components.input.directive.js --js public/js/egeo/components/input/components.input.controller.js --js public/js/egeo/components/checkbox/components.checkbox.directive.js --js public/js/egeo/components/checkbox/components.checkbox.controller.js';
           }
         },
         files: [{
@@ -125,22 +125,20 @@ module.exports = function (grunt) {
       styleguide: {
         files: [
           // Includes font files within path and its sub-directories
-          {expand: true, cwd: '<%= app.egeoBase %>', src: ['**/*.js', '*.js', '!vendors'], dest: '<%= app.dist %>/<%= app.docs %>/public/js'},
-          {expand: true, cwd: '<%= app.egeoBase %>', src: ['**/*.tpl.html', '*.tpl.html'], dest: '<%= app.dist %>/<%= app.docs %>/public/js'},
-          {expand: true, cwd: '<%= app.egeoBase %>', src: ['<%= app.assets %>/**'], dest: '<%= app.dist %>/<%= app.docs %>/public'},
+          {expand: true, cwd: '<%= app.egeoBase %>', src: ['*.css'], dest: '<%= app.dist %>/<%= app.docs %>/public'},
           {expand: true, cwd: '<%= app.kssTemplate %>/public', src: ['**/*'], dest: '<%= app.dist %>/<%= app.docs %>/public'},
           {expand: true, cwd: '<%= app.src %>', src: ['*.js'], dest: '<%= app.dist %>/<%= app.docs %>/public/js'},
-          {expand: true, cwd: '<%= app.src %>', src: ['*.html'], dest: '<%= app.dist %>/<%= app.docs %>/public/js'}, // temporal for Stratio UI tests
-          {expand: true, cwd: '<%= app.src %>', src: ['*.css'], dest: '<%= app.dist %>/<%= app.docs %>/public'}, // temporal for Stratio UI tests
+          {expand: true, cwd: '<%= app.src %>', src: ['**/*.js'], dest: '<%= app.dist %>/<%= app.docs %>/public/js/egeo'},
+          {expand: true, cwd: '<%= app.src %>', src: ['**/*.html'], dest: '<%= app.dist %>/<%= app.docs %>/public/js/egeo'},
           {expand: true, cwd: '<%= app.src %>', src: ['<%= app.assets %>/**'], dest: '<%= app.dist %>/<%= app.docs %>/public'},
-          {expand: true, cwd: '<%= app.npm %>', src: ['angular-animate/*.js', 'angular/*.js', 'angular-sanitize/*.js'], dest: '<%= app.dist %>/<%= app.docs %>/vendors'}
+          {expand: true, cwd: '<%= app.npm %>', src: ['angular-animate/*.js', 'angular/*.js', 'angular-sanitize/*.js'], dest: '<%= app.dist %>/<%= app.docs %>/public/js/egeo/vendors'}
         ],
       },
       dist: {
         files: [
           // Includes font files within path and its sub-directories
-          {expand: true, cwd: '<%= app.src %>', src: ['*.js'], dest: '<%= app.dist %>/<%= app.lib %>'},
-          {expand: true, cwd: '<%= app.src %>', src: ['*.html'], dest: '<%= app.dist %>/<%= app.lib %>'},
+          {expand: true, cwd: '<%= app.src %>', src: ['**/*.js', '!app.js', '!test.controller.js'], dest: '<%= app.dist %>/<%= app.lib %>'},
+          {expand: true, cwd: '<%= app.src %>', src: ['**/*.html'], dest: '<%= app.dist %>/<%= app.lib %>'},
           {expand: true, cwd: '<%= app.npm %>', src: ['angular-animate/*.js', 'angular/*.js', 'angular-sanitize/*.js'], dest: '<%= app.dist %>/<%= app.lib %>/vendors'}
         ],
       },
