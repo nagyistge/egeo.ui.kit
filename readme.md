@@ -40,6 +40,17 @@ npm run-script sass-watch
 
 This command creates a watcher that launches the doc task every time a Sass file changes. Launch the command in a command line and keep it as a background task.
 
+## How to test
+
+The Kit includes a command to test the Javascript and to generate a report about code coverage.
+
+The command below will launch the Javascript suite of tests:
+```
+npm run-script test
+```
+
+You will check the results of code coverage in [egeo.ui.kit installation folder]/dist/test-coverage/PhantomJS 1.9.8 (Windows 8.0.0.0)/lcov-report/index.html
+
 ## Dependencies
 
 This project is the documentation of the Egeo UI Kit so other projects are needed to obtain the complete website. You can see below all the dependencies that belongs to it.

@@ -10,6 +10,10 @@ module.exports = function (config) {
       'tests/app.js',
       'src/providers/*.js',
       'src/factories/*.js',
+      'src/components/form/components.form.directive.js',
+      'src/components/form/components.formgroup.directive.js',
+      'src/components/form/components.form.directive.tpl.html',
+      'src/components/form/components.formgroup.directive.tpl.html',
       'src/components/**/*.directive.js',
       'src/components/**/*controller.js',
       'src/objects/**/*.js',
@@ -35,14 +39,14 @@ module.exports = function (config) {
     },
 
     junitReporter: {
-      outputDir: 'tests/coverage/surefire-reports/',
+      outputDir: 'dist/test-coverage/surefire-reports/',
       outputFile: undefined,
       suite: ''
     },
 
     coverageReporter: {
       type: "lcov",
-      dir: 'tests/coverage',
+      dir: 'dist/test-coverage',
       file: '../../lcovUT.info'
     },
     singleRun: true,
