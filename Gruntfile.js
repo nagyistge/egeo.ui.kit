@@ -47,6 +47,7 @@ module.exports = function (grunt) {
   var appConfig = {
     src: 'src',               // Folder of the source
     dist: 'dist',             // Folder of the distributable deliverables.
+    tests: 'tests',           // Folder of the tests.
     docs: 'docs',             // Folder of the distributable documentation.
     lib: 'egeo',              // Folder of the distributable library.
     styleguide: 'styleguide', // Warning: This name is used to reference files 
@@ -130,6 +131,7 @@ module.exports = function (grunt) {
           {expand: true, cwd: '<%= app.src %>', src: ['*.js'], dest: '<%= app.dist %>/<%= app.docs %>/public/js'},
           {expand: true, cwd: '<%= app.src %>', src: ['**/*.js'], dest: '<%= app.dist %>/<%= app.docs %>/public/js/egeo'},
           {expand: true, cwd: '<%= app.src %>', src: ['**/*.html'], dest: '<%= app.dist %>/<%= app.docs %>/public/js/egeo'},
+          {expand: true, cwd: '<%= app.src %>', src: ['**/*.html'], dest: '<%= app.tests %>/public/js/egeo'},
           {expand: true, cwd: '<%= app.src %>', src: ['<%= app.assets %>/**'], dest: '<%= app.dist %>/<%= app.docs %>/public'},
           {expand: true, cwd: '<%= app.npm %>', src: ['angular-animate/*.js', 'angular/*.js', 'angular-sanitize/*.js'], dest: '<%= app.dist %>/<%= app.docs %>/public/js/egeo/vendors'}
         ],

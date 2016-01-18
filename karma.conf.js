@@ -16,6 +16,7 @@ module.exports = function (config) {
       'src/components/formgroup/components.formgroup.tpl.html',
       'src/components/**/*.directive.js',
       'src/components/**/*controller.js',
+      'src/components/**/*.html',
       'src/objects/**/*.js',
 
       // fixtures

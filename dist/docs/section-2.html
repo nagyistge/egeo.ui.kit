@@ -52,8 +52,40 @@ with the components and helpers.</p>
           <section id="section-2.1" class="kss-section kss-depth-2">
             <h1 class="kss-title"><span class="kss-ref">2.1</span> ChildrenClass</h1>
             <div class="kss-description">
-              <p><span class="tag tag--type">@provider</span><span class="tag tag--untested">untested</span></p>
+              <p><span class="tag tag--type">@provider</span><span class="tag tag--tested">tested</span></p>
+<p>The ChildrenClass Provider adds a CSS class to the child elements of the first child node of the directive.</p>
+<h2 id="usage">Usage</h2>
+<p>This a sample directive from the Toolbar component where you can see how to use the EgeoChildrenClass Provider.
+´´´
+(function() {
+    &#39;use strict&#39;;</p>
+<pre><code>angular
+    .module(&#39;egeo.toolbar&#39;, [])
+    .directive(&#39;egeoCToolbar&#39;, egeoCToolbar);
 
+egeoCToolbar.$inject = [&#39;EgeoConfig&#39;, &#39;EgeoChildrenClass&#39;];
+
+function egeoCToolbar(EgeoConfig, EgeoChildrenClass) {
+    var directive = {
+        ...
+        link: EgeoChildrenClass(&#39;egeo-c-toolbar__item&#39;),
+        ...
+    }
+
+    return directive;
+}
+</code></pre><p>})();
+´´´</p>
+<p>And now you can see the code of the template. Note that the main html node allow transcluded content.</p>
+<pre><code>&lt;div class=&quot;egeo-c-toolbar&quot; data-ng-class=&quot;{&#39;egeo-u-float--right&#39;: atRight}&quot; data-ng-transclude&gt;&lt;/div&gt;
+</code></pre><p>The idea is that all nodes included as transcluded content, will receive automatically the
+egeo-c-toolbar__item class. So the final code should be something like that.</p>
+<pre><code>&lt;div class=&quot;egeo-c-toolbar&quot; data-ng-class=&quot;{&#39;egeo-u-float--right&#39;: atRight}&quot;&gt;
+     &lt;div class=&quot;egeo-c-toolbar__item&quot;&gt;Sample 1&lt;/div&gt;
+     &lt;div class=&quot;egeo-c-toolbar__item&quot;&gt;Sample 2&lt;/div&gt;
+     &lt;div class=&quot;egeo-c-toolbar__item&quot;&gt;Sample 3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><div class="compatibility">Compatibility IE9+, Firefox Latest, Chrome Latest, Edge Latest, Safari Latest, Opera Latest</div>
             </div>
           </section>
         </article>

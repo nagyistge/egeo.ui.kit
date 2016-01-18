@@ -41,7 +41,6 @@
               <li class="kss-menu-item"><a href="#section-5.6"><span class="kss-ref">5.6</span><span class="kss-name">Checkbox</span></a></li>
               <li class="kss-menu-item"><a href="#section-5.11"><span class="kss-ref">5.11</span><span class="kss-name">Button</span></a></li>
               <li class="kss-menu-item"><a href="#section-5.12"><span class="kss-ref">5.12</span><span class="kss-name">Button Group</span></a></li>
-              <li class="kss-menu-item"><a href="#section-5.13"><span class="kss-ref">5.13</span><span class="kss-name">Popover</span></a></li>
               <li class="kss-menu-item"><a href="#section-5.14"><span class="kss-ref">5.14</span><span class="kss-name">Row</span></a></li>
               <li class="kss-menu-item"><a href="#section-5.15"><span class="kss-ref">5.15</span><span class="kss-name">Toolbar</span></a></li>
               <li class="kss-menu-item"><a href="#section-5.16"><span class="kss-ref">5.16</span><span class="kss-name">Dropdown</span></a></li>
@@ -72,7 +71,7 @@ logically related to the CSS.</p>
      &lt;/egeo-c-formgroup&gt;
      &lt;egeo-c-input id=&quot;test2&quot; label=&quot;test2&quot; placeholder=&quot;put here your text&quot; type=&quot;text&quot;&gt;&lt;/egeo-c-input&gt;
 &lt;/egeo-c-form&gt;
-</code></pre><p><egeo-c-form name="test" method="post">
+</code></pre><p><egeo-c-form id="TestForm" method="post">
      <egeo-c-formgroup>
          <label class="egeo-c-label" for="test1">test:</label><input class="egeo-c-input" type="text" id="test1">
      </egeo-c-formgroup>
@@ -92,6 +91,16 @@ logically related to the CSS.</p>
 <p>The Form Group component is a wrapper to group components inside an HTML Form
 that can be joined to work together. A typical example of a form group is a
 label with an input.</p>
+<h2 id="usage">Usage</h2>
+<pre><code>     &lt;egeo-c-formgroup&gt;
+         &lt;label class=&quot;egeo-c-label&quot; for=&quot;test6&quot;&gt;test:&lt;/label&gt;&lt;input class=&quot;egeo-c-input&quot; type=&quot;text&quot; id=&quot;test6&quot;&gt;
+     &lt;/egeo-c-formgroup&gt;
+</code></pre><p>Will produce the result:</p>
+<hr>
+<p><egeo-c-formgroup>
+  <label class="egeo-c-label" for="test6">test:</label><input class="egeo-c-input" placeholder="type here" type="text" id="test6">
+</egeo-c-formgroup></p>
+<hr>
 <h2 id="dependencies">Dependencies</h2>
 <ul>
 <li><a href="../ui-base/section-7.html#section-7.11">CSS Base Framework - components.formgroup</a></li>
@@ -102,9 +111,15 @@ label with an input.</p>
           <section id="section-5.4" class="kss-section kss-depth-2">
             <h1 class="kss-title"><span class="kss-ref">5.4</span> Label</h1>
             <div class="kss-description">
-              <p><span class="tag tag--tested">tested</span></p>
+              <p><span class="tag tag--tested">tested</span><span class="tag tag--danger">internal</span></p>
 <p>The Label Component is a class to show the Egeo custom version of an
 HTML label tag.</p>
+<h2 id="usage">Usage</h2>
+<pre><code>&lt;egeo-c-label id=&quot;labelid&quot; label=&quot;test&quot;&gt;&lt;/egeo-c-label&gt;
+</code></pre><p>Will produce the next result:</p>
+<hr>
+<p><egeo-c-label id="labelid" label="test"></egeo-c-label></p>
+<hr>
 <h2 id="dependencies">Dependencies</h2>
 <ul>
 <li><a href="../ui-base/section-7.html#section-7.14">CSS Base Framework - components.label</a></li>
@@ -393,21 +408,6 @@ with egeo-c-buttons as inside elements. Use it combined with other elements may 
 <div class="compatibility">Compatibility IE9+, Firefox Latest, Chrome Latest, Edge Latest, Safari Latest, Opera Latest</div>
             </div>
           </section>
-          <section id="section-5.13" class="kss-section kss-depth-2">
-            <h1 class="kss-title"><span class="kss-ref">5.13</span> Popover</h1>
-            <div class="kss-description">
-              <p><span class="tag tag--danger">internal</span><span class="tag tag--untested">untested</span><span class="tag tag--warn">beta version</span></p>
-<p>The Popover component, for now, is only available inside other components like
-the Button Group. For that, in terms of code available to work with, only the
-CSS has real influence in the code. In short term, this component will be
-available to be included as a directive in any other component itself.</p>
-<h2 id="dependencies">Dependencies</h2>
-<ul>
-<li><a href="../ui-base/section-7.html#section-7.9">CSS Base Framework - components.popover</a></li>
-</ul>
-<div class="compatibility">Compatibility IE9+, Firefox Latest, Chrome Latest, Edge Latest, Safari Latest, Opera Latest</div>
-            </div>
-          </section>
           <section id="section-5.14" class="kss-section kss-depth-2">
             <h1 class="kss-title"><span class="kss-ref">5.14</span> Row</h1>
             <div class="kss-description">
@@ -466,7 +466,7 @@ transclude content. Below you can see the properties exposed:</p>
           <section id="section-5.15" class="kss-section kss-depth-2">
             <h1 class="kss-title"><span class="kss-ref">5.15</span> Toolbar</h1>
             <div class="kss-description">
-              <p><span class="tag tag--untested">untested</span><span class="tag tag--warn">beta version</span></p>
+              <p><span class="tag tag--untested">tested</span><span class="tag tag--warn">beta version</span></p>
 <p>The Toolbar Component is a container of items which will be added one behind the other.</p>
 <h3 id="egeo-c-toolbar">egeo-c-toolbar</h3>
 <p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">tested</span><span class="tag tag--danger">internal</span></p>

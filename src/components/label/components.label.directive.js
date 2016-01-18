@@ -9,8 +9,8 @@
 
     function egeoCLabel(EgeoConfig) {
         var directive = {
-            restrict: 'E',
             replace: true,
+            restrict: 'E',
             scope: {
                 id: '@',
                 label: '@'

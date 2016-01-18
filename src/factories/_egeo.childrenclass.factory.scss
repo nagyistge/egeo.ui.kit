@@ -1,6 +1,51 @@
 // ChildrenClass
 //
-// <span class="tag tag--type">@provider</span><span class="tag tag--untested">untested</span>
+// <span class="tag tag--type">@provider</span><span class="tag tag--tested">tested</span>
 //
+// The ChildrenClass Provider adds a CSS class to the child elements of the first child node of the directive.
+//
+// ## Usage
+// 
+// This a sample directive from the Toolbar component where you can see how to use the EgeoChildrenClass Provider.
+// ´´´
+// (function() {
+//     'use strict';
+// 
+//     angular
+//         .module('egeo.toolbar', [])
+//         .directive('egeoCToolbar', egeoCToolbar);
+// 
+//     egeoCToolbar.$inject = ['EgeoConfig', 'EgeoChildrenClass'];
+// 
+//     function egeoCToolbar(EgeoConfig, EgeoChildrenClass) {
+//         var directive = {
+//             ...
+//             link: EgeoChildrenClass('egeo-c-toolbar__item'),
+//             ...
+//         }
+// 
+//         return directive;
+//     }
+// })();
+// ´´´
+//
+// And now you can see the code of the template. Note that the main html node allow transcluded content.
+//
+// ```
+// <div class="egeo-c-toolbar" data-ng-class="{'egeo-u-float--right': atRight}" data-ng-transclude></div>
+// ```
+//
+// The idea is that all nodes included as transcluded content, will receive automatically the 
+// egeo-c-toolbar__item class. So the final code should be something like that.
+// 
+// ```
+// <div class="egeo-c-toolbar" data-ng-class="{'egeo-u-float--right': atRight}">
+//      <div class="egeo-c-toolbar__item">Sample 1</div>
+//      <div class="egeo-c-toolbar__item">Sample 2</div>
+//      <div class="egeo-c-toolbar__item">Sample 3</div>
+// </div>
+// ```
+//
+// <div class="compatibility">Compatibility IE9+, Firefox Latest, Chrome Latest, Edge Latest, Safari Latest, Opera Latest</div>
 //
 // Styleguide 2.1

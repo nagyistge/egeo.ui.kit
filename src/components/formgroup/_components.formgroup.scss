@@ -6,6 +6,23 @@
 // that can be joined to work together. A typical example of a form group is a
 // label with an input.
 //
+// ## Usage
+//
+// ```
+//      <egeo-c-formgroup>
+//          <label class="egeo-c-label" for="test6">test:</label><input class="egeo-c-input" type="text" id="test6">
+//      </egeo-c-formgroup>
+// ```
+//
+// Will produce the result:
+//
+// ---
+// <egeo-c-formgroup>
+//   <label class="egeo-c-label" for="test6">test:</label><input class="egeo-c-input" placeholder="type here" type="text" id="test6">
+// </egeo-c-formgroup>
+//
+// ---
+//
 // ## Dependencies
 //  
 // * [CSS Base Framework - components.formgroup](../ui-base/section-7.html#section-7.11)

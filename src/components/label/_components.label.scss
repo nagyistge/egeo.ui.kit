@@ -1,9 +1,21 @@
 // Label
 //
-// <span class="tag tag--tested">tested</span>
+// <span class="tag tag--tested">tested</span><span class="tag tag--danger">internal</span>
 //
 // The Label Component is a class to show the Egeo custom version of an
 // HTML label tag.
+//
+// ## Usage
+//
+// ```
+// <egeo-c-label id="labelid" label="test"></egeo-c-label>
+// ```
+// Will produce the next result:
+//
+// ---
+// <egeo-c-label id="labelid" label="test"></egeo-c-label>
+//
+// ---
 //
 // ## Dependencies
 //  

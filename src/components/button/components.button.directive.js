@@ -33,8 +33,8 @@
 
         function link(scope, element, attrs, ctrl) {
             if (scope.popover) { 
-                ctrl.hasPopover = true; 
-                element.click(ctrl.togglePopover);
+                ctrl.hasPopover = true;
+                element.on('click', ctrl.togglePopover);
             }
         }
     }
