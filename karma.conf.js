@@ -6,6 +6,8 @@ module.exports = function (config) {
     files: [
       'node_modules/angular/angular.js',
       'node_modules/angular-mocks/angular-mocks.js',
+      'node_modules/angular-sanitize/angular-sanitize.js',
+      'src/vendors/angular-bind-html-compile/angular-bind-html-compile.js',
 
       'tests/app.js',
       'src/providers/*.js',
@@ -20,7 +22,6 @@ module.exports = function (config) {
       'src/objects/**/*.js',
 
       // fixtures
-      //'tests/mock/*.json',
       'tests/**/**/tests.*.js'
     ],
 

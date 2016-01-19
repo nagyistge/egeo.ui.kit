@@ -1,4 +1,4 @@
-describe('components.button.directive', function() {
+describe('components.button', function() {
   var compile, scope, directiveElem, $httpBackend, ctrl, controller;
 
   beforeEach(function(){
