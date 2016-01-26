@@ -15,6 +15,8 @@
         vm.hasPopover = false;
         vm.isOpenPopover = false;
         vm.togglePopover = togglePopover;
+        vm.openPopover = openPopover;
+        vm.closePopover = closePopover;
 
         function togglePopover() {
             if (vm.isOpenPopover) {
@@ -53,8 +55,9 @@
 
         function getPopoverArrow() {
             if (!popoverArrow) {
+                $element = angular.element($element[0]);
                 popoverArrow = angular.element($element.find('.egeo-c-popover__arrow'));
-            }
+        }
 
             return popoverArrow;
         }

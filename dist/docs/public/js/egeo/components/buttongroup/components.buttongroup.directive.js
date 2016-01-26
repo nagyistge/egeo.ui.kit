@@ -39,8 +39,8 @@
 
             function checkWidth() {
                 // Do something only if the width changed
-                if (lastWidth != element.parent().width()) {
-                    lastWidth = element.parent().width();
+                if (lastWidth != element.parent().prop('offsetWidth')) {
+                    lastWidth = element.parent().prop('offsetWidth');
 
                     renderElements();
                 }
@@ -111,26 +111,23 @@
 
             function renderPopover() {
                 var i,
-                    buttongroupItems,
                     item;
 
                 ctrl.popoverItems = angular.element(element.find('.egeo-c-popover__listitems')).children();
-                buttongroupItems = element.children().slice(0, element.children().length - 1);
                 i = ctrl.popoverItems.length;
 
                 while (i--) {
                     item = angular.element(ctrl.popoverItems[i]);
                     item.attr('class', 'egeo-c-popover__listitem ng-isolate-scope');
                     item.html(item.html() + item.attr('data-label'));
-
-                    if (angular.element(buttongroupItems[i]).hasClass('ng-hide')) {
+                    if (angular.element(element.children()[i]).hasClass('ng-hide')) {
                         item.removeClass('ng-hide');
                     } else {
                         item.addClass('ng-hide');
                     }
                 }
 
-                if ((element.find('.egeo-c-popover').parent().parent().offset().left + element.find('.egeo-c-popover').outerWidth()) >= $(window).innerWidth()) {
+                if ((element.find('.egeo-c-popover').parent().parent().prop('offsetLeft') + element.find('.egeo-c-popover').outerWidth()) >= $(window).innerWidth()) {
                     element.find('.egeo-c-popover').addClass('egeo-c-popover--right-aligned');
                 }
 
@@ -174,7 +171,7 @@
 
                 // Remove the item from the array which contains the hidden items
                 while (items == ctrl.itemsHidden.length && i < ctrl.itemsHidden.length) {
-                    if (ctrl.itemsHidden[i].index() == item.index()) {
+                    if (String(ctrl.itemsHidden[i].attr('class')).split(' ').join('') == String(item.attr('class')).split(' ').join('')) {
                         ctrl.itemsHidden.splice(i, 1);
                     }
 
@@ -195,7 +192,7 @@
                 var response = false;
 
                 while (i < ctrl.itemsHidden.length && !response) {
-                    if (ctrl.itemsHidden[i].index() == item.index()) {
+                    if (String(ctrl.itemsHidden[i].attr('class')).split(' ').join('') == String(item.attr('class')).split(' ').join('')) {
                         response = true;
                     }
 
@@ -210,7 +207,7 @@
                     iMax = element.children().length -1,
                     widthBuffer = 0,
                     childWidth = 0,
-                    correctionFactor = 3, // The correction factor is used due to the separation the browsers add to the inline-block elements
+                    correctionFactor = 5, // The correction factor is used due to the separation the browsers add to the inline-block elements
                     limit = null,
                     buttonFits = false;
 
@@ -218,12 +215,12 @@
                 while (i < iMax && limit == null) {
                     // We will compare button to button
 
-                    childWidth = angular.element(element.children()[i]).outerWidth(true) + correctionFactor;
+                    childWidth = angular.element(element.children()[i]).prop('offsetWidth') + correctionFactor;
 
                     if (i == (iMax - 1)) { // Is the last item before the more button
-                        buttonFits = (widthBuffer + childWidth) < element.parent().width();
+                        buttonFits = (widthBuffer + childWidth) < element.parent().prop('clientWidth');
                     } else {
-                        buttonFits = (widthBuffer + childWidth) < (element.parent().width() - moreButtonWidth);
+                        buttonFits = (widthBuffer + childWidth) < (element.parent().prop('clientWidth') - moreButtonWidth);
                     }
                     
                     if (buttonFits) {

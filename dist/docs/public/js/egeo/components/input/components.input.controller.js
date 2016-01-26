@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('egeo.buttons')
+        .module('egeo.forms')
         .controller('EgeoInputController', EgeoInputController);
 
     function EgeoInputController($scope, $element) {
@@ -12,6 +12,7 @@
         vm.isHelpShown = false;
         vm.id = $scope.$id;
         vm.isFocused = false;
+        vm.onFocus = onFocus;
 
         function onFocus() {
             vm.isFocused = true;

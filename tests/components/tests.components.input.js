@@ -100,7 +100,6 @@ describe('components.input', function() {
   it('should show the help', function() {
     controller.isHelpShown = true;
     scope.$digest();
-    console.log(directiveElem[0]);
     //expect(controller.isOpenPopover).toBe(true);
   });
 */

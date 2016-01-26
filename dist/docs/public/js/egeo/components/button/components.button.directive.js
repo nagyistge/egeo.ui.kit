@@ -33,7 +33,6 @@
 
         function link(scope, element, attrs, ctrl) {
             if (scope.popover) { 
-                console.log(element);
                 ctrl.hasPopover = true;
                 element.on('click', ctrl.togglePopover);
             }

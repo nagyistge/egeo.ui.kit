@@ -14,9 +14,12 @@
         vm.popoverItems = [];
         vm.id = $scope.$id;
         vm.test = test;
+        vm.isTesting = false;
 
         function test() {
             console.log("test");
+
+            return 'test';
         }
     }
 })();

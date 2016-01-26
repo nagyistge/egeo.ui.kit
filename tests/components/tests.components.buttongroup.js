@@ -19,7 +19,7 @@ describe('components.buttongroup', function() {
   });
 
   function getCompiledElement(){
-    var element = angular.element('<div><egeo-c-buttongroup><egeo-c-button data-type="submit" data-modifier="tool-1" data-label="Test 1" data-rounded="true" data-icon-left="icon-datetime" data-ng-click="TestCtrl.test()"></egeo-c-button><egeo-c-button data-type="submit" data-modifier="tool-1" data-label="Test 2" data-rounded="true" data-small="true" data-icon-left="icon-datetime" data-ng-click="TestCtrl.test()"></egeo-c-button><egeo-c-button data-type="submit" data-modifier="tool-2" data-label="Test 3" data-rounded="true" data-icon-left="icon-datetime" data-ng-click="TestCtrl.test()"></egeo-c-button></egeo-c-buttongroup></div>');
+    var element = angular.element('<div style="width: 110px"><egeo-c-buttongroup><button class="egeo-c-button egeo-c-button--main-1"><span>test</span></button></egeo-c-buttongroup></div>');
     var compiledElement = compile(element)(scope);
     directiveElem
     scope.$digest();
@@ -28,30 +28,15 @@ describe('components.buttongroup', function() {
   }
 
   // DIRECTIVE TESTS
-/*  
+
   it('should have the class egeo-c-buttongroup', function() {
     var tag = directiveElem[0].children[0];
     expect(tag.className.indexOf('egeo-c-buttongroup')).not.toBe(-1);
   });
 
-  it('should have a text inside the button', function() {
-    var tag = directiveElem[0].children[1];
-    expect(tag).toBeDefined();
-    expect(tag.tagName).toBe('SPAN');
-    expect(tag.textContent).toBe('AngularJS Button');
-  });
-*/
   // CONTROLLER TEST
-/*
-  it('should toggle the popover shown status to opened', function() {
-    controller.togglePopover();
-    expect(controller.isOpenPopover).toBe(true);
-  });
 
-  it('should toggle the popover shown status to closed', function() {
-    controller.isOpenPopover = true;
-    controller.togglePopover();
-    expect(controller.isOpenPopover).toBe(false);
+  it('should launch a test log', function() {
+    expect(controller.test()).toBe('test');
   });
-*/
 });

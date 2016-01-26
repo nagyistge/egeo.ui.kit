@@ -22,6 +22,13 @@ describe('components.checkbox', function() {
     return compiledElement;
   }
 
+  function getCompiledNoHelpElement(){
+    var element = angular.element('<egeo-c-checkbox data-id="test-checkbox" data-label="I read and accept the conditions" data-model="vm.isRead" data-required="true" data-qa="id-for-checkbox"></egeo-c-checkbox>');
+    var compiledElement = compile(element)(scope);
+    scope.$digest();
+    return compiledElement;
+  }
+
   // DIRECTIVE TESTS
 
   it('should be inside a ng-form tag', function() {
@@ -67,6 +74,12 @@ describe('components.checkbox', function() {
     expect(tag.className.indexOf('icon-help2')).not.toBe(-1);
   });
 
+  it('shouldn\'t have the help icon', function() {
+    directiveElem = getCompiledNoHelpElement();
+    var tag = directiveElem[0].children[2];
+    expect(tag).not.toBeDefined();
+  });
+
   // CONTROLLER TESTS
 /* test doesn't work because $digest cycle seems to be not launched and the html code is not re-write 
    with the controller changes.
@@ -74,7 +87,6 @@ describe('components.checkbox', function() {
   it('should show the help', function() {
     controller.isHelpShown = true;
     scope.$digest();
-    console.log(directiveElem[0]);
     //expect(controller.isOpenPopover).toBe(true);
   });
 */

@@ -4,6 +4,7 @@ module.exports = function (config) {
     basePath: '',
 
     files: [
+      'node_modules/jquery/dist/jquery.js',
       'node_modules/angular/angular.js',
       'node_modules/angular-mocks/angular-mocks.js',
       'node_modules/angular-sanitize/angular-sanitize.js',
@@ -23,6 +24,12 @@ module.exports = function (config) {
 
       // fixtures
       'tests/**/**/tests.*.js'
+    ],
+
+    exclude: [
+      'src/components/app-header/components.app-header.directive.js',
+      'src/components/dropdown/components.dropdown.directive.js',
+      'src/components/dropdown/components.dropdown.controller.js'
     ],
 
     autoWatch: false,
