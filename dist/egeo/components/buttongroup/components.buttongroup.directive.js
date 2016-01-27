@@ -14,6 +14,7 @@
             restrict: 'E',
             replace: true,
             scope: {
+                popoverToRight: '@',
                 small: '@'
             },
             templateUrl: EgeoConfig.getEgeoPath() + '/components/buttongroup/components.buttongroup.tpl.html',

@@ -337,8 +337,12 @@ to HTML Element and called <code>egeo-c-buttongroup</code>. Below you can see th
 </thead>
 <tbody>
 <tr>
-<td><div class="egeo-u-tx-align--left">small</div></td>
-<td><div class="egeo-u-tx-align--left">Tell to the directive if the more button will be small or not.</div></td>
+<td>small</td>
+<td>Tell to the directive if the more button will be small or not.</td>
+</tr>
+<tr>
+<td>popoverToRight</td>
+<td>Tell to the directive if the popover should behave as if placed in the right side of the website. This means that the popover would be shown from the ellipsis button to the left. The component automatically checks if the popover would be placed outside the viewport and the will apply this behavior regardless of the property value.</td>
 </tr>
 </tbody>
 </table>
@@ -361,9 +365,9 @@ with egeo-c-buttons as inside elements. Use it combined with other elements may 
      &lt;/egeo-c-buttongroup&gt;
 &lt;/div&gt;
 &lt;p&gt;The same buttongroup in a container of 110px wide and right aligned.&lt;/p&gt;
-&lt;div style=&quot;text-align: right; margin-right: 10px;&quot; data-ng-controller=&quot;TestController as TestCtrl&quot;&gt;
+&lt;div style=&quot;text-align: right; margin-right: 10px&quot;&gt;
   &lt;div style=&quot;display: inline-block; width: 110px&quot; data-ng-controller=&quot;TestController as TestCtrl&quot;&gt;
-     &lt;egeo-c-buttongroup&gt;
+     &lt;egeo-c-buttongroup popover-to-right=&quot;true&quot;&gt;
          &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-1&quot; data-label=&quot;Test 1&quot; data-rounded=&quot;true&quot; data-icon-left=&quot;icon-datetime&quot; data-ng-click=&quot;TestCtrl.test()&quot;&gt;&lt;/egeo-c-button&gt;
          &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-1&quot; data-label=&quot;Test 2&quot; data-rounded=&quot;true&quot; data-small=&quot;true&quot; data-icon-left=&quot;icon-datetime&quot; data-ng-click=&quot;TestCtrl.test()&quot;&gt;&lt;/egeo-c-button&gt;
          &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-2&quot; data-label=&quot;Test 3&quot; data-rounded=&quot;true&quot; data-icon-left=&quot;icon-datetime&quot; data-ng-click=&quot;TestCtrl.test()&quot;&gt;&lt;/egeo-c-button&gt;
@@ -388,9 +392,9 @@ with egeo-c-buttons as inside elements. Use it combined with other elements may 
      </egeo-c-buttongroup>
 </div>
 <p>The same buttongroup in a container of 110px wide and right aligned.</p>
-<div style="text-align: right; margin-right: 10px;" data-ng-controller="TestController as TestCtrl">
-  <div style="display: inline-block; width: 110px" data-ng-controller="TestController as TestCtrl">
-     <egeo-c-buttongroup>
+<div style="text-align: right; margin-right: 10px" data-ng-controller="TestController as TestCtrl">
+  <div style="display: inline-block; width: 110px">
+     <egeo-c-buttongroup popover-to-right="true">
          <egeo-c-button data-type="submit" data-modifier="tool-1" data-label="Test 1" data-rounded="true" data-icon-left="icon-datetime" data-ng-click="TestCtrl.test()"></egeo-c-button>
          <egeo-c-button data-type="submit" data-modifier="tool-1" data-label="Test 2" data-rounded="true" data-small="true" data-icon-left="icon-datetime" data-ng-click="TestCtrl.test()"></egeo-c-button>
          <egeo-c-button data-type="submit" data-modifier="tool-2" data-label="Test 3" data-rounded="true" data-icon-left="icon-datetime" data-ng-click="TestCtrl.test()"></egeo-c-button>

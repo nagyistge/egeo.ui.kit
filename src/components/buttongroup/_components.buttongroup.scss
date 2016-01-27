@@ -13,9 +13,10 @@
 // Egeo provides an AngularJS directive to create button groups with ease. The directive is restricted
 // to HTML Element and called `egeo-c-buttongroup`. Below you can see the properties exposed:
 //
-// | Property                                             | Description                                                                                             |
-// | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-// | <div class="egeo-u-tx-align--left">small</div>       | <div class="egeo-u-tx-align--left">Tell to the directive if the more button will be small or not.</div> |
+// | Property       | Description                                                                                                                                                                        |
+// | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+// | small          | Tell to the directive if the more button will be small or not.                                                                                                                     |
+// | popoverToRight | Tell to the directive if the popover should behave as if placed in the right side of the website. This means that the popover would be shown from the ellipsis button to the left. The component automatically checks if the popover would be placed outside the viewport and the will apply this behavior regardless of the property value. |
 //
 // **Warning:** Keep in mind that the egeo-c-buttongroup Angular Directive is only allowed to be used 
 // with egeo-c-buttons as inside elements. Use it combined with other elements may have unexpected effects.
@@ -39,9 +40,9 @@
 //      </egeo-c-buttongroup>
 // </div>
 // <p>The same buttongroup in a container of 110px wide and right aligned.</p>
-// <div style="text-align: right; margin-right: 10px;" data-ng-controller="TestController as TestCtrl">
+// <div style="text-align: right; margin-right: 10px">
 //   <div style="display: inline-block; width: 110px" data-ng-controller="TestController as TestCtrl">
-//      <egeo-c-buttongroup>
+//      <egeo-c-buttongroup popover-to-right="true">
 //          <egeo-c-button data-type="submit" data-modifier="tool-1" data-label="Test 1" data-rounded="true" data-icon-left="icon-datetime" data-ng-click="TestCtrl.test()"></egeo-c-button>
 //          <egeo-c-button data-type="submit" data-modifier="tool-1" data-label="Test 2" data-rounded="true" data-small="true" data-icon-left="icon-datetime" data-ng-click="TestCtrl.test()"></egeo-c-button>
 //          <egeo-c-button data-type="submit" data-modifier="tool-2" data-label="Test 3" data-rounded="true" data-icon-left="icon-datetime" data-ng-click="TestCtrl.test()"></egeo-c-button>
@@ -69,9 +70,9 @@
 //      </egeo-c-buttongroup>
 // </div>
 // <p>The same buttongroup in a container of 110px wide and right aligned.</p>
-// <div style="text-align: right; margin-right: 10px;" data-ng-controller="TestController as TestCtrl">
-//   <div style="display: inline-block; width: 110px" data-ng-controller="TestController as TestCtrl">
-//      <egeo-c-buttongroup>
+// <div style="text-align: right; margin-right: 10px" data-ng-controller="TestController as TestCtrl">
+//   <div style="display: inline-block; width: 110px">
+//      <egeo-c-buttongroup popover-to-right="true">
 //          <egeo-c-button data-type="submit" data-modifier="tool-1" data-label="Test 1" data-rounded="true" data-icon-left="icon-datetime" data-ng-click="TestCtrl.test()"></egeo-c-button>
 //          <egeo-c-button data-type="submit" data-modifier="tool-1" data-label="Test 2" data-rounded="true" data-small="true" data-icon-left="icon-datetime" data-ng-click="TestCtrl.test()"></egeo-c-button>
 //          <egeo-c-button data-type="submit" data-modifier="tool-2" data-label="Test 3" data-rounded="true" data-icon-left="icon-datetime" data-ng-click="TestCtrl.test()"></egeo-c-button>
