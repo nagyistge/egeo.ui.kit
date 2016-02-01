@@ -141,7 +141,7 @@ module.exports = function (grunt) {
           // Includes font files within path and its sub-directories
           {expand: true, cwd: '<%= app.src %>', src: ['**/*.js', '!app.js', '!test.controller.js'], dest: '<%= app.dist %>/<%= app.lib %>'},
           {expand: true, cwd: '<%= app.src %>', src: ['**/*.html'], dest: '<%= app.dist %>/<%= app.lib %>'},
-          {expand: true, cwd: '<%= app.npm %>', src: ['angular-animate/*.js', 'angular/*.js', 'angular-sanitize/*.js'], dest: '<%= app.dist %>/<%= app.lib %>/vendors'}
+          {expand: true, cwd: '<%= app.npm %>', src: ['angular-animate/*.js', 'angular-translate/dist/*', 'angular-translate/dist/**/*', 'angular/*.js', 'angular-sanitize/*.js'], dest: '<%= app.dist %>/<%= app.lib %>/vendors'}
         ],
       },
       upload: {
