@@ -24,7 +24,7 @@
             'egeo.forms'
         ])
 
-        .config(function(EgeoConfigProvider){
+        .config(function(EgeoConfigProvider) {
             EgeoConfigProvider.setEgeoPath('public/js/egeo');
         });
 })();
