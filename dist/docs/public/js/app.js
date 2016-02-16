@@ -19,7 +19,6 @@
             'egeo.childrenClass',
             'egeo.toolbar',
             'egeo.dropdown',
-            'egeo.app-header',
             'egeo.row',
             'egeo.forms'
         ])
