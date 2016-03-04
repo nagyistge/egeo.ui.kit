@@ -227,7 +227,7 @@ and/or the form it is included on.</p>
 HTML input select tag.</p>
 <h3 id="egeo-c-combobox">egeo-c-combobox</h3>
 <p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">tested</span></p>
-<p>Apply the whole styles needed to customize a combobox.</p>
+<p>Apply the whole styles needed to customize a select.</p>
 <h2 id="variables-exposed-to-theming">Variables exposed to theming</h2>
 <table>
 <thead>
@@ -252,13 +252,14 @@ and/or the form it is included on.</p>
 <h3 id="how-to-work-with">How to work with</h3>
 <pre><code>&lt;div ng-controller=&quot;TestController as vm&quot;&gt;
   &lt;egeo-c-form id=&quot;TestForm&quot; method=&quot;post&quot;&gt;
-     &lt;egeo-c-combobox data-id=&quot;test-combobox&quot; data-label=&quot;I read and accept the conditions&quot; data-required=&quot;true&quot; data-qa=&quot;id-for-combobox&quot; data-help-text=&quot;The acceptance of conditions is needed to continue.&quot;&gt;&lt;/egeo-c-combobox&gt;
+     &lt;egeo-c-combobox data-text=&quot;--- Please select ---&quot; data-options=&quot;{{vm.cboptions}}&quot; data-model=&quot;{{vm.cbovalue}}&quot; data-id=&quot;test-combobox&quot; data-label=&quot;Select an option&quot; data-required=&quot;true&quot; data-qa=&quot;id-for-combobox&quot; data-help-text=&quot;Lorem ipsum dolor sit amet.&quot;&gt;
+     &lt;/egeo-c-combobox&gt;
   &lt;/egeo-c-form&gt;
 &lt;/div&gt;
 </code></pre><hr>
 <div ng-controller="TestController as vm">
   <egeo-c-form id="TestForm" method="post">
-     <egeo-c-combobox data-text="--- Please select ---" data-options="{{vm.cboptions}}" data-model="{{vm.cbovalue}}" data-id="test-combobox" data-label="Select an option" data-required="true" data-qa="id-for-combobox" data-help-text="The acceptance of conditions is needed to continue.">
+     <egeo-c-combobox data-text="--- Please select ---" data-options="{{vm.cboptions}}" data-model="{{vm.cbovalue}}" data-id="test-combobox" data-label="Select an option" data-required="true" data-qa="id-for-combobox" data-help-text="Lorem ipsum dolor sit amet.">
      </egeo-c-combobox>
   </egeo-c-form>
 </div>

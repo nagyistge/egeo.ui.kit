@@ -9,7 +9,7 @@
 // 
 // <span class="tag tag--type">@mixin</span><span class="tag tag--tested">tested</span>
 //
-// Apply the whole styles needed to customize a combobox.
+// Apply the whole styles needed to customize a select.
 //
 // ## Variables exposed to theming
 //
@@ -28,7 +28,7 @@
 // ```
 // <div ng-controller="TestController as vm">
 //   <egeo-c-form id="TestForm" method="post">
-//      <egeo-c-combobox data-text="--- Please select ---" data-options="{{vm.cboptions}}" data-model="{{vm.cbovalue}}" data-id="test-combobox" data-label="Select an option" data-required="true" data-qa="id-for-combobox" data-help-text="The acceptance of conditions is needed to continue.">
+//      <egeo-c-combobox data-text="--- Please select ---" data-options="{{vm.cboptions}}" data-model="{{vm.cbovalue}}" data-id="test-combobox" data-label="Select an option" data-required="true" data-qa="id-for-combobox" data-help-text="Lorem ipsum dolor sit amet.">
 //      </egeo-c-combobox>
 //   </egeo-c-form>
 // </div>
@@ -37,7 +37,7 @@
 // ---
 // <div ng-controller="TestController as vm">
 //   <egeo-c-form id="TestForm" method="post">
-//      <egeo-c-combobox data-text="--- Please select ---" data-options="{{vm.cboptions}}" data-model="{{vm.cbovalue}}" data-id="test-combobox" data-label="Select an option" data-required="true" data-qa="id-for-combobox" data-help-text="The acceptance of conditions is needed to continue.">
+//      <egeo-c-combobox data-text="--- Please select ---" data-options="{{vm.cboptions}}" data-model="{{vm.cbovalue}}" data-id="test-combobox" data-label="Select an option" data-required="true" data-qa="id-for-combobox" data-help-text="Lorem ipsum dolor sit amet.">
 //      </egeo-c-combobox>
 //   </egeo-c-form>
 // </div>
