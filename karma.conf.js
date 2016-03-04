@@ -11,6 +11,7 @@ module.exports = function (config) {
       'src/vendors/angular-bind-html-compile/angular-bind-html-compile.js',
 
       'tests/app.js',
+      'tests/test.controller.js',
       'src/providers/*.js',
       'src/factories/*.js',
       'src/components/form/components.form.directive.js',

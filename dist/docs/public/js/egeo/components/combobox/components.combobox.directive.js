@@ -1,11 +1,11 @@
 (function() {
-    use 'strict';
+    'use strict';
 
     angular
-        .module('egeo.combobox', [])
+        .module('egeo.forms')
         .directive('egeoCCombobox', egeoCCombobox);
 
-    egeoCCombobox = $inject['EgeoConfig'];
+    egeoCCombobox.$inject = ['EgeoConfig'];
 
     function egeoCCombobox(EgeoConfig) {
         var directive = {
@@ -17,10 +17,14 @@
                 disabled: '@',
                 helpText: '@',
                 id: '@',
+                label: '@',
+                model: '@',
                 options: '@',
-                required: '@'
+                required: '@',
+                select: '@',
+                text: '@'
             },
-            templateUrl: EgeoConfig.getPath() + '/components/combobox/components.combobox.tpl.html';
+            templateUrl: EgeoConfig.getEgeoPath() + '/components/combobox/components.combobox.tpl.html'
         }
 
         return directive;

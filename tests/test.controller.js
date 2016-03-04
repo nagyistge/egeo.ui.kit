@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('myApp')
+        .module('egeo')
         .controller('TestController', TestController);
 
     function TestController() {

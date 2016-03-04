@@ -39,6 +39,7 @@
               <li class="kss-menu-item"><a href="#section-5.4"><span class="kss-ref">5.4</span><span class="kss-name">Label</span></a></li>
               <li class="kss-menu-item"><a href="#section-5.5"><span class="kss-ref">5.5</span><span class="kss-name">Input</span></a></li>
               <li class="kss-menu-item"><a href="#section-5.6"><span class="kss-ref">5.6</span><span class="kss-name">Checkbox</span></a></li>
+              <li class="kss-menu-item"><a href="#section-5.7"><span class="kss-ref">5.7</span><span class="kss-name">Combobox</span></a></li>
               <li class="kss-menu-item"><a href="#section-5.11"><span class="kss-ref">5.11</span><span class="kss-name">Button</span></a></li>
               <li class="kss-menu-item"><a href="#section-5.12"><span class="kss-ref">5.12</span><span class="kss-name">Button Group</span></a></li>
               <li class="kss-menu-item"><a href="#section-5.14"><span class="kss-ref">5.14</span><span class="kss-name">Row</span></a></li>
@@ -196,13 +197,13 @@ and/or the form it is included on.</p>
 <h3 id="how-to-work-with">How to work with</h3>
 <pre><code>&lt;div ng-controller=&quot;TestController as vm&quot;&gt;
   &lt;egeo-c-form id=&quot;TestForm&quot; method=&quot;post&quot;&gt;
-     &lt;egeo-c-checkbox data-id=&quot;test-checkbox&quot; data-label=&quot;I read and accept the conditions&quot; data-model=&quot;vm.isRead&quot; data-required=&quot;true&quot; data-qa=&quot;id-for-checkbox&quot; data-help-text=&quot;The acceptance of conditions is needed to continue.&quot;&gt;&lt;/egeo-c-checkbox&gt;
+     &lt;egeo-c-checkbox data-id=&quot;test-checkbox&quot; data-label=&quot;I read and accept the conditions&quot; data-required=&quot;true&quot; data-qa=&quot;id-for-checkbox&quot; data-help-text=&quot;The acceptance of conditions is needed to continue.&quot;&gt;&lt;/egeo-c-checkbox&gt;
   &lt;/egeo-c-form&gt;
 &lt;/div&gt;
 </code></pre><hr>
 <div ng-controller="TestController as vm">
   <egeo-c-form id="TestForm" method="post">
-     <egeo-c-checkbox data-id="test-checkbox" data-label="I read and accept the conditions" data-model="vm.isRead" data-required="true" data-qa="id-for-checkbox" data-help-text="The acceptance of conditions is needed to continue."></egeo-c-checkbox>
+     <egeo-c-checkbox data-id="test-checkbox" data-label="I read and accept the conditions" data-required="true" data-qa="id-for-checkbox" data-help-text="The acceptance of conditions is needed to continue."></egeo-c-checkbox>
   </egeo-c-form>
 </div>
 
@@ -210,6 +211,62 @@ and/or the form it is included on.</p>
 <h2 id="dependencies">Dependencies</h2>
 <ul>
 <li><a href="../ui-base/section-7.html#section-7.15">CSS Base Framework - components.checkbox</a></li>
+<li><a href="../ui-base/section-7.html#section-7.14">CSS Base Framework - components.label</a></li>
+<li><a href="../ui-base/section-7.html#section-7.16">CSS Base Framework - components.helpbox</a></li>
+<li><a href="../ui-base/section-7.html#section-7.17">CSS Base Framework - components.message</a></li>
+<li><a href="../ui-base/section-7.html#section-7.3">CSS Base Framework - components.icon</a></li>
+</ul>
+<div class="compatibility">Compatibility IE9+, Firefox Latest, Chrome Latest, Edge Latest, Safari Latest, Opera Latest</div>
+            </div>
+          </section>
+          <section id="section-5.7" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">5.7</span> Combobox</h1>
+            <div class="kss-description">
+              <p><span class="tag tag--tested">tested</span><span class="tag tag--danger">alpha version</span></p>
+<p>The Combobox Component is a class to show the Egeo custom version of an
+HTML input select tag.</p>
+<h3 id="egeo-c-combobox">egeo-c-combobox</h3>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">tested</span></p>
+<p>Apply the whole styles needed to customize a combobox.</p>
+<h2 id="variables-exposed-to-theming">Variables exposed to theming</h2>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="egeo-u-nowrap">$egeo-c-combobox</span></td>
+<td><span class="egeo-u-nowrap"><code>true</code> </span></td>
+<td>Tells Egeo if the class egeo-c-combobox should be included in the CSS.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-egeo-c-combobox-angularjs-directive">The egeo-c-combobox AngularJS directive</h2>
+<p>Egeo includes an AngularJS directive to be used in Angular apps to allow developers to integrate the whole classes, properties and
+functionalities with no effort. The directive is the responsible of apply different styles depending of the status of the combobox itself
+and/or the form it is included on.</p>
+<h3 id="how-to-work-with">How to work with</h3>
+<pre><code>&lt;div ng-controller=&quot;TestController as vm&quot;&gt;
+  &lt;egeo-c-form id=&quot;TestForm&quot; method=&quot;post&quot;&gt;
+     &lt;egeo-c-combobox data-id=&quot;test-combobox&quot; data-label=&quot;I read and accept the conditions&quot; data-required=&quot;true&quot; data-qa=&quot;id-for-combobox&quot; data-help-text=&quot;The acceptance of conditions is needed to continue.&quot;&gt;&lt;/egeo-c-combobox&gt;
+  &lt;/egeo-c-form&gt;
+&lt;/div&gt;
+</code></pre><hr>
+<div ng-controller="TestController as vm">
+  <egeo-c-form id="TestForm" method="post">
+     <egeo-c-combobox data-text="--- Please select ---" data-options="{{vm.cboptions}}" data-model="{{vm.cbovalue}}" data-id="test-combobox" data-label="Select an option" data-required="true" data-qa="id-for-combobox" data-help-text="The acceptance of conditions is needed to continue.">
+     </egeo-c-combobox>
+  </egeo-c-form>
+</div>
+
+<hr>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li><a href="../ui-base/section-7.html#section-7.15">CSS Base Framework - components.combobox</a></li>
 <li><a href="../ui-base/section-7.html#section-7.14">CSS Base Framework - components.label</a></li>
 <li><a href="../ui-base/section-7.html#section-7.16">CSS Base Framework - components.helpbox</a></li>
 <li><a href="../ui-base/section-7.html#section-7.17">CSS Base Framework - components.message</a></li>
@@ -601,6 +658,8 @@ transclude content.  Below you can see the properties exposed:</p>
 <script src="public/js/egeo/components/input/components.input.controller.js"></script>
 <script src="public/js/egeo/components/checkbox/components.checkbox.directive.js"></script>
 <script src="public/js/egeo/components/checkbox/components.checkbox.controller.js"></script>
+<script src="public/js/egeo/components/combobox/components.combobox.directive.js"></script>
+<script src="public/js/egeo/components/combobox/components.combobox.controller.js"></script>
 
   </body>
 </html>

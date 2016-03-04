@@ -8,8 +8,8 @@
         </i>
     </label>
 
-    <select class="egeo-c-combobox" id="{{id}}" name="{{id}}" data-ng-model="model" data-ng-required="{{required}}" data-ng-disabled="{{disabled}}" data-ng-focus="vm.isFocused = true" data-ng-blur="vm.isFocused = false">
-      <option ng-repeat="option in options" value="{{option.value}}">{{option.label}}</option>
+    <select class="egeo-c-combobox" id="{{id}}" name="{{id}}" data-ng-model="model" data-ng-required="{{required}}" data-ng-disabled="{{disabled}}" data-ng-focus="vm.isFocused = true" data-ng-blur="vm.isFocused = false" data-ng-options="o.label for o in {{options}} track by o.id" data-ng-model="model">
+        <option value="">{{text}}</option>
     </select>
 
     <div class="egeo-c-helpbox" data-ng-if="(vm.isFocused && vm.hasHelp) || (!this[id].$valid && this[id][id].$touched)">
