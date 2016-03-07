@@ -40,6 +40,7 @@
               <li class="kss-menu-item"><a href="#section-5.5"><span class="kss-ref">5.5</span><span class="kss-name">Input</span></a></li>
               <li class="kss-menu-item"><a href="#section-5.6"><span class="kss-ref">5.6</span><span class="kss-name">Checkbox</span></a></li>
               <li class="kss-menu-item"><a href="#section-5.7"><span class="kss-ref">5.7</span><span class="kss-name">Combobox</span></a></li>
+              <li class="kss-menu-item"><a href="#section-5.8"><span class="kss-ref">5.8</span><span class="kss-name">Radiobutton</span></a></li>
               <li class="kss-menu-item"><a href="#section-5.11"><span class="kss-ref">5.11</span><span class="kss-name">Button</span></a></li>
               <li class="kss-menu-item"><a href="#section-5.12"><span class="kss-ref">5.12</span><span class="kss-name">Button Group</span></a></li>
               <li class="kss-menu-item"><a href="#section-5.14"><span class="kss-ref">5.14</span><span class="kss-name">Row</span></a></li>
@@ -267,7 +268,64 @@ and/or the form it is included on.</p>
 <hr>
 <h2 id="dependencies">Dependencies</h2>
 <ul>
-<li><a href="../ui-base/section-7.html#section-7.15">CSS Base Framework - components.combobox</a></li>
+<li><a href="../ui-base/section-7.html#section-7.18">CSS Base Framework - components.combobox</a></li>
+<li><a href="../ui-base/section-7.html#section-7.14">CSS Base Framework - components.label</a></li>
+<li><a href="../ui-base/section-7.html#section-7.16">CSS Base Framework - components.helpbox</a></li>
+<li><a href="../ui-base/section-7.html#section-7.17">CSS Base Framework - components.message</a></li>
+<li><a href="../ui-base/section-7.html#section-7.3">CSS Base Framework - components.icon</a></li>
+</ul>
+<div class="compatibility">Compatibility IE9+, Firefox Latest, Chrome Latest, Edge Latest, Safari Latest, Opera Latest</div>
+            </div>
+          </section>
+          <section id="section-5.8" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">5.8</span> Radiobutton</h1>
+            <div class="kss-description">
+              <p><span class="tag tag--untested">untested</span><span class="tag tag--danger">alpha version</span></p>
+<p>The radiobutton Component is a class to show the Egeo custom version of an
+HTML input radiobutton tag.</p>
+<h3 id="egeo-c-radiobutton">egeo-c-radiobutton</h3>
+<p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">tested</span></p>
+<p>Apply the whole styles needed to customize a radiobutton.</p>
+<h2 id="variables-exposed-to-theming">Variables exposed to theming</h2>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="egeo-u-nowrap">$egeo-c-radiobutton</span></td>
+<td><span class="egeo-u-nowrap"><code>true</code> </span></td>
+<td>Tells Egeo if the class egeo-c-radiobutton should be included in the CSS.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-egeo-c-radiobutton-angularjs-directive">The egeo-c-radiobutton AngularJS directive</h2>
+<p>Egeo includes an AngularJS directive to be used in Angular apps to allow developers to integrate the whole classes, properties and
+functionalities with no effort. The directive is the responsible of apply different styles depending of the status of the radiobutton itself
+and/or the form it is included on.</p>
+<h3 id="how-to-work-with">How to work with</h3>
+<pre><code>&lt;div ng-controller=&quot;TestController as vm&quot;&gt;
+  &lt;egeo-c-form id=&quot;TestForm&quot; method=&quot;post&quot;&gt;
+     &lt;egeo-c-radiobutton data-id=&quot;test-radiobutton1&quot; data-cname=&quot;radiobutton-name&quot; data-value=&quot;1&quot; data-label=&quot;opt 1&quot; data-required=&quot;true&quot; data-qa=&quot;id-for-radiobutton&quot; data-help-text=&quot;Lorem ipsum dolor.&quot;&gt;&lt;/egeo-c-radiobutton&gt;
+     &lt;egeo-c-radiobutton data-id=&quot;test-radiobutton2&quot; data-cname=&quot;radiobutton-name&quot; data-value=&quot;2&quot; data-label=&quot;opt 2&quot; data-required=&quot;true&quot; data-qa=&quot;id-for-radiobutton&quot; data-help-text=&quot;Lorem ipsum dolor sit amet.&quot;&gt;&lt;/egeo-c-radiobutton&gt;
+  &lt;/egeo-c-form&gt;
+&lt;/div&gt;
+</code></pre><hr>
+<div ng-controller="TestController as vm">
+  <egeo-c-form id="TestForm" method="post">
+     <egeo-c-radiobutton data-id="test-radiobutton1" data-cname="radiobutton-name" data-value="1" data-label="opt 1" data-required="true" data-qa="id-for-radiobutton" data-help-text="Lorem ipsum dolor."></egeo-c-radiobutton>
+     <egeo-c-radiobutton data-id="test-radiobutton2" data-cname="radiobutton-name" data-value="2" data-label="opt 2" data-required="true" data-qa="id-for-radiobutton" data-help-text="Lorem ipsum dolor sit amet."></egeo-c-radiobutton>
+  </egeo-c-form>
+</div>
+
+<hr>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li><a href="../ui-base/section-7.html#section-7.15">CSS Base Framework - components.radiobutton</a></li>
 <li><a href="../ui-base/section-7.html#section-7.14">CSS Base Framework - components.label</a></li>
 <li><a href="../ui-base/section-7.html#section-7.16">CSS Base Framework - components.helpbox</a></li>
 <li><a href="../ui-base/section-7.html#section-7.17">CSS Base Framework - components.message</a></li>
@@ -661,6 +719,8 @@ transclude content.  Below you can see the properties exposed:</p>
 <script src="public/js/egeo/components/checkbox/components.checkbox.controller.js"></script>
 <script src="public/js/egeo/components/combobox/components.combobox.directive.js"></script>
 <script src="public/js/egeo/components/combobox/components.combobox.controller.js"></script>
+<script src="public/js/egeo/components/radiobutton/components.radiobutton.directive.js"></script>
+<script src="public/js/egeo/components/radiobutton/components.radiobutton.controller.js"></script>
 
   </body>
 </html>
