@@ -18,7 +18,6 @@
             'egeo.buttons',
             'egeo.childrenClass',
             'egeo.toolbar',
-            'egeo.dropdown',
             'egeo.row',
             'egeo.forms'
         ])
