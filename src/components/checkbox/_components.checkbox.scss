@@ -5,25 +5,27 @@
 // The Checkbox Component is a class to show the Egeo custom version of an
 // HTML input checkbox tag.
 //
-// ### egeo-c-checkbox
+// ## The egeo-c-checkbox AngularJS directive
 // 
 // <span class="tag tag--type">@mixin</span><span class="tag tag--tested">tested</span>
-//
-// Apply the whole styles needed to customize a checkbox.
-//
-// ## Variables exposed to theming
-//
-// | Variable                                                       | Default value                                      | Description                                                              |
-// | -------------------------------------------------------------- | -------------------------------------------------- | ------------------------------------------------------------------------ |
-// | <span class="egeo-u-nowrap">$egeo-c-checkbox</span>            | <span class="egeo-u-nowrap">`true` </span>         | Tells Egeo if the class egeo-c-checkbox should be included in the CSS.   |
-//
-// ## The egeo-c-checkbox AngularJS directive
 //
 // Egeo includes an AngularJS directive to be used in Angular apps to allow developers to integrate the whole classes, properties and
 // functionalities with no effort. The directive is the responsible of apply different styles depending of the status of the checkbox itself
 // and/or the form it is included on.
 //
-// ### How to work with
+// ### Directive settings
+//
+// | Variable   | Default value     | Description                                                                   |
+// | ---------- | ----------------- | ----------------------------------------------------------------------------- |
+// | disabled   | `false`           | Tell whether the checkbox is disabled or not.                                 |
+// | helpText   | none              | The help text the component should show when the user clicks on the help icon.|
+// | id         | none              | The id of the input.                                                          |
+// | label      | none              | The text of the label will appear beside the checkbox.                        |
+// | model      | none              | AngularJS model to bind the value of the component.                           |
+// | qa         | none              | Identifier used by QA team for testing purposes.                              |
+// | required   | `false`           | Tell whether the checkbox is required or not.                                 |
+//
+// ### Usage
 //
 // ```
 // <div ng-controller="TestController as vm">

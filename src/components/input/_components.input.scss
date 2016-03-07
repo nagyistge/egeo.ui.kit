@@ -11,7 +11,22 @@
 // functionalities with no effort. The directive is the responsible of apply different styles depending of the status of the input itself
 // and/or the form it is included on.
 //
-// ### How to work with
+// ### Directive settings
+//
+// | Variable   | Default value     | Description                                                                   |
+// | ---------- | ----------------- | ----------------------------------------------------------------------------- |
+// | disabled   | `false`           | Tell whether the input is disabled or not.                                    |
+// | helpText   | none              | The help text the component should show when the user clicks on the help icon.|
+// | id         | none              | The id of the input.                                                          |
+// | label      | none              | The text of the label will appear beside the input.                           |
+// | model      | none              | AngularJS model to bind the value of the component.                           |
+// | pattern    | none              | Pattern applied to validate content using Angular forms validation.           |
+// | placeholder| none              | Placeholder value of the input.                                               |
+// | qa         | none              | Identifier used by QA team for testing purposes.                              |
+// | required   | `false`           | Tell whether the input is required or not.                                    |
+// | type       | none              | HTML type of the input (check options [here](http://www.w3schools.com/tags/att_input_type.asp)). |
+//
+// ### Usage
 //
 // ```
 // <div ng-controller="TestController as vm">

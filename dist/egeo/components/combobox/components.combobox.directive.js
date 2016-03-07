@@ -20,8 +20,8 @@
                 label: '@',
                 model: '@',
                 options: '@',
+                qa: '@',
                 required: '@',
-                select: '@',
                 text: '@'
             },
             templateUrl: EgeoConfig.getEgeoPath() + '/components/combobox/components.combobox.tpl.html'

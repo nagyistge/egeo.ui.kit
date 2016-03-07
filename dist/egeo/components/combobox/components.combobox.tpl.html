@@ -8,7 +8,7 @@
         </i>
     </label>
 
-    <select class="egeo-c-combobox" id="{{id}}" name="{{id}}" data-ng-model="model" data-ng-required="{{required}}" data-ng-disabled="{{disabled}}" data-ng-focus="vm.isFocused = true" data-ng-blur="vm.isFocused = false" data-ng-options="o.label for o in {{options}} track by o.id" data-ng-model="model">
+    <select class="egeo-c-combobox" id="{{id}}" name="{{id}}" data-ng-model="model" data-ng-required="{{required}}" data-ng-disabled="{{disabled}}" data-ng-focus="vm.isFocused = true" data-ng-blur="vm.isFocused = false" data-ng-options="o.label for o in {{options}} track by o.id" data-ng-model="model" data-qa="{{qa}}">
         <option value="">{{text}}</option>
     </select>
 

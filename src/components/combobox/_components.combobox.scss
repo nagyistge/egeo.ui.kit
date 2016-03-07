@@ -5,25 +5,29 @@
 // The Combobox Component is a class to show the Egeo custom version of an
 // HTML input select tag.
 //
-// ### egeo-c-combobox
+// ## The egeo-c-combobox AngularJS directive
 // 
 // <span class="tag tag--type">@mixin</span><span class="tag tag--tested">tested</span>
-//
-// Apply the whole styles needed to customize a select.
-//
-// ## Variables exposed to theming
-//
-// | Variable                                                       | Default value                                      | Description                                                              |
-// | -------------------------------------------------------------- | -------------------------------------------------- | ------------------------------------------------------------------------ |
-// | <span class="egeo-u-nowrap">$egeo-c-combobox</span>            | <span class="egeo-u-nowrap">`true` </span>         | Tells Egeo if the class egeo-c-combobox should be included in the CSS.   |
-//
-// ## The egeo-c-combobox AngularJS directive
 //
 // Egeo includes an AngularJS directive to be used in Angular apps to allow developers to integrate the whole classes, properties and
 // functionalities with no effort. The directive is the responsible of apply different styles depending of the status of the combobox itself
 // and/or the form it is included on.
 //
-// ### How to work with
+// ### Directive settings
+//
+// | Variable   | Default value     | Description                                                                   |
+// | ---------- | ----------------- | ----------------------------------------------------------------------------- |
+// | disabled   | `false`           | Tell whether the select is disabled or not.                                   |
+// | helpText   | none              | The help text the component should show when the user clicks on the help icon.|
+// | id         | none              | The id of the select.                                                         |
+// | label      | none              | The text of the label will appear beside the select.                          |
+// | model      | none              | AngularJS model to bind the value of the component.                           |
+// | options    | none              | An array of objects with label/value/selected properties to create the options of the select. Sample: `[{id: 1, label: "opt 1", selected: false}, {id: 2, label: "opt 2", selected: true}, {id: 3, label: "opt 3"}];` |
+// | qa         | none              | Identifier used by QA team for testing purposes.                              |
+// | required   | `false`           | Tell whether the select is required or not.                                   |
+// | text       | none              | The text will appear inside the select if none was selected.                  |
+//
+// ### Usage
 //
 // ```
 // <div ng-controller="TestController as vm">

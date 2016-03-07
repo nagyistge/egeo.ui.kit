@@ -45,7 +45,6 @@
               <li class="kss-menu-item"><a href="#section-5.12"><span class="kss-ref">5.12</span><span class="kss-name">Button Group</span></a></li>
               <li class="kss-menu-item"><a href="#section-5.14"><span class="kss-ref">5.14</span><span class="kss-name">Row</span></a></li>
               <li class="kss-menu-item"><a href="#section-5.15"><span class="kss-ref">5.15</span><span class="kss-name">Toolbar</span></a></li>
-              <li class="kss-menu-item"><a href="#section-5.16"><span class="kss-ref">5.16</span><span class="kss-name">Dropdown</span></a></li>
             </ul>
           </nav>
         </div>
@@ -65,7 +64,33 @@
               <p><span class="tag tag--tested">tested</span><span class="tag tag--warn">beta version</span></p>
 <p>The Form component is a wrapper to group all components inside an HTML Form
 logically related to the CSS.</p>
-<h2 id="how-to-work-with-forms">How to work with forms</h2>
+<h2 id="the-egeo-c-form-angularjs-directive">The egeo-c-form AngularJS directive</h2>
+<p>Egeo includes an AngularJS directive to be used in Angular apps to allow developers to integrate the whole classes, properties and
+functionalities with no effort. The directive is the responsible of apply different styles depending of the status of the input itself
+and/or the form it is included on.</p>
+<h3 id="directive-settings">Directive settings</h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>none</td>
+<td>The id of the form.</td>
+</tr>
+<tr>
+<td>method</td>
+<td>none</td>
+<td>GET/POST.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usage">Usage</h2>
 <pre><code>&lt;egeo-c-form id=&quot;TestForm&quot; method=&quot;post&quot;&gt;
      &lt;egeo-c-formgroup&gt;
          &lt;label class=&quot;egeo-c-label&quot; for=&quot;test1&quot;&gt;test:&lt;/label&gt;&lt;input class=&quot;egeo-c-input&quot; type=&quot;text&quot; id=&quot;test1&quot;&gt;
@@ -92,7 +117,11 @@ logically related to the CSS.</p>
 <p>The Form Group component is a wrapper to group components inside an HTML Form
 that can be joined to work together. A typical example of a form group is a
 label with an input.</p>
-<h2 id="usage">Usage</h2>
+<h2 id="the-egeo-c-formgroup-angularjs-directive">The egeo-c-formgroup AngularJS directive</h2>
+<p>Egeo includes an AngularJS directive to be used in Angular apps to allow developers to integrate the whole classes, properties and
+functionalities with no effort. The directive is the responsible of apply different styles depending of the status of the input itself
+and/or the form it is included on.</p>
+<h3 id="usage">Usage</h3>
 <pre><code>     &lt;egeo-c-formgroup&gt;
          &lt;label class=&quot;egeo-c-label&quot; for=&quot;test6&quot;&gt;test:&lt;/label&gt;&lt;input class=&quot;egeo-c-input&quot; type=&quot;text&quot; id=&quot;test6&quot;&gt;
      &lt;/egeo-c-formgroup&gt;
@@ -115,6 +144,28 @@ label with an input.</p>
               <p><span class="tag tag--tested">tested</span><span class="tag tag--danger">internal</span></p>
 <p>The Label Component is a class to show the Egeo custom version of an
 HTML label tag.</p>
+<h3 id="directive-settings">Directive settings</h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>none</td>
+<td>The id of the labe.</td>
+</tr>
+<tr>
+<td>label</td>
+<td>none</td>
+<td>The text of the label.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="usage">Usage</h2>
 <pre><code>&lt;egeo-c-label id=&quot;labelid&quot; label=&quot;test&quot;&gt;&lt;/egeo-c-label&gt;
 </code></pre><p>Will produce the next result:</p>
@@ -138,7 +189,69 @@ HTML input tag.</p>
 <p>Egeo includes an AngularJS directive to be used in Angular apps to allow developers to integrate the whole classes, properties and
 functionalities with no effort. The directive is the responsible of apply different styles depending of the status of the input itself
 and/or the form it is included on.</p>
-<h3 id="how-to-work-with">How to work with</h3>
+<h3 id="directive-settings">Directive settings</h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>disabled</td>
+<td><code>false</code></td>
+<td>Tell whether the input is disabled or not.</td>
+</tr>
+<tr>
+<td>helpText</td>
+<td>none</td>
+<td>The help text the component should show when the user clicks on the help icon.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>none</td>
+<td>The id of the input.</td>
+</tr>
+<tr>
+<td>label</td>
+<td>none</td>
+<td>The text of the label will appear beside the input.</td>
+</tr>
+<tr>
+<td>model</td>
+<td>none</td>
+<td>AngularJS model to bind the value of the component.</td>
+</tr>
+<tr>
+<td>pattern</td>
+<td>none</td>
+<td>Pattern applied to validate content using Angular forms validation.</td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td>none</td>
+<td>Placeholder value of the input.</td>
+</tr>
+<tr>
+<td>qa</td>
+<td>none</td>
+<td>Identifier used by QA team for testing purposes.</td>
+</tr>
+<tr>
+<td>required</td>
+<td><code>false</code></td>
+<td>Tell whether the input is required or not.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>none</td>
+<td>HTML type of the input (check options <a href="http://www.w3schools.com/tags/att_input_type.asp">here</a>).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="usage">Usage</h3>
 <pre><code>&lt;div ng-controller=&quot;TestController as vm&quot;&gt;
   &lt;egeo-c-form id=&quot;TestForm&quot; method=&quot;post&quot;&gt;
      &lt;egeo-c-input data-id=&quot;username&quot; data-label=&quot;username&quot; data-placeholder=&quot;Ex. dwalsh&quot; data-type=&quot;text&quot; data-model=&quot;vm.username&quot; data-pattern=&quot;&#39;([a-zA-Z0-9]*)&#39;&quot; data-required=&quot;true&quot; data-qa=&quot;id-for-username&quot; data-help-text=&quot;The username is needed to login into our applications. Only numbers and letters are allowed.&quot;&gt;&lt;/egeo-c-input&gt;
@@ -171,10 +284,12 @@ and/or the form it is included on.</p>
               <p><span class="tag tag--tested">tested</span><span class="tag tag--danger">alpha version</span></p>
 <p>The Checkbox Component is a class to show the Egeo custom version of an
 HTML input checkbox tag.</p>
-<h3 id="egeo-c-checkbox">egeo-c-checkbox</h3>
+<h2 id="the-egeo-c-checkbox-angularjs-directive">The egeo-c-checkbox AngularJS directive</h2>
 <p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">tested</span></p>
-<p>Apply the whole styles needed to customize a checkbox.</p>
-<h2 id="variables-exposed-to-theming">Variables exposed to theming</h2>
+<p>Egeo includes an AngularJS directive to be used in Angular apps to allow developers to integrate the whole classes, properties and
+functionalities with no effort. The directive is the responsible of apply different styles depending of the status of the checkbox itself
+and/or the form it is included on.</p>
+<h3 id="directive-settings">Directive settings</h3>
 <table>
 <thead>
 <tr>
@@ -185,17 +300,43 @@ HTML input checkbox tag.</p>
 </thead>
 <tbody>
 <tr>
-<td><span class="egeo-u-nowrap">$egeo-c-checkbox</span></td>
-<td><span class="egeo-u-nowrap"><code>true</code> </span></td>
-<td>Tells Egeo if the class egeo-c-checkbox should be included in the CSS.</td>
+<td>disabled</td>
+<td><code>false</code></td>
+<td>Tell whether the checkbox is disabled or not.</td>
+</tr>
+<tr>
+<td>helpText</td>
+<td>none</td>
+<td>The help text the component should show when the user clicks on the help icon.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>none</td>
+<td>The id of the input.</td>
+</tr>
+<tr>
+<td>label</td>
+<td>none</td>
+<td>The text of the label will appear beside the checkbox.</td>
+</tr>
+<tr>
+<td>model</td>
+<td>none</td>
+<td>AngularJS model to bind the value of the component.</td>
+</tr>
+<tr>
+<td>qa</td>
+<td>none</td>
+<td>Identifier used by QA team for testing purposes.</td>
+</tr>
+<tr>
+<td>required</td>
+<td><code>false</code></td>
+<td>Tell whether the checkbox is required or not.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="the-egeo-c-checkbox-angularjs-directive">The egeo-c-checkbox AngularJS directive</h2>
-<p>Egeo includes an AngularJS directive to be used in Angular apps to allow developers to integrate the whole classes, properties and
-functionalities with no effort. The directive is the responsible of apply different styles depending of the status of the checkbox itself
-and/or the form it is included on.</p>
-<h3 id="how-to-work-with">How to work with</h3>
+<h3 id="usage">Usage</h3>
 <pre><code>&lt;div ng-controller=&quot;TestController as vm&quot;&gt;
   &lt;egeo-c-form id=&quot;TestForm&quot; method=&quot;post&quot;&gt;
      &lt;egeo-c-checkbox data-id=&quot;test-checkbox&quot; data-label=&quot;I read and accept the conditions&quot; data-required=&quot;true&quot; data-qa=&quot;id-for-checkbox&quot; data-help-text=&quot;The acceptance of conditions is needed to continue.&quot;&gt;&lt;/egeo-c-checkbox&gt;
@@ -226,10 +367,12 @@ and/or the form it is included on.</p>
               <p><span class="tag tag--tested">tested</span><span class="tag tag--danger">alpha version</span></p>
 <p>The Combobox Component is a class to show the Egeo custom version of an
 HTML input select tag.</p>
-<h3 id="egeo-c-combobox">egeo-c-combobox</h3>
+<h2 id="the-egeo-c-combobox-angularjs-directive">The egeo-c-combobox AngularJS directive</h2>
 <p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">tested</span></p>
-<p>Apply the whole styles needed to customize a select.</p>
-<h2 id="variables-exposed-to-theming">Variables exposed to theming</h2>
+<p>Egeo includes an AngularJS directive to be used in Angular apps to allow developers to integrate the whole classes, properties and
+functionalities with no effort. The directive is the responsible of apply different styles depending of the status of the combobox itself
+and/or the form it is included on.</p>
+<h3 id="directive-settings">Directive settings</h3>
 <table>
 <thead>
 <tr>
@@ -240,17 +383,53 @@ HTML input select tag.</p>
 </thead>
 <tbody>
 <tr>
-<td><span class="egeo-u-nowrap">$egeo-c-combobox</span></td>
-<td><span class="egeo-u-nowrap"><code>true</code> </span></td>
-<td>Tells Egeo if the class egeo-c-combobox should be included in the CSS.</td>
+<td>disabled</td>
+<td><code>false</code></td>
+<td>Tell whether the select is disabled or not.</td>
+</tr>
+<tr>
+<td>helpText</td>
+<td>none</td>
+<td>The help text the component should show when the user clicks on the help icon.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>none</td>
+<td>The id of the select.</td>
+</tr>
+<tr>
+<td>label</td>
+<td>none</td>
+<td>The text of the label will appear beside the select.</td>
+</tr>
+<tr>
+<td>model</td>
+<td>none</td>
+<td>AngularJS model to bind the value of the component.</td>
+</tr>
+<tr>
+<td>options</td>
+<td>none</td>
+<td>An array of objects with label/value/selected properties to create the options of the select. Sample: <code>[{id: 1, label: &quot;opt 1&quot;, selected: false}, {id: 2, label: &quot;opt 2&quot;, selected: true}, {id: 3, label: &quot;opt 3&quot;}];</code></td>
+</tr>
+<tr>
+<td>qa</td>
+<td>none</td>
+<td>Identifier used by QA team for testing purposes.</td>
+</tr>
+<tr>
+<td>required</td>
+<td><code>false</code></td>
+<td>Tell whether the select is required or not.</td>
+</tr>
+<tr>
+<td>text</td>
+<td>none</td>
+<td>The text will appear inside the select if none was selected.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="the-egeo-c-combobox-angularjs-directive">The egeo-c-combobox AngularJS directive</h2>
-<p>Egeo includes an AngularJS directive to be used in Angular apps to allow developers to integrate the whole classes, properties and
-functionalities with no effort. The directive is the responsible of apply different styles depending of the status of the combobox itself
-and/or the form it is included on.</p>
-<h3 id="how-to-work-with">How to work with</h3>
+<h3 id="usage">Usage</h3>
 <pre><code>&lt;div ng-controller=&quot;TestController as vm&quot;&gt;
   &lt;egeo-c-form id=&quot;TestForm&quot; method=&quot;post&quot;&gt;
      &lt;egeo-c-combobox data-text=&quot;--- Please select ---&quot; data-options=&quot;{{vm.cboptions}}&quot; data-model=&quot;{{vm.cbovalue}}&quot; data-id=&quot;test-combobox&quot; data-label=&quot;Select an option&quot; data-required=&quot;true&quot; data-qa=&quot;id-for-combobox&quot; data-help-text=&quot;Lorem ipsum dolor sit amet.&quot;&gt;
@@ -280,13 +459,15 @@ and/or the form it is included on.</p>
           <section id="section-5.8" class="kss-section kss-depth-2">
             <h1 class="kss-title"><span class="kss-ref">5.8</span> Radiobutton</h1>
             <div class="kss-description">
-              <p><span class="tag tag--untested">untested</span><span class="tag tag--danger">alpha version</span></p>
+              <p><span class="tag tag--tested">tested</span><span class="tag tag--danger">alpha version</span></p>
 <p>The radiobutton Component is a class to show the Egeo custom version of an
 HTML input radiobutton tag.</p>
-<h3 id="egeo-c-radiobutton">egeo-c-radiobutton</h3>
+<h2 id="the-egeo-c-radiobutton-angularjs-directive">The egeo-c-radiobutton AngularJS directive</h2>
 <p><span class="tag tag--type">@mixin</span><span class="tag tag--tested">tested</span></p>
-<p>Apply the whole styles needed to customize a radiobutton.</p>
-<h2 id="variables-exposed-to-theming">Variables exposed to theming</h2>
+<p>Egeo includes an AngularJS directive to be used in Angular apps to allow developers to integrate the whole classes, properties and
+functionalities with no effort. The directive is the responsible of apply different styles depending of the status of the radiobutton itself
+and/or the form it is included on.</p>
+<h3 id="directive-settings">Directive settings</h3>
 <table>
 <thead>
 <tr>
@@ -297,17 +478,43 @@ HTML input radiobutton tag.</p>
 </thead>
 <tbody>
 <tr>
-<td><span class="egeo-u-nowrap">$egeo-c-radiobutton</span></td>
-<td><span class="egeo-u-nowrap"><code>true</code> </span></td>
-<td>Tells Egeo if the class egeo-c-radiobutton should be included in the CSS.</td>
+<td>disabled</td>
+<td><code>false</code></td>
+<td>Tell whether the radiobutton is disabled or not.</td>
+</tr>
+<tr>
+<td>helpText</td>
+<td>none</td>
+<td>The help text the component should show when the user clicks on the help icon.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>none</td>
+<td>The id of the input.</td>
+</tr>
+<tr>
+<td>label</td>
+<td>none</td>
+<td>The text of the label will appear beside the radiobutton.</td>
+</tr>
+<tr>
+<td>model</td>
+<td>none</td>
+<td>AngularJS model to bind the value of the component.</td>
+</tr>
+<tr>
+<td>qa</td>
+<td>none</td>
+<td>Identifier used by QA team for testing purposes.</td>
+</tr>
+<tr>
+<td>required</td>
+<td><code>false</code></td>
+<td>Tell whether the radiobutton is required or not.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="the-egeo-c-radiobutton-angularjs-directive">The egeo-c-radiobutton AngularJS directive</h2>
-<p>Egeo includes an AngularJS directive to be used in Angular apps to allow developers to integrate the whole classes, properties and
-functionalities with no effort. The directive is the responsible of apply different styles depending of the status of the radiobutton itself
-and/or the form it is included on.</p>
-<h3 id="how-to-work-with">How to work with</h3>
+<h3 id="usage">Usage</h3>
 <pre><code>&lt;div ng-controller=&quot;TestController as vm&quot;&gt;
   &lt;egeo-c-form id=&quot;TestForm&quot; method=&quot;post&quot;&gt;
      &lt;egeo-c-radiobutton data-id=&quot;test-radiobutton1&quot; data-cname=&quot;radiobutton-name&quot; data-value=&quot;1&quot; data-label=&quot;opt 1&quot; data-required=&quot;true&quot; data-qa=&quot;id-for-radiobutton&quot; data-help-text=&quot;Lorem ipsum dolor.&quot;&gt;&lt;/egeo-c-radiobutton&gt;
@@ -342,6 +549,7 @@ and/or the form it is included on.</p>
 <p><span class="tag tag--type">@directive</span><span class="tag tag--tested">tested</span></p>
 <p>Egeo provides an AngularJS directive to create all types of buttons defined with ease. The directive is restricted
 to HTML Element and called <code>egeo-c-button</code>. Below you can see the properties exposed:</p>
+<h3 id="directive-settings">Directive settings</h3>
 <table>
 <thead>
 <tr>
@@ -351,40 +559,40 @@ to HTML Element and called <code>egeo-c-button</code>. Below you can see the pro
 </thead>
 <tbody>
 <tr>
-<td><div class="egeo-u-tx-align--left">type</div></td>
-<td><div class="egeo-u-tx-align--left">Submit, Reset or Button</div></td>
+<td>at-right</td>
+<td>Floats the button to right</td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align--left">modifier</div></td>
-<td><div class="egeo-u-tx-align--left">The name of the button created as a CSS BEM Modifier</div></td>
+<td>icon-left</td>
+<td>An icon which appears at left side</td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align--left">label</div></td>
-<td><div class="egeo-u-tx-align--left">The label of the button</div></td>
+<td>icon-right</td>
+<td>An icon which appears at right side</td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align--left">icon-left</div></td>
-<td><div class="egeo-u-tx-align--left">An icon which appears at left side</div></td>
+<td>label</td>
+<td>The label of the button</td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align--left">icon-right</div></td>
-<td><div class="egeo-u-tx-align--left">An icon which appears at right side</div></td>
+<td>modifier</td>
+<td>The name of the button created as a CSS BEM Modifier</td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align--left">small</div></td>
-<td><div class="egeo-u-tx-align--left">A small version of the button</div></td>
+<td>popover</td>
+<td><span class="tag tag--danger">internal</span>It is used to reference popover IDs when the button is linked to a popover.</td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align--left">rounded</div></td>
-<td><div class="egeo-u-tx-align--left">A rounded version of the button. A rounded button will hide the label and only show the icon.</div></td>
+<td>rounded</td>
+<td>A rounded version of the button. A rounded button will hide the label and only show the icon.</td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align--left">at-right</div></td>
-<td><div class="egeo-u-tx-align--left">Floats the button to right</div></td>
+<td>small</td>
+<td>A small version of the button</td>
 </tr>
 <tr>
-<td><div class="egeo-u-tx-align--left">popover</div></td>
-<td><div classgit="egeo-u-tx-align--left"><span class="tag tag--danger">internal</span>It is used to reference popover IDs when the button is linked to a popover.</div></td>
+<td>type</td>
+<td>Submit, Reset or Button</td>
 </tr>
 </tbody>
 </table>
@@ -443,6 +651,7 @@ is only available via the AngularJS Directive.</p>
 <p><span class="tag tag--type">@directive</span><span class="tag tag--tested">tested</span></p>
 <p>Egeo provides an AngularJS directive to create button groups with ease. The directive is restricted
 to HTML Element and called <code>egeo-c-buttongroup</code>. Below you can see the properties exposed:</p>
+<h3 id="directive-settings">Directive settings</h3>
 <table>
 <thead>
 <tr>
@@ -538,6 +747,7 @@ and never floats.</p>
 <p>Egeo provides an AngularJS directive to create rows with ease. The directive is restricted
 to HTML Element and called <code>egeo-c-row</code>. The Row component is a container so it allows to use
 transclude content. Below you can see the properties exposed:</p>
+<h3 id="directive-settings">Directive settings</h3>
 <table>
 <thead>
 <tr>
@@ -596,6 +806,7 @@ components of the UI Kit.</p>
 <p>Egeo provides an AngularJS directive to create toolbars with ease. The directive is restricted
 to HTML Element and called <code>egeo-c-toolbar</code>. The Toolbar component is a container so it allows to use
 transclude content.  Below you can see the properties exposed:</p>
+<h3 id="directive-settings">Directive settings</h3>
 <table>
 <thead>
 <tr>
@@ -632,52 +843,6 @@ transclude content.  Below you can see the properties exposed:</p>
 <ul>
 <li><a href="../ui-base/section-7.html#section-7.5">CSS Base Framework - components.toolbar</a></li>
 <li><a href="../ui-base/section-8.html#section-8.3">CSS Base Framework - utils.floats</a></li>
-</ul>
-<div class="compatibility">Compatibility IE9+, Firefox Latest, Chrome Latest, Edge Latest, Safari Latest, Opera Latest</div>
-            </div>
-          </section>
-          <section id="section-5.16" class="kss-section kss-depth-2">
-            <h1 class="kss-title"><span class="kss-ref">5.16</span> Dropdown</h1>
-            <div class="kss-description">
-              <p><span class="tag tag--danger">in progress</span><span class="tag tag--untested">untested</span></p>
-<p>In progress...</p>
-<h2 id="the-egeo-c-dropdown-angularjs-directive">The egeo-c-dropdown AngularJS directive</h2>
-<p><span class="tag tag--type">@directive</span><span class="tag tag--untested">untested</span></p>
-<p>soon</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Default value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><div class="egeo-u-tx-align--left">soon</div></td>
-<td><div class="egeo-u-tx-align--left">soon</div></td>
-</tr>
-</tbody>
-</table>
-<h3 id="usage">Usage</h3>
-<p>soon</p>
-<pre><code> &lt;egeo-c-dropdown data-label=&quot;Dropdown button&quot; data-icon=&quot;icon-datetime&quot;&gt;
-  &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;main-1&quot; data-label=&quot;AngularJS Button: Click to test ({{count}})&quot; data-ng-click=&quot;count = count + 1&quot;&gt;&lt;/egeo-c-button&gt;
-  &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;danger&quot; data-label=&quot;AngularJS Danger Button&quot;&gt;&lt;/egeo-c-button&gt;
-  &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-2&quot; data-rounded=&quot;true&quot; data-icon-left=&quot;icon-datetime&quot;&gt;&lt;/egeo-c-button&gt;
-  &lt;egeo-c-button data-type=&quot;submit&quot; data-modifier=&quot;tool-ellipsis&quot; data-rounded=&quot;true&quot; data-icon-left=&quot;icon-waiting&quot;&gt;&lt;/egeo-c-button&gt;
- &lt;/egeo-c-dropdown&gt;
-</code></pre><hr>
-<p> <egeo-c-dropdown data-label="Dropdown button" data-icon="icon-datetime">
-  <egeo-c-button data-type="submit" data-modifier="main-1" data-label="AngularJS Button: Click to test ({{count}})" data-ng-click="count = count + 1"></egeo-c-button>
-  <egeo-c-button data-type="submit" data-modifier="danger" data-label="AngularJS Danger Button"></egeo-c-button>
-  <egeo-c-button data-type="submit" data-modifier="tool-2" data-rounded="true" data-icon-left="icon-datetime"></egeo-c-button>
-  <egeo-c-button data-type="submit" data-modifier="tool-ellipsis" data-rounded="true" data-icon-left="icon-waiting"></egeo-c-button>
- </egeo-c-dropdown></p>
-<hr>
-<h2 id="dependencies">Dependencies</h2>
-<ul>
-<li><a href="section-5.html#section-5.11">components.button</a></li>
-<li><a href="../ui-base/section-7.html#section-7.6">CSS Base Framework - components.dropdown</a></li>
 </ul>
 <div class="compatibility">Compatibility IE9+, Firefox Latest, Chrome Latest, Edge Latest, Safari Latest, Opera Latest</div>
             </div>

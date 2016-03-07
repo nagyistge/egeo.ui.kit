@@ -5,8 +5,21 @@
 // The Form component is a wrapper to group all components inside an HTML Form
 // logically related to the CSS.
 //
+// ## The egeo-c-form AngularJS directive
 //
-// ## How to work with forms
+// Egeo includes an AngularJS directive to be used in Angular apps to allow developers to integrate the whole classes, properties and
+// functionalities with no effort. The directive is the responsible of apply different styles depending of the status of the input itself
+// and/or the form it is included on.
+//
+// ### Directive settings
+//
+// | Variable   | Default value     | Description          |
+// | ---------- | ----------------- | -------------------- |
+// | id         | none              | The id of the form.  |
+// | method     | none              | GET/POST.            |
+//
+//
+// ## Usage
 //
 // ```
 // <egeo-c-form id="TestForm" method="post">
