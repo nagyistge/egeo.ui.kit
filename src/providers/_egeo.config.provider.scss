@@ -16,6 +16,11 @@
 // obtain the template to work with, calls to the EgeoConfig
 // provider to obtain the EgeoPath.
 //
+// Keep in mind that this configuration is independent of
+// the import of the JS files in the HTML document. In fact,
+// for now, it is only used to find the templates that the directives
+// use to be rendered.
+//
 // The default value of the path is `public/js/egeo` and we
 // can obtain it as it shown below. The code is from the 
 // egeo-c-button directive. Take a look to the lines 5, 7 
@@ -64,7 +69,7 @@
 //        });
 // ```
 //
-// The tests covers the getEgeoPath function in the default case but not
+// *Note: *The tests covers the getEgeoPath function in the default case but not
 // the manual configuration process for now.
 //
 // <div class="compatibility">Compatibility IE9+, Firefox Latest, Chrome Latest, Edge Latest, Safari Latest, Opera Latest</div>

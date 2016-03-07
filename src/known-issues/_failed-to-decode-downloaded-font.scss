@@ -1,0 +1,19 @@
+// Failed to decode downloaded font
+//
+// ### Symptom
+//
+// When try to compile the project, your receive the next error by the Grunt console:
+// ```
+// Failed to decode downloaded font: https://my-own-url/vendors/assets/fonts/stratio-fonticon/ico_stratio.ttf?-5duxr7
+// login:1 OTS parsing error: invalid version tag
+// ```
+//
+// ### How to fix
+//
+// This is a problem of the Icomoon generated font **ico_stratio**. Try to update 
+// the version of the font (contact the Stratio design team) or contact the Egeo dev team
+// using the [Egeo G+ community](https://plus.google.com/communities/110822685909914920886), 
+// [github issues](https://github.com/Stratio/egeo.ui.kit/issues) or 
+// [email](mailto:alejandrorodriguez@stratio.com).
+//
+// Styleguide 7.1

@@ -32,6 +32,7 @@
               <li class="kss-menu-item"><a href="section-4.html"><span class="kss-ref">4</span><span class="kss-name">Objects</span></a></li>
               <li class="kss-menu-item"><a href="section-5.html"><span class="kss-ref">5</span><span class="kss-name">Components</span></a></li>
               <li class="kss-menu-item"><a href="section-6.html"><span class="kss-ref">6</span><span class="kss-name">Vendors</span></a></li>
+              <li class="kss-menu-item"><a href="section-7.html"><span class="kss-ref">7</span><span class="kss-name">Known issues</span></a></li>
             </ul>
             <ul class="kss-menu-child">
               <li class="kss-menu-item"><a href="#section-1.1"><span class="kss-ref">1.1</span><span class="kss-name">EgeoConfig</span></a></li>
@@ -63,6 +64,10 @@ or similar resources.</p>
 egeo components and resources. Where a component needs to
 obtain the template to work with, calls to the EgeoConfig
 provider to obtain the EgeoPath.</p>
+<p>Keep in mind that this configuration is independent of
+the import of the JS files in the HTML document. In fact,
+for now, it is only used to find the templates that the directives
+use to be rendered.</p>
 <p>The default value of the path is <code>public/js/egeo</code> and we
 can obtain it as it shown below. The code is from the
 egeo-c-button directive. Take a look to the lines 5, 7
@@ -103,7 +108,7 @@ and 7 to 9:</p>
        .config(function(EgeoConfigProvider){
            EgeoConfigProvider.setEgeoPath(&#39;my/path&#39;);
        });
-</code></pre><p>The tests covers the getEgeoPath function in the default case but not
+</code></pre><p><em>Note: </em>The tests covers the getEgeoPath function in the default case but not
 the manual configuration process for now.</p>
 <div class="compatibility">Compatibility IE9+, Firefox Latest, Chrome Latest, Edge Latest, Safari Latest, Opera Latest</div>
             </div>

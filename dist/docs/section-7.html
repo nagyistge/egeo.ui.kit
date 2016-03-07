@@ -24,7 +24,7 @@
             <div class="version">v0.1.0</div>
           </header>
           <nav class="kss-nav">
-            <ul class="kss-menu" data-kss-ref="6">
+            <ul class="kss-menu" data-kss-ref="7">
               <li class="kss-menu-item"><a href="./"><span class="kss-ref">0</span><span class="kss-name">Overview</span></a></li>
               <li class="kss-menu-item"><a href="section-1.html"><span class="kss-ref">1</span><span class="kss-name">Providers</span></a></li>
               <li class="kss-menu-item"><a href="section-2.html"><span class="kss-ref">2</span><span class="kss-name">Factories</span></a></li>
@@ -35,28 +35,53 @@
               <li class="kss-menu-item"><a href="section-7.html"><span class="kss-ref">7</span><span class="kss-name">Known issues</span></a></li>
             </ul>
             <ul class="kss-menu-child">
-              <li class="kss-menu-item"><a href="#section-6.1"><span class="kss-ref">6.1</span><span class="kss-name">angular-bind-html-compile</span></a></li>
+              <li class="kss-menu-item"><a href="#section-7.1"><span class="kss-ref">7.1</span><span class="kss-name">Failed to decode downloaded font</span></a></li>
+              <li class="kss-menu-item"><a href="#section-7.2"><span class="kss-ref">7.2</span><span class="kss-name">The map of color isn&#x27;t a valid CSS value</span></a></li>
             </ul>
           </nav>
         </div>
       </div>
       <div class="kss-content">
         <article class="kss-article">
-          <section id="section-6" class="kss-section kss-depth-1">
-            <h1 class="kss-title"><span class="kss-ref">6</span> Vendors</h1>
+          <section id="section-7" class="kss-section kss-depth-1">
+            <h1 class="kss-title"><span class="kss-ref">7</span> Known issues</h1>
             <div class="kss-description">
-              <p>Vendors are external libraries which provide more functionality and consistency to the
-framework avoiding re-invent the wheel and using standard techniques and methods that
-been proven their value by the community.</p>
+              <p>Here are documented all the issues known by the team and the solutions
+provided if exists.</p>
 
             </div>
           </section>
-          <section id="section-6.1" class="kss-section kss-depth-2">
-            <h1 class="kss-title"><span class="kss-ref">6.1</span> angular-bind-html-compile</h1>
+          <section id="section-7.1" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">7.1</span> Failed to decode downloaded font</h1>
             <div class="kss-description">
-              <p>The bind-html-compile directive is provided under MIT License by Incuna LTD trough
-its <a href="https://github.com/incuna/angular-bind-html-compile">Git repository</a>.</p>
-<p>The bind-html-compile directive allows for HTML containing directives to be compiled.</p>
+              <h3 id="symptom">Symptom</h3>
+<p>When try to compile the project, your receive the next error by the Grunt console:</p>
+<pre><code>Failed to decode downloaded font: https://my-own-url/vendors/assets/fonts/stratio-fonticon/ico_stratio.ttf?-5duxr7
+login:1 OTS parsing error: invalid version tag
+</code></pre><h3 id="how-to-fix">How to fix</h3>
+<p>This is a problem of the Icomoon generated font <strong>ico_stratio</strong>. Try to update
+the version of the font (contact the Stratio design team) or contact the Egeo dev team
+using the <a href="https://plus.google.com/communities/110822685909914920886">Egeo G+ community</a>,
+<a href="https://github.com/Stratio/egeo.ui.kit/issues">github issues</a> or
+<a href="mailto:alejandrorodriguez@stratio.com">email</a>.</p>
+
+            </div>
+          </section>
+          <section id="section-7.2" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">7.2</span> The map of color isn&#x27;t a valid CSS value</h1>
+            <div class="kss-description">
+              <h3 id="symptom">Symptom</h3>
+<p>When try to compile the project, your receive the next error by the Sass console:</p>
+<pre><code>&gt;&gt; File &quot;front-source/styles/main.scss&quot; changed.
+Running &quot;sass:dist&quot; (sass) task
+&gt;&gt; (a1: #37b5e4, a1_dark: #2d96bd, a1_light: #3dc9fc, a2: #b5c1c5, a2_dark: #919b9e, a2_light: #ccd9de, a3: #405467, a3_dark: #283440, a3_light: #4f6880, n0: #fff, n1: #fbfbfb, n2: #f3f3f3, n3: #e4e4e4, n4: #cbcbcb, n5: #b5b5b5, n6: #999, n7: #777, n8: #555, n9: #242424, n10: #000, b1: #172734, b2: #0f1b27, b3: #eff2f3, b3_dark: #e1e4e5, b4: #fff, s1: #88b060, s1_dark: #759653, s1_light: #9ab084, s2: #ff8900, s2_dark: #e57a00, s2_light: #ffa033, s3: #e23b2b, s3_dark: #c93426, s3_light: #e36459, t1: #d0c120, t2: #21d8de, t3: #bcea3f) isn&#39;t a valid CSS value.
+&gt;&gt;   Line XX  Column X  node_modules/egeo.ui.base/src/settings/_settings.colors.scss
+Warning:  Use --force to continue.
+</code></pre><h3 id="how-to-fix">How to fix</h3>
+<p>This is a problem of Sass versions normally occur when you have different versions
+of Sass running locally and globally in your machine. Check that you are using only
+one version (preferably the local one) and ensure that your Sass version is, at least,
+the v3.3.</p>
 
             </div>
           </section>
