@@ -1,18 +1,11 @@
 <div ng-form name="{{id}}" class="egeo-c-formgroup">
-    <label class="egeo-c-label" for="{{id}}" ng-show="{{(label != null)}}">
-        {{label}}
+    <egeo-c-label data-for="{{id}}" data-label="{{label}}" ng-show="{{(label != null)}}" data-required="{{required}}" data-model="vm.isHelpShown" data-has-help="vm.hasHelp"></egeo-c-label>
 
-        <span class="egeo-c-label__optional-mark" data-ng-if="!required"></span>
-
-        <i class="egeo-c-icon icon-help2" data-ng-if="vm.hasHelp" data-ng-click="vm.isHelpShown = !vm.isHelpShown">
-        </i>
-    </label>
-
-    <select class="egeo-c-combobox" id="{{id}}" name="{{id}}" data-ng-model="model" data-ng-required="{{required}}" data-ng-disabled="{{disabled}}" data-ng-focus="vm.isFocused = true" data-ng-blur="vm.isFocused = false" data-ng-options="o.label for o in {{options}} track by o.id" data-ng-model="model" data-qa="{{qa}}">
+    <select class="egeo-c-combobox" id="{{id}}" name="{{id}}" data-ng-model="model" data-ng-required="{{required}}" data-ng-disabled="{{disabled}}" data-ng-focus="vm.isFocused = true" data-ng-blur="vm.isFocused = false; vm.isHelpShown = false" data-ng-options="o.label for o in {{options}} track by o.id" data-ng-model="model" data-qa="{{qa}}">
         <option value="">{{text}}</option>
     </select>
 
-    <div class="egeo-c-helpbox" data-ng-if="(vm.isFocused && vm.hasHelp) || (!this[id].$valid && this[id][id].$touched)">
+    <div class="egeo-c-helpbox" data-ng-if="((vm.isFocused || vm.isHelpShown) && vm.hasHelp) || (!this[id].$valid && this[id][id].$touched)">
         <div class="egeo-c-helpbox__text">
             <div class="egeo-c-message" data-ng-if="!this[id].$valid && this[id][id].$touched" data-ng-class="{'egeo-c-message--error': required, 'egeo-c-message--warn': !required}">
                 <i class="egeo-c-icon icon-alert" data-ng-if="!required && this[id][id].$error.pattern"></i>
