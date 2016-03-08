@@ -9,15 +9,26 @@
 
     function egeoCLabel(EgeoConfig) {
         var directive = {
+            link: link,
             replace: true,
             restrict: 'E',
             scope: {
+                for: '@',
+                hasHelp: '=',
                 id: '@',
-                label: '@'
+                label: '@',
+                model: '=',
+                required: '@'
             },
             templateUrl: EgeoConfig.getEgeoPath() + '/components/label/components.label.tpl.html'
         };
 
         return directive;
+
+        function link(scope, element, attrs, ctrl) {
+            scope.toggleHelp = function() {
+                scope.model = !scope.model;
+            }
+        }
     }
 })();
