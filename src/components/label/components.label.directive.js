@@ -17,7 +17,7 @@
                 hasHelp: '=',
                 id: '@',
                 label: '@',
-                model: '=',
+                isHelpShown: '=',
                 required: '@'
             },
             templateUrl: EgeoConfig.getEgeoPath() + '/components/label/components.label.tpl.html'
@@ -27,7 +27,7 @@
 
         function link(scope, element, attrs, ctrl) {
             scope.toggleHelp = function() {
-                scope.model = !scope.model;
+                scope.isHelpShown = !scope.isHelpShown;
             }
         }
     }

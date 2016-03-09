@@ -1,7 +1,7 @@
 <div ng-form name="{{id}}" class="egeo-c-formgroup">
     <input type="radio" class="egeo-c-radiobutton" id="{{id}}" name="{{cname}}" value="{{value}}" data-ng-model="model" data-ng-required="{{required}}" data-ng-disabled="{{disabled}}" data-qa="{{qa}}" data-ng-trim="false" data-ng-focus="vm.isFocused = true" data-ng-blur="vm.isFocused = false; vm.isHelpShown = false">
 
-    <egeo-c-label data-for="{{id}}" data-label="{{label}}" ng-show="{{(label != null)}}" data-required="{{required}}" data-model="vm.isHelpShown" data-has-help="vm.hasHelp"></egeo-c-label>
+    <egeo-c-label data-for="{{id}}" data-label="{{label}}" ng-show="{{(label != null)}}" data-required="{{required}}" data-is-help-shown="vm.isHelpShown" data-has-help="vm.hasHelp"></egeo-c-label>
 
     <div class="egeo-c-helpbox egeo-c-helpbox--arrow-to-left" data-ng-if="(vm.isHelpShown && vm.hasHelp) || (!this[id].$valid && this[id][id].$touched)">
         <div class="egeo-c-helpbox__text">

@@ -1,5 +1,5 @@
 <div ng-form name="{{id}}" class="egeo-c-formgroup">
-    <egeo-c-label data-for="{{id}}" data-label="{{label}}" ng-show="{{(label != null)}}" data-required="{{required}}" data-model="vm.isHelpShown" data-has-help="vm.hasHelp"></egeo-c-label>
+    <egeo-c-label data-for="{{id}}" data-label="{{label}}" ng-show="{{(label != null)}}" data-required="{{required}}" data-is-help-shown="vm.isHelpShown" data-has-help="vm.hasHelp"></egeo-c-label>
 
     <select class="egeo-c-combobox" id="{{id}}" name="{{id}}" data-ng-model="model" data-ng-required="{{required}}" data-ng-disabled="{{disabled}}" data-ng-focus="vm.isFocused = true" data-ng-blur="vm.isFocused = false; vm.isHelpShown = false" data-ng-options="o.label for o in {{options}} track by o.id" data-ng-model="model" data-qa="{{qa}}">
         <option value="">{{text}}</option>

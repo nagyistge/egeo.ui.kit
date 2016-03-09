@@ -1,5 +1,5 @@
 <div ng-form name="{{id}}" class="egeo-c-formgroup">
-    <egeo-c-label data-for="{{id}}" data-label="{{label}}" ng-show="{{(label != null)}}" data-required="{{required}}" data-model="vm.isHelpShown" data-has-help="vm.hasHelp"></egeo-c-label>
+    <egeo-c-label data-for="{{id}}" data-label="{{label}}" ng-show="{{(label != null)}}" data-required="{{required}}" data-is-help-shown="vm.isHelpShown" data-has-help="vm.hasHelp"></egeo-c-label>
 
     <input type="{{type}}" class="egeo-c-input" id="{{id}}" name="{{id}}" placeholder="{{placeholder}}" data-ng-model="model" data-ng-pattern="pattern" data-ng-required="{{required}}" data-ng-disabled="{{disabled}}" data-qa="{{qa}}" data-ng-trim="false" data-ng-focus="vm.isFocused = true" data-ng-blur="vm.isFocused = false; vm.isHelpShown = false">
 

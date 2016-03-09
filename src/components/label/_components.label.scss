@@ -7,10 +7,14 @@
 //
 // ### Directive settings
 //
-// | Variable   | Default value     | Description                              |
-// | ---------- | ----------------- | ---------------------------------------- |
-// | id         | none              | The id of the labe.                      |
-// | label      | none              | The text of the label.                   |
+// | Variable    | Default value     | Description                                              |
+// | ----------- | ----------------- | -------------------------------------------------------- |
+// | id          | none              | The id of the labe.                                      |
+// | label       | none              | The text of the label.                                   |
+// | for         | none              | The id of the input associated to the label.             |
+// | hasHelp     | none              | If the label must show an icon of help available.        |
+// | isHelpShown | none              | If the help box is shown.                                |
+// | required    | none              | If the field associated to the label is required or not. |
 //
 // ## Usage
 //
