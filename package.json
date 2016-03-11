@@ -6,8 +6,7 @@
   "scripts": {
     "doc": "grunt doc",
     "serve": "grunt serve",
-    "test": "karma start",
-    "postinstall": "npm update egeo.ui.base && npm update egeo.website.template"
+    "test": "karma start"
   },
   "author": "Alex R Chies (alejandrorodriguez@stratio.com)",
   "license": "ISC",
