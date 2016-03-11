@@ -46,6 +46,7 @@
               <li class="kss-menu-item"><a href="#section-5.12"><span class="kss-ref">5.12</span><span class="kss-name">Button Group</span></a></li>
               <li class="kss-menu-item"><a href="#section-5.14"><span class="kss-ref">5.14</span><span class="kss-name">Row</span></a></li>
               <li class="kss-menu-item"><a href="#section-5.15"><span class="kss-ref">5.15</span><span class="kss-name">Toolbar</span></a></li>
+              <li class="kss-menu-item"><a href="#section-5.16"><span class="kss-ref">5.16</span><span class="kss-name">Helpbox</span></a></li>
             </ul>
           </nav>
         </div>
@@ -166,6 +167,26 @@ HTML label tag.</p>
 <td>label</td>
 <td>none</td>
 <td>The text of the label.</td>
+</tr>
+<tr>
+<td>for</td>
+<td>none</td>
+<td>The id of the input associated to the label.</td>
+</tr>
+<tr>
+<td>hasHelp</td>
+<td>none</td>
+<td>If the label must show an icon of help available.</td>
+</tr>
+<tr>
+<td>isHelpShown</td>
+<td>none</td>
+<td>If the help box is shown.</td>
+</tr>
+<tr>
+<td>required</td>
+<td>none</td>
+<td>If the field associated to the label is required or not.</td>
 </tr>
 </tbody>
 </table>
@@ -850,6 +871,13 @@ transclude content.  Below you can see the properties exposed:</p>
 <div class="compatibility">Compatibility IE9+, Firefox Latest, Chrome Latest, Edge Latest, Safari Latest, Opera Latest</div>
             </div>
           </section>
+          <section id="section-5.16" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><span class="kss-ref">5.16</span> Helpbox</h1>
+            <div class="kss-description">
+              <p><span class="tag tag--untested">untested</span><span class="tag tag--danger">internal</span><span class="tag tag--danger">alpha version</span></p>
+
+            </div>
+          </section>
         </article>
         <footer class="kss-footer">
           <div>Created using <a href="https://github.com/hughsk/kss-node">kss-node</a> and <a href="https://github.com/htanjo/kss-node-template">kss-node-template</a>.</div>
@@ -887,6 +915,7 @@ transclude content.  Below you can see the properties exposed:</p>
 <script src="public/js/egeo/components/combobox/components.combobox.controller.js"></script>
 <script src="public/js/egeo/components/radiobutton/components.radiobutton.directive.js"></script>
 <script src="public/js/egeo/components/radiobutton/components.radiobutton.controller.js"></script>
+<script src="public/js/egeo/components/helpbox/components.helpbox.directive.js"></script>
 
   </body>
 </html>

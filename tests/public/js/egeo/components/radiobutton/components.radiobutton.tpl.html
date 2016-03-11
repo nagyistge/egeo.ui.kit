@@ -3,16 +3,5 @@
 
     <egeo-c-label data-for="{{id}}" data-label="{{label}}" ng-show="{{(label != null)}}" data-required="{{required}}" data-is-help-shown="vm.isHelpShown" data-has-help="vm.hasHelp"></egeo-c-label>
 
-    <div class="egeo-c-helpbox egeo-c-helpbox--arrow-to-left" data-ng-if="(vm.isHelpShown && vm.hasHelp) || (!this[id].$valid && this[id][id].$touched)">
-        <div class="egeo-c-helpbox__text">
-            <div class="egeo-c-message" data-ng-if="!this[id].$valid && this[id][id].$touched" data-ng-class="{'egeo-c-message--error': required, 'egeo-c-message--warn': !required}">
-                <i class="egeo-c-icon icon-alert" data-ng-if="!required && this[id][id].$error.pattern"></i>
-                <i class="egeo-c-icon icon-circle-cross" data-ng-if="this[id][id].$error.required || (this[id][id].$error.pattern && required)"></i>
-                <span class="egeo-c-message__text" data-ng-if="this[id][id].$error.required">This field is required.</span>
-                <span class="egeo-c-message__text" data-ng-if="this[id][id].$error.pattern">This field has wrong format.</span>
-            </div>
-
-            {{helpText}}
-        </div>
-    </div>
+    <egeo-c-helpbox data-is-help-shown="vm.isHelpShown" data-has-help="vm.hasHelp" data-valid="this[id].$valid" data-touched="this[id][id].$touched" data-error="this[id][id].$error" data-required="{{required}}" data-help-text="{{helpText}}"></egeo-c-helpbox>
 </div>
