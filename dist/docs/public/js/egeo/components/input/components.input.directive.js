@@ -34,6 +34,10 @@
             if (scope.helpText) { 
                 ctrl.hasHelp = true; 
             }
+
+            setTimeout(function() {
+                element.find('label').attr('for', element.find('label').attr('for').trim());
+            }, 400);
         }
     }
 })();
