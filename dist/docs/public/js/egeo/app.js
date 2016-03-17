@@ -19,7 +19,8 @@
             'egeo.childrenClass',
             'egeo.toolbar',
             'egeo.row',
-            'egeo.forms'
+            'egeo.forms',
+            'egeo.header'
         ])
 
         .config(function(EgeoConfigProvider) {

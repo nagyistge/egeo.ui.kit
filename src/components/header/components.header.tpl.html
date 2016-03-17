@@ -1,0 +1,15 @@
+<header class="egeo-c-header" role="banner">
+  <h1 class="egeo-c-header__logo" data-ng-if="appLogo" data-sref="{{appRoot}}">
+    <img ng-src="{{appLogo}}" title="{{appName}}" alt="The logo of the application" />
+  </h1>
+
+  <nav class="egeo-c-header__navigation" role="navigation">
+    <ul class="egeo-c-header__menu">
+      <li class="egeo-c-header__menu-item" data-ng-repeat="item in mainMenu">
+        <i class="egeo-c-icon {{item.icon}} egeo-c-header__menu-item__icon" data-ng-if="item.icon"></i>
+        <span data-sref="{{item.route}}" class="egeo-c-header__menu-item__label">{{item.label}}</span>
+        <span class="egeo-c-badge" data-ng-if="item.count && item.count > 0">{{item.count}}</span>
+      </li>
+    </ul>
+  </nav>
+</header>

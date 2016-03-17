@@ -12,6 +12,7 @@
         this.other = "";
         this.cboptions = [{id: 1, label: "opt 1", selected: false}, {id: 2, label: "opt 2", selected: true}, {id: 3, label: "opt 3"}];
         this.cbovalue = "opt 1";
+        this.mainMenu = [{ icon: 'icon-paper', label: 'My Viewer', route: 'page1', count:'0' }, { icon: 'icon-grid-2', label: 'Pages', route: 'page2' }, { label: 'Data Sources', route: 'page3', count:'12' }, { icon: 'icon-monitor', label: 'Data Views', route: 'page4' }, { icon: 'icon-box', label: 'Widgets', route: 'page5' }];
 
         function test() {
             console.log("TestController: test");
