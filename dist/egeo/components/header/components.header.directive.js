@@ -16,7 +16,8 @@
               appLogo: '@',
               appName: '@',
               appRoot: '@',
-              mainMenu: '='
+              mainMenu: '=',
+              note: '='
           },
           templateUrl: EgeoConfig.getEgeoPath() + '/components/header/components.header.tpl.html'
       };

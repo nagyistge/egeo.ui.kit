@@ -7,9 +7,17 @@
     <ul class="egeo-c-header__menu">
       <li class="egeo-c-header__menu-item" data-ng-repeat="item in mainMenu">
         <i class="egeo-c-icon {{item.icon}} egeo-c-header__menu-item__icon" data-ng-if="item.icon"></i>
-        <span data-sref="{{item.route}}" class="egeo-c-header__menu-item__label">{{item.label}}</span>
+        <span data-sref="{{item.sref}}" class="egeo-c-header__menu-item__label">{{item.label}}</span>
         <span class="egeo-c-badge" data-ng-if="item.count && item.count > 0">{{item.count}}</span>
       </li>
     </ul>
   </nav>
+
+  <div class="egeo-c-header__note" data-ng-if="note">
+    <a class="egeo-c-header__note__link" href="{{note.href}}" target="{{note.target}}">
+      <i class="egeo-c-icon {{note.leftIcon}}" data-ng-if="note.leftIcon"></i>
+      <span class="egeo-c-header__note__label">{{note.label}}</span>
+      <i class="egeo-c-icon {{note.rightIcon}}" data-ng-if="note.rightIcon"></i>
+    </a>
+  </div>
 </header>
