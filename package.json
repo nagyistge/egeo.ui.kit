@@ -6,7 +6,8 @@
   "scripts": {
     "doc": "grunt doc",
     "serve": "grunt serve",
-    "test": "karma start"
+    "test": "karma start",
+    "update": "grunt update-kss"
   },
   "author": "Alex R Chies (alejandrorodriguez@stratio.com)",
   "license": "ISC",
