@@ -3,6 +3,23 @@
     <img ng-src="{{appLogo}}" title="{{appName}}" alt="The logo of the application" />
   </h1>
 
+  <aside class="egeo-c-header__user-bar">
+    <span class="egeo-c-user-dropdown">
+      <i class="egeo-c-icon icon-head"></i>
+      <span class="egeo-c-user-dropdown__label">{{userName}}</span>
+    </span>
+
+    <ul class="egeo-c-header__tools">
+      <li class="egeo-c-header__tools-item" data-ng-repeat="item in tools">
+        <i class="egeo-c-icon {{item.icon}} egeo-c-header__tools-item__icon" title="{{item.label}}" data-sref="{{item.sref}}" data-ng-if="item.icon"></i>
+      </li>
+    </ul>
+
+    <span class="egeo-c-header__app-dropdown">
+      <i class="egeo-c-icon icon-grid-dots"></i>
+    </span>
+  </aside>
+
   <nav class="egeo-c-header__navigation" role="navigation">
     <ul class="egeo-c-header__menu">
       <li class="egeo-c-header__menu-item" data-ng-repeat="item in mainMenu">

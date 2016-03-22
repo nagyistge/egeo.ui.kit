@@ -17,7 +17,9 @@
               appName: '@',
               appRoot: '@',
               mainMenu: '=',
-              note: '='
+              note: '=',
+              tools: '=',
+              userName: '@'
           },
           templateUrl: EgeoConfig.getEgeoPath() + '/components/header/components.header.tpl.html'
       };
