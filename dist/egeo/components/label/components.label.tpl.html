@@ -1,8 +1,10 @@
-<label for="{{for}}" class="egeo-c-label" ng-show="{{(label != null)}}">
-    {{label}}
+<span>
+    <label for="{{for}}" class="egeo-c-label" ng-show="{{(label != null)}}">
+        {{label}}
 
-    <span class="egeo-c-label__optional-mark" data-ng-if="!required"></span>
+        <span class="egeo-c-label__optional-mark" data-ng-if="!required"></span>
 
-    <i class="egeo-c-icon icon-help2" data-ng-if="hasHelp" data-ng-click="toggleHelp()">
-    </i>
-</label>
+        <i class="egeo-c-icon icon-help2" data-ng-if="hasHelp" data-ng-click="toggleHelp()">
+        </i>
+    </label>
+</span>

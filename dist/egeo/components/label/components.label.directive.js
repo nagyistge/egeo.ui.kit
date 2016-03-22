@@ -28,11 +28,7 @@
         function link(scope, element, attrs, ctrl) {
             scope.toggleHelp = function() {
                 scope.isHelpShown = !scope.isHelpShown;
-            }
-
-            setTimeout(function() {
-                element.attr('for', element.attr('for').trim());
-            }, 400);            
+            }           
         }
     }
 })();

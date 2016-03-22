@@ -8,9 +8,9 @@ describe('components.form.directive', function() {
     inject(function($compile, $rootScope, $templateCache){
       compile = $compile;
       scope = $rootScope.$new();
-      $templateCache.put('public/js/egeo/components/form/components.form.tpl.html', '<form role="form" class="egeo-c-form" id="{{id}}" accept-charset="utf-8" method="{{method}}" novalidate ng-transclude></form>');
+      $templateCache.put('public/js/egeo/components/form/components.form.tpl.html', '<div><form role="form" class="egeo-c-form" id="{{id}}" accept-charset="utf-8" method="{{method}}" novalidate ng-transclude></form></div>');
     });
-    
+
     directiveElem = getCompiledElement();
   });
 
@@ -22,25 +22,25 @@ describe('components.form.directive', function() {
   }
 
   it('should have a form HTML tag', function() {
-    var tag = directiveElem[0];
+    var tag = directiveElem[0].children[0];
     expect(tag).toBeDefined();
     expect(tag.tagName).toBe('FORM');
   });
 
   it('should have an Id', function() {
-    var tag = directiveElem[0];
+    var tag = directiveElem[0].children[0];
     expect(tag).toBeDefined();
     expect(tag.id.replace(/ /g,'')).toBe('TestForm');
   });
 
   it('should have a method', function() {
-    var tag = directiveElem[0];
+    var tag = directiveElem[0].children[0];
     expect(tag).toBeDefined();
     expect(tag.method.replace(/ /g,'')).toBe('post');
   });
 
   it('should have the class egeo-c-form', function() {
-    var tag = directiveElem[0];
+    var tag = directiveElem[0].children[0];
     expect(tag).toBeDefined();
     expect(tag.className.indexOf('egeo-c-form')).not.toBe(-1);
   });
