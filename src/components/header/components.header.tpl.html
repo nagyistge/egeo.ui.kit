@@ -11,7 +11,10 @@
 
     <ul class="egeo-c-header__tools">
       <li class="egeo-c-header__tools-item" data-ng-repeat="item in tools">
-        <i class="egeo-c-icon {{item.icon}} egeo-c-header__tools-item__icon" title="{{item.label}}" data-sref="{{item.sref}}" data-ng-if="item.icon"></i>
+        <i class="egeo-c-icon {{item.icon}} egeo-c-header__tools-item__icon" title="{{item.label}}" data-sref="{{item.sref}}" data-ng-if="item.sref"></i>
+        <a href="{{item.href}}" target="{{item.target}}" data-ng-if="item.href">
+          <i class="egeo-c-icon {{item.icon}} egeo-c-header__tools-item__icon" title="{{item.label}}"></i>
+        </a>
       </li>
     </ul>
 

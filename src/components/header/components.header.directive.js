@@ -27,8 +27,7 @@
       return directive;
 
       function link(scope, element, attrs) {
-          console.log(typeof(scope.mainMenu));
-          console.log(scope.mainMenu);
+
       }
     }
 })();
