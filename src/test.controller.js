@@ -15,6 +15,7 @@
         this.tools = [{ icon: 'icon-cog', label: 'Configuration', sref: 'config' }, { icon: 'icon-help2', label: 'Help', href: 'https://stratio.atlassian.net/wiki', target: '_blank' }];
         this.mainMenu = [{ icon: 'icon-paper', label: 'My Viewer', sref: 'page1', count:'0' }, { icon: 'icon-grid-2', label: 'Pages', sref: 'page2' }, { label: 'Data Sources', sref: 'page3', count:'12' }, { icon: 'icon-monitor', label: 'Data Views', sref: 'page4' }, { icon: 'icon-box', label: 'Widgets', sref: 'page5' }];
         this.note = {href: 'http://www.google.com', target: '_blank', leftIcon: 'icon-thermometer', label: 'Global Status Panel' };
+        this.userDropdownItems = [{icon: 'icon-logout', label: 'Logout', sref: 'logout'}, {icon: 'icon-head', label: 'Profile', sref: 'profile'}];
 
         function test() {
             console.log("TestController: test");

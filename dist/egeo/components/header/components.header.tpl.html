@@ -4,9 +4,23 @@
   </h1>
 
   <aside class="egeo-c-header__user-bar">
-    <span class="egeo-c-user-dropdown">
+    <span class="egeo-c-user-dropdown" data-ng-click="vm.toggleDropdown(1)">
       <i class="egeo-c-icon icon-head"></i>
       <span class="egeo-c-user-dropdown__label">{{userName}}</span>
+
+      <ul class="egeo-c-dropdown-box" data-dropdown-index="1" data-ng-show="vm.isUserDropdownVisible">
+        <li class="egeo-c-dropdown-box-item" data-ng-repeat="item in userDropdownItems">
+          <a href="{{item.href}}" target="{{item.target}}" data-ng-if="item.href">
+            <i class="egeo-c-icon {{item.icon}} egeo-c-dropdown-box-item__icon" title="{{item.label}}"></i>
+            <span class="egeo-c-dropdown-box-item__label">{{item.label}}</span>
+          </a>
+
+          <span data-sref="{{item.sref}}" data-ng-if="item.sref">
+            <i class="egeo-c-icon {{item.icon}} egeo-c-dropdown-box-item__icon" title="{{item.label}}"></i>
+            <span class="egeo-c-dropdown-box-item__label">{{item.label}}</span>
+          </span>
+        </li>
+      </ul>
     </span>
 
     <ul class="egeo-c-header__tools">

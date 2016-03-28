@@ -9,6 +9,7 @@
 
     function egeoCHeader(EgeoConfig) {
       var directive = {
+          controller: 'EgeoHeaderController as vm',
           link: link,
           replace: true,
           restrict: 'E',
@@ -19,6 +20,7 @@
               mainMenu: '=',
               note: '=',
               tools: '=',
+              userDropdownItems: '=',
               userName: '@'
           },
           templateUrl: EgeoConfig.getEgeoPath() + '/components/header/components.header.tpl.html'

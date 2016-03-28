@@ -23,14 +23,14 @@
 // ```
 // <div ng-controller="TestController as vm">
 //   <egeo-c-form id="TestForm" method="post">
-//     <egeo-c-header data-app-logo="public/assets/images/app-logo.png" data-app-name="Stratio Viewer" data-user-name="Antonio H." data-tools="vm.tools" data-main-menu="vm.mainMenu" data-note="vm.note"></egeo-c-header>
+//     <egeo-c-header data-app-logo="public/assets/images/app-logo.png" data-app-name="Stratio Viewer" data-user-name="Antonio H." data-user-dropdown-items="vm.userDropdownItems" data-tools="vm.tools" data-main-menu="vm.mainMenu" data-note="vm.note"></egeo-c-header>
 //   </egeo-c-form>
 // </div>
 // ```
 //
 // <div ng-controller="TestController as vm">
 //   <egeo-c-form id="TestForm" method="post">
-//     <egeo-c-header data-app-logo="public/assets/images/app-logo.png" data-app-name="Stratio Viewer" data-user-name="Antonio H." data-tools="vm.tools" data-main-menu="vm.mainMenu" data-note="vm.note"></egeo-c-header>
+//     <egeo-c-header data-app-logo="public/assets/images/app-logo.png" data-app-name="Stratio Viewer" data-user-name="Antonio H." data-user-dropdown-items="vm.userDropdownItems" data-tools="vm.tools" data-main-menu="vm.mainMenu" data-note="vm.note"></egeo-c-header>
 //   </egeo-c-form>
 // </div>
 //

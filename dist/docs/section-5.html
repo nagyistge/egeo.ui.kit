@@ -908,12 +908,12 @@ depending of the status of the input itself and/or the form it is included on.</
 <h2 id="usage">Usage</h2>
 <pre><code>&lt;div ng-controller=&quot;TestController as vm&quot;&gt;
   &lt;egeo-c-form id=&quot;TestForm&quot; method=&quot;post&quot;&gt;
-    &lt;egeo-c-header data-app-logo=&quot;public/assets/images/app-logo.png&quot; data-app-name=&quot;Stratio Viewer&quot; data-user-name=&quot;Antonio H.&quot; data-tools=&quot;vm.tools&quot; data-main-menu=&quot;vm.mainMenu&quot; data-note=&quot;vm.note&quot;&gt;&lt;/egeo-c-header&gt;
+    &lt;egeo-c-header data-app-logo=&quot;public/assets/images/app-logo.png&quot; data-app-name=&quot;Stratio Viewer&quot; data-user-name=&quot;Antonio H.&quot; data-user-dropdown-items=&quot;vm.userDropdownItems&quot; data-tools=&quot;vm.tools&quot; data-main-menu=&quot;vm.mainMenu&quot; data-note=&quot;vm.note&quot;&gt;&lt;/egeo-c-header&gt;
   &lt;/egeo-c-form&gt;
 &lt;/div&gt;
 </code></pre><div ng-controller="TestController as vm">
   <egeo-c-form id="TestForm" method="post">
-    <egeo-c-header data-app-logo="public/assets/images/app-logo.png" data-app-name="Stratio Viewer" data-user-name="Antonio H." data-tools="vm.tools" data-main-menu="vm.mainMenu" data-note="vm.note"></egeo-c-header>
+    <egeo-c-header data-app-logo="public/assets/images/app-logo.png" data-app-name="Stratio Viewer" data-user-name="Antonio H." data-user-dropdown-items="vm.userDropdownItems" data-tools="vm.tools" data-main-menu="vm.mainMenu" data-note="vm.note"></egeo-c-header>
   </egeo-c-form>
 </div>
 
@@ -960,6 +960,7 @@ depending of the status of the input itself and/or the form it is included on.</
 <script src="public/js/egeo/components/radiobutton/components.radiobutton.controller.js"></script>
 <script src="public/js/egeo/components/helpbox/components.helpbox.directive.js"></script>
 <script src="public/js/egeo/components/header/components.header.directive.js"></script>
+<script src="public/js/egeo/components/header/components.header.controller.js"></script>
 
   </body>
 </html>
