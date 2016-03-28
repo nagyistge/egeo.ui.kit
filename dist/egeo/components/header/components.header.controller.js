@@ -13,8 +13,24 @@
         vm.id = $scope.$id;
         vm.isUserDropdownVisible = false;
         vm.isAppDropdownVisible = false;
+        vm.submenu;
 
+        vm.toggleSubmenu = toggleSubmenu;
         vm.toggleDropdown = toggleDropdown;
+
+        function toggleSubmenu(item) {
+            for (var i = 0; i < $scope.mainMenu.length; i++) {
+                if ( $scope.mainMenu[i] != item ) {
+                    if ( $scope.mainMenu[i].submenu ) $scope.mainMenu[i].isOpen = false;
+                } else {
+                    $scope.mainMenu[i].isOpen = !$scope.mainMenu[i].isOpen;
+
+                    if ( !$scope.mainMenu[i].isOpen ) vm.submenu = null;
+                }
+            }
+
+            if ( item.isOpen ) vm.submenu = item.submenu;
+        }
 
         function toggleDropdown(index) {
             if ( index == USER_DROPDOWN_INDEX ) {

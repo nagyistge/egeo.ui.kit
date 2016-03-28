@@ -1,57 +1,65 @@
-<header class="egeo-c-header" role="banner">
-  <h1 class="egeo-c-header__logo" data-ng-if="appLogo" data-sref="{{appRoot}}">
-    <img ng-src="{{appLogo}}" title="{{appName}}" alt="The logo of the application" />
-  </h1>
+<header role="banner">
+  <div class="egeo-c-header">
+    <h1 class="egeo-c-header__logo" data-ng-if="appLogo" data-sref="{{appRoot}}">
+      <img ng-src="{{appLogo}}" title="{{appName}}" alt="The logo of the application" />
+    </h1>
 
-  <aside class="egeo-c-header__user-bar">
-    <span class="egeo-c-user-dropdown" data-ng-click="vm.toggleDropdown(1)">
-      <i class="egeo-c-icon icon-head"></i>
-      <span class="egeo-c-user-dropdown__label">{{userName}}</span>
+    <aside class="egeo-c-header__user-bar">
+      <span class="egeo-c-user-dropdown" data-ng-click="vm.toggleDropdown(1)">
+        <i class="egeo-c-icon icon-head"></i>
+        <span class="egeo-c-user-dropdown__label">{{userName}}</span>
 
-      <ul class="egeo-c-dropdown-box" data-dropdown-index="1" data-ng-show="vm.isUserDropdownVisible">
-        <li class="egeo-c-dropdown-box-item" data-ng-repeat="item in userDropdownItems">
+        <ul class="egeo-c-dropdown-box" data-dropdown-index="1" data-ng-show="vm.isUserDropdownVisible">
+          <li class="egeo-c-dropdown-box-item" data-ng-repeat="item in userDropdownItems">
+            <a href="{{item.href}}" target="{{item.target}}" data-ng-if="item.href">
+              <i class="egeo-c-icon {{item.icon}} egeo-c-dropdown-box-item__icon" title="{{item.label}}"></i>
+              <span class="egeo-c-dropdown-box-item__label">{{item.label}}</span>
+            </a>
+
+            <span data-sref="{{item.sref}}" data-ng-if="item.sref">
+              <i class="egeo-c-icon {{item.icon}} egeo-c-dropdown-box-item__icon" title="{{item.label}}"></i>
+              <span class="egeo-c-dropdown-box-item__label">{{item.label}}</span>
+            </span>
+          </li>
+        </ul>
+      </span>
+
+      <ul class="egeo-c-header__tools">
+        <li class="egeo-c-header__tools-item" data-ng-repeat="item in tools">
+          <i class="egeo-c-icon {{item.icon}} egeo-c-header__tools-item__icon" title="{{item.label}}" data-sref="{{item.sref}}" data-ng-if="item.sref"></i>
           <a href="{{item.href}}" target="{{item.target}}" data-ng-if="item.href">
-            <i class="egeo-c-icon {{item.icon}} egeo-c-dropdown-box-item__icon" title="{{item.label}}"></i>
-            <span class="egeo-c-dropdown-box-item__label">{{item.label}}</span>
+            <i class="egeo-c-icon {{item.icon}} egeo-c-header__tools-item__icon" title="{{item.label}}"></i>
           </a>
-
-          <span data-sref="{{item.sref}}" data-ng-if="item.sref">
-            <i class="egeo-c-icon {{item.icon}} egeo-c-dropdown-box-item__icon" title="{{item.label}}"></i>
-            <span class="egeo-c-dropdown-box-item__label">{{item.label}}</span>
-          </span>
         </li>
       </ul>
-    </span>
 
-    <ul class="egeo-c-header__tools">
-      <li class="egeo-c-header__tools-item" data-ng-repeat="item in tools">
-        <i class="egeo-c-icon {{item.icon}} egeo-c-header__tools-item__icon" title="{{item.label}}" data-sref="{{item.sref}}" data-ng-if="item.sref"></i>
-        <a href="{{item.href}}" target="{{item.target}}" data-ng-if="item.href">
-          <i class="egeo-c-icon {{item.icon}} egeo-c-header__tools-item__icon" title="{{item.label}}"></i>
-        </a>
-      </li>
-    </ul>
+      <span class="egeo-c-header__app-dropdown" data-ng-if="apps">
+        <i class="egeo-c-icon icon-grid-dots"></i>
+      </span>
+    </aside>
 
-    <span class="egeo-c-header__app-dropdown" data-ng-if="apps">
-      <i class="egeo-c-icon icon-grid-dots"></i>
-    </span>
-  </aside>
+    <nav class="egeo-c-header__navigation" role="navigation">
+      <ul class="egeo-c-header__menu">
+        <li class="egeo-c-header__menu-item" data-ng-repeat="item in mainMenu">
+          <i class="egeo-c-icon {{item.icon}} egeo-c-header__menu-item__icon" data-ng-if="item.icon"></i>
+          <span data-sref="{{item.sref}}" class="egeo-c-header__menu-item__label" data-ng-if="item.sref">{{item.label}}</span>
+          <span class="egeo-c-header__menu-item__label" data-ng-if="item.submenu" data-ng-click="vm.toggleSubmenu(item)">{{item.label}}</span>
+          <span class="egeo-c-badge" data-ng-if="item.count && item.count > 0">{{item.count}}</span>
+          <ul class="egeo-c-header__submenu" data-ng-if="item.submenu" data-ng-show="item.isOpen">
+            <li class="egeo-c-header__submenu-item" data-ng-class="{'egeo-c-header__submenu-item--active': subitem.active}" data-ng-repeat="subitem in item.submenu">
+              <span class="egeo-c-header__submenu-item__label" data-sref="{{subitem.sref}}">{{subitem.label}}</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
 
-  <nav class="egeo-c-header__navigation" role="navigation">
-    <ul class="egeo-c-header__menu">
-      <li class="egeo-c-header__menu-item" data-ng-repeat="item in mainMenu">
-        <i class="egeo-c-icon {{item.icon}} egeo-c-header__menu-item__icon" data-ng-if="item.icon"></i>
-        <span data-sref="{{item.sref}}" class="egeo-c-header__menu-item__label">{{item.label}}</span>
-        <span class="egeo-c-badge" data-ng-if="item.count && item.count > 0">{{item.count}}</span>
-      </li>
-    </ul>
-  </nav>
-
-  <div class="egeo-c-header__note" data-ng-if="note">
-    <a class="egeo-c-header__note__link" href="{{note.href}}" target="{{note.target}}">
-      <i class="egeo-c-icon {{note.leftIcon}}" data-ng-if="note.leftIcon"></i>
-      <span class="egeo-c-header__note__label">{{note.label}}</span>
-      <i class="egeo-c-icon {{note.rightIcon}}" data-ng-if="note.rightIcon"></i>
-    </a>
+    <div class="egeo-c-header__note" data-ng-if="note">
+      <a class="egeo-c-header__note__link" href="{{note.href}}" target="{{note.target}}">
+        <i class="egeo-c-icon {{note.leftIcon}}" data-ng-if="note.leftIcon"></i>
+        <span class="egeo-c-header__note__label">{{note.label}}</span>
+        <i class="egeo-c-icon {{note.rightIcon}}" data-ng-if="note.rightIcon"></i>
+      </a>
+    </div>
   </div>
 </header>
