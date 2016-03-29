@@ -41,8 +41,6 @@
         }
 
         function openDropdown(index) {
-            console.log('Opening Dropdown ' + index);
-
             if ( index == USER_DROPDOWN_INDEX ) {
                 vm.isUserDropdownVisible = true;
             } else if ( index == APP_DROPDOWN_INDEX ) {
@@ -51,8 +49,6 @@
         }
 
         function closeDropdown(index) {
-            console.log('Closing Dropdown ' + index);
-
             if ( index == USER_DROPDOWN_INDEX ) {
                 vm.isUserDropdownVisible = false;
             } else if ( index == APP_DROPDOWN_INDEX ) {
