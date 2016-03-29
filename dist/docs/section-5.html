@@ -46,7 +46,7 @@
               <li class="kss-menu-item"><a href="#section-5.12"><span class="kss-ref">5.12</span><span class="kss-name">Button Group</span></a></li>
               <li class="kss-menu-item"><a href="#section-5.14"><span class="kss-ref">5.14</span><span class="kss-name">Row</span></a></li>
               <li class="kss-menu-item"><a href="#section-5.15"><span class="kss-ref">5.15</span><span class="kss-name">Toolbar</span></a></li>
-              <li class="kss-menu-item"><a href="#section-5.16"><span class="kss-ref">5.16</span><span class="kss-name">5.16</span></a></li>
+              <li class="kss-menu-item"><a href="#section-5.16"><span class="kss-ref">5.16</span><span class="kss-name">Helpbox</span></a></li>
               <li class="kss-menu-item"><a href="#section-5.17"><span class="kss-ref">5.17</span><span class="kss-name">Header</span></a></li>
             </ul>
           </nav>
@@ -882,7 +882,33 @@ transclude content.  Below you can see the properties exposed:</p>
             </div>
           </section>
           <section id="section-5.16" class="kss-section kss-depth-2">
-            <h1 class="kss-title"><span class="kss-ref">5.16</span> 5.16</h1>
+            <h1 class="kss-title"><span class="kss-ref">5.16</span> Helpbox</h1>
+            <div class="kss-description">
+              <p><span class="tag tag--untested">untested</span>
+<span class="tag tag--danger">internal</span>
+<span class="tag tag--warn">beta version</span></p>
+<p>The Helpbox directive is used to automatize the behavior and appearance of help
+messages in the whole components of Egeo.</p>
+<h2 id="the-egeo-c-helpbox-angularjs-directive">The egeo-c-helpbox AngularJS directive</h2>
+<p><span class="tag tag--type">@directive</span><span class="tag tag--tested">tested</span></p>
+<p>Egeo includes an AngularJS directive to be used in Angular apps to allow developers to integrate the whole classes, properties and
+functionalities with no effort. The directive is the responsible of apply different styles depending of the status of the combobox itself
+and/or the form it is included on.</p>
+<p><strong>warn: </strong> This directive is internally used by other Egeo components.</p>
+<h3 id="directive-settings">Directive settings</h3>
+<p>TODO: finish documentation
+| Variable   | Default value     | Description                                                                   |
+| ---------- | ----------------- | ----------------------------------------------------------------------------- |
+| error      | none              | |
+| hasHelp    | none              | |
+| helpText   | none              | The help text the component should show when the user clicks on the help icon.|
+| isFocused  | <code>false</code>           | |
+| isHelpShown| <code>false</code>           | |
+| required   | <code>false</code>           | Tell whether the input is required or not.                                    |
+| touched    | <code>false</code>           | |
+| valid      | <code>false</code>           | |</p>
+
+            </div>
           </section>
           <section id="section-5.17" class="kss-section kss-depth-2">
             <h1 class="kss-title"><span class="kss-ref">5.17</span> Header</h1>
