@@ -10,7 +10,6 @@
     function egeoCHeader(EgeoConfig) {
       var directive = {
           controller: 'EgeoHeaderController as vm',
-          link: link,
           replace: true,
           restrict: 'E',
           scope: {
@@ -27,9 +26,5 @@
       };
 
       return directive;
-
-      function link(scope, element, attrs) {
-
-      }
     }
 })();

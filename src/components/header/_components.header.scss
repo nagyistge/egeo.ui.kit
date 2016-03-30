@@ -16,11 +16,72 @@
 //
 // ### Directive settings
 //
-// | Variable   | Default value     | Description          |
-// | ---------- | ----------------- | -------------------- |
+// | Variable           | Type | Description                                                                                        |
+// | ------------------ | ---- | -------------------------------------------------------------------------------------------------- |
+// | appLogo            | `@`  | Url to an image that would be the logo of the app.                                                 |
+// | appName            | `@`  | The name of the app.                                                                               |
+// | appRoot            | `@`  | The root Url of the app to redirect the user when click on the logo.                               |
+// | mainMenu           | `=`  | An array of objects that creates the Main Menu of the app (see below for more information).        |
+// | note               | `=`  | An object that configures an advice at right side of the header (see below for more information).  |
+// | tools              | `=`  | An array of objects that creates direct access in the user bar (see below for more information).   |
+// | userDropdownItems  | `=`  | An array of objects that creates a dropdown for the user options (see below for more information). |
+// | userName           | `@`  | The name of the user logged in the app.                                                            |
 //
+// ## How to configure the Main Menu
+//
+// To create the main navigation menu, you must create an array of objects that
+// will be passed to the directive by reference (=) with these properties:
+//
+// * icon: an icon that will be shown in the bar.
+// * label: a label that will be shown as the title of the icon (only will appear if the user put the mouse over the icon).
+// * sref (optional): if used, the reference of the app the user will be redirected on click using the ui-sref notation.
+// * count (optional): if used, a counter that will be shown in a badge to tell the user how many items needs atention inside.
+// * submenu (optional): if used, a second array of objects to show in a second level (with only icon, label and sref properties).
+// * isOpen (optional): whether the submenu should appears extended or not.
+//
+// ## How to create or modify a note
+//
+// A note is a warning object that appear at bottom and right side of the header
+// and shows any important information to the user. To create a note, you must
+// create an object that will be passed to the directive by reference (=) and
+// will have the next properties:
+//
+// * href: the Url where the user will be redirected. Remember that it is possible to redirect
+// to any part of your app, even if you are using sref to do it, using the Url notation.
+// * target: _blank, _self, ...
+// * leftIcon (optional): An icon in the ico_stratio icon font that will appear at left of the label.
+// * label: the text of the note (should be short).
+// * rightIcon (optional): An icon in the ico_stratio icon font that will appear at right of the label.
+//
+// ## How to configure tools in the user bar
+//
+// The user bar is the bar of tools that appears at top right in the header. It
+// includes the user dropdown, a serie of icons with different purposes and,
+// optionally, an app icon to switch between Stratio modules. The tools are the
+// icons between the user dropdown and the app icon (if exists).
+//
+// To create this tools or quick access, you must create an array of objects that
+// will be passed to the directive by reference (=) with these properties:
+//
+// * icon: an icon that will be shown in the bar.
+// * label: a label that will be shown as the title of the icon (only will appear if the user put the mouse over the icon).
+// * sref (optional): if used, the reference of the app the user will be redirected on click using the ui-sref notation.
+// * href (optional): if used, a link where the user will be redirected on click.
+// * target (optional): if used, the window where the link (only href) will be shown.
+//
+// ## How to configure the user dropdown
+//
+// To create the differente options should appear as dropdown option in the
+// user dropdown, you must create an array of objects that will be passed to the
+// directive by reference (=) with these properties:
+//
+// * icon: an icon that will be shown at left of the label.
+// * label: the text that will be shown.
+// * sref: the reference of the app the user will be redirected on click using the ui-sref notation.
 //
 // ## Usage
+//
+// ### Directive use
 //
 // ```
 // <div ng-controller="TestController as vm">
@@ -29,6 +90,18 @@
 //   </egeo-c-form>
 // </div>
 // ```
+//
+// ### Variables in the TestController:
+//
+// ```
+// this.tools = [{ icon: 'icon-cog', label: 'Configuration', sref: 'config' }, { icon: 'icon-help2', label: 'Help', href: 'https://stratio.atlassian.net/wiki', target: '_blank' }];
+// this.mainMenu = [{icon: 'icon-paper', label: 'My Viewer', sref: 'page1', count:'0' }, {icon: 'icon-grid-2', label: 'Pages', sref: 'page2' }, {icon: 'icon-server', label: 'Data Sources', count:'12', isOpen: false, submenu: [{label: 'Triggered', sref: 'triggered', active: 'true'}, {label: 'Setup', sref: 'setup'}] }, {icon: 'icon-monitor', label: 'Data Views', sref: 'page4' }, {icon: 'icon-box', label: 'Widgets', sref: 'page5' }];
+// this.note = {href: 'http://www.google.com', target: '_blank', leftIcon: 'icon-thermometer', label: 'Global Status Panel' };
+// this.userDropdownItems = [{icon: 'icon-logout', label: 'Logout', sref: 'logout'}, {icon: 'icon-head', label: 'Profile', sref: 'profile'}];
+// this.apps = null;
+// ```
+//
+// ### Result
 //
 // <div ng-controller="TestController as vm">
 //   <egeo-c-form id="TestForm" method="post">
@@ -37,6 +110,12 @@
 // </div>
 //
 // ## Dependencies
+//
+// * [CSS Base Framework - components.header](../ui-base/section-7.html#section-7.20)
+// * [CSS Base Framework - components.user-dropdown](../ui-base/section-7.html#section-7.19)
+// * [CSS Base Framework - components.dropdown-box](../ui-base/section-7.html#section-7.21)
+// * [CSS Base Framework - components.badge](../ui-base/section-7.html#section-7.18)
+// * [CSS Base Framework - components.icon](../ui-base/section-7.html#section-7.3)
 //
 //
 // <div class="compatibility">Compatibility IE9+, Firefox Latest, Chrome Latest, Edge Latest, Safari Latest, Opera Latest</div>
