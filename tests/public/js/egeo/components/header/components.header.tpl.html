@@ -42,10 +42,10 @@
 
     <nav class="egeo-c-header__navigation" role="navigation">
       <ul class="egeo-c-header__menu">
-        <li class="egeo-c-header__menu-item" data-ng-repeat="item in mainMenu">
+        <li class="egeo-c-header__menu-item" data-ng-click="vm.toggleSubmenu(item)" data-ng-repeat="item in mainMenu">
           <i class="egeo-c-icon {{item.icon}} egeo-c-header__menu-item__icon" data-ng-if="item.icon"></i>
           <span data-sref="{{item.sref}}" class="egeo-c-header__menu-item__label" data-ng-if="item.sref">{{item.label}}</span>
-          <span class="egeo-c-header__menu-item__label" data-ng-if="item.submenu" data-ng-click="vm.toggleSubmenu(item)">{{item.label}}</span>
+          <span class="egeo-c-header__menu-item__label" data-ng-if="item.submenu">{{item.label}}</span>
           <span class="egeo-c-badge" data-ng-if="item.count && item.count > 0">{{item.count}}</span>
           <ul class="egeo-c-header__submenu" data-ng-if="item.submenu" data-ng-show="item.isOpen">
             <li class="egeo-c-header__submenu-item" data-ng-class="{'egeo-c-header__submenu-item--active': subitem.active}" data-ng-repeat="subitem in item.submenu">
