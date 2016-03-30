@@ -9,6 +9,7 @@
 
     function egeoCHelpbox(EgeoConfig) {
         var directive = {
+            link: link,
             restrict: 'E',
             replace: true,
             scope: {
@@ -25,5 +26,11 @@
         };
 
         return directive;
+
+        function link(scope) {
+            if ( !scope.hasHelp ) {
+                if ( scope.helpText ) scope.hasHelp = true;
+            }
+        }
     }
 })();

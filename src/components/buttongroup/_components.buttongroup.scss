@@ -15,12 +15,12 @@
 //
 // ### Directive settings
 //
-// | Property       | Description                                                                                                                                                                        |
-// | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-// | small          | Tell to the directive if the more button will be small or not.                                                                                                                     |
-// | popoverToRight | Tell to the directive if the popover should behave as if placed in the right side of the website. This means that the popover would be shown from the ellipsis button to the left. The component automatically checks if the popover would be placed outside the viewport and the will apply this behavior regardless of the property value. |
+// | Property       | Type | Description                                                                                                                                                                        |
+// | -------------- | ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+// | small          | `@`  | Tell to the directive if the more button will be small or not.                                                                                                                     |
+// | popoverToRight | `@`  | Tell to the directive if the popover should behave as if placed in the right side of the website. This means that the popover would be shown from the ellipsis button to the left. The component automatically checks if the popover would be placed outside the viewport and the will apply this behavior regardless of the property value. |
 //
-// **Warning:** Keep in mind that the egeo-c-buttongroup Angular Directive is only allowed to be used 
+// **Warning:** Keep in mind that the egeo-c-buttongroup Angular Directive is only allowed to be used
 // with egeo-c-buttons as inside elements. Use it combined with other elements may have unexpected effects.
 //
 // ### Usage
@@ -85,7 +85,7 @@
 // ---
 //
 // ## Dependencies
-//  
+//
 // * [components.button](section-5.html#section-5.11)
 // * [CSS Base Framework - components.buttongroup](../ui-base/section-7.html#section-7.8)
 // * [CSS Base Framework - components.popover](../ui-base/section-7.html#section-7.9)

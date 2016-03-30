@@ -15,15 +15,15 @@
 //
 // ### Directive settings
 //
-// | Variable   | Default value     | Description                                                                   |
-// | ---------- | ----------------- | ----------------------------------------------------------------------------- |
-// | disabled   | `false`           | Tell whether the radiobutton is disabled or not.                              |
-// | helpText   | none              | The help text the component should show when the user clicks on the help icon.|
-// | id         | none              | The id of the input.                                                          |
-// | label      | none              | The text of the label will appear beside the radiobutton.                     |
-// | model      | none              | AngularJS model to bind the value of the component.                           |
-// | qa         | none              | Identifier used by QA team for testing purposes.                              |
-// | required   | `false`           | Tell whether the radiobutton is required or not.                              |
+// | Variable   | Type | Description                                                                   |
+// | ---------- | ---- | ----------------------------------------------------------------------------- |
+// | disabled   | `@`  | Tell whether the radiobutton is disabled or not.                              |
+// | helpText   | `@`  | The help text the component should show when the user clicks on the help icon.|
+// | id         | `@`  | The id of the input.                                                          |
+// | label      | `@`  | The text of the label will appear beside the radiobutton.                     |
+// | model      | `=`  | AngularJS model to bind the value of the component.                           |
+// | qa         | `@`  | Identifier used by QA team for testing purposes.                              |
+// | required   | `@`  | Tell whether the radiobutton is required or not.                              |
 //
 // ### Usage
 //

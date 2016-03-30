@@ -11,17 +11,17 @@
 //
 // ### Directive settings
 //
-// | Property    | Description                                                                                                                |
-// | ----------- | -------------------------------------------------------------------------------------------------------------------------- |
-// | at-right    | Floats the button to right                                                                                                 |
-// | icon-left   | An icon which appears at left side                                                                                         |
-// | icon-right  | An icon which appears at right side                                                                                        |
-// | label       | The label of the button                                                                                                    |
-// | modifier    | The name of the button created as a CSS BEM Modifier                                                                       |
-// | popover     | <span class="tag tag--danger">internal</span>It is used to reference popover IDs when the button is linked to a popover.   |
-// | rounded     | A rounded version of the button. A rounded button will hide the label and only show the icon.                              |
-// | small       | A small version of the button                                                                                              |
-// | type        | Submit, Reset or Button                                                                                                    |
+// | Property    | Type | Description                                                                                                                |
+// | ----------- | ---- | -------------------------------------------------------------------------------------------------------------------------- |
+// | at-right    | `@`  | Floats the button to right                                                                                                 |
+// | icon-left   | `@`  | An icon which appears at left side                                                                                         |
+// | icon-right  | `@`  | An icon which appears at right side                                                                                        |
+// | label       | `@`  | The label of the button                                                                                                    |
+// | modifier    | `@`  | The name of the button created as a CSS BEM Modifier                                                                       |
+// | popover     | `@`  | <span class="tag tag--danger">internal</span>It is used to reference popover IDs when the button is linked to a popover.   |
+// | rounded     | `@`  | A rounded version of the button. A rounded button will hide the label and only show the icon.                              |
+// | small       | `@`  | A small version of the button                                                                                              |
+// | type        | `@`  | Submit, Reset or Button                                                                                                    |
 //
 // ### Usage
 //
@@ -65,7 +65,7 @@
 // ---
 //
 // ## Dependencies
-//  
+//
 // * [CSS Base Framework - components.button](../ui-base/section-7.html#section-7.2)
 // * [CSS Base Framework - components.icon](../ui-base/section-7.html#section-7.3)
 // * [CSS Base Framework - utils.floats](../ui-base/section-8.html#section-8.3)

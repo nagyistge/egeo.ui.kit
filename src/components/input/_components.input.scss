@@ -15,18 +15,18 @@
 //
 // ### Directive settings
 //
-// | Variable   | Default value     | Description                                                                   |
-// | ---------- | ----------------- | ----------------------------------------------------------------------------- |
-// | disabled   | `false`           | Tell whether the input is disabled or not.                                    |
-// | helpText   | none              | The help text the component should show when the user clicks on the help icon.|
-// | id         | none              | The id of the input.                                                          |
-// | label      | none              | The text of the label will appear beside the input.                           |
-// | model      | none              | AngularJS model to bind the value of the component.                           |
-// | pattern    | none              | Pattern applied to validate content using Angular forms validation.           |
-// | placeholder| none              | Placeholder value of the input.                                               |
-// | qa         | none              | Identifier used by QA team for testing purposes.                              |
-// | required   | `false`           | Tell whether the input is required or not.                                    |
-// | type       | none              | HTML type of the input (check options [here](http://www.w3schools.com/tags/att_input_type.asp)). |
+// | Variable   | Type | Description                                                                   |
+// | ---------- | ---- | ----------------------------------------------------------------------------- |
+// | disabled   | `@`  | Tell whether the input is disabled or not.                                    |
+// | helpText   | `@`  | The help text the component should show when the user clicks on the help icon.|
+// | id         | `@`  | The id of the input.                                                          |
+// | label      | `@`  | The text of the label will appear beside the input.                           |
+// | model      | `=`  | AngularJS model to bind the value of the component.                           |
+// | pattern    | `=`  | Pattern applied to validate content using Angular forms validation.           |
+// | placeholder| `@`  | Placeholder value of the input.                                               |
+// | qa         | `@`  | Identifier used by QA team for testing purposes.                              |
+// | required   | `@`  | Tell whether the input is required or not.                                    |
+// | type       | `@`  | HTML type of the input (check options [here](http://www.w3schools.com/tags/att_input_type.asp)). |
 //
 // ### Usage
 //

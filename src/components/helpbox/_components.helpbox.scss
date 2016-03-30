@@ -18,16 +18,22 @@
 // **warn: ** This directive is internally used by other Egeo components.
 //
 // ### Directive settings
-// TODO: finish documentation
-// | Variable   | Default value     | Description                                                                   |
-// | ---------- | ----------------- | ----------------------------------------------------------------------------- |
-// | error      | none              | |
-// | hasHelp    | none              | |
-// | helpText   | none              | The help text the component should show when the user clicks on the help icon.|
-// | isFocused  | `false`           | |
-// | isHelpShown| `false`           | |
-// | required   | `false`           | Tell whether the input is required or not.                                    |
-// | touched    | `false`           | |
-// | valid      | `false`           | |
+//
+// | Variable   | Type | Description                                                                   |
+// | ---------- | ---- | ----------------------------------------------------------------------------- |
+// | error      | `=`  | The error object of an AngularJS form. |
+// | hasHelp    | `@`  | (optional) If help message exists. If no indicated the directive will check the helpText parameter to do it. |
+// | helpText   | `@`  | The help text the component should show when the user clicks on the help icon.|
+// | isFocused  | `=`  | If the control that is bind to the help box has the focus. |
+// | isHelpShown| `=`  | If the help is shown. |
+// | required   | `@`  | Whether the input is required or not.                                    |
+// | touched    | `=`  | If the AngularJS form was being touched. |
+// | valid      | `=`  | If the AngularJS form is valid. |
+//
+// ## Usage
+//
+// ```
+// <egeo-c-helpbox data-is-help-shown="vm.isHelpShown" data-has-help="vm.hasHelp" data-valid="this[id].$valid" data-touched="this[id][id].$touched" data-error="this[id][id].$error" data-required="{{required}}" data-help-text="{{helpText}}"></egeo-c-helpbox>
+// ```
 //
 // Styleguide 5.16
