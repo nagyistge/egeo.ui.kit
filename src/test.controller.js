@@ -17,6 +17,13 @@
         this.note = {href: 'http://www.google.com', target: '_blank', leftIcon: 'icon-thermometer', label: 'Global Status Panel' };
         this.userDropdownItems = [{icon: 'icon-logout', label: 'Logout', sref: 'logout'}, {icon: 'icon-book1', label: 'Documentation', href: 'https://stratio.atlassian.net/wiki', target: '_blank'}];
         this.apps = null;
+        this.isFocused = true;
+        this.isHelpShown = true;
+        this.isValid = false;
+        this.isTouched = true;
+        this.error;
+        this.falseValue = false;
+        this.trueValue = true;
 
         function test() {
             console.log("TestController: test");
