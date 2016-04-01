@@ -127,6 +127,7 @@ module.exports = function (grunt) {
       styleguide: {
         files: [
           // Includes font files within path and its sub-directories
+          {expand: true, cwd: '<%= app.src %>', src: ['test.controller.js'], dest: '<%= app.tests %>'},
           {expand: true, cwd: '<%= app.egeoBase %>', src: ['*.css'], dest: '<%= app.dist %>/<%= app.docs %>/public'},
           {expand: true, cwd: '<%= app.kssTemplate %>/public', src: ['**/*'], dest: '<%= app.dist %>/<%= app.docs %>/public'},
           {expand: true, cwd: '<%= app.src %>', src: ['*.js'], dest: '<%= app.dist %>/<%= app.docs %>/public/js'},

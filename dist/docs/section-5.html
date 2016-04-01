@@ -1080,9 +1080,7 @@ directive by reference (=) with these properties:</p>
 <h2 id="usage">Usage</h2>
 <h3 id="directive-use">Directive use</h3>
 <pre><code>&lt;div ng-controller=&quot;TestController as vm&quot;&gt;
-  &lt;egeo-c-form id=&quot;TestForm&quot; method=&quot;post&quot;&gt;
-    &lt;egeo-c-header data-app-logo=&quot;public/assets/images/app-logo.png&quot; data-app-name=&quot;Stratio Viewer&quot; data-user-name=&quot;Antonio H.&quot; data-user-dropdown-items=&quot;vm.userDropdownItems&quot; data-tools=&quot;vm.tools&quot; data-main-menu=&quot;vm.mainMenu&quot; data-note=&quot;vm.note&quot;&gt;&lt;/egeo-c-header&gt;
-  &lt;/egeo-c-form&gt;
+  &lt;egeo-c-header data-app-logo=&quot;public/assets/images/app-logo.png&quot; data-app-name=&quot;Stratio Viewer&quot; data-user-name=&quot;Antonio H.&quot; data-user-dropdown-items=&quot;vm.userDropdownItems&quot; data-tools=&quot;vm.tools&quot; data-main-menu=&quot;vm.mainMenu&quot; data-note=&quot;vm.note&quot;&gt;&lt;/egeo-c-header&gt;
 &lt;/div&gt;
 </code></pre><h3 id="variables-in-the-testcontroller-">Variables in the TestController:</h3>
 <pre><code>this.tools = [{ icon: &#39;icon-cog&#39;, label: &#39;Configuration&#39;, sref: &#39;config&#39; }, { icon: &#39;icon-help2&#39;, label: &#39;Help&#39;, href: &#39;https://stratio.atlassian.net/wiki&#39;, target: &#39;_blank&#39; }];
@@ -1092,9 +1090,7 @@ this.userDropdownItems = [{icon: &#39;icon-logout&#39;, label: &#39;Logout&#39;,
 this.apps = null;
 </code></pre><h3 id="result">Result</h3>
 <div ng-controller="TestController as vm">
-  <egeo-c-form id="TestForm" method="post">
-    <egeo-c-header data-app-logo="public/assets/images/app-logo.png" data-app-name="Stratio Viewer" data-user-name="Antonio H." data-user-dropdown-items="vm.userDropdownItems" data-tools="vm.tools" data-main-menu="vm.mainMenu" data-note="vm.note"></egeo-c-header>
-  </egeo-c-form>
+  <egeo-c-header data-app-logo="public/assets/images/app-logo.png" data-app-name="Stratio Viewer" data-user-name="Antonio H." data-user-dropdown-items="vm.userDropdownItems" data-tools="vm.tools" data-main-menu="vm.mainMenu" data-note="vm.note"></egeo-c-header>
 </div>
 
 <h2 id="dependencies">Dependencies</h2>
