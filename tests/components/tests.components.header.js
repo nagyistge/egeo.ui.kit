@@ -112,16 +112,42 @@ describe('components.header.directive', function() {
     }
   });
 
-    it('should have a note with the options defined', function() {
-      var tag = directiveElem[0].children[0].children[0].children[4];
-      var item = scope.$$childTail.$$childTail.$$childTail.note;
+  it('should have a note with the options defined', function() {
+    var tag = directiveElem[0].children[0].children[0].children[4];
+    var item = scope.$$childTail.$$childTail.$$childTail.note;
 
-      expect(tag).toBeDefined();
-      expect(tag.className.indexOf('egeo-c-header__note')).not.toBe(-1);
-      expect(tag.children[0].getAttribute('href')).toBe(item.href);
-      expect(tag.children[0].getAttribute('target')).toBe(item.target);
-      if ( item.leftIcon ) { expect(tag.children[0].children[0].className.indexOf(item.leftIcon)).not.toBe(-1); }
-      expect(tag.children[0].children[1].textContent).toBe(item.label);
-      if ( item.rightIcon ) { expect(tag.children[0].children[2].className.indexOf(item.rightIcon)).not.toBe(-1); }
-    });
+    expect(tag).toBeDefined();
+    expect(tag.className.indexOf('egeo-c-header__note')).not.toBe(-1);
+    expect(tag.children[0].getAttribute('href')).toBe(item.href);
+    expect(tag.children[0].getAttribute('target')).toBe(item.target);
+    if ( item.leftIcon ) { expect(tag.children[0].children[0].className.indexOf(item.leftIcon)).not.toBe(-1); }
+    expect(tag.children[0].children[1].textContent).toBe(item.label);
+    if ( item.rightIcon ) { expect(tag.children[0].children[2].className.indexOf(item.rightIcon)).not.toBe(-1); }
+  });
+
+  // CONTROLLER TESTS
+
+  it('should change the user dropdown isOpen option', function() {
+    controller.toggleDropdown(1);
+    expect(controller.isUserDropdownVisible).toBe(true);
+    controller.toggleDropdown(1);
+    expect(controller.isUserDropdownVisible).toBe(false);
+  });
+
+  it('should change the app dropdown isOpen option', function() {
+    controller.toggleDropdown(2);
+    expect(controller.isAppDropdownVisible).toBe(true);
+    controller.toggleDropdown(2);
+    expect(controller.isAppDropdownVisible).toBe(false);
+  });
+
+  it('should change the submenu dropdown isOpen option', function() {
+    // Mock a false scope to be coincident with the original scope in the application
+    scope.mainMenu = scope.$$childTail.$$childTail.$$childTail.mainMenu;
+    
+    controller.toggleSubmenu(scope.$$childTail.$$childTail.$$childTail.mainMenu[2]);
+    expect(scope.$$childTail.$$childTail.$$childTail.mainMenu[2].isOpen).toBe(true);
+    controller.toggleSubmenu(scope.$$childTail.$$childTail.$$childTail.mainMenu[2]);
+    expect(scope.$$childTail.$$childTail.$$childTail.mainMenu[2].isOpen).toBe(false);
+  });
 });
