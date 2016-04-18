@@ -18,7 +18,7 @@
                 helpText: '@',
                 id: '@',
                 label: '@',
-                model: '@',
+                model: '=',
                 options: '@',
                 qa: '@',
                 required: '@',
@@ -30,8 +30,10 @@
         return directive;
 
         function link(scope, element, attrs, ctrl) {
-            if (scope.helpText) { 
-                ctrl.hasHelp = true; 
+            var c;
+
+            if (scope.helpText) {
+                ctrl.hasHelp = true;
             }
         }
     }

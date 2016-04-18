@@ -32,7 +32,7 @@
 // ```
 // <div ng-controller="TestController as vm">
 //   <egeo-c-form id="TestForm" method="post">
-//      <egeo-c-combobox data-text="--- Please select ---" data-options="{{vm.cboptions}}" data-model="{{vm.cbovalue}}" data-id="test-combobox" data-label="Select an option" data-required="true" data-qa="id-for-combobox" data-help-text="Lorem ipsum dolor sit amet.">
+//      <egeo-c-combobox data-text="--- Please select ---" data-options="{{vm.cboptions}}" data-model="vm.cboresult" data-id="test-combobox" data-label="Select an option" data-required="true" data-qa="id-for-combobox" data-help-text="Lorem ipsum dolor sit amet.">
 //      </egeo-c-combobox>
 //   </egeo-c-form>
 // </div>
@@ -41,7 +41,7 @@
 // ---
 // <div ng-controller="TestController as vm">
 //   <egeo-c-form id="TestForm" method="post">
-//      <egeo-c-combobox data-text="--- Please select ---" data-options="{{vm.cboptions}}" data-model="{{vm.cbovalue}}" data-id="test-combobox" data-label="Select an option" data-required="true" data-qa="id-for-combobox" data-help-text="Lorem ipsum dolor sit amet.">
+//      <egeo-c-combobox data-text="--- Please select ---" data-options="{{vm.cboptions}}" data-model="vm.cboresult" data-id="test-combobox" data-label="Select an option" data-required="true" data-qa="id-for-combobox" data-help-text="Lorem ipsum dolor sit amet.">
 //      </egeo-c-combobox>
 //   </egeo-c-form>
 // </div>
