@@ -39,8 +39,8 @@
 // ---
 // <div ng-controller="TestController as vm">
 //   <egeo-c-form id="TestForm" method="post">
-//      <egeo-c-radiobutton data-id="test-radiobutton1" data-cname="radiobutton-name" data-value="1" data-label="opt 1" data-required="true" data-qa="id-for-radiobutton" data-help-text="Lorem ipsum dolor."></egeo-c-radiobutton>
-//      <egeo-c-radiobutton data-id="test-radiobutton2" data-cname="radiobutton-name" data-value="2" data-label="opt 2" data-required="true" data-qa="id-for-radiobutton" data-help-text="Lorem ipsum dolor sit amet."></egeo-c-radiobutton>
+//      <egeo-c-radiobutton data-id="test-radiobutton1" data-model="vm.radiovalue" data-cname="radiobutton-name" data-value="1" data-label="opt 1" data-required="true" data-qa="id-for-radiobutton" data-help-text="Lorem ipsum dolor."></egeo-c-radiobutton>
+//      <egeo-c-radiobutton data-id="test-radiobutton2" data-model="vm.radiovalue" data-cname="radiobutton-name" data-value="2" data-label="opt 2" data-required="true" data-qa="id-for-radiobutton" data-help-text="Lorem ipsum dolor sit amet."></egeo-c-radiobutton>
 //   </egeo-c-form>
 // </div>
 //

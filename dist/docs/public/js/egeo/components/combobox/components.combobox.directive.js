@@ -35,8 +35,6 @@
             if (scope.helpText) {
                 ctrl.hasHelp = true;
             }
-
-            console.log(scope.model);
         }
     }
 })();

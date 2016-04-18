@@ -375,13 +375,13 @@ and/or the form it is included on.</p>
 <h3 id="usage">Usage</h3>
 <pre><code>&lt;div ng-controller=&quot;TestController as vm&quot;&gt;
   &lt;egeo-c-form id=&quot;TestForm&quot; method=&quot;post&quot;&gt;
-     &lt;egeo-c-checkbox data-id=&quot;test-checkbox&quot; data-label=&quot;I read and accept the conditions&quot; data-required=&quot;true&quot; data-qa=&quot;id-for-checkbox&quot; data-help-text=&quot;The acceptance of conditions is needed to continue.&quot;&gt;&lt;/egeo-c-checkbox&gt;
+     &lt;egeo-c-checkbox data-id=&quot;test-checkbox&quot; data-model=&quot;vm.checkvalue&quot; data-label=&quot;I read and accept the conditions&quot; data-required=&quot;true&quot; data-qa=&quot;id-for-checkbox&quot; data-help-text=&quot;The acceptance of conditions is needed to continue.&quot;&gt;&lt;/egeo-c-checkbox&gt;
   &lt;/egeo-c-form&gt;
 &lt;/div&gt;
 </code></pre><hr>
 <div ng-controller="TestController as vm">
   <egeo-c-form id="TestForm" method="post">
-     <egeo-c-checkbox data-id="test-checkbox" data-label="I read and accept the conditions" data-required="true" data-qa="id-for-checkbox" data-help-text="The acceptance of conditions is needed to continue."></egeo-c-checkbox>
+     <egeo-c-checkbox data-id="test-checkbox" data-model="vm.checkvalue" data-label="I read and accept the conditions" data-required="true" data-qa="id-for-checkbox" data-help-text="The acceptance of conditions is needed to continue."></egeo-c-checkbox>
   </egeo-c-form>
 </div>
 
@@ -468,15 +468,13 @@ and/or the form it is included on.</p>
 <h3 id="usage">Usage</h3>
 <pre><code>&lt;div ng-controller=&quot;TestController as vm&quot;&gt;
   &lt;egeo-c-form id=&quot;TestForm&quot; method=&quot;post&quot;&gt;
-     &lt;egeo-c-combobox data-text=&quot;--- Please select ---&quot; data-options=&quot;{{vm.cboptions}}&quot; data-model=&quot;vm.cboresult&quot; data-id=&quot;test-combobox&quot; data-label=&quot;Select an option&quot; data-required=&quot;true&quot; data-qa=&quot;id-for-combobox&quot; data-help-text=&quot;Lorem ipsum dolor sit amet.&quot;&gt;
-     &lt;/egeo-c-combobox&gt;
+     &lt;egeo-c-combobox data-text=&quot;--- Please select ---&quot; data-options=&quot;{{vm.cboptions}}&quot; data-model=&quot;vm.cboresult&quot; data-id=&quot;test-combobox&quot; data-label=&quot;Select an option&quot; data-required=&quot;true&quot; data-qa=&quot;id-for-combobox&quot; data-help-text=&quot;Lorem ipsum dolor sit amet.&quot;&gt;&lt;/egeo-c-combobox&gt;
   &lt;/egeo-c-form&gt;
 &lt;/div&gt;
 </code></pre><hr>
 <div ng-controller="TestController as vm">
   <egeo-c-form id="TestForm" method="post">
-     <egeo-c-combobox data-text="--- Please select ---" data-options="{{vm.cboptions}}" data-model="vm.cboresult" data-id="test-combobox" data-label="Select an option" data-required="true" data-qa="id-for-combobox" data-help-text="Lorem ipsum dolor sit amet.">
-     </egeo-c-combobox>
+     <egeo-c-combobox data-text="--- Please select ---" data-options="{{vm.cboptions}}" data-model="vm.cboresult" data-id="test-combobox" data-label="Select an option" data-required="true" data-qa="id-for-combobox" data-help-text="Lorem ipsum dolor sit amet."></egeo-c-combobox>
   </egeo-c-form>
 </div>
 
@@ -560,8 +558,8 @@ and/or the form it is included on.</p>
 </code></pre><hr>
 <div ng-controller="TestController as vm">
   <egeo-c-form id="TestForm" method="post">
-     <egeo-c-radiobutton data-id="test-radiobutton1" data-cname="radiobutton-name" data-value="1" data-label="opt 1" data-required="true" data-qa="id-for-radiobutton" data-help-text="Lorem ipsum dolor."></egeo-c-radiobutton>
-     <egeo-c-radiobutton data-id="test-radiobutton2" data-cname="radiobutton-name" data-value="2" data-label="opt 2" data-required="true" data-qa="id-for-radiobutton" data-help-text="Lorem ipsum dolor sit amet."></egeo-c-radiobutton>
+     <egeo-c-radiobutton data-id="test-radiobutton1" data-model="vm.radiovalue" data-cname="radiobutton-name" data-value="1" data-label="opt 1" data-required="true" data-qa="id-for-radiobutton" data-help-text="Lorem ipsum dolor."></egeo-c-radiobutton>
+     <egeo-c-radiobutton data-id="test-radiobutton2" data-model="vm.radiovalue" data-cname="radiobutton-name" data-value="2" data-label="opt 2" data-required="true" data-qa="id-for-radiobutton" data-help-text="Lorem ipsum dolor sit amet."></egeo-c-radiobutton>
   </egeo-c-form>
 </div>
 
