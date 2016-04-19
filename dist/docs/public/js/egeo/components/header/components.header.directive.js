@@ -10,6 +10,7 @@
     function egeoCHeader(EgeoConfig) {
       var directive = {
           controller: 'EgeoHeaderController as vm',
+          link: link,
           replace: true,
           restrict: 'E',
           scope: {
@@ -26,5 +27,13 @@
       };
 
       return directive;
+
+      function link(scope, element, attrs, ctrl) {
+          var i = scope.mainMenu.length;
+
+          while (i-- && !ctrl.submenu) {
+              if ( scope.mainMenu[i].isOpen ) ctrl.toggleSubmenu(scope.mainMenu[i], true);
+          }
+      }
     }
 })();

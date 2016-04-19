@@ -18,12 +18,16 @@
         vm.toggleSubmenu = toggleSubmenu;
         vm.toggleDropdown = toggleDropdown;
 
-        function toggleSubmenu(item) {
+        function toggleSubmenu(item, initial) {
             for (var i = 0; i < $scope.mainMenu.length; i++) {
                 if ( $scope.mainMenu[i] != item ) {
                     if ( $scope.mainMenu[i].submenu ) $scope.mainMenu[i].isOpen = false;
                 } else {
-                    $scope.mainMenu[i].isOpen = !$scope.mainMenu[i].isOpen;
+                    if ( initial ) {
+                        $scope.mainMenu[i].isOpen = true;
+                    } else {
+                        $scope.mainMenu[i].isOpen = !$scope.mainMenu[i].isOpen;
+                    }
 
                     if ( !$scope.mainMenu[i].isOpen ) vm.submenu = null;
                 }
