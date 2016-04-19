@@ -1,5 +1,5 @@
 <div>
-    <div class="egeo-c-helpbox" data-ng-if="((isFocused || isHelpShown) && (helpText != null)) || (!valid && touched)">
+    <div class="egeo-c-helpbox" data-ng-if="((isFocused || isHelpShown) && (helpText != '')) || (!valid && touched)">
         <div class="egeo-c-helpbox__text">
             <div class="egeo-c-message" data-ng-if="!$parent.valid && $parent.touched" data-ng-class="{'egeo-c-message--error': $parent.required, 'egeo-c-message--warn': !$parent.required}">
                 <i class="egeo-c-icon icon-alert" data-ng-if="!$parent.required && $parent.error.pattern"></i>
@@ -8,7 +8,7 @@
                 <span class="egeo-c-message__text" data-ng-if="$parent.error.pattern">This field has wrong format.</span>
             </div>
 
-            {{helpText}}
+            <div class="egeo-c-helpbox__label" data-ng-if="helpText">{{helpText}}</div>
         </div>
     </div>
 </div>
