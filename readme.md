@@ -14,6 +14,30 @@ git clone https://github.com/Stratio/egeo.ui.kit.git
 npm install
 ```
 
+### With Npm
+
+Include the Egeo Base Framework dependency in the *dependencies* section of your package.json file:
+```
+  "dependencies": {
+    ...
+    "egeo.ui.kit": "git://github.com/Stratio/egeo.ui.kit.git#v0.2-rc.0",
+    ...
+  }
+```
+And launch `npm install`. You can also update the library using `npm update egeo.ui.kit`.
+
+### With Bower
+
+Include the Egeo Base Framework dependency in the *dependencies* section of your bower.json file:
+```
+  "dependencies": {
+    ...
+    "egeo.ui.kit": "git://github.com/Stratio/egeo.ui.kit.git#v0.2-rc.0",
+    ...
+  }
+```
+And launch `bower install`. You can also update the library using `bower update egeo.ui.kit`.
+
 ## Launch the website
 
 You can see the website locally using a local webserver included with the project. Only use the `npm run-script serve` command and a local webserver will be launched in [http://localhost:9001](http://localhost:9001).
